@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cemc-param-web"
+version = "0.1.0"
+description = "CEMC GRIB2 要素清单静态站点：从 params.json 构建（cemc-param-db 的公开展示端）"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "jinja2",
+]
+
+[project.optional-dependencies]
+test = ["pytest"]
+
+[project.scripts]
+cemc-param-web = "cemc_param_web.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+cemc_param_web = ["templates/*.html", "static/*"]

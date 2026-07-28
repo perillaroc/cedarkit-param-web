@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="toolbar">
+  <input type="search" id="filter-q" placeholder="搜索 name / wgrib2 名 / 别名 / 描述 / 编号…" autofocus>
+  <select id="filter-discipline">
+    <option value="">全部 Discipline</option>
+    {% for value, label in disciplines %}
+    <option value="{{ value }}">{{ value }} — {{ label }}</option>
+    {% endfor %}
+  </select>
+  <span id="filter-count" class="filter-count"></span>
+</div>
+<table class="param-table" id="param-table">
+  <thead>
+    <tr>
+      <th class="num">编号</th>
+      <th>name</th>
+      <th>wgrib2</th>
+      <th>单位</th>
+      <th>描述</th>
+      <th class="num">变体</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for e in entries %}
+    <tr data-search="{{ e.search_text }}" data-discipline="{{ e.discipline }}">
+      <td class="num"><a href="{{ e.detail_url }}">{{ e.triplet }}</a></td>
+      <td class="name"><a href="{{ e.detail_url }}">{{ e.name }}</a></td>
+      <td>{{ e.wgrib2_name or "" }}</td>
+      <td>{{ e.unit or "" }}</td>
+      <td>{{ e.description_cn or e.description or "" }}</td>
+      <td class="num">{% if e.variants %}<span class="badge">{{ e.variants | length }}</span>{% endif %}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
+{% block scripts %}
+<script src="{{ root }}static/search.js"></script>
+{% endblock %}

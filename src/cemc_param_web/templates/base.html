@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}CEMC GRIB2 要素数据库{% endblock %}</title>
+<link rel="stylesheet" href="{{ root }}static/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <h1><a href="{{ root }}index.html">CEMC GRIB2 要素数据库</a></h1>
+    <p class="stats">{{ stats.entries }} 条目 · {{ stats.variants }} 变体 · {{ stats.aliases }} 别名</p>
+  </div>
+</header>
+<main class="wrap">
+{% block content %}{% endblock %}
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <p>由 cemc-param-web 从 params.json 静态生成（python -m cemc_param_web build）。
+       数据由内部项目 cemc-param-db 维护并导出，请勿在本站直接修改。
+       对照：<a href="https://codes.ecmwf.int/grib/param-db/">ECMWF GRIB Parameter Database</a></p>
+  </div>
+</footer>
+{% block scripts %}{% endblock %}
+</body>
+</html>

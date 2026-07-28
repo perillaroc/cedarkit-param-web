@@ -1,0 +1,9 @@
+# Netlify 部署配置：GitHub 仓库关联后自动按此构建发布。
+# 构建产物是纯静态文件（site/），无服务端、无前端框架。
+[build]
+  # 安装本包（仅 jinja2 一个依赖）后从 params.json 构建站点
+  command = "pip install . && cemc-param-web build --clean"
+  publish = "site"
+
+[build.environment]
+  PYTHON_VERSION = "3.12"

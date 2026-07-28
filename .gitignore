@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+
+# 虚拟环境与测试缓存
+.venv/
+.pytest_cache/
+
+# 生成物：静态站点（cemc-param-web build）
+/site/
+
+# 注意：params.json 是 cemc-param-db 的导出快照，应纳入版本管理（PR diff 即发布审批）
