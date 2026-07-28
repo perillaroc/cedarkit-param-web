@@ -1,0 +1,25 @@
+{
+  "name": "cemc-param-web",
+  "version": "0.2.0",
+  "private": true,
+  "description": "CEMC GRIB2 要素清单静态站点（Vue 3 + Naive UI，数据来自 cemc-param-db 导出的 params.json）",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc -b && vite build",
+    "preview": "vite preview",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "naive-ui": "^2.43.1",
+    "vue": "^3.5.13",
+    "vue-router": "^4.5.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.2.1",
+    "typescript": "~5.7.2",
+    "vite": "^6.0.7",
+    "vitest": "^3.0.2",
+    "vue-tsc": "^3.3.8"
+  }
+}
