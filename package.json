@@ -3,6 +3,7 @@
   "version": "0.2.0",
   "private": true,
   "description": "CEMC GRIB2 要素清单静态站点（Vue 3 + Naive UI，数据来自 cemc-param-db 导出的 params.json）",
+  "license": "Apache-2.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
