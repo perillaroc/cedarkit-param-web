@@ -5,7 +5,7 @@
     "stats": {
       "entries": 126,
       "variants": 95,
-      "aliases": 18
+      "aliases": 20
     }
   },
   "entries": [
@@ -222,8 +222,8 @@
       "wgrib2_name": "LHTFL",
       "unit": "ws/m2",
       "description": "Latent heat net flux",
-      "description_cn": "潜热辐射",
-      "updated_at": "2026-07-28 01:48:09"
+      "description_cn": "潜热通量",
+      "updated_at": "2026-08-21 02:37:47"
     },
     {
       "key": {
@@ -444,11 +444,11 @@
       },
       "name": "pwat",
       "wgrib2_name": "PWAT",
-      "unit": "kg/kg",
+      "unit": "kg/m2",
       "description": "Precipitable water",
       "description_cn": "整层可降水量",
       "typeOfLevel": "atmosphere",
-      "updated_at": "2026-07-28 01:48:09",
+      "updated_at": "2026-08-21 02:37:47",
       "variants": [
         {
           "name": "pwat",
@@ -573,6 +573,9 @@
         "number": 22
       },
       "name": "qc",
+      "aliases": [
+        "CLWMR"
+      ],
       "wgrib2_name": "CLMR",
       "unit": "kg/kg",
       "description": "Cloud mixing ratio",
@@ -678,9 +681,9 @@
       "wgrib2_name": "TCIWV",
       "unit": "kg/m2",
       "description": "Total column integrated water vapor",
-      "description_cn": "总柱状比湿",
+      "description_cn": "总柱状水汽",
       "typeOfLevel": "atmosphere",
-      "updated_at": "2026-07-28 01:48:09",
+      "updated_at": "2026-08-21 02:37:47",
       "variants": [
         {
           "name": "tvw",
@@ -794,9 +797,9 @@
       "name": "pc",
       "unit": "Pa",
       "description": "Condensation layer pressure",
-      "description_cn": "抬升凝结高度",
+      "description_cn": "抬升凝结高度处气压",
       "typeOfLevel": "surface",
-      "updated_at": "2026-07-28 01:48:09",
+      "updated_at": "2026-08-21 02:37:47",
       "variants": [
         {
           "name": "pc",
@@ -1162,8 +1165,8 @@
       "wgrib2_name": "DZDT",
       "unit": "m/s",
       "description": "Vertical velocity (geometric)",
-      "description_cn": "等高面垂直速度",
-      "updated_at": "2026-07-28 01:48:09",
+      "description_cn": "垂直速度",
+      "updated_at": "2026-08-21 02:37:47",
       "variants": [
         {
           "name": "w",
@@ -1179,7 +1182,7 @@
             "time_range_hours": 1
           },
           "description": "Maximum of w during 1 hours",
-          "description_cn": "1小时等高面最大垂直速度"
+          "description_cn": "1小时最大垂直速度"
         },
         {
           "name": "wmax#3",
@@ -1189,7 +1192,7 @@
             "time_range_hours": 3
           },
           "description": "Maximum of w during 3 hours",
-          "description_cn": "3小时等高面最大垂直速度"
+          "description_cn": "3小时最大垂直速度"
         },
         {
           "name": "wmax",
@@ -1198,7 +1201,7 @@
             "stepType": "max"
           },
           "description": "Maximum of w",
-          "description_cn": "等高面最大垂直速度"
+          "description_cn": "最大垂直速度"
         }
       ]
     },
@@ -1314,10 +1317,10 @@
         "number": 225
       },
       "name": "mpv1",
-      "unit": "1e-6.k/(m2.s.kg)",
+      "unit": "1e-6.K.m2/(s.kg)",
       "description": "Moist potential vorticity(vertical part)",
       "description_cn": "湿位涡垂直分量",
-      "updated_at": "2026-07-28 01:48:09"
+      "updated_at": "2026-08-21 02:37:47"
     },
     {
       "key": {
@@ -2141,11 +2144,11 @@
       },
       "name": "kidx",
       "wgrib2_name": "KX",
-      "unit": "C",
+      "unit": "K",
       "description": "K index",
       "description_cn": "K指数",
       "typeOfLevel": "meanSea",
-      "updated_at": "2026-07-28 01:48:09",
+      "updated_at": "2026-08-21 02:37:47",
       "variants": [
         {
           "name": "kidx",
@@ -2190,6 +2193,9 @@
         "number": 5
       },
       "name": "sweatidx",
+      "aliases": [
+        "SWEATX"
+      ],
       "wgrib2_name": "SX",
       "description": "Sweat index",
       "description_cn": "强天气胁迫指数",
@@ -2553,9 +2559,9 @@
       "wgrib2_name": "ALBDO",
       "unit": "%",
       "description": "Albedo",
-      "description_cn": "反射率",
+      "description_cn": "反照率",
       "typeOfLevel": "surface",
-      "updated_at": "2026-07-28 01:48:09",
+      "updated_at": "2026-08-21 02:37:47",
       "variants": [
         {
           "name": "albedo",
@@ -2639,8 +2645,8 @@
       "wgrib2_name": "HFLUX",
       "unit": "ws/m2",
       "description": "Sensible heat net flux",
-      "description_cn": "感热辐射",
-      "updated_at": "2026-07-28 01:48:09"
+      "description_cn": "感热通量",
+      "updated_at": "2026-08-21 02:37:47"
     }
   ]
 }
