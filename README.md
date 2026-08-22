@@ -1,15 +1,15 @@
-# cemc-param-web
+# cedarkit-param-web
 
-CEMC GRIB2 要素清单的**公开展示端**：Vue 3 + Naive UI 单页应用，
+CedarKit GRIB2 要素清单的**公开展示端**：Vue 3 + Naive UI 单页应用，
 对标 [ECMWF GRIB Parameter Database](https://codes.ecmwf.int/grib/param-db/)。
 
-数据来源：内部项目 `cemc-param-db`（SQLite 编辑真源）通过
-`python -m cemc_param_db export-json` 导出 `params.json`。
+数据来源：内部项目 `cedarkit-param-db`（SQLite 编辑真源）通过
+`python -m cedarkit_param_db export-json` 导出 `params.json`。
 **本仓库不维护数据**——`public/params.json` 的变更只接受来自内部导出的更新，
 请勿手工编辑；JSON 的 PR diff 即发布前的内容审批。
 
 ```
-cemc_param.db（内部）──export-json──> public/params.json（本仓库）──vite build──> dist/ ──> Netlify
+cedarkit_param.db（内部）──export-json──> public/params.json（本仓库）──vite build──> dist/ ──> Netlify
 ```
 
 ## 技术栈
@@ -39,15 +39,15 @@ npm run preview    # 预览构建产物
 
 接入步骤：Netlify 控制台 → Add new site → Import an existing project →
 选择本仓库的 GitHub 仓库，确认配置来自 `netlify.toml` 即可。此后每次
-push 到主分支自动重新构建发布；发布内容变更的正确路径是：cemc-param-db 侧
+push 到主分支自动重新构建发布；发布内容变更的正确路径是：cedarkit-param-db 侧
 维护数据 → `export-json` → 本仓库提交 `public/params.json` 的 PR（diff 即审批）→
 合并后 Netlify 自动上线。
 
 ## 项目结构
 
 ```
-cemc-param-web/
-├── public/params.json        # 数据快照（cemc-param-db 导出，schema_version 契约）；
+cedarkit-param-web/
+├── public/params.json        # 数据快照（cedarkit-param-db 导出，schema_version 契约）；
 │                             # 构建时拷入 dist 根，运行时 fetch 加载，同时供第三方脚本消费
 ├── index.html                # Vite 入口
 ├── src/
@@ -65,7 +65,7 @@ cemc-param-web/
 
 `public/params.json` 的 `meta.schema_version` 是两边升级的协调点：前端加载时
 校验版本（`src/data.ts` 的 `SUPPORTED_SCHEMA_VERSION`），契约变更需在
-cemc-param-db 侧递增版本号。
+cedarkit-param-db 侧递增版本号。
 
 > 注：0.2.0 起前端由 Jinja2 静态渲染（Python 包）重构为 Vue SPA；
 > 旧的 `params/{d}/{c}/{n}.html` 静态详情页 URL 不再存在，由 hash 路由取代。

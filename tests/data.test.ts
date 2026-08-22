@@ -1,6 +1,6 @@
 /** data.ts 展示模型装配测试（原 Python 版 test_build.py TestLoadModel 的移植）。
  *
- * 自含 fixture（内联 params.json 结构），不依赖 cemc-param-db。
+ * 自含 fixture（内联 params.json 结构），不依赖 cedarkit-param-db。
  */
 
 import { describe, expect, it } from 'vitest'
@@ -10,7 +10,7 @@ import type { ParamDoc } from '../src/types'
 const FIXTURE_DOC: ParamDoc = {
   meta: {
     schema_version: 1,
-    generated_by: 'cemc-param-db',
+    generated_by: 'cedarkit-param-db',
     stats: { entries: 2, variants: 1, aliases: 2 },
   },
   entries: [

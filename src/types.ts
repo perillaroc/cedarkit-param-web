@@ -1,6 +1,6 @@
 /** params.json 数据契约与展示模型类型。
  *
- * 契约由 cemc-param-db 的 export-json 导出（meta.schema_version 协调两边升级），
+ * 契约由 cedarkit-param-db 的 export-json 导出（meta.schema_version 协调两边升级），
  * Raw* 接口与契约字段一一对应；Entry/Variant 是 data.ts 装配后的展示模型。
  */
 

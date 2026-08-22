@@ -11,4 +11,4 @@ dist/
 .vscode/
 .idea/
 
-# 注意：public/params.json 是 cemc-param-db 的导出快照，应纳入版本管理（PR diff 即发布审批）
+# 注意：public/params.json 是 cedarkit-param-db 的导出快照，应纳入版本管理（PR diff 即发布审批）

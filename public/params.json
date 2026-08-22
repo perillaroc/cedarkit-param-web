@@ -1,7 +1,7 @@
 {
   "meta": {
     "schema_version": 1,
-    "generated_by": "cemc-param-db",
+    "generated_by": "cedarkit-param-db",
     "stats": {
       "entries": 126,
       "variants": 95,

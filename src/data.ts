@@ -1,13 +1,13 @@
 /** params.json 加载与展示模型装配。
  *
- * 数据契约：cemc-param-db 导出的 params.json（meta.schema_version 必须兼容）。
+ * 数据契约：cedarkit-param-db 导出的 params.json（meta.schema_version 必须兼容）。
  * 本模块只做展示层加工（三元组、discipline 标签、when 可读文本、搜索索引），
  * 不接触数据库。
  */
 
 import type { Entry, ParamDoc, RawEntry, SiteModel, Variant } from './types'
 
-/** 兼容的 params.json schema 版本（cemc-param-db exporter.JSON_SCHEMA_VERSION） */
+/** 兼容的 params.json schema 版本（cedarkit-param-db exporter.JSON_SCHEMA_VERSION） */
 export const SUPPORTED_SCHEMA_VERSION = 1
 
 /** WMO GRIB2 Table 0.0 常用 discipline 的中文标签（未知值回退为 "Discipline N"） */
@@ -72,13 +72,13 @@ export function shapeEntry(raw: RawEntry): Entry {
   return { ...base, searchText: searchText(base) }
 }
 
-/** 契约文档 → 展示模型；schema_version 不兼容时抛错（需 cemc-param-db 重新导出） */
+/** 契约文档 → 展示模型；schema_version 不兼容时抛错（需 cedarkit-param-db 重新导出） */
 export function buildModel(doc: ParamDoc): SiteModel {
   const version = doc.meta?.schema_version
   if (version !== SUPPORTED_SCHEMA_VERSION) {
     throw new Error(
       `params.json schema_version=${version}，本站仅支持 ${SUPPORTED_SCHEMA_VERSION}；` +
-        `请用匹配版本的 cemc-param-db 重新导出（export-json）`,
+        `请用匹配版本的 cedarkit-param-db 重新导出（export-json）`,
     )
   }
   const entries = doc.entries.map(shapeEntry)
