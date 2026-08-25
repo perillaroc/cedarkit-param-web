@@ -172,7 +172,7 @@ watch(
         v-model:value="query"
         type="text"
         placeholder="搜索名称、描述、单位、层次或输入 0.0.0…"
-        aria-label="搜索参数"
+        :input-props="{ 'aria-label': '搜索参数' }"
         clearable
         autofocus
         class="search-input"
@@ -182,7 +182,7 @@ watch(
         v-model:value="discipline"
         :options="disciplineOptions"
         placeholder="全部 Discipline"
-        aria-label="按 Discipline 筛选"
+        :input-props="{ 'aria-label': '按 Discipline 筛选' }"
         clearable
         class="filter-select"
       />
@@ -190,20 +190,20 @@ watch(
         v-model:value="categoryKey"
         :options="categoryOptions"
         placeholder="全部 Category"
-        aria-label="按 Category 筛选"
+        :input-props="{ 'aria-label': '按 Category 筛选' }"
         clearable
         class="filter-select"
       />
       <n-select
         v-model:value="variantFilter"
         :options="variantOptions"
-        aria-label="按条件变体筛选"
+        :input-props="{ 'aria-label': '按条件变体筛选' }"
         class="filter-select"
       />
     </div>
 
     <div class="result-summary">
-      <n-text depth="3">{{ filtered.length }} / {{ model?.entries.length ?? 0 }} 条</n-text>
+      <n-text depth="3" class="result-count">{{ filtered.length }} / {{ model?.entries.length ?? 0 }} 条</n-text>
       <n-button v-if="query || discipline !== null || categoryKey || variantFilter !== 'all'" text type="primary" @click="clearFilters">
         清除筛选
       </n-button>
@@ -250,6 +250,7 @@ watch(
 .search-input { width: min(100%, 380px); }
 .filter-select { width: 180px; }
 .result-summary { display: flex; align-items: center; justify-content: space-between; }
+.result-count { color: #62676d !important; }
 .mobile-list { display: none; }
 .card-link { color: inherit; text-decoration: none; }
 .card-description { margin: 0 0 10px; color: var(--n-text-color-3); }

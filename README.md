@@ -32,9 +32,19 @@ hash 路由（`/#/params/0/0/0`）使详情页链接可分享且无需 SPA fallb
 npm install
 npm run dev        # 开发服务器（热更新）
 npm test           # vitest：数据装配逻辑
+npm run test:e2e   # Playwright：浏览器流程与无障碍检查（首次需安装 Chromium）
 npm run build      # vue-tsc 类型检查 + 产物输出到 dist/
 npm run preview    # 预览构建产物
 ```
+
+首次运行浏览器测试前执行：
+
+```bash
+npx playwright install --no-shell chromium
+```
+
+GitHub Actions 会在 Node.js 22 环境中依次执行单元测试、类型检查、生产构建和
+Chromium E2E，并阻断 `serious` 或 `critical` 级无障碍问题。
 
 ## 部署（GitHub + Netlify）
 

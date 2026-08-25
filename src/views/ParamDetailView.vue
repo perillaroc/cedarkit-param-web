@@ -117,15 +117,15 @@ async function copy(value: string, label: string) {
     <n-descriptions bordered :column="1" label-placement="left" size="small">
       <n-descriptions-item label="discipline / category / number">
         {{ entry.discipline }} / {{ entry.category }} / {{ entry.number }}
-        <n-button text type="primary" size="tiny" @click="copy(entry.triplet, '三元组')">复制</n-button>
+        <n-button text size="small" @click="copy(entry.triplet, '三元组')">复制</n-button>
       </n-descriptions-item>
       <n-descriptions-item label="name">
         {{ entry.name }}
-        <n-button text type="primary" size="tiny" @click="copy(entry.name, '名称')">复制</n-button>
+        <n-button text size="small" @click="copy(entry.name, '名称')">复制</n-button>
       </n-descriptions-item>
       <n-descriptions-item v-if="entry.wgrib2Name" label="wgrib2 name">
         {{ entry.wgrib2Name }}
-        <n-button text type="primary" size="tiny" @click="copy(entry.wgrib2Name!, ' wgrib2 名称')">复制</n-button>
+        <n-button text size="small" @click="copy(entry.wgrib2Name!, ' wgrib2 名称')">复制</n-button>
       </n-descriptions-item>
       <n-descriptions-item v-if="entry.unit" label="单位">{{ entry.unit }}</n-descriptions-item>
       <n-descriptions-item v-if="entry.typeOfLevel" label="typeOfLevel">{{ entry.typeOfLevel }}</n-descriptions-item>
@@ -162,7 +162,7 @@ async function copy(value: string, label: string) {
 .plain-link { text-decoration: none; }
 .detail-title, .section-title { margin-bottom: 0; }
 .triplet { font-size: 16px; }
-.hint { font-size: 12px; }
+.hint { color: #62676d !important; font-size: 12px; }
 :deep(.when-code) { white-space: normal; overflow-wrap: anywhere; }
 @media (max-width: 640px) {
   .detail-nav { align-items: flex-start; flex-direction: column; }

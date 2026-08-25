@@ -40,7 +40,7 @@ onMounted(ensureLoaded)
 body { margin: 0; }
 .site-header { max-width: 1200px; margin: 0 auto; display: flex; align-items: baseline; justify-content: space-between; gap: 16px; }
 .site-title { font-size: 18px; font-weight: 600; }
-.site-meta { font-size: 12px; white-space: nowrap; }
+.site-meta { color: #62676d !important; font-size: 12px; white-space: nowrap; }
 .site-content { padding: 16px 24px 32px; max-width: 1200px; margin: 0 auto; }
 .loading-wrap { display: flex; justify-content: center; padding: 64px; }
 .error-content { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
