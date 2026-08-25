@@ -3,8 +3,8 @@
  * 自含 fixture（内联 params.json 结构），不依赖 cedarkit-param-db。
  */
 
-import { describe, expect, it } from 'vitest'
-import { buildModel } from '../src/data'
+import { afterEach, describe, expect, it, vi } from 'vitest'
+import { buildModel, loadModel } from '../src/data'
 import type { ParamDoc } from '../src/types'
 
 const FIXTURE_DOC: ParamDoc = {
@@ -53,11 +53,23 @@ describe('buildModel', () => {
       { value: 0, label: '气象' },
       { value: 10, label: '海洋' },
     ])
+    expect(model.categories).toEqual([
+      { discipline: 0, value: 0, label: '0.0' },
+      { discipline: 10, value: 0, label: '10.0' },
+    ])
+    expect(model.meta.generated_by).toBe('cedarkit-param-db')
   })
 
   it('搜索索引覆盖别名与变体', () => {
     const t = buildModel(FIXTURE_DOC).entries[0]
     for (const needle of ['2t', 't2m', 't_2m', '温度', '0.0.0', 'tmp']) {
+      expect(t.searchText).toContain(needle.toLowerCase())
+    }
+  })
+
+  it('搜索索引覆盖单位、层次和变体条件', () => {
+    const t = buildModel(FIXTURE_DOC).entries[0]
+    for (const needle of ['K', 'heightAboveGround', 'first_level_type=103']) {
       expect(t.searchText).toContain(needle.toLowerCase())
     }
   })
@@ -68,5 +80,23 @@ describe('buildModel', () => {
       meta: { ...FIXTURE_DOC.meta, schema_version: 999 },
     }
     expect(() => buildModel(bad)).toThrowError(/schema_version/)
+  })
+})
+
+describe('loadModel', () => {
+  afterEach(() => vi.unstubAllGlobals())
+
+  it('拒绝统计值与数据不一致的文档', async () => {
+    const badStats: ParamDoc = {
+      ...FIXTURE_DOC,
+      meta: { ...FIXTURE_DOC.meta, stats: { entries: 999, variants: 1, aliases: 2 } },
+    }
+    vi.stubGlobal('fetch', vi.fn().mockResolvedValue(new Response(JSON.stringify(badStats))))
+    await expect(loadModel('/params.json')).rejects.toThrow(/meta.stats/)
+  })
+
+  it('为无效 JSON 提供明确错误', async () => {
+    vi.stubGlobal('fetch', vi.fn().mockResolvedValue(new Response('{')))
+    await expect(loadModel('/params.json')).rejects.toThrow(/不是有效的 JSON/)
   })
 })

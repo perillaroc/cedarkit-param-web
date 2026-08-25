@@ -19,6 +19,13 @@ Vue 3 + TypeScript + Vite + Naive UI + vue-router（hash 模式）。
 任意子路径）下工作（`vite.config.ts` 中 `base: './'`）。
 hash 路由（`/#/params/0/0/0`）使详情页链接可分享且无需 SPA fallback 配置。
 
+## 主要功能
+
+- 按名称、别名、描述、单位、层次、变体条件和三元组全文搜索；输入三元组后可回车直达。
+- 按 discipline、category 和是否包含条件变体组合筛选；筛选、页码保存在 URL 中。
+- 桌面端表格与移动端卡片布局；详情页支持字段复制、变体继承值展示和相邻条目导航。
+- 对 `schema_version`、核心字段和统计值进行运行时校验，加载失败后可直接重试。
+
 ## 本地开发
 
 ```bash
@@ -62,6 +69,9 @@ cedarkit-param-web/
 ├── tests/data.test.ts        # vitest：装配/搜索索引/schema_version 校验
 └── netlify.toml              # Netlify 构建/发布配置
 ```
+
+Netlify 配置同时为带哈希的构建资源设置长期缓存，为 `params.json` 设置短期重新验证，
+并添加 CSP、禁止嗅探和禁止嵌入等基础安全响应头。
 
 `public/params.json` 的 `meta.schema_version` 是两边升级的协调点：前端加载时
 校验版本（`src/data.ts` 的 `SUPPORTED_SCHEMA_VERSION`），契约变更需在

@@ -38,13 +38,26 @@ export function shapeVariant(v: NonNullable<RawEntry['variants']>[number]): Vari
 export function searchText(e: Omit<Entry, 'searchText'>): string {
   const parts: Array<string | undefined> = [
     e.triplet,
+    `${e.discipline}.${e.category}`,
+    e.disciplineLabel,
     e.name,
     e.wgrib2Name,
+    e.unit,
+    e.typeOfLevel,
+    e.level === undefined ? undefined : String(e.level),
     e.description,
     e.descriptionCn,
     ...e.aliases,
     ...e.variants.map((v) => v.name),
     ...e.variants.flatMap((v) => v.aliases),
+    ...e.variants.flatMap((v) => [
+      v.whenText,
+      v.typeOfLevel,
+      v.level === undefined ? undefined : String(v.level),
+      v.unit,
+      v.description,
+      v.descriptionCn,
+    ]),
   ]
   return parts.filter((p): p is string => !!p).join(' ').toLowerCase()
 }
@@ -87,12 +100,66 @@ export function buildModel(doc: ParamDoc): SiteModel {
   const disciplines = [...seen.entries()]
     .map(([value, label]) => ({ value, label }))
     .sort((a, b) => a.value - b.value)
-  return { entries, disciplines }
+  const categoryKeys = new Set(entries.map((e) => `${e.discipline}.${e.category}`))
+  const categories = [...categoryKeys]
+    .map((key) => {
+      const [discipline, value] = key.split('.').map(Number)
+      return { discipline, value, label: `${discipline}.${value}` }
+    })
+    .sort((a, b) => a.discipline - b.discipline || a.value - b.value)
+  return { entries, disciplines, categories, meta: doc.meta }
+}
+
+function assertParamDoc(value: unknown): asserts value is ParamDoc {
+  if (!value || typeof value !== 'object') throw new Error('params.json 根节点不是对象')
+  const doc = value as Partial<ParamDoc>
+  if (!doc.meta || typeof doc.meta.schema_version !== 'number') {
+    throw new Error('params.json 缺少 meta.schema_version')
+  }
+  if (!Array.isArray(doc.entries)) throw new Error('params.json 的 entries 不是数组')
+  for (const [index, entry] of doc.entries.entries()) {
+    if (
+      !entry ||
+      typeof entry !== 'object' ||
+      !entry.key ||
+      !Number.isInteger(entry.key.discipline) ||
+      !Number.isInteger(entry.key.category) ||
+      !Number.isInteger(entry.key.number) ||
+      typeof entry.name !== 'string' ||
+      !entry.name
+    ) {
+      throw new Error(`params.json entries[${index}] 的 key 或 name 无效`)
+    }
+    if (entry.variants && !Array.isArray(entry.variants)) {
+      throw new Error(`params.json entries[${index}].variants 不是数组`)
+    }
+  }
+  const stats = doc.meta.stats
+  if (stats) {
+    const variants = doc.entries.reduce((sum, entry) => sum + (entry.variants?.length ?? 0), 0)
+    const aliases = doc.entries.reduce(
+      (sum, entry) =>
+        sum +
+        (entry.aliases?.length ?? 0) +
+        (entry.variants ?? []).reduce((n, variant) => n + (variant.aliases?.length ?? 0), 0),
+      0,
+    )
+    if (stats.entries !== doc.entries.length || stats.variants !== variants || stats.aliases !== aliases) {
+      throw new Error('params.json 的 meta.stats 与实际数据不一致')
+    }
+  }
 }
 
 /** 从站点根加载 params.json 并装配展示模型 */
 export async function loadModel(url = './params.json'): Promise<SiteModel> {
   const resp = await fetch(url)
   if (!resp.ok) throw new Error(`加载 ${url} 失败：HTTP ${resp.status}`)
-  return buildModel((await resp.json()) as ParamDoc)
+  let doc: unknown
+  try {
+    doc = await resp.json()
+  } catch {
+    throw new Error(`${url} 不是有效的 JSON`)
+  }
+  assertParamDoc(doc)
+  return buildModel(doc)
 }

@@ -87,4 +87,7 @@ export interface SiteModel {
   entries: Entry[]
   /** 数据中出现的 discipline 值与中文标签，按值排序 */
   disciplines: Array<{ value: number; label: string }>
+  /** 数据中出现的 discipline/category 组合，按数值排序 */
+  categories: Array<{ discipline: number; value: number; label: string }>
+  meta: ParamDoc['meta']
 }
