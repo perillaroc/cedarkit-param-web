@@ -1,15 +1,17 @@
 {
   "meta": {
-    "schema_version": 1,
+    "schema_version": 2,
     "generated_by": "cedarkit-param-db",
     "stats": {
       "entries": 126,
       "variants": 95,
-      "aliases": 20
+      "aliases": 27,
+      "parameter_ids": 221
     }
   },
   "entries": [
     {
+      "parameter_id": "cedarkit.t",
       "key": {
         "discipline": 0,
         "category": 0,
@@ -23,6 +25,7 @@
       "updated_at": "2026-07-28 01:48:09",
       "variants": [
         {
+          "parameter_id": "cedarkit.t2m",
           "name": "t2m",
           "when": {
             "first_level_type": 103,
@@ -34,6 +37,7 @@
           "description_cn": "2米温度"
         },
         {
+          "parameter_id": "cedarkit.ts",
           "name": "ts",
           "aliases": [
             "tsfc"
@@ -46,6 +50,7 @@
           "description_cn": "地面温度"
         },
         {
+          "parameter_id": "cedarkit.st",
           "name": "st",
           "when": {
             "first_level_type": 106
@@ -55,6 +60,7 @@
           "description_cn": "土壤温度"
         },
         {
+          "parameter_id": "cedarkit.st-0-10",
           "name": "st(0-10)",
           "when": {
             "first_level_type": 106,
@@ -66,6 +72,7 @@
           "description_cn": "0-10cm土壤温度"
         },
         {
+          "parameter_id": "cedarkit.st-10-40",
           "name": "st(10-40)",
           "when": {
             "first_level_type": 106,
@@ -77,6 +84,7 @@
           "description_cn": "10-40cm土壤温度"
         },
         {
+          "parameter_id": "cedarkit.st-40-100",
           "name": "st(40-100)",
           "when": {
             "first_level_type": 106,
@@ -88,6 +96,7 @@
           "description_cn": "40-100cm土壤温度"
         },
         {
+          "parameter_id": "cedarkit.st-100-200",
           "name": "st(100-200)",
           "when": {
             "first_level_type": 106,
@@ -101,12 +110,16 @@
       ]
     },
     {
+      "parameter_id": "cedarkit.theta-se",
       "key": {
         "discipline": 0,
         "category": 0,
         "number": 3
       },
       "name": "thetaSe",
+      "aliases": [
+        "pte"
+      ],
       "wgrib2_name": "EPOT",
       "unit": "K",
       "description": "Pseudo-equivalent potential temperature",
@@ -114,6 +127,7 @@
       "updated_at": "2026-07-28 01:48:09"
     },
     {
+      "parameter_id": "cedarkit.mx2t.any",
       "key": {
         "discipline": 0,
         "category": 0,
@@ -129,6 +143,7 @@
       "updated_at": "2026-07-28 01:48:09",
       "variants": [
         {
+          "parameter_id": "cedarkit.mx2t",
           "name": "mx2t",
           "aliases": [
             "tmax2m"
@@ -144,6 +159,7 @@
       ]
     },
     {
+      "parameter_id": "cedarkit.mn2t.any",
       "key": {
         "discipline": 0,
         "category": 0,
@@ -159,6 +175,7 @@
       "updated_at": "2026-07-28 01:48:09",
       "variants": [
         {
+          "parameter_id": "cedarkit.mn2t",
           "name": "mn2t",
           "aliases": [
             "tmin2m"
@@ -174,12 +191,16 @@
       ]
     },
     {
+      "parameter_id": "cedarkit.td",
       "key": {
         "discipline": 0,
         "category": 0,
         "number": 6
       },
       "name": "td",
+      "aliases": [
+        "dpt"
+      ],
       "wgrib2_name": "DPT",
       "unit": "K",
       "description": "Dew point",
@@ -187,6 +208,7 @@
       "updated_at": "2026-07-28 01:48:09",
       "variants": [
         {
+          "parameter_id": "cedarkit.td2m",
           "name": "td2m",
           "when": {
             "first_level_type": 103,
@@ -200,6 +222,7 @@
       ]
     },
     {
+      "parameter_id": "cedarkit.ttd",
       "key": {
         "discipline": 0,
         "category": 0,
@@ -213,6 +236,7 @@
       "updated_at": "2026-07-28 01:48:09"
     },
     {
+      "parameter_id": "cedarkit.slhf",
       "key": {
         "discipline": 0,
         "category": 0,
@@ -226,6 +250,7 @@
       "updated_at": "2026-08-21 02:37:47"
     },
     {
+      "parameter_id": "cedarkit.skint",
       "key": {
         "discipline": 0,
         "category": 0,
@@ -236,6 +261,7 @@
       "updated_at": "2026-07-28 01:48:09"
     },
     {
+      "parameter_id": "cedarkit.hfx.any",
       "key": {
         "discipline": 0,
         "category": 0,
@@ -249,6 +275,7 @@
       "updated_at": "2026-07-28 01:48:09",
       "variants": [
         {
+          "parameter_id": "cedarkit.hfx",
           "name": "hfx",
           "when": {
             "first_level_type": 1,
@@ -259,6 +286,7 @@
       ]
     },
     {
+      "parameter_id": "cedarkit.tadv",
       "key": {
         "discipline": 0,
         "category": 0,
@@ -274,6 +302,7 @@
       "updated_at": "2026-07-28 01:48:09"
     },
     {
+      "parameter_id": "cedarkit.saunaidx",
       "key": {
         "discipline": 0,
         "category": 0,
@@ -285,6 +314,7 @@
       "updated_at": "2026-07-28 01:48:09"
     },
     {
+      "parameter_id": "cedarkit.htdn",
       "key": {
         "discipline": 0,
         "category": 0,
@@ -296,6 +326,7 @@
       "updated_at": "2026-07-28 01:48:09"
     },
     {
+      "parameter_id": "cedarkit.ata",
       "key": {
         "discipline": 0,
         "category": 0,
@@ -308,6 +339,7 @@
       "updated_at": "2026-07-28 01:48:09"
     },
     {
+      "parameter_id": "cedarkit.tn",
       "key": {
         "discipline": 0,
         "category": 0,
@@ -320,6 +352,7 @@
       "updated_at": "2026-07-28 01:48:09"
     },
     {
+      "parameter_id": "cedarkit.thp",
       "key": {
         "discipline": 0,
         "category": 0,
@@ -331,6 +364,7 @@
       "updated_at": "2026-07-28 01:48:09"
     },
     {
+      "parameter_id": "cedarkit.q",
       "key": {
         "discipline": 0,
         "category": 1,
@@ -344,6 +378,7 @@
       "updated_at": "2026-07-28 01:48:09",
       "variants": [
         {
+          "parameter_id": "cedarkit.q2m",
           "name": "q2m",
           "when": {
             "first_level_type": 103,
@@ -355,6 +390,7 @@
           "description_cn": "2米比湿"
         },
         {
+          "parameter_id": "cedarkit.sw",
           "name": "sw",
           "when": {
             "first_level_type": 106
@@ -365,6 +401,7 @@
           "description_cn": "土壤湿度"
         },
         {
+          "parameter_id": "cedarkit.sw-0-10",
           "name": "sw(0-10)",
           "when": {
             "first_level_type": 106,
@@ -376,6 +413,7 @@
           "description_cn": "0-10cm土壤湿度"
         },
         {
+          "parameter_id": "cedarkit.sw-10-40",
           "name": "sw(10-40)",
           "when": {
             "first_level_type": 106,
@@ -387,6 +425,7 @@
           "description_cn": "10-40cm土壤湿度"
         },
         {
+          "parameter_id": "cedarkit.sw-40-100",
           "name": "sw(40-100)",
           "when": {
             "first_level_type": 106,
@@ -398,6 +437,7 @@
           "description_cn": "40-100cm土壤湿度"
         },
         {
+          "parameter_id": "cedarkit.sw-100-200",
           "name": "sw(100-200)",
           "when": {
             "first_level_type": 106,
@@ -411,6 +451,7 @@
       ]
     },
     {
+      "parameter_id": "cedarkit.rh",
       "key": {
         "discipline": 0,
         "category": 1,
@@ -424,6 +465,7 @@
       "updated_at": "2026-07-28 01:48:09",
       "variants": [
         {
+          "parameter_id": "cedarkit.rh2m",
           "name": "rh2m",
           "when": {
             "first_level_type": 103,
@@ -437,6 +479,7 @@
       ]
     },
     {
+      "parameter_id": "cedarkit.pwat.any",
       "key": {
         "discipline": 0,
         "category": 1,
@@ -451,6 +494,7 @@
       "updated_at": "2026-08-21 02:37:47",
       "variants": [
         {
+          "parameter_id": "cedarkit.pwat",
           "name": "pwat",
           "when": {
             "first_level_type": 10
@@ -460,6 +504,7 @@
       ]
     },
     {
+      "parameter_id": "cedarkit.rain.any",
       "key": {
         "discipline": 0,
         "category": 1,
@@ -474,7 +519,11 @@
       "updated_at": "2026-07-28 01:48:09",
       "variants": [
         {
+          "parameter_id": "cedarkit.rain",
           "name": "rain",
+          "aliases": [
+            "apcp"
+          ],
           "when": {
             "first_level_type": 1,
             "stepType": "accum"
@@ -484,6 +533,7 @@
       ]
     },
     {
+      "parameter_id": "cedarkit.rainnc.any",
       "key": {
         "discipline": 0,
         "category": 1,
@@ -498,6 +548,7 @@
       "updated_at": "2026-07-28 01:48:09",
       "variants": [
         {
+          "parameter_id": "cedarkit.rainnc",
           "name": "rainnc",
           "when": {
             "first_level_type": 1,
@@ -508,6 +559,7 @@
       ]
     },
     {
+      "parameter_id": "cedarkit.rainc.any",
       "key": {
         "discipline": 0,
         "category": 1,
@@ -522,6 +574,7 @@
       "updated_at": "2026-07-28 01:48:09",
       "variants": [
         {
+          "parameter_id": "cedarkit.rainc",
           "name": "rainc",
           "when": {
             "first_level_type": 1,
@@ -532,6 +585,7 @@
       ]
     },
     {
+      "parameter_id": "cedarkit.sd.any",
       "key": {
         "discipline": 0,
         "category": 1,
@@ -546,6 +600,7 @@
       "updated_at": "2026-07-28 01:48:09",
       "variants": [
         {
+          "parameter_id": "cedarkit.sd",
           "name": "sd",
           "when": {
             "first_level_type": 1
@@ -555,6 +610,7 @@
       ]
     },
     {
+      "parameter_id": "cedarkit.precitype",
       "key": {
         "discipline": 0,
         "category": 1,
@@ -567,6 +623,7 @@
       "updated_at": "2026-07-28 01:48:09"
     },
     {
+      "parameter_id": "cedarkit.qc",
       "key": {
         "discipline": 0,
         "category": 1,
@@ -583,6 +640,7 @@
       "updated_at": "2026-07-28 01:48:09"
     },
     {
+      "parameter_id": "cedarkit.qi",
       "key": {
         "discipline": 0,
         "category": 1,
@@ -596,6 +654,7 @@
       "updated_at": "2026-07-28 01:48:09"
     },
     {
+      "parameter_id": "cedarkit.qr",
       "key": {
         "discipline": 0,
         "category": 1,
@@ -609,6 +668,7 @@
       "updated_at": "2026-07-28 01:48:09"
     },
     {
+      "parameter_id": "cedarkit.qs",
       "key": {
         "discipline": 0,
         "category": 1,
@@ -622,6 +682,7 @@
       "updated_at": "2026-07-28 01:48:09"
     },
     {
+      "parameter_id": "cedarkit.sf.any",
       "key": {
         "discipline": 0,
         "category": 1,
@@ -636,9 +697,11 @@
       "updated_at": "2026-07-28 01:48:09",
       "variants": [
         {
+          "parameter_id": "cedarkit.sf",
           "name": "sf",
           "aliases": [
-            "snow"
+            "snow",
+            "asnow"
           ],
           "when": {
             "first_level_type": 1,
@@ -649,6 +712,7 @@
       ]
     },
     {
+      "parameter_id": "cedarkit.graupel",
       "key": {
         "discipline": 0,
         "category": 1,
@@ -662,6 +726,7 @@
       "updated_at": "2026-07-28 01:48:09"
     },
     {
+      "parameter_id": "cedarkit.tsrwe",
       "key": {
         "discipline": 0,
         "category": 1,
@@ -672,6 +737,7 @@
       "updated_at": "2026-07-28 01:48:09"
     },
     {
+      "parameter_id": "cedarkit.tvw.any",
       "key": {
         "discipline": 0,
         "category": 1,
@@ -686,6 +752,7 @@
       "updated_at": "2026-08-21 02:37:47",
       "variants": [
         {
+          "parameter_id": "cedarkit.tvw",
           "name": "tvw",
           "when": {
             "first_level_type": 10
@@ -695,6 +762,7 @@
       ]
     },
     {
+      "parameter_id": "cedarkit.tcw.any",
       "key": {
         "discipline": 0,
         "category": 1,
@@ -709,6 +777,7 @@
       "updated_at": "2026-07-28 01:48:09",
       "variants": [
         {
+          "parameter_id": "cedarkit.tcw",
           "name": "tcw",
           "when": {
             "first_level_type": 10
@@ -718,6 +787,7 @@
       ]
     },
     {
+      "parameter_id": "cedarkit.tiw.any",
       "key": {
         "discipline": 0,
         "category": 1,
@@ -732,6 +802,7 @@
       "updated_at": "2026-07-28 01:48:09",
       "variants": [
         {
+          "parameter_id": "cedarkit.tiw",
           "name": "tiw",
           "when": {
             "first_level_type": 10
@@ -741,6 +812,7 @@
       ]
     },
     {
+      "parameter_id": "cedarkit.qflx",
       "key": {
         "discipline": 0,
         "category": 1,
@@ -753,12 +825,16 @@
       "updated_at": "2026-07-28 01:48:09"
     },
     {
+      "parameter_id": "cedarkit.qdiv",
       "key": {
         "discipline": 0,
         "category": 1,
         "number": 225
       },
       "name": "qdiv",
+      "aliases": [
+        "qv_div"
+      ],
       "wgrib2_name": "FRZR",
       "unit": "1e-7.g/(cm2.hpa.s)",
       "description": "Moisture flux divergence",
@@ -766,6 +842,7 @@
       "updated_at": "2026-07-28 01:48:09"
     },
     {
+      "parameter_id": "cedarkit.src",
       "key": {
         "discipline": 0,
         "category": 1,
@@ -777,6 +854,7 @@
       "updated_at": "2026-07-28 01:48:09"
     },
     {
+      "parameter_id": "cedarkit.ro",
       "key": {
         "discipline": 0,
         "category": 1,
@@ -789,6 +867,7 @@
       "updated_at": "2026-07-28 01:48:09"
     },
     {
+      "parameter_id": "cedarkit.pc.any",
       "key": {
         "discipline": 0,
         "category": 1,
@@ -802,6 +881,7 @@
       "updated_at": "2026-08-21 02:37:47",
       "variants": [
         {
+          "parameter_id": "cedarkit.pc",
           "name": "pc",
           "when": {
             "first_level_type": 1
@@ -811,6 +891,7 @@
       ]
     },
     {
+      "parameter_id": "cedarkit.qfxsfc.any",
       "key": {
         "discipline": 0,
         "category": 1,
@@ -824,6 +905,7 @@
       "updated_at": "2026-07-28 01:48:09",
       "variants": [
         {
+          "parameter_id": "cedarkit.qfxsfc",
           "name": "qfxsfc",
           "aliases": [
             "qfx"
@@ -836,6 +918,7 @@
       ]
     },
     {
+      "parameter_id": "cedarkit.qpe",
       "key": {
         "discipline": 0,
         "category": 1,
@@ -848,6 +931,7 @@
       "updated_at": "2026-07-28 01:48:09"
     },
     {
+      "parameter_id": "cedarkit.rhmax",
       "key": {
         "discipline": 0,
         "category": 1,
@@ -860,6 +944,7 @@
       "updated_at": "2026-07-28 01:48:09",
       "variants": [
         {
+          "parameter_id": "cedarkit.rhmax2m",
           "name": "rhmax2m",
           "when": {
             "first_level_type": 103,
@@ -873,6 +958,7 @@
       ]
     },
     {
+      "parameter_id": "cedarkit.rhmin",
       "key": {
         "discipline": 0,
         "category": 1,
@@ -885,6 +971,7 @@
       "updated_at": "2026-07-28 01:48:09",
       "variants": [
         {
+          "parameter_id": "cedarkit.rhmin2m",
           "name": "rhmin2m",
           "when": {
             "first_level_type": 103,
@@ -898,6 +985,7 @@
       ]
     },
     {
+      "parameter_id": "cedarkit.rainp",
       "key": {
         "discipline": 0,
         "category": 1,
@@ -910,6 +998,7 @@
       "updated_at": "2026-07-28 01:48:09"
     },
     {
+      "parameter_id": "cedarkit.rainpr",
       "key": {
         "discipline": 0,
         "category": 1,
@@ -922,6 +1011,7 @@
       "updated_at": "2026-07-28 01:48:09"
     },
     {
+      "parameter_id": "cedarkit.rainh",
       "key": {
         "discipline": 0,
         "category": 1,
@@ -934,6 +1024,7 @@
       "updated_at": "2026-07-28 01:48:09"
     },
     {
+      "parameter_id": "cedarkit.hail",
       "key": {
         "discipline": 0,
         "category": 1,
@@ -946,6 +1037,7 @@
       "updated_at": "2026-07-28 01:48:09"
     },
     {
+      "parameter_id": "cedarkit.raint",
       "key": {
         "discipline": 0,
         "category": 1,
@@ -958,6 +1050,7 @@
       "updated_at": "2026-07-28 01:48:09"
     },
     {
+      "parameter_id": "cedarkit.light",
       "key": {
         "discipline": 0,
         "category": 1,
@@ -969,6 +1062,7 @@
       "updated_at": "2026-07-28 01:48:09"
     },
     {
+      "parameter_id": "cedarkit.hi.any",
       "key": {
         "discipline": 0,
         "category": 1,
@@ -982,6 +1076,7 @@
       "updated_at": "2026-07-28 01:48:09",
       "variants": [
         {
+          "parameter_id": "cedarkit.hi",
           "name": "hi",
           "when": {
             "first_level_type": 1
@@ -991,6 +1086,7 @@
       ]
     },
     {
+      "parameter_id": "cedarkit.ii",
       "key": {
         "discipline": 0,
         "category": 1,
@@ -1003,6 +1099,7 @@
       "updated_at": "2026-07-28 01:48:09"
     },
     {
+      "parameter_id": "cedarkit.rain5max.any",
       "key": {
         "discipline": 0,
         "category": 1,
@@ -1016,6 +1113,7 @@
       "updated_at": "2026-07-28 01:48:09",
       "variants": [
         {
+          "parameter_id": "cedarkit.rain5max",
           "name": "rain5max",
           "when": {
             "first_level_type": 1,
@@ -1026,6 +1124,7 @@
       ]
     },
     {
+      "parameter_id": "cedarkit.u",
       "key": {
         "discipline": 0,
         "category": 2,
@@ -1039,6 +1138,7 @@
       "updated_at": "2026-07-28 01:48:09",
       "variants": [
         {
+          "parameter_id": "cedarkit.u10m",
           "name": "u10m",
           "when": {
             "first_level_type": 103,
@@ -1051,6 +1151,7 @@
           "description_cn": "10米东西风"
         },
         {
+          "parameter_id": "cedarkit.u10mmax-1",
           "name": "u10mmax#1",
           "when": {
             "first_level_type": 103,
@@ -1064,6 +1165,7 @@
           "description_cn": "输出间隔内最大10米东西风"
         },
         {
+          "parameter_id": "cedarkit.u10mmax-3",
           "name": "u10mmax#3",
           "when": {
             "first_level_type": 103,
@@ -1077,6 +1179,7 @@
           "description_cn": "3小时最大10米东西风"
         },
         {
+          "parameter_id": "cedarkit.u10mmax",
           "name": "u10mmax",
           "when": {
             "first_level_type": 103,
@@ -1091,6 +1194,7 @@
       ]
     },
     {
+      "parameter_id": "cedarkit.v",
       "key": {
         "discipline": 0,
         "category": 2,
@@ -1104,6 +1208,7 @@
       "updated_at": "2026-07-28 01:48:09",
       "variants": [
         {
+          "parameter_id": "cedarkit.v10m",
           "name": "v10m",
           "when": {
             "first_level_type": 103,
@@ -1116,6 +1221,7 @@
           "description_cn": "10米南北风"
         },
         {
+          "parameter_id": "cedarkit.v10mmax-1",
           "name": "v10mmax#1",
           "when": {
             "first_level_type": 103,
@@ -1129,6 +1235,7 @@
           "description_cn": "输出间隔内10米南北风"
         },
         {
+          "parameter_id": "cedarkit.v10mmax-3",
           "name": "v10mmax#3",
           "when": {
             "first_level_type": 103,
@@ -1142,6 +1249,7 @@
           "description_cn": "3小时最大10米南北风"
         },
         {
+          "parameter_id": "cedarkit.v10mmax",
           "name": "v10mmax",
           "when": {
             "first_level_type": 103,
@@ -1156,6 +1264,7 @@
       ]
     },
     {
+      "parameter_id": "cedarkit.w.any",
       "key": {
         "discipline": 0,
         "category": 2,
@@ -1169,12 +1278,14 @@
       "updated_at": "2026-08-21 02:37:47",
       "variants": [
         {
+          "parameter_id": "cedarkit.w",
           "name": "w",
           "when": {
             "first_level_type": 100
           }
         },
         {
+          "parameter_id": "cedarkit.wmax-1",
           "name": "wmax#1",
           "when": {
             "first_level_type": 100,
@@ -1185,6 +1296,7 @@
           "description_cn": "1小时最大垂直速度"
         },
         {
+          "parameter_id": "cedarkit.wmax-3",
           "name": "wmax#3",
           "when": {
             "first_level_type": 100,
@@ -1195,6 +1307,7 @@
           "description_cn": "3小时最大垂直速度"
         },
         {
+          "parameter_id": "cedarkit.wmax",
           "name": "wmax",
           "when": {
             "first_level_type": 100,
@@ -1206,6 +1319,7 @@
       ]
     },
     {
+      "parameter_id": "cedarkit.vor",
       "key": {
         "discipline": 0,
         "category": 2,
@@ -1219,6 +1333,7 @@
       "updated_at": "2026-07-28 01:48:09"
     },
     {
+      "parameter_id": "cedarkit.div",
       "key": {
         "discipline": 0,
         "category": 2,
@@ -1232,6 +1347,7 @@
       "updated_at": "2026-07-28 01:48:09"
     },
     {
+      "parameter_id": "cedarkit.gust",
       "key": {
         "discipline": 0,
         "category": 2,
@@ -1245,12 +1361,16 @@
       "updated_at": "2026-07-28 01:48:09"
     },
     {
+      "parameter_id": "cedarkit.shr",
       "key": {
         "discipline": 0,
         "category": 2,
         "number": 25
       },
       "name": "shr",
+      "aliases": [
+        "vwsh"
+      ],
       "wgrib2_name": "VWSH",
       "unit": "s-1",
       "description": "Vertical speed shear",
@@ -1258,6 +1378,7 @@
       "updated_at": "2026-07-28 01:48:09",
       "variants": [
         {
+          "parameter_id": "cedarkit.shr-0-1000",
           "name": "shr(0-1000)",
           "when": {
             "first_level_type": 103,
@@ -1270,6 +1391,7 @@
           "description_cn": "0-1km垂直风切变"
         },
         {
+          "parameter_id": "cedarkit.shr-0-3000",
           "name": "shr(0-3000)",
           "when": {
             "first_level_type": 103,
@@ -1282,6 +1404,7 @@
           "description_cn": "0-3km垂直风切变"
         },
         {
+          "parameter_id": "cedarkit.shr-0-6000",
           "name": "shr(0-6000)",
           "when": {
             "first_level_type": 103,
@@ -1296,6 +1419,7 @@
       ]
     },
     {
+      "parameter_id": "cedarkit.voradv",
       "key": {
         "discipline": 0,
         "category": 2,
@@ -1311,6 +1435,7 @@
       "updated_at": "2026-07-28 01:48:09"
     },
     {
+      "parameter_id": "cedarkit.mpv1",
       "key": {
         "discipline": 0,
         "category": 2,
@@ -1323,6 +1448,7 @@
       "updated_at": "2026-08-21 02:37:47"
     },
     {
+      "parameter_id": "cedarkit.mpv2",
       "key": {
         "discipline": 0,
         "category": 2,
@@ -1335,6 +1461,7 @@
       "updated_at": "2026-07-28 01:48:09"
     },
     {
+      "parameter_id": "cedarkit.wess.any",
       "key": {
         "discipline": 0,
         "category": 2,
@@ -1348,6 +1475,7 @@
       "updated_at": "2026-07-28 01:48:09",
       "variants": [
         {
+          "parameter_id": "cedarkit.wess",
           "name": "wess",
           "when": {
             "first_level_type": 1
@@ -1357,6 +1485,7 @@
       ]
     },
     {
+      "parameter_id": "cedarkit.nsss.any",
       "key": {
         "discipline": 0,
         "category": 2,
@@ -1370,6 +1499,7 @@
       "updated_at": "2026-07-28 01:48:09",
       "variants": [
         {
+          "parameter_id": "cedarkit.nsss",
           "name": "nsss",
           "when": {
             "first_level_type": 1
@@ -1379,6 +1509,7 @@
       ]
     },
     {
+      "parameter_id": "cedarkit.thunwind",
       "key": {
         "discipline": 0,
         "category": 2,
@@ -1390,6 +1521,7 @@
       "updated_at": "2026-07-28 01:48:09"
     },
     {
+      "parameter_id": "cedarkit.seawave",
       "key": {
         "discipline": 0,
         "category": 2,
@@ -1402,6 +1534,7 @@
       "updated_at": "2026-07-28 01:48:09"
     },
     {
+      "parameter_id": "cedarkit.weph",
       "key": {
         "discipline": 0,
         "category": 2,
@@ -1413,6 +1546,7 @@
       "updated_at": "2026-07-28 01:48:09"
     },
     {
+      "parameter_id": "cedarkit.haze",
       "key": {
         "discipline": 0,
         "category": 2,
@@ -1424,6 +1558,7 @@
       "updated_at": "2026-07-28 01:48:09"
     },
     {
+      "parameter_id": "cedarkit.apd",
       "key": {
         "discipline": 0,
         "category": 2,
@@ -1435,6 +1570,7 @@
       "updated_at": "2026-07-28 01:48:09"
     },
     {
+      "parameter_id": "cedarkit.fog",
       "key": {
         "discipline": 0,
         "category": 2,
@@ -1446,6 +1582,7 @@
       "updated_at": "2026-07-28 01:48:09"
     },
     {
+      "parameter_id": "cedarkit.vi",
       "key": {
         "discipline": 0,
         "category": 2,
@@ -1458,6 +1595,7 @@
       "updated_at": "2026-07-28 01:48:09"
     },
     {
+      "parameter_id": "cedarkit.wi.any",
       "key": {
         "discipline": 0,
         "category": 2,
@@ -1470,6 +1608,7 @@
       "updated_at": "2026-07-28 01:48:09",
       "variants": [
         {
+          "parameter_id": "cedarkit.wi",
           "name": "wi",
           "when": {
             "first_level_type": 1
@@ -1479,6 +1618,7 @@
       ]
     },
     {
+      "parameter_id": "cedarkit.shrmax",
       "key": {
         "discipline": 0,
         "category": 2,
@@ -1491,6 +1631,7 @@
       "updated_at": "2026-07-28 01:48:09",
       "variants": [
         {
+          "parameter_id": "cedarkit.shrmax-0-600",
           "name": "shrmax(0-600)",
           "when": {
             "first_level_type": 103,
@@ -1505,6 +1646,7 @@
       ]
     },
     {
+      "parameter_id": "cedarkit.shrmaxdir",
       "key": {
         "discipline": 0,
         "category": 2,
@@ -1517,6 +1659,7 @@
       "updated_at": "2026-07-28 01:48:09",
       "variants": [
         {
+          "parameter_id": "cedarkit.shrmaxdir-0-600",
           "name": "shrmaxdir(0-600)",
           "when": {
             "first_level_type": 103,
@@ -1531,6 +1674,7 @@
       ]
     },
     {
+      "parameter_id": "cedarkit.ps.any",
       "key": {
         "discipline": 0,
         "category": 3,
@@ -1545,6 +1689,7 @@
       "updated_at": "2026-07-28 01:48:09",
       "variants": [
         {
+          "parameter_id": "cedarkit.ps",
           "name": "ps",
           "aliases": [
             "psfc"
@@ -1557,6 +1702,7 @@
       ]
     },
     {
+      "parameter_id": "cedarkit.psl.any",
       "key": {
         "discipline": 0,
         "category": 3,
@@ -1571,7 +1717,11 @@
       "updated_at": "2026-07-28 01:48:09",
       "variants": [
         {
+          "parameter_id": "cedarkit.psl",
           "name": "psl",
+          "aliases": [
+            "mslp"
+          ],
           "when": {
             "first_level_type": 101
           },
@@ -1580,6 +1730,7 @@
       ]
     },
     {
+      "parameter_id": "cedarkit.h.any",
       "key": {
         "discipline": 0,
         "category": 3,
@@ -1593,12 +1744,14 @@
       "updated_at": "2026-07-28 01:48:09",
       "variants": [
         {
+          "parameter_id": "cedarkit.h",
           "name": "h",
           "when": {
             "first_level_type": 100
           }
         },
         {
+          "parameter_id": "cedarkit.zs",
           "name": "zs",
           "when": {
             "first_level_type": 1
@@ -1610,6 +1763,7 @@
       ]
     },
     {
+      "parameter_id": "cedarkit.pblh.any",
       "key": {
         "discipline": 0,
         "category": 3,
@@ -1624,6 +1778,7 @@
       "updated_at": "2026-07-28 01:48:09",
       "variants": [
         {
+          "parameter_id": "cedarkit.pblh",
           "name": "pblh",
           "when": {
             "first_level_type": 1
@@ -1633,6 +1788,7 @@
       ]
     },
     {
+      "parameter_id": "cedarkit.pi",
       "key": {
         "discipline": 0,
         "category": 3,
@@ -1644,6 +1800,7 @@
       "updated_at": "2026-07-28 01:48:09"
     },
     {
+      "parameter_id": "cedarkit.pip",
       "key": {
         "discipline": 0,
         "category": 3,
@@ -1655,6 +1812,7 @@
       "updated_at": "2026-07-28 01:48:09"
     },
     {
+      "parameter_id": "cedarkit.ht0.any",
       "key": {
         "discipline": 0,
         "category": 3,
@@ -1668,6 +1826,7 @@
       "updated_at": "2026-07-28 01:48:09",
       "variants": [
         {
+          "parameter_id": "cedarkit.ht0",
           "name": "ht0",
           "when": {
             "first_level_type": 1
@@ -1677,6 +1836,7 @@
       ]
     },
     {
+      "parameter_id": "cedarkit.ht2.any",
       "key": {
         "discipline": 0,
         "category": 3,
@@ -1690,6 +1850,7 @@
       "updated_at": "2026-07-28 01:48:09",
       "variants": [
         {
+          "parameter_id": "cedarkit.ht2",
           "name": "ht2",
           "when": {
             "first_level_type": 1
@@ -1699,6 +1860,7 @@
       ]
     },
     {
+      "parameter_id": "cedarkit.hib",
       "key": {
         "discipline": 0,
         "category": 3,
@@ -1711,6 +1873,7 @@
       "updated_at": "2026-07-28 01:48:09"
     },
     {
+      "parameter_id": "cedarkit.znt.any",
       "key": {
         "discipline": 0,
         "category": 3,
@@ -1724,6 +1887,7 @@
       "updated_at": "2026-07-28 01:48:09",
       "variants": [
         {
+          "parameter_id": "cedarkit.znt",
           "name": "znt",
           "when": {
             "first_level_type": 1
@@ -1733,6 +1897,7 @@
       ]
     },
     {
+      "parameter_id": "cedarkit.gusw.any",
       "key": {
         "discipline": 0,
         "category": 4,
@@ -1747,6 +1912,7 @@
       "updated_at": "2026-07-28 01:48:09",
       "variants": [
         {
+          "parameter_id": "cedarkit.gusw",
           "name": "gusw",
           "aliases": [
             "gswu"
@@ -1757,6 +1923,7 @@
           "typeOfLevel": "surface"
         },
         {
+          "parameter_id": "cedarkit.tusw",
           "name": "tusw",
           "when": {
             "first_level_type": 8
@@ -1768,6 +1935,7 @@
       ]
     },
     {
+      "parameter_id": "cedarkit.gsw",
       "key": {
         "discipline": 0,
         "category": 4,
@@ -1784,6 +1952,7 @@
       "updated_at": "2026-07-28 01:48:09",
       "variants": [
         {
+          "parameter_id": "cedarkit.tsw",
           "name": "tsw",
           "when": {
             "first_level_type": 8,
@@ -1796,6 +1965,7 @@
       ]
     },
     {
+      "parameter_id": "cedarkit.gswc.any",
       "key": {
         "discipline": 0,
         "category": 4,
@@ -1810,6 +1980,7 @@
       "updated_at": "2026-07-28 01:48:09",
       "variants": [
         {
+          "parameter_id": "cedarkit.gswc",
           "name": "gswc",
           "when": {
             "first_level_type": 1
@@ -1817,6 +1988,7 @@
           "typeOfLevel": "surface"
         },
         {
+          "parameter_id": "cedarkit.tswc",
           "name": "tswc",
           "when": {
             "first_level_type": 8
@@ -1828,6 +2000,7 @@
       ]
     },
     {
+      "parameter_id": "cedarkit.guswc.any",
       "key": {
         "discipline": 0,
         "category": 4,
@@ -1842,6 +2015,7 @@
       "updated_at": "2026-07-28 01:48:09",
       "variants": [
         {
+          "parameter_id": "cedarkit.guswc",
           "name": "guswc",
           "when": {
             "first_level_type": 1
@@ -1849,6 +2023,7 @@
           "typeOfLevel": "surface"
         },
         {
+          "parameter_id": "cedarkit.tuswc",
           "name": "tuswc",
           "when": {
             "first_level_type": 8
@@ -1861,6 +2036,7 @@
       ]
     },
     {
+      "parameter_id": "cedarkit.btv",
       "key": {
         "discipline": 0,
         "category": 4,
@@ -1874,6 +2050,7 @@
       "updated_at": "2026-07-28 01:48:09"
     },
     {
+      "parameter_id": "cedarkit.bti",
       "key": {
         "discipline": 0,
         "category": 4,
@@ -1887,6 +2064,7 @@
       "updated_at": "2026-07-28 01:48:09"
     },
     {
+      "parameter_id": "cedarkit.gulw.any",
       "key": {
         "discipline": 0,
         "category": 5,
@@ -1901,6 +2079,7 @@
       "updated_at": "2026-07-28 01:48:09",
       "variants": [
         {
+          "parameter_id": "cedarkit.gulw",
           "name": "gulw",
           "aliases": [
             "gslu"
@@ -1911,6 +2090,7 @@
           "typeOfLevel": "surface"
         },
         {
+          "parameter_id": "cedarkit.tulw",
           "name": "tulw",
           "when": {
             "first_level_type": 8
@@ -1922,6 +2102,7 @@
       ]
     },
     {
+      "parameter_id": "cedarkit.glw",
       "key": {
         "discipline": 0,
         "category": 5,
@@ -1938,6 +2119,7 @@
       "updated_at": "2026-07-28 01:48:09"
     },
     {
+      "parameter_id": "cedarkit.gdlwc.any",
       "key": {
         "discipline": 0,
         "category": 5,
@@ -1952,6 +2134,7 @@
       "updated_at": "2026-07-28 01:48:09",
       "variants": [
         {
+          "parameter_id": "cedarkit.gdlwc",
           "name": "gdlwc",
           "when": {
             "first_level_type": 1
@@ -1961,6 +2144,7 @@
       ]
     },
     {
+      "parameter_id": "cedarkit.gulwc.any",
       "key": {
         "discipline": 0,
         "category": 5,
@@ -1974,6 +2158,7 @@
       "updated_at": "2026-07-28 01:48:09",
       "variants": [
         {
+          "parameter_id": "cedarkit.gulwc",
           "name": "gulwc",
           "when": {
             "first_level_type": 1
@@ -1981,6 +2166,7 @@
           "typeOfLevel": "surface"
         },
         {
+          "parameter_id": "cedarkit.tulwc",
           "name": "tulwc",
           "when": {
             "first_level_type": 8
@@ -1992,6 +2178,7 @@
       ]
     },
     {
+      "parameter_id": "cedarkit.tcc",
       "key": {
         "discipline": 0,
         "category": 6,
@@ -2006,6 +2193,7 @@
       "updated_at": "2026-07-28 01:48:09"
     },
     {
+      "parameter_id": "cedarkit.lcc",
       "key": {
         "discipline": 0,
         "category": 6,
@@ -2020,6 +2208,7 @@
       "updated_at": "2026-07-28 01:48:09"
     },
     {
+      "parameter_id": "cedarkit.mcc",
       "key": {
         "discipline": 0,
         "category": 6,
@@ -2034,6 +2223,7 @@
       "updated_at": "2026-07-28 01:48:09"
     },
     {
+      "parameter_id": "cedarkit.hcc",
       "key": {
         "discipline": 0,
         "category": 6,
@@ -2048,6 +2238,7 @@
       "updated_at": "2026-07-28 01:48:09"
     },
     {
+      "parameter_id": "cedarkit.cldb",
       "key": {
         "discipline": 0,
         "category": 6,
@@ -2061,6 +2252,7 @@
       "updated_at": "2026-07-28 01:48:09"
     },
     {
+      "parameter_id": "cedarkit.cldt",
       "key": {
         "discipline": 0,
         "category": 6,
@@ -2074,6 +2266,7 @@
       "updated_at": "2026-07-28 01:48:09"
     },
     {
+      "parameter_id": "cedarkit.ceiling",
       "key": {
         "discipline": 0,
         "category": 6,
@@ -2087,6 +2280,7 @@
       "updated_at": "2026-07-28 01:48:09"
     },
     {
+      "parameter_id": "cedarkit.cc",
       "key": {
         "discipline": 0,
         "category": 6,
@@ -2100,6 +2294,7 @@
       "updated_at": "2026-07-28 01:48:09"
     },
     {
+      "parameter_id": "cedarkit.pli.any",
       "key": {
         "discipline": 0,
         "category": 7,
@@ -2114,6 +2309,7 @@
       "updated_at": "2026-07-28 01:48:09",
       "variants": [
         {
+          "parameter_id": "cedarkit.pli",
           "name": "pli",
           "when": {
             "first_level_type": 1
@@ -2123,6 +2319,7 @@
       ]
     },
     {
+      "parameter_id": "cedarkit.bli",
       "key": {
         "discipline": 0,
         "category": 7,
@@ -2137,6 +2334,7 @@
       "updated_at": "2026-07-28 01:48:09"
     },
     {
+      "parameter_id": "cedarkit.kidx.any",
       "key": {
         "discipline": 0,
         "category": 7,
@@ -2151,6 +2349,7 @@
       "updated_at": "2026-08-21 02:37:47",
       "variants": [
         {
+          "parameter_id": "cedarkit.kidx",
           "name": "kidx",
           "aliases": [
             "ki",
@@ -2164,6 +2363,7 @@
       ]
     },
     {
+      "parameter_id": "cedarkit.tti.any",
       "key": {
         "discipline": 0,
         "category": 7,
@@ -2178,6 +2378,7 @@
       "updated_at": "2026-07-28 01:48:09",
       "variants": [
         {
+          "parameter_id": "cedarkit.tti",
           "name": "tti",
           "when": {
             "first_level_type": 1
@@ -2187,6 +2388,7 @@
       ]
     },
     {
+      "parameter_id": "cedarkit.sweatidx.any",
       "key": {
         "discipline": 0,
         "category": 7,
@@ -2203,6 +2405,7 @@
       "updated_at": "2026-07-28 01:48:09",
       "variants": [
         {
+          "parameter_id": "cedarkit.sweatidx",
           "name": "sweatidx",
           "aliases": [
             "sweat"
@@ -2215,6 +2418,7 @@
       ]
     },
     {
+      "parameter_id": "cedarkit.cape.any",
       "key": {
         "discipline": 0,
         "category": 7,
@@ -2229,6 +2433,7 @@
       "updated_at": "2026-07-28 01:48:09",
       "variants": [
         {
+          "parameter_id": "cedarkit.cape",
           "name": "cape",
           "when": {
             "first_level_type": 1
@@ -2238,6 +2443,7 @@
       ]
     },
     {
+      "parameter_id": "cedarkit.cin.any",
       "key": {
         "discipline": 0,
         "category": 7,
@@ -2252,6 +2458,7 @@
       "updated_at": "2026-07-28 01:48:09",
       "variants": [
         {
+          "parameter_id": "cedarkit.cin",
           "name": "cin",
           "when": {
             "first_level_type": 1
@@ -2261,6 +2468,7 @@
       ]
     },
     {
+      "parameter_id": "cedarkit.srh",
       "key": {
         "discipline": 0,
         "category": 7,
@@ -2274,6 +2482,7 @@
       "updated_at": "2026-07-28 01:48:09",
       "variants": [
         {
+          "parameter_id": "cedarkit.srh-0-1000",
           "name": "srh(0-1000)",
           "when": {
             "first_level_type": 103,
@@ -2286,6 +2495,7 @@
           "description_cn": "0-1km垂直风暴螺旋度"
         },
         {
+          "parameter_id": "cedarkit.srh-0-3000",
           "name": "srh(0-3000)",
           "when": {
             "first_level_type": 103,
@@ -2300,6 +2510,7 @@
       ]
     },
     {
+      "parameter_id": "cedarkit.ri",
       "key": {
         "discipline": 0,
         "category": 7,
@@ -2312,6 +2523,7 @@
       "updated_at": "2026-07-28 01:48:09",
       "variants": [
         {
+          "parameter_id": "cedarkit.risfc",
           "name": "risfc",
           "when": {
             "first_level_type": 1
@@ -2321,6 +2533,7 @@
           "description_cn": "近地面总体理查森数"
         },
         {
+          "parameter_id": "cedarkit.ripbl",
           "name": "ripbl",
           "when": {
             "first_level_type": 166
@@ -2331,6 +2544,7 @@
       ]
     },
     {
+      "parameter_id": "cedarkit.si.any",
       "key": {
         "discipline": 0,
         "category": 7,
@@ -2345,6 +2559,7 @@
       "updated_at": "2026-07-28 01:48:09",
       "variants": [
         {
+          "parameter_id": "cedarkit.si",
           "name": "si",
           "when": {
             "first_level_type": 1
@@ -2354,6 +2569,7 @@
       ]
     },
     {
+      "parameter_id": "cedarkit.uhmax.any",
       "key": {
         "discipline": 0,
         "category": 7,
@@ -2367,12 +2583,14 @@
       "updated_at": "2026-07-28 01:48:09",
       "variants": [
         {
+          "parameter_id": "cedarkit.uhmax",
           "name": "uhmax",
           "when": {
             "stepType": "max"
           }
         },
         {
+          "parameter_id": "cedarkit.uhmax-2000-5000",
           "name": "uhmax(2000-5000)",
           "when": {
             "first_level_type": 103,
@@ -2388,6 +2606,7 @@
       ]
     },
     {
+      "parameter_id": "cedarkit.dcape",
       "key": {
         "discipline": 0,
         "category": 7,
@@ -2401,6 +2620,7 @@
       "updated_at": "2026-07-28 01:48:09"
     },
     {
+      "parameter_id": "cedarkit.ssi",
       "key": {
         "discipline": 0,
         "category": 7,
@@ -2412,6 +2632,7 @@
       "updated_at": "2026-07-28 01:48:09"
     },
     {
+      "parameter_id": "cedarkit.asi",
       "key": {
         "discipline": 0,
         "category": 7,
@@ -2423,6 +2644,7 @@
       "updated_at": "2026-07-28 01:48:09"
     },
     {
+      "parameter_id": "cedarkit.echotop",
       "key": {
         "discipline": 0,
         "category": 16,
@@ -2436,6 +2658,7 @@
       "updated_at": "2026-07-28 01:48:09"
     },
     {
+      "parameter_id": "cedarkit.cdbz",
       "key": {
         "discipline": 0,
         "category": 16,
@@ -2454,6 +2677,7 @@
       "updated_at": "2026-07-28 01:48:09",
       "variants": [
         {
+          "parameter_id": "cedarkit.cdbzmax",
           "name": "cdbzmax",
           "when": {
             "stepType": "max"
@@ -2461,6 +2685,7 @@
           "typeOfLevel": "surface"
         },
         {
+          "parameter_id": "cedarkit.cdbzmax-1",
           "name": "cdbzmax#1",
           "when": {
             "stepType": "max",
@@ -2471,6 +2696,7 @@
           "description_cn": "输出间隔内最大雷达组合反射率"
         },
         {
+          "parameter_id": "cedarkit.cdbzmax-3",
           "name": "cdbzmax#3",
           "aliases": [
             "cr#3"
@@ -2486,6 +2712,7 @@
       ]
     },
     {
+      "parameter_id": "cedarkit.dbz",
       "key": {
         "discipline": 0,
         "category": 16,
@@ -2498,12 +2725,14 @@
       "updated_at": "2026-07-28 01:48:09",
       "variants": [
         {
+          "parameter_id": "cedarkit.dbzmax",
           "name": "dbzmax",
           "when": {
             "stepType": "max"
           }
         },
         {
+          "parameter_id": "cedarkit.dbzmax-3",
           "name": "dbzmax#3",
           "when": {
             "stepType": "max",
@@ -2515,6 +2744,7 @@
       ]
     },
     {
+      "parameter_id": "cedarkit.dbzmaxh",
       "key": {
         "discipline": 0,
         "category": 16,
@@ -2527,6 +2757,7 @@
       "updated_at": "2026-07-28 01:48:09"
     },
     {
+      "parameter_id": "cedarkit.vis.any",
       "key": {
         "discipline": 0,
         "category": 19,
@@ -2541,6 +2772,7 @@
       "updated_at": "2026-07-28 01:48:09",
       "variants": [
         {
+          "parameter_id": "cedarkit.vis",
           "name": "vis",
           "when": {
             "first_level_type": 1
@@ -2550,6 +2782,7 @@
       ]
     },
     {
+      "parameter_id": "cedarkit.albedo.any",
       "key": {
         "discipline": 0,
         "category": 19,
@@ -2564,6 +2797,7 @@
       "updated_at": "2026-08-21 02:37:47",
       "variants": [
         {
+          "parameter_id": "cedarkit.albedo",
           "name": "albedo",
           "when": {
             "first_level_type": 1
@@ -2573,6 +2807,7 @@
       ]
     },
     {
+      "parameter_id": "cedarkit.fogh.any",
       "key": {
         "discipline": 0,
         "category": 19,
@@ -2586,6 +2821,7 @@
       "updated_at": "2026-07-28 01:48:09",
       "variants": [
         {
+          "parameter_id": "cedarkit.fogh",
           "name": "fogh",
           "when": {
             "first_level_type": 1
@@ -2595,6 +2831,7 @@
       ]
     },
     {
+      "parameter_id": "cedarkit.fogod.any",
       "key": {
         "discipline": 0,
         "category": 19,
@@ -2607,6 +2844,7 @@
       "updated_at": "2026-07-28 01:48:09",
       "variants": [
         {
+          "parameter_id": "cedarkit.fogod",
           "name": "fogod",
           "when": {
             "first_level_type": 1
@@ -2616,6 +2854,7 @@
       ]
     },
     {
+      "parameter_id": "cedarkit.tsoil",
       "key": {
         "discipline": 2,
         "category": 0,
@@ -2626,6 +2865,7 @@
       "updated_at": "2026-07-28 01:48:09"
     },
     {
+      "parameter_id": "cedarkit.soil-m",
       "key": {
         "discipline": 2,
         "category": 0,
@@ -2636,6 +2876,7 @@
       "updated_at": "2026-07-28 01:48:09"
     },
     {
+      "parameter_id": "cedarkit.sshf",
       "key": {
         "discipline": 2,
         "category": 0,
