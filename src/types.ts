@@ -13,6 +13,7 @@ export interface ParamKey {
 }
 
 export interface RawVariant {
+  parameter_id: string
   name: string
   when: Record<string, number | string>
   aliases?: string[]
@@ -24,9 +25,11 @@ export interface RawVariant {
 }
 
 export interface RawEntry {
+  parameter_id: string
   key: ParamKey
   name: string
   aliases?: string[]
+  external_names?: Record<string, string>
   wgrib2_name?: string
   unit?: string
   description?: string

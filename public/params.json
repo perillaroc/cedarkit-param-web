@@ -1,6 +1,6 @@
 {
   "meta": {
-    "schema_version": 2,
+    "schema_version": 3,
     "generated_by": "cedarkit-param-db",
     "stats": {
       "entries": 126,
@@ -18,6 +18,9 @@
         "number": 0
       },
       "name": "t",
+      "external_names": {
+        "cmadaas": "TEM"
+      },
       "wgrib2_name": "TMP",
       "unit": "K",
       "description": "Temperature",
@@ -511,6 +514,9 @@
         "number": 8
       },
       "name": "rain",
+      "external_names": {
+        "cmadaas": "PRE"
+      },
       "wgrib2_name": "APCP",
       "unit": "mm",
       "description": "Total precipitation",
@@ -1131,6 +1137,9 @@
         "number": 2
       },
       "name": "u",
+      "external_names": {
+        "cmadaas": "WIU"
+      },
       "wgrib2_name": "UGRD",
       "unit": "m/s",
       "description": "U-component of wind",
@@ -1201,6 +1210,9 @@
         "number": 3
       },
       "name": "v",
+      "external_names": {
+        "cmadaas": "WIV"
+      },
       "wgrib2_name": "VGRD",
       "unit": "m/s",
       "description": "V-component of wind",
@@ -1737,6 +1749,9 @@
         "number": 5
       },
       "name": "h",
+      "external_names": {
+        "cmadaas": "GPH"
+      },
       "wgrib2_name": "HGT",
       "unit": "Gpm",
       "description": "Geopotential height",

@@ -8,7 +8,7 @@
 import type { Entry, ParamDoc, RawEntry, SiteModel, Variant } from './types'
 
 /** 兼容的 params.json schema 版本（cedarkit-param-db exporter.JSON_SCHEMA_VERSION） */
-export const SUPPORTED_SCHEMA_VERSION = 1
+export const SUPPORTED_SCHEMA_VERSION = 3
 
 /** WMO GRIB2 Table 0.0 常用 discipline 的中文标签（未知值回退为 "Discipline N"） */
 export const DISCIPLINE_NAMES: Record<number, string> = {

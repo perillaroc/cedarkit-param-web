@@ -9,12 +9,13 @@ import type { ParamDoc } from '../src/types'
 
 const FIXTURE_DOC: ParamDoc = {
   meta: {
-    schema_version: 1,
+    schema_version: 3,
     generated_by: 'cedarkit-param-db',
     stats: { entries: 2, variants: 1, aliases: 2 },
   },
   entries: [
     {
+      parameter_id: 'cedarkit.t',
       key: { discipline: 0, category: 0, number: 0 },
       name: 't',
       aliases: ['2t'],
@@ -26,6 +27,7 @@ const FIXTURE_DOC: ParamDoc = {
       updated_at: '2026-07-28 00:00:00',
       variants: [
         {
+          parameter_id: 'cedarkit.t2m',
           name: 't2m',
           aliases: ['t_2m'],
           when: { first_level_type: 103, first_level: 2 },
@@ -35,6 +37,7 @@ const FIXTURE_DOC: ParamDoc = {
       ],
     },
     {
+      parameter_id: 'cedarkit.sst',
       key: { discipline: 10, category: 0, number: 4 },
       name: 'sst',
       updated_at: '2026-07-28 00:00:00',
