@@ -34,6 +34,7 @@ test.describe('parameter discovery', () => {
   test('shows effective inherited values on details', async ({ page }) => {
     await page.goto('/#/params/0/0/0')
 
+    await expect(page.locator('tr').filter({ hasText: 'CMADaaS name' })).toContainText('TEM')
     await expect(page.getByRole('heading', { name: /条件变体（7）/ })).toBeVisible()
     await expect(page.getByRole('cell', { name: /K.*继承/ }).first()).toBeVisible()
     await expect(page.getByText('“继承”表示该值来自条目级定义。')).toBeVisible()
@@ -65,7 +66,7 @@ test.describe('accessibility', () => {
   for (const route of ['/', '/#/params/0/0/0']) {
     test(`${route} has no serious accessibility violations`, async ({ page }) => {
       await page.goto(route)
-      await expect(page.getByText(/schema v1/)).toBeVisible()
+      await expect(page.getByText(/schema v[0-9]+/)).toBeVisible()
 
       const results = await new AxeBuilder({ page }).analyze()
       const blocking = results.violations.filter(({ impact }) =>

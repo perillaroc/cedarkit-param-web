@@ -19,6 +19,7 @@ const FIXTURE_DOC: ParamDoc = {
       key: { discipline: 0, category: 0, number: 0 },
       name: 't',
       aliases: ['2t'],
+      external_names: { cmadaas: 'TEM' },
       wgrib2_name: 'TMP',
       unit: 'K',
       description: 'Temperature',
@@ -51,6 +52,7 @@ describe('buildModel', () => {
     const t = model.entries[0]
     expect(t.triplet).toBe('0.0.0')
     expect(t.disciplineLabel).toBe('气象')
+    expect(t.cmadaasName).toBe('TEM')
     expect(t.variants[0].whenText).toBe('first_level_type=103, first_level=2')
     expect(model.disciplines).toEqual([
       { value: 0, label: '气象' },
@@ -65,7 +67,7 @@ describe('buildModel', () => {
 
   it('搜索索引覆盖别名与变体', () => {
     const t = buildModel(FIXTURE_DOC).entries[0]
-    for (const needle of ['2t', 't2m', 't_2m', '温度', '0.0.0', 'tmp']) {
+    for (const needle of ['2t', 't2m', 't_2m', '温度', '0.0.0', 'tem', 'tmp']) {
       expect(t.searchText).toContain(needle.toLowerCase())
     }
   })

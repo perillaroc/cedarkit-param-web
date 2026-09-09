@@ -82,6 +82,7 @@ const columns: DataTableColumns<Entry> = [
     sorter: (a, b) => a.name.localeCompare(b.name),
     render: (e) => h(RouterLink, { to: detailRoute(e, route.query) }, { default: () => e.name }),
   },
+  { title: 'CMADaaS', key: 'cmadaasName', width: 110, render: (e) => e.cmadaasName ?? '' },
   { title: 'wgrib2', key: 'wgrib2Name', render: (e) => e.wgrib2Name ?? '' },
   { title: '单位', key: 'unit', width: 80, render: (e) => e.unit ?? '' },
   {
@@ -234,6 +235,7 @@ watch(
           </template>
           <p class="card-description">{{ entry.descriptionCn ?? entry.description ?? '暂无描述' }}</p>
           <n-space size="small">
+            <n-tag v-if="entry.cmadaasName" size="small" type="success">CMADaaS: {{ entry.cmadaasName }}</n-tag>
             <n-tag v-if="entry.wgrib2Name" size="small">{{ entry.wgrib2Name }}</n-tag>
             <n-tag v-if="entry.unit" size="small">{{ entry.unit }}</n-tag>
             <n-tag v-if="entry.variants.length" size="small" type="info">{{ entry.variants.length }} 个变体</n-tag>

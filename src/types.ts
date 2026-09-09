@@ -73,6 +73,7 @@ export interface Entry {
   disciplineLabel: string
   name: string
   aliases: string[]
+  cmadaasName?: string
   wgrib2Name?: string
   unit?: string
   description?: string

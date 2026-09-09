@@ -123,6 +123,10 @@ async function copy(value: string, label: string) {
         {{ entry.name }}
         <n-button text size="small" @click="copy(entry.name, '名称')">复制</n-button>
       </n-descriptions-item>
+      <n-descriptions-item v-if="entry.cmadaasName" label="CMADaaS name">
+        {{ entry.cmadaasName }}
+        <n-button text size="small" @click="copy(entry.cmadaasName!, ' CMADaaS 名称')">复制</n-button>
+      </n-descriptions-item>
       <n-descriptions-item v-if="entry.wgrib2Name" label="wgrib2 name">
         {{ entry.wgrib2Name }}
         <n-button text size="small" @click="copy(entry.wgrib2Name!, ' wgrib2 名称')">复制</n-button>
