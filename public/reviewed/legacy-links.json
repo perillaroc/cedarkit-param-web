@@ -1,0 +1,4334 @@
+{
+  "links": [
+    {
+      "candidates": [
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-tym.current",
+              "path": "browser/tym/params.json",
+              "snapshot": "tym"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.st"
+        },
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-tym.current",
+              "path": "browser/tym/params.json",
+              "snapshot": "tym"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.st-0-10"
+        },
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.st-10-40"
+        },
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.st-100-200"
+        },
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.st-40-100"
+        },
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-geps.current",
+              "path": "browser/geps/params.json",
+              "snapshot": "geps"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-1km.current",
+              "path": "browser/meso1/params.json",
+              "snapshot": "meso1"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-reps.current",
+              "path": "browser/reps/params.json",
+              "snapshot": "reps"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-tym.current",
+              "path": "browser/tym/params.json",
+              "snapshot": "tym"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.t"
+        },
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-geps.current",
+              "path": "browser/geps/params.json",
+              "snapshot": "geps"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-1km.current",
+              "path": "browser/meso1/params.json",
+              "snapshot": "meso1"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-reps.current",
+              "path": "browser/reps/params.json",
+              "snapshot": "reps"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-tym.current",
+              "path": "browser/tym/params.json",
+              "snapshot": "tym"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.t2m"
+        },
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-1km.current",
+              "path": "browser/meso1/params.json",
+              "snapshot": "meso1"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-reps.current",
+              "path": "browser/reps/params.json",
+              "snapshot": "reps"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-tym.current",
+              "path": "browser/tym/params.json",
+              "snapshot": "tym"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.ts"
+        }
+      ],
+      "triplet": "0.0.0"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-1km.current",
+              "path": "browser/meso1/params.json",
+              "snapshot": "meso1"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-tym.current",
+              "path": "browser/tym/params.json",
+              "snapshot": "tym"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.theta-se"
+        }
+      ],
+      "triplet": "0.0.3"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.mx2t"
+        },
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.mx2t.any"
+        }
+      ],
+      "triplet": "0.0.4"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.mn2t"
+        },
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.mn2t.any"
+        }
+      ],
+      "triplet": "0.0.5"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-1km.current",
+              "path": "browser/meso1/params.json",
+              "snapshot": "meso1"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-tym.current",
+              "path": "browser/tym/params.json",
+              "snapshot": "tym"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.td"
+        },
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-1km.current",
+              "path": "browser/meso1/params.json",
+              "snapshot": "meso1"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-tym.current",
+              "path": "browser/tym/params.json",
+              "snapshot": "tym"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.td2m"
+        }
+      ],
+      "triplet": "0.0.6"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-1km.current",
+              "path": "browser/meso1/params.json",
+              "snapshot": "meso1"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-tym.current",
+              "path": "browser/tym/params.json",
+              "snapshot": "tym"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.ttd"
+        }
+      ],
+      "triplet": "0.0.7"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.slhf"
+        }
+      ],
+      "triplet": "0.0.10"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.skint"
+        }
+      ],
+      "triplet": "0.0.17"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.hfx"
+        },
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.hfx.any"
+        }
+      ],
+      "triplet": "0.0.24"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.tadv"
+        }
+      ],
+      "triplet": "0.0.224"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.saunaidx"
+        }
+      ],
+      "triplet": "0.0.225"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.htdn"
+        }
+      ],
+      "triplet": "0.0.226"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.ata"
+        }
+      ],
+      "triplet": "0.0.227"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.tn"
+        }
+      ],
+      "triplet": "0.0.228"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.thp"
+        }
+      ],
+      "triplet": "0.0.229"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-geps.current",
+              "path": "browser/geps/params.json",
+              "snapshot": "geps"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-1km.current",
+              "path": "browser/meso1/params.json",
+              "snapshot": "meso1"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-tym.current",
+              "path": "browser/tym/params.json",
+              "snapshot": "tym"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.q"
+        },
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-1km.current",
+              "path": "browser/meso1/params.json",
+              "snapshot": "meso1"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-tym.current",
+              "path": "browser/tym/params.json",
+              "snapshot": "tym"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.q2m"
+        },
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-tym.current",
+              "path": "browser/tym/params.json",
+              "snapshot": "tym"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.sw"
+        },
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-tym.current",
+              "path": "browser/tym/params.json",
+              "snapshot": "tym"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.sw-0-10"
+        },
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.sw-10-40"
+        },
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.sw-100-200"
+        },
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.sw-40-100"
+        }
+      ],
+      "triplet": "0.1.0"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-geps.current",
+              "path": "browser/geps/params.json",
+              "snapshot": "geps"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-1km.current",
+              "path": "browser/meso1/params.json",
+              "snapshot": "meso1"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-reps.current",
+              "path": "browser/reps/params.json",
+              "snapshot": "reps"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-tym.current",
+              "path": "browser/tym/params.json",
+              "snapshot": "tym"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.rh"
+        },
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-geps.current",
+              "path": "browser/geps/params.json",
+              "snapshot": "geps"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-1km.current",
+              "path": "browser/meso1/params.json",
+              "snapshot": "meso1"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-reps.current",
+              "path": "browser/reps/params.json",
+              "snapshot": "reps"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-tym.current",
+              "path": "browser/tym/params.json",
+              "snapshot": "tym"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.rh2m"
+        }
+      ],
+      "triplet": "0.1.1"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-geps.current",
+              "path": "browser/geps/params.json",
+              "snapshot": "geps"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-tym.current",
+              "path": "browser/tym/params.json",
+              "snapshot": "tym"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.pwat"
+        },
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-geps.current",
+              "path": "browser/geps/params.json",
+              "snapshot": "geps"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-tym.current",
+              "path": "browser/tym/params.json",
+              "snapshot": "tym"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.pwat.any"
+        }
+      ],
+      "triplet": "0.1.3"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-geps.current",
+              "path": "browser/geps/params.json",
+              "snapshot": "geps"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-1km.current",
+              "path": "browser/meso1/params.json",
+              "snapshot": "meso1"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-reps.current",
+              "path": "browser/reps/params.json",
+              "snapshot": "reps"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-tym.current",
+              "path": "browser/tym/params.json",
+              "snapshot": "tym"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.rain"
+        },
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-geps.current",
+              "path": "browser/geps/params.json",
+              "snapshot": "geps"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-1km.current",
+              "path": "browser/meso1/params.json",
+              "snapshot": "meso1"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-reps.current",
+              "path": "browser/reps/params.json",
+              "snapshot": "reps"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-tym.current",
+              "path": "browser/tym/params.json",
+              "snapshot": "tym"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.rain.any"
+        }
+      ],
+      "triplet": "0.1.8"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-geps.current",
+              "path": "browser/geps/params.json",
+              "snapshot": "geps"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-tym.current",
+              "path": "browser/tym/params.json",
+              "snapshot": "tym"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.rainnc"
+        },
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-geps.current",
+              "path": "browser/geps/params.json",
+              "snapshot": "geps"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-tym.current",
+              "path": "browser/tym/params.json",
+              "snapshot": "tym"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.rainnc.any"
+        }
+      ],
+      "triplet": "0.1.9"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-geps.current",
+              "path": "browser/geps/params.json",
+              "snapshot": "geps"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-reps.current",
+              "path": "browser/reps/params.json",
+              "snapshot": "reps"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-tym.current",
+              "path": "browser/tym/params.json",
+              "snapshot": "tym"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.rainc"
+        },
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-geps.current",
+              "path": "browser/geps/params.json",
+              "snapshot": "geps"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-reps.current",
+              "path": "browser/reps/params.json",
+              "snapshot": "reps"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-tym.current",
+              "path": "browser/tym/params.json",
+              "snapshot": "tym"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.rainc.any"
+        }
+      ],
+      "triplet": "0.1.10"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-reps.current",
+              "path": "browser/reps/params.json",
+              "snapshot": "reps"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.sd"
+        },
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-reps.current",
+              "path": "browser/reps/params.json",
+              "snapshot": "reps"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.sd.any"
+        }
+      ],
+      "triplet": "0.1.11"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.precitype"
+        }
+      ],
+      "triplet": "0.1.19"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-1km.current",
+              "path": "browser/meso1/params.json",
+              "snapshot": "meso1"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-reps.current",
+              "path": "browser/reps/params.json",
+              "snapshot": "reps"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-tym.current",
+              "path": "browser/tym/params.json",
+              "snapshot": "tym"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.qc"
+        }
+      ],
+      "triplet": "0.1.22"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-1km.current",
+              "path": "browser/meso1/params.json",
+              "snapshot": "meso1"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-tym.current",
+              "path": "browser/tym/params.json",
+              "snapshot": "tym"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.qi"
+        }
+      ],
+      "triplet": "0.1.23"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-1km.current",
+              "path": "browser/meso1/params.json",
+              "snapshot": "meso1"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-tym.current",
+              "path": "browser/tym/params.json",
+              "snapshot": "tym"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.qr"
+        }
+      ],
+      "triplet": "0.1.24"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-1km.current",
+              "path": "browser/meso1/params.json",
+              "snapshot": "meso1"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-tym.current",
+              "path": "browser/tym/params.json",
+              "snapshot": "tym"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.qs"
+        }
+      ],
+      "triplet": "0.1.25"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-geps.current",
+              "path": "browser/geps/params.json",
+              "snapshot": "geps"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.sf"
+        },
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-geps.current",
+              "path": "browser/geps/params.json",
+              "snapshot": "geps"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.sf.any"
+        }
+      ],
+      "triplet": "0.1.29"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-1km.current",
+              "path": "browser/meso1/params.json",
+              "snapshot": "meso1"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-tym.current",
+              "path": "browser/tym/params.json",
+              "snapshot": "tym"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.graupel"
+        }
+      ],
+      "triplet": "0.1.32"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.tsrwe"
+        }
+      ],
+      "triplet": "0.1.53"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-1km.current",
+              "path": "browser/meso1/params.json",
+              "snapshot": "meso1"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.tvw"
+        },
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-1km.current",
+              "path": "browser/meso1/params.json",
+              "snapshot": "meso1"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.tvw.any"
+        }
+      ],
+      "triplet": "0.1.64"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.tcw"
+        },
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.tcw.any"
+        }
+      ],
+      "triplet": "0.1.69"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-1km.current",
+              "path": "browser/meso1/params.json",
+              "snapshot": "meso1"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.tiw"
+        },
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-1km.current",
+              "path": "browser/meso1/params.json",
+              "snapshot": "meso1"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.tiw.any"
+        }
+      ],
+      "triplet": "0.1.70"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-tym.current",
+              "path": "browser/tym/params.json",
+              "snapshot": "tym"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.qflx"
+        }
+      ],
+      "triplet": "0.1.224"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.qdiv"
+        }
+      ],
+      "triplet": "0.1.225"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.src"
+        }
+      ],
+      "triplet": "0.1.226"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.ro"
+        }
+      ],
+      "triplet": "0.1.227"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.pc"
+        },
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.pc.any"
+        }
+      ],
+      "triplet": "0.1.228"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-tym.current",
+              "path": "browser/tym/params.json",
+              "snapshot": "tym"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.qfxsfc"
+        },
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-tym.current",
+              "path": "browser/tym/params.json",
+              "snapshot": "tym"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.qfxsfc.any"
+        }
+      ],
+      "triplet": "0.1.229"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.qpe"
+        }
+      ],
+      "triplet": "0.1.230"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.rhmax"
+        },
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.rhmax2m"
+        }
+      ],
+      "triplet": "0.1.231"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.rhmin"
+        },
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.rhmin2m"
+        }
+      ],
+      "triplet": "0.1.232"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.rainp"
+        }
+      ],
+      "triplet": "0.1.233"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.rainpr"
+        }
+      ],
+      "triplet": "0.1.234"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.rainh"
+        }
+      ],
+      "triplet": "0.1.235"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.hail"
+        }
+      ],
+      "triplet": "0.1.236"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.raint"
+        }
+      ],
+      "triplet": "0.1.237"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.light"
+        }
+      ],
+      "triplet": "0.1.238"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.hi"
+        },
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.hi.any"
+        }
+      ],
+      "triplet": "0.1.239"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.ii"
+        }
+      ],
+      "triplet": "0.1.240"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.rain5max"
+        },
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.rain5max.any"
+        }
+      ],
+      "triplet": "0.1.241"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-geps.current",
+              "path": "browser/geps/params.json",
+              "snapshot": "geps"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-1km.current",
+              "path": "browser/meso1/params.json",
+              "snapshot": "meso1"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-reps.current",
+              "path": "browser/reps/params.json",
+              "snapshot": "reps"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-tym.current",
+              "path": "browser/tym/params.json",
+              "snapshot": "tym"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.u"
+        },
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-geps.current",
+              "path": "browser/geps/params.json",
+              "snapshot": "geps"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-1km.current",
+              "path": "browser/meso1/params.json",
+              "snapshot": "meso1"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-reps.current",
+              "path": "browser/reps/params.json",
+              "snapshot": "reps"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-tym.current",
+              "path": "browser/tym/params.json",
+              "snapshot": "tym"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.u10m"
+        },
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.u10mmax"
+        },
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-1km.current",
+              "path": "browser/meso1/params.json",
+              "snapshot": "meso1"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-tym.current",
+              "path": "browser/tym/params.json",
+              "snapshot": "tym"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.u10mmax-1"
+        },
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.u10mmax-3"
+        }
+      ],
+      "triplet": "0.2.2"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-geps.current",
+              "path": "browser/geps/params.json",
+              "snapshot": "geps"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-1km.current",
+              "path": "browser/meso1/params.json",
+              "snapshot": "meso1"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-reps.current",
+              "path": "browser/reps/params.json",
+              "snapshot": "reps"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-tym.current",
+              "path": "browser/tym/params.json",
+              "snapshot": "tym"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.v"
+        },
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-geps.current",
+              "path": "browser/geps/params.json",
+              "snapshot": "geps"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-1km.current",
+              "path": "browser/meso1/params.json",
+              "snapshot": "meso1"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-reps.current",
+              "path": "browser/reps/params.json",
+              "snapshot": "reps"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-tym.current",
+              "path": "browser/tym/params.json",
+              "snapshot": "tym"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.v10m"
+        },
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.v10mmax"
+        },
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-1km.current",
+              "path": "browser/meso1/params.json",
+              "snapshot": "meso1"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-tym.current",
+              "path": "browser/tym/params.json",
+              "snapshot": "tym"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.v10mmax-1"
+        },
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.v10mmax-3"
+        }
+      ],
+      "triplet": "0.2.3"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-1km.current",
+              "path": "browser/meso1/params.json",
+              "snapshot": "meso1"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-tym.current",
+              "path": "browser/tym/params.json",
+              "snapshot": "tym"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.w"
+        },
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-1km.current",
+              "path": "browser/meso1/params.json",
+              "snapshot": "meso1"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-tym.current",
+              "path": "browser/tym/params.json",
+              "snapshot": "tym"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.w.any"
+        },
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.wmax"
+        },
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-1km.current",
+              "path": "browser/meso1/params.json",
+              "snapshot": "meso1"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-tym.current",
+              "path": "browser/tym/params.json",
+              "snapshot": "tym"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.wmax-1"
+        },
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.wmax-3"
+        }
+      ],
+      "triplet": "0.2.9"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-tym.current",
+              "path": "browser/tym/params.json",
+              "snapshot": "tym"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.vor"
+        }
+      ],
+      "triplet": "0.2.12"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-1km.current",
+              "path": "browser/meso1/params.json",
+              "snapshot": "meso1"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-tym.current",
+              "path": "browser/tym/params.json",
+              "snapshot": "tym"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.div"
+        }
+      ],
+      "triplet": "0.2.13"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.gust"
+        }
+      ],
+      "triplet": "0.2.22"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-geps.current",
+              "path": "browser/geps/params.json",
+              "snapshot": "geps"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-1km.current",
+              "path": "browser/meso1/params.json",
+              "snapshot": "meso1"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-reps.current",
+              "path": "browser/reps/params.json",
+              "snapshot": "reps"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-tym.current",
+              "path": "browser/tym/params.json",
+              "snapshot": "tym"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.shr"
+        },
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-geps.current",
+              "path": "browser/geps/params.json",
+              "snapshot": "geps"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-1km.current",
+              "path": "browser/meso1/params.json",
+              "snapshot": "meso1"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-reps.current",
+              "path": "browser/reps/params.json",
+              "snapshot": "reps"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-tym.current",
+              "path": "browser/tym/params.json",
+              "snapshot": "tym"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.shr-0-1000"
+        },
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-geps.current",
+              "path": "browser/geps/params.json",
+              "snapshot": "geps"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-1km.current",
+              "path": "browser/meso1/params.json",
+              "snapshot": "meso1"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-reps.current",
+              "path": "browser/reps/params.json",
+              "snapshot": "reps"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-tym.current",
+              "path": "browser/tym/params.json",
+              "snapshot": "tym"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.shr-0-3000"
+        },
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-geps.current",
+              "path": "browser/geps/params.json",
+              "snapshot": "geps"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-1km.current",
+              "path": "browser/meso1/params.json",
+              "snapshot": "meso1"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-reps.current",
+              "path": "browser/reps/params.json",
+              "snapshot": "reps"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-tym.current",
+              "path": "browser/tym/params.json",
+              "snapshot": "tym"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.shr-0-6000"
+        }
+      ],
+      "triplet": "0.2.25"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.voradv"
+        }
+      ],
+      "triplet": "0.2.224"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.mpv1"
+        }
+      ],
+      "triplet": "0.2.225"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.mpv2"
+        }
+      ],
+      "triplet": "0.2.226"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.wess"
+        },
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.wess.any"
+        }
+      ],
+      "triplet": "0.2.227"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.nsss"
+        },
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.nsss.any"
+        }
+      ],
+      "triplet": "0.2.228"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.thunwind"
+        }
+      ],
+      "triplet": "0.2.229"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.seawave"
+        }
+      ],
+      "triplet": "0.2.230"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.weph"
+        }
+      ],
+      "triplet": "0.2.231"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.haze"
+        }
+      ],
+      "triplet": "0.2.232"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.apd"
+        }
+      ],
+      "triplet": "0.2.233"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.fog"
+        }
+      ],
+      "triplet": "0.2.234"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.vi"
+        }
+      ],
+      "triplet": "0.2.235"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.wi"
+        },
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.wi.any"
+        }
+      ],
+      "triplet": "0.2.236"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.shrmax"
+        },
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.shrmax-0-600"
+        }
+      ],
+      "triplet": "0.2.237"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.shrmaxdir"
+        },
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.shrmaxdir-0-600"
+        }
+      ],
+      "triplet": "0.2.238"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-geps.current",
+              "path": "browser/geps/params.json",
+              "snapshot": "geps"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-1km.current",
+              "path": "browser/meso1/params.json",
+              "snapshot": "meso1"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-tym.current",
+              "path": "browser/tym/params.json",
+              "snapshot": "tym"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.ps"
+        },
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-geps.current",
+              "path": "browser/geps/params.json",
+              "snapshot": "geps"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-1km.current",
+              "path": "browser/meso1/params.json",
+              "snapshot": "meso1"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-tym.current",
+              "path": "browser/tym/params.json",
+              "snapshot": "tym"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.ps.any"
+        }
+      ],
+      "triplet": "0.3.0"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-geps.current",
+              "path": "browser/geps/params.json",
+              "snapshot": "geps"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-1km.current",
+              "path": "browser/meso1/params.json",
+              "snapshot": "meso1"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-reps.current",
+              "path": "browser/reps/params.json",
+              "snapshot": "reps"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-tym.current",
+              "path": "browser/tym/params.json",
+              "snapshot": "tym"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.psl"
+        },
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-geps.current",
+              "path": "browser/geps/params.json",
+              "snapshot": "geps"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-1km.current",
+              "path": "browser/meso1/params.json",
+              "snapshot": "meso1"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-reps.current",
+              "path": "browser/reps/params.json",
+              "snapshot": "reps"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-tym.current",
+              "path": "browser/tym/params.json",
+              "snapshot": "tym"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.psl.any"
+        }
+      ],
+      "triplet": "0.3.1"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-geps.current",
+              "path": "browser/geps/params.json",
+              "snapshot": "geps"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-1km.current",
+              "path": "browser/meso1/params.json",
+              "snapshot": "meso1"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-reps.current",
+              "path": "browser/reps/params.json",
+              "snapshot": "reps"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-tym.current",
+              "path": "browser/tym/params.json",
+              "snapshot": "tym"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.h"
+        },
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-geps.current",
+              "path": "browser/geps/params.json",
+              "snapshot": "geps"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-1km.current",
+              "path": "browser/meso1/params.json",
+              "snapshot": "meso1"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-reps.current",
+              "path": "browser/reps/params.json",
+              "snapshot": "reps"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-tym.current",
+              "path": "browser/tym/params.json",
+              "snapshot": "tym"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.h.any"
+        },
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-geps.current",
+              "path": "browser/geps/params.json",
+              "snapshot": "geps"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-1km.current",
+              "path": "browser/meso1/params.json",
+              "snapshot": "meso1"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-tym.current",
+              "path": "browser/tym/params.json",
+              "snapshot": "tym"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.zs"
+        }
+      ],
+      "triplet": "0.3.5"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-1km.current",
+              "path": "browser/meso1/params.json",
+              "snapshot": "meso1"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.pblh"
+        },
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-1km.current",
+              "path": "browser/meso1/params.json",
+              "snapshot": "meso1"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.pblh.any"
+        }
+      ],
+      "triplet": "0.3.18"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.pi"
+        }
+      ],
+      "triplet": "0.3.26"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.pip"
+        }
+      ],
+      "triplet": "0.3.224"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-1km.current",
+              "path": "browser/meso1/params.json",
+              "snapshot": "meso1"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.ht0"
+        },
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-1km.current",
+              "path": "browser/meso1/params.json",
+              "snapshot": "meso1"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.ht0.any"
+        }
+      ],
+      "triplet": "0.3.225"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-1km.current",
+              "path": "browser/meso1/params.json",
+              "snapshot": "meso1"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.ht2"
+        },
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-1km.current",
+              "path": "browser/meso1/params.json",
+              "snapshot": "meso1"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.ht2.any"
+        }
+      ],
+      "triplet": "0.3.226"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.hib"
+        }
+      ],
+      "triplet": "0.3.227"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.znt"
+        },
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.znt.any"
+        }
+      ],
+      "triplet": "0.3.228"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.gusw"
+        },
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.gusw.any"
+        },
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.tusw"
+        }
+      ],
+      "triplet": "0.4.8"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.gsw"
+        },
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.tsw"
+        }
+      ],
+      "triplet": "0.4.9"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.gswc"
+        },
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.gswc.any"
+        },
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.tswc"
+        }
+      ],
+      "triplet": "0.4.11"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.guswc"
+        },
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.guswc.any"
+        },
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.tuswc"
+        }
+      ],
+      "triplet": "0.4.53"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.btv"
+        }
+      ],
+      "triplet": "0.4.227"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.bti"
+        }
+      ],
+      "triplet": "0.4.228"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.gulw"
+        },
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.gulw.any"
+        },
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.tulw"
+        }
+      ],
+      "triplet": "0.5.4"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.glw"
+        }
+      ],
+      "triplet": "0.5.5"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.gdlwc"
+        },
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.gdlwc.any"
+        }
+      ],
+      "triplet": "0.5.8"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.gulwc"
+        },
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.gulwc.any"
+        },
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.tulwc"
+        }
+      ],
+      "triplet": "0.5.224"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-geps.current",
+              "path": "browser/geps/params.json",
+              "snapshot": "geps"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-1km.current",
+              "path": "browser/meso1/params.json",
+              "snapshot": "meso1"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-tym.current",
+              "path": "browser/tym/params.json",
+              "snapshot": "tym"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.tcc"
+        }
+      ],
+      "triplet": "0.6.1"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-geps.current",
+              "path": "browser/geps/params.json",
+              "snapshot": "geps"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-1km.current",
+              "path": "browser/meso1/params.json",
+              "snapshot": "meso1"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-tym.current",
+              "path": "browser/tym/params.json",
+              "snapshot": "tym"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.lcc"
+        }
+      ],
+      "triplet": "0.6.3"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-geps.current",
+              "path": "browser/geps/params.json",
+              "snapshot": "geps"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-1km.current",
+              "path": "browser/meso1/params.json",
+              "snapshot": "meso1"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.mcc"
+        }
+      ],
+      "triplet": "0.6.4"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-geps.current",
+              "path": "browser/geps/params.json",
+              "snapshot": "geps"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-1km.current",
+              "path": "browser/meso1/params.json",
+              "snapshot": "meso1"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.hcc"
+        }
+      ],
+      "triplet": "0.6.5"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.cldb"
+        }
+      ],
+      "triplet": "0.6.11"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.cldt"
+        }
+      ],
+      "triplet": "0.6.12"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.ceiling"
+        }
+      ],
+      "triplet": "0.6.13"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-1km.current",
+              "path": "browser/meso1/params.json",
+              "snapshot": "meso1"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-tym.current",
+              "path": "browser/tym/params.json",
+              "snapshot": "tym"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.cc"
+        }
+      ],
+      "triplet": "0.6.22"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-1km.current",
+              "path": "browser/meso1/params.json",
+              "snapshot": "meso1"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.pli"
+        },
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-1km.current",
+              "path": "browser/meso1/params.json",
+              "snapshot": "meso1"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.pli.any"
+        }
+      ],
+      "triplet": "0.7.0"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-geps.current",
+              "path": "browser/geps/params.json",
+              "snapshot": "geps"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-1km.current",
+              "path": "browser/meso1/params.json",
+              "snapshot": "meso1"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-reps.current",
+              "path": "browser/reps/params.json",
+              "snapshot": "reps"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-tym.current",
+              "path": "browser/tym/params.json",
+              "snapshot": "tym"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.bli"
+        }
+      ],
+      "triplet": "0.7.1"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.kidx"
+        },
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.kidx.any"
+        }
+      ],
+      "triplet": "0.7.2"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.tti"
+        },
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.tti.any"
+        }
+      ],
+      "triplet": "0.7.4"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.sweatidx"
+        },
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.sweatidx.any"
+        }
+      ],
+      "triplet": "0.7.5"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-geps.current",
+              "path": "browser/geps/params.json",
+              "snapshot": "geps"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-1km.current",
+              "path": "browser/meso1/params.json",
+              "snapshot": "meso1"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-reps.current",
+              "path": "browser/reps/params.json",
+              "snapshot": "reps"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-tym.current",
+              "path": "browser/tym/params.json",
+              "snapshot": "tym"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.cape"
+        },
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-geps.current",
+              "path": "browser/geps/params.json",
+              "snapshot": "geps"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-1km.current",
+              "path": "browser/meso1/params.json",
+              "snapshot": "meso1"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-reps.current",
+              "path": "browser/reps/params.json",
+              "snapshot": "reps"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-tym.current",
+              "path": "browser/tym/params.json",
+              "snapshot": "tym"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.cape.any"
+        }
+      ],
+      "triplet": "0.7.6"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-geps.current",
+              "path": "browser/geps/params.json",
+              "snapshot": "geps"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-1km.current",
+              "path": "browser/meso1/params.json",
+              "snapshot": "meso1"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-reps.current",
+              "path": "browser/reps/params.json",
+              "snapshot": "reps"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-tym.current",
+              "path": "browser/tym/params.json",
+              "snapshot": "tym"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.cin"
+        },
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-geps.current",
+              "path": "browser/geps/params.json",
+              "snapshot": "geps"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-1km.current",
+              "path": "browser/meso1/params.json",
+              "snapshot": "meso1"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-reps.current",
+              "path": "browser/reps/params.json",
+              "snapshot": "reps"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-tym.current",
+              "path": "browser/tym/params.json",
+              "snapshot": "tym"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.cin.any"
+        }
+      ],
+      "triplet": "0.7.7"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-1km.current",
+              "path": "browser/meso1/params.json",
+              "snapshot": "meso1"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.srh"
+        },
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-1km.current",
+              "path": "browser/meso1/params.json",
+              "snapshot": "meso1"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.srh-0-1000"
+        },
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-1km.current",
+              "path": "browser/meso1/params.json",
+              "snapshot": "meso1"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.srh-0-3000"
+        }
+      ],
+      "triplet": "0.7.8"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.ri"
+        },
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.ripbl"
+        },
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.risfc"
+        }
+      ],
+      "triplet": "0.7.12"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.si"
+        },
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.si.any"
+        }
+      ],
+      "triplet": "0.7.13"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.uhmax"
+        },
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-1km.current",
+              "path": "browser/meso1/params.json",
+              "snapshot": "meso1"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.uhmax-2000-5000"
+        },
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-1km.current",
+              "path": "browser/meso1/params.json",
+              "snapshot": "meso1"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.uhmax.any"
+        }
+      ],
+      "triplet": "0.7.15"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-geps.current",
+              "path": "browser/geps/params.json",
+              "snapshot": "geps"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-1km.current",
+              "path": "browser/meso1/params.json",
+              "snapshot": "meso1"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-reps.current",
+              "path": "browser/reps/params.json",
+              "snapshot": "reps"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.dcape"
+        }
+      ],
+      "triplet": "0.7.224"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.ssi"
+        }
+      ],
+      "triplet": "0.7.225"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.asi"
+        }
+      ],
+      "triplet": "0.7.226"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-1km.current",
+              "path": "browser/meso1/params.json",
+              "snapshot": "meso1"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.echotop"
+        }
+      ],
+      "triplet": "0.16.3"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-geps.current",
+              "path": "browser/geps/params.json",
+              "snapshot": "geps"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-1km.current",
+              "path": "browser/meso1/params.json",
+              "snapshot": "meso1"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-reps.current",
+              "path": "browser/reps/params.json",
+              "snapshot": "reps"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-tym.current",
+              "path": "browser/tym/params.json",
+              "snapshot": "tym"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.cdbz"
+        },
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.cdbzmax"
+        },
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-1km.current",
+              "path": "browser/meso1/params.json",
+              "snapshot": "meso1"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.cdbzmax-1"
+        },
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.cdbzmax-3"
+        }
+      ],
+      "triplet": "0.16.224"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-1km.current",
+              "path": "browser/meso1/params.json",
+              "snapshot": "meso1"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.dbz"
+        },
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.dbzmax"
+        },
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.dbzmax-3"
+        }
+      ],
+      "triplet": "0.16.225"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.dbzmaxh"
+        }
+      ],
+      "triplet": "0.16.226"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-geps.current",
+              "path": "browser/geps/params.json",
+              "snapshot": "geps"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-1km.current",
+              "path": "browser/meso1/params.json",
+              "snapshot": "meso1"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-reps.current",
+              "path": "browser/reps/params.json",
+              "snapshot": "reps"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-tym.current",
+              "path": "browser/tym/params.json",
+              "snapshot": "tym"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.vis"
+        },
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-geps.current",
+              "path": "browser/geps/params.json",
+              "snapshot": "geps"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-1km.current",
+              "path": "browser/meso1/params.json",
+              "snapshot": "meso1"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
+              "path": "browser/meso3/params.json",
+              "snapshot": "meso3"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-reps.current",
+              "path": "browser/reps/params.json",
+              "snapshot": "reps"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-tym.current",
+              "path": "browser/tym/params.json",
+              "snapshot": "tym"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.vis.any"
+        }
+      ],
+      "triplet": "0.19.0"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.albedo"
+        },
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.albedo.any"
+        }
+      ],
+      "triplet": "0.19.1"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-tym.current",
+              "path": "browser/tym/params.json",
+              "snapshot": "tym"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.fogh"
+        },
+        {
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
+              "path": "browser/gfs/params.json",
+              "snapshot": "gfs"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-tym.current",
+              "path": "browser/tym/params.json",
+              "snapshot": "tym"
+            }
+          ],
+          "historical_only": false,
+          "parameter_id": "cedarkit.fogh.any"
+        }
+      ],
+      "triplet": "0.19.224"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.fogod"
+        },
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.fogod.any"
+        }
+      ],
+      "triplet": "0.19.225"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.tsoil"
+        }
+      ],
+      "triplet": "2.0.2"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.soil-m"
+        }
+      ],
+      "triplet": "2.0.22"
+    },
+    {
+      "candidates": [
+        {
+          "current_targets": [],
+          "historical_only": true,
+          "parameter_id": "cedarkit.sshf"
+        }
+      ],
+      "triplet": "2.0.24"
+    }
+  ],
+  "schema_version": 1,
+  "scope": {
+    "current_support": false,
+    "purpose": "historical_navigation_only"
+  },
+  "source": {
+    "path": "legacy/params-schema3.json",
+    "sha256": "aa576355db5b992d478287b4370f9e3b5e73217fa88f984dc0ff21f0be9f5a18",
+    "size": 77025
+  }
+}

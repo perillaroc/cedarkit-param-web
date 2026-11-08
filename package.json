@@ -2,15 +2,16 @@
   "name": "cedarkit-param-web",
   "version": "0.2.0",
   "private": true,
-  "description": "CedarKit GRIB2 要素清单静态站点（Vue 3 + Naive UI，数据来自 cedarkit-param-db 导出的 params.json）",
+  "description": "CedarKit 当前审核参数、产品适用映射及证据的静态浏览器（Vue 3 + Naive UI，schema 4）",
   "license": "Apache-2.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc -b && vite build",
+    "build": "npm run verify:bundle && vue-tsc -b && vite build",
     "preview": "vite preview",
     "test": "vitest run",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "verify:bundle": "node tools/browser-bundle.mjs"
   },
   "dependencies": {
     "naive-ui": "^2.43.1",
@@ -20,6 +21,7 @@
   "devDependencies": {
     "@axe-core/playwright": "^4.13.0",
     "@playwright/test": "^1.62.1",
+    "@types/node": "^22.20.5",
     "@vitejs/plugin-vue": "^5.2.1",
     "typescript": "~5.7.2",
     "vite": "^6.0.7",

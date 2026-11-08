@@ -1,0 +1,952 @@
+{
+  "catalog": {
+    "api_version": "cedarkit.catalog/v1",
+    "copied_unchanged": true,
+    "id": "reki.cemc-catalog",
+    "owner": "reki",
+    "path": "catalog-v1.json",
+    "sha256": "1f2cc1a652b594db9f58fb5cc03c27a317bd3113dd82efed07ea8d43cce5a1ac",
+    "size": 1164084,
+    "version": "40"
+  },
+  "dataset_bindings": [
+    {
+      "dataset_id": "cma_geps",
+      "mappings": {
+        "grib2": {
+          "api_version": "cedarkit.mappings/v1",
+          "backend": "grib2",
+          "id": "cedarkit.grib2.cma-geps.current",
+          "path": "resources/current-geps-mappings.json",
+          "sha256": "86f0c92308bfda9d589a7e377649728b8f764355b6e5f40ac5f0622bc7cb782e",
+          "size": 313110,
+          "version": "9"
+        }
+      },
+      "parameter_registry": {
+        "api_version": "cedarkit.parameters/v1",
+        "id": "cedarkit.parameters.cma-geps.current",
+        "path": "resources/current-geps-parameters.json",
+        "sha256": "767dba673ebae8dc8b51bbd82e7ba5d2a68c40a31388293dc2c20cbebbcaffa4",
+        "size": 11685,
+        "version": "6"
+      },
+      "products": [
+        {
+          "id": "orig",
+          "version": "current"
+        }
+      ],
+      "snapshot": "geps"
+    },
+    {
+      "dataset_id": "cma_geps_control_cmadaas",
+      "mappings": {
+        "cmadaas": {
+          "api_version": "cedarkit.mappings/v1",
+          "backend": "cmadaas",
+          "id": "cedarkit.mappings.cmadaas",
+          "path": "resources/current-cmadaas-mappings.json",
+          "sha256": "98fb58eebb658edb22a2c9ba977007079d4a34381ef255a5afd92fac51584cfd",
+          "size": 1233211,
+          "version": "8"
+        }
+      },
+      "parameter_registry": {
+        "api_version": "cedarkit.parameters/v1",
+        "id": "cedarkit.parameters.cmadaas",
+        "path": "resources/current-cmadaas-parameters.json",
+        "sha256": "059083f3cd698eb71c17dbd877486758d75d2aa21b0bc6bac28fd0c2d757948e",
+        "size": 30274,
+        "version": "6"
+      },
+      "products": [
+        {
+          "id": "forecast",
+          "version": "service-20261105"
+        }
+      ],
+      "snapshot": "cmadaas"
+    },
+    {
+      "dataset_id": "cma_geps_perturbation_cmadaas",
+      "mappings": {
+        "cmadaas": {
+          "api_version": "cedarkit.mappings/v1",
+          "backend": "cmadaas",
+          "id": "cedarkit.mappings.cmadaas",
+          "path": "resources/current-cmadaas-mappings.json",
+          "sha256": "98fb58eebb658edb22a2c9ba977007079d4a34381ef255a5afd92fac51584cfd",
+          "size": 1233211,
+          "version": "8"
+        }
+      },
+      "parameter_registry": {
+        "api_version": "cedarkit.parameters/v1",
+        "id": "cedarkit.parameters.cmadaas",
+        "path": "resources/current-cmadaas-parameters.json",
+        "sha256": "059083f3cd698eb71c17dbd877486758d75d2aa21b0bc6bac28fd0c2d757948e",
+        "size": 30274,
+        "version": "6"
+      },
+      "products": [
+        {
+          "id": "forecast",
+          "version": "service-20261105"
+        }
+      ],
+      "snapshot": "cmadaas"
+    },
+    {
+      "dataset_id": "cma_gfs_gmf",
+      "mappings": {
+        "grib2": {
+          "api_version": "cedarkit.mappings/v1",
+          "backend": "grib2",
+          "id": "cedarkit.grib2.cma-gfs.current",
+          "path": "resources/current-gfs-mappings.json",
+          "sha256": "734070cae6dcf55f9ad874ad4b22d6960c9056a92133e11bee8ed7b15b347bf8",
+          "size": 237798,
+          "version": "20"
+        }
+      },
+      "parameter_registry": {
+        "api_version": "cedarkit.parameters/v1",
+        "id": "cedarkit.parameters.cma-gfs.current",
+        "path": "resources/current-gfs-parameters.json",
+        "sha256": "a22af7aaacbbde834c007b2ab95343985c141bebd460734d5bcb02e8bd54b21d",
+        "size": 31187,
+        "version": "15"
+      },
+      "products": [
+        {
+          "id": "orig",
+          "version": "current"
+        }
+      ],
+      "snapshot": "gfs"
+    },
+    {
+      "dataset_id": "cma_gfs_gmf_analysis_cmadaas",
+      "mappings": {
+        "cmadaas": {
+          "api_version": "cedarkit.mappings/v1",
+          "backend": "cmadaas",
+          "id": "cedarkit.mappings.cmadaas",
+          "path": "resources/current-cmadaas-mappings.json",
+          "sha256": "98fb58eebb658edb22a2c9ba977007079d4a34381ef255a5afd92fac51584cfd",
+          "size": 1233211,
+          "version": "8"
+        }
+      },
+      "parameter_registry": {
+        "api_version": "cedarkit.parameters/v1",
+        "id": "cedarkit.parameters.cmadaas",
+        "path": "resources/current-cmadaas-parameters.json",
+        "sha256": "059083f3cd698eb71c17dbd877486758d75d2aa21b0bc6bac28fd0c2d757948e",
+        "size": 30274,
+        "version": "6"
+      },
+      "products": [
+        {
+          "id": "analysis",
+          "version": "service-20261105"
+        }
+      ],
+      "snapshot": "cmadaas"
+    },
+    {
+      "dataset_id": "cma_gfs_gmf_cmadaas",
+      "mappings": {
+        "cmadaas": {
+          "api_version": "cedarkit.mappings/v1",
+          "backend": "cmadaas",
+          "id": "cedarkit.mappings.cmadaas",
+          "path": "resources/current-cmadaas-mappings.json",
+          "sha256": "98fb58eebb658edb22a2c9ba977007079d4a34381ef255a5afd92fac51584cfd",
+          "size": 1233211,
+          "version": "8"
+        }
+      },
+      "parameter_registry": {
+        "api_version": "cedarkit.parameters/v1",
+        "id": "cedarkit.parameters.cmadaas",
+        "path": "resources/current-cmadaas-parameters.json",
+        "sha256": "059083f3cd698eb71c17dbd877486758d75d2aa21b0bc6bac28fd0c2d757948e",
+        "size": 30274,
+        "version": "6"
+      },
+      "products": [
+        {
+          "id": "forecast",
+          "version": "service-20261105"
+        }
+      ],
+      "snapshot": "cmadaas"
+    },
+    {
+      "dataset_id": "cma_meso_1km",
+      "mappings": {
+        "grib2": {
+          "api_version": "cedarkit.mappings/v1",
+          "backend": "grib2",
+          "id": "cedarkit.grib2.cma-meso-1km.current",
+          "path": "resources/current-meso1-mappings.json",
+          "sha256": "d8a20aa20f477d4dae708a2669ca5b0809dff2d7d25002527d5c627e22ca37a6",
+          "size": 180652,
+          "version": "11"
+        }
+      },
+      "parameter_registry": {
+        "api_version": "cedarkit.parameters/v1",
+        "id": "cedarkit.parameters.cma-meso-1km.current",
+        "path": "resources/current-meso1-parameters.json",
+        "sha256": "c6538602512a63282023b8ca34ae72115f6348754899ee3fb59ba234325e70c2",
+        "size": 18881,
+        "version": "8"
+      },
+      "products": [
+        {
+          "id": "orig",
+          "version": "current"
+        }
+      ],
+      "snapshot": "meso1"
+    },
+    {
+      "dataset_id": "cma_meso_1km_analysis_cmadaas",
+      "mappings": {
+        "cmadaas": {
+          "api_version": "cedarkit.mappings/v1",
+          "backend": "cmadaas",
+          "id": "cedarkit.mappings.cmadaas",
+          "path": "resources/current-cmadaas-mappings.json",
+          "sha256": "98fb58eebb658edb22a2c9ba977007079d4a34381ef255a5afd92fac51584cfd",
+          "size": 1233211,
+          "version": "8"
+        }
+      },
+      "parameter_registry": {
+        "api_version": "cedarkit.parameters/v1",
+        "id": "cedarkit.parameters.cmadaas",
+        "path": "resources/current-cmadaas-parameters.json",
+        "sha256": "059083f3cd698eb71c17dbd877486758d75d2aa21b0bc6bac28fd0c2d757948e",
+        "size": 30274,
+        "version": "6"
+      },
+      "products": [
+        {
+          "id": "analysis",
+          "version": "service-20261105"
+        }
+      ],
+      "snapshot": "cmadaas"
+    },
+    {
+      "dataset_id": "cma_meso_1km_forecast_cmadaas",
+      "mappings": {
+        "cmadaas": {
+          "api_version": "cedarkit.mappings/v1",
+          "backend": "cmadaas",
+          "id": "cedarkit.mappings.cmadaas",
+          "path": "resources/current-cmadaas-mappings.json",
+          "sha256": "98fb58eebb658edb22a2c9ba977007079d4a34381ef255a5afd92fac51584cfd",
+          "size": 1233211,
+          "version": "8"
+        }
+      },
+      "parameter_registry": {
+        "api_version": "cedarkit.parameters/v1",
+        "id": "cedarkit.parameters.cmadaas",
+        "path": "resources/current-cmadaas-parameters.json",
+        "sha256": "059083f3cd698eb71c17dbd877486758d75d2aa21b0bc6bac28fd0c2d757948e",
+        "size": 30274,
+        "version": "6"
+      },
+      "products": [
+        {
+          "id": "forecast",
+          "version": "service-20261105"
+        }
+      ],
+      "snapshot": "cmadaas"
+    },
+    {
+      "dataset_id": "cma_meso_3km",
+      "mappings": {
+        "grib2": {
+          "api_version": "cedarkit.mappings/v1",
+          "backend": "grib2",
+          "id": "cedarkit.grib2.cma-meso-3km.current",
+          "path": "resources/current-meso3-mappings.json",
+          "sha256": "2364850959fd862c31b8afe9491c8bd9aaf3c0993372aed893c0dc48685f7ac8",
+          "size": 206117,
+          "version": "13"
+        }
+      },
+      "parameter_registry": {
+        "api_version": "cedarkit.parameters/v1",
+        "id": "cedarkit.parameters.cma-meso-3km.current",
+        "path": "resources/current-meso3-parameters.json",
+        "sha256": "5ca2afcd4c45217707d8531cf9c240476038fa771219e5d177769b9fa56ab03f",
+        "size": 23251,
+        "version": "10"
+      },
+      "products": [
+        {
+          "id": "orig",
+          "version": "current"
+        }
+      ],
+      "snapshot": "meso3"
+    },
+    {
+      "dataset_id": "cma_meso_3km_analysis_cmadaas",
+      "mappings": {
+        "cmadaas": {
+          "api_version": "cedarkit.mappings/v1",
+          "backend": "cmadaas",
+          "id": "cedarkit.mappings.cmadaas",
+          "path": "resources/current-cmadaas-mappings.json",
+          "sha256": "98fb58eebb658edb22a2c9ba977007079d4a34381ef255a5afd92fac51584cfd",
+          "size": 1233211,
+          "version": "8"
+        }
+      },
+      "parameter_registry": {
+        "api_version": "cedarkit.parameters/v1",
+        "id": "cedarkit.parameters.cmadaas",
+        "path": "resources/current-cmadaas-parameters.json",
+        "sha256": "059083f3cd698eb71c17dbd877486758d75d2aa21b0bc6bac28fd0c2d757948e",
+        "size": 30274,
+        "version": "6"
+      },
+      "products": [
+        {
+          "id": "analysis",
+          "version": "service-20261105"
+        }
+      ],
+      "snapshot": "cmadaas"
+    },
+    {
+      "dataset_id": "cma_meso_3km_forecast_cmadaas",
+      "mappings": {
+        "cmadaas": {
+          "api_version": "cedarkit.mappings/v1",
+          "backend": "cmadaas",
+          "id": "cedarkit.mappings.cmadaas",
+          "path": "resources/current-cmadaas-mappings.json",
+          "sha256": "98fb58eebb658edb22a2c9ba977007079d4a34381ef255a5afd92fac51584cfd",
+          "size": 1233211,
+          "version": "8"
+        }
+      },
+      "parameter_registry": {
+        "api_version": "cedarkit.parameters/v1",
+        "id": "cedarkit.parameters.cmadaas",
+        "path": "resources/current-cmadaas-parameters.json",
+        "sha256": "059083f3cd698eb71c17dbd877486758d75d2aa21b0bc6bac28fd0c2d757948e",
+        "size": 30274,
+        "version": "6"
+      },
+      "products": [
+        {
+          "id": "forecast",
+          "version": "service-20261105"
+        }
+      ],
+      "snapshot": "cmadaas"
+    },
+    {
+      "dataset_id": "cma_reps",
+      "mappings": {
+        "grib2": {
+          "api_version": "cedarkit.mappings/v1",
+          "backend": "grib2",
+          "id": "cedarkit.grib2.cma-reps.current",
+          "path": "resources/current-reps-mappings.json",
+          "sha256": "004d36b69a20a904b17247bbb63891f89e3ecdf051940a412832d018f2a68872",
+          "size": 240119,
+          "version": "8"
+        }
+      },
+      "parameter_registry": {
+        "api_version": "cedarkit.parameters/v1",
+        "id": "cedarkit.parameters.cma-reps.current",
+        "path": "resources/current-reps-parameters.json",
+        "sha256": "5dc8cf8b751d1982a506cd5b115d69ab9aec9ed3d6d8d8a00f60a75c02f51859",
+        "size": 9202,
+        "version": "5"
+      },
+      "products": [
+        {
+          "id": "orig",
+          "version": "current"
+        }
+      ],
+      "snapshot": "reps"
+    },
+    {
+      "dataset_id": "cma_reps_control_cmadaas",
+      "mappings": {
+        "cmadaas": {
+          "api_version": "cedarkit.mappings/v1",
+          "backend": "cmadaas",
+          "id": "cedarkit.mappings.cmadaas",
+          "path": "resources/current-cmadaas-mappings.json",
+          "sha256": "98fb58eebb658edb22a2c9ba977007079d4a34381ef255a5afd92fac51584cfd",
+          "size": 1233211,
+          "version": "8"
+        }
+      },
+      "parameter_registry": {
+        "api_version": "cedarkit.parameters/v1",
+        "id": "cedarkit.parameters.cmadaas",
+        "path": "resources/current-cmadaas-parameters.json",
+        "sha256": "059083f3cd698eb71c17dbd877486758d75d2aa21b0bc6bac28fd0c2d757948e",
+        "size": 30274,
+        "version": "6"
+      },
+      "products": [
+        {
+          "id": "forecast",
+          "version": "service-20261105"
+        }
+      ],
+      "snapshot": "cmadaas"
+    },
+    {
+      "dataset_id": "cma_reps_perturbation_cmadaas",
+      "mappings": {
+        "cmadaas": {
+          "api_version": "cedarkit.mappings/v1",
+          "backend": "cmadaas",
+          "id": "cedarkit.mappings.cmadaas",
+          "path": "resources/current-cmadaas-mappings.json",
+          "sha256": "98fb58eebb658edb22a2c9ba977007079d4a34381ef255a5afd92fac51584cfd",
+          "size": 1233211,
+          "version": "8"
+        }
+      },
+      "parameter_registry": {
+        "api_version": "cedarkit.parameters/v1",
+        "id": "cedarkit.parameters.cmadaas",
+        "path": "resources/current-cmadaas-parameters.json",
+        "sha256": "059083f3cd698eb71c17dbd877486758d75d2aa21b0bc6bac28fd0c2d757948e",
+        "size": 30274,
+        "version": "6"
+      },
+      "products": [
+        {
+          "id": "forecast",
+          "version": "service-20261105"
+        }
+      ],
+      "snapshot": "cmadaas"
+    },
+    {
+      "dataset_id": "cma_tym",
+      "mappings": {
+        "grib2": {
+          "api_version": "cedarkit.mappings/v1",
+          "backend": "grib2",
+          "id": "cedarkit.grib2.cma-tym.current",
+          "path": "resources/current-tym-mappings.json",
+          "sha256": "959ebac11abdb2a9ecd26b0bac1b026178bd6ffa1a7957b6fbfa70c57b73c627",
+          "size": 168811,
+          "version": "12"
+        }
+      },
+      "parameter_registry": {
+        "api_version": "cedarkit.parameters/v1",
+        "id": "cedarkit.parameters.cma-tym.current",
+        "path": "resources/current-tym-parameters.json",
+        "sha256": "3360430a860fd89b0f10172ae8e6543566ce8025da6e3d3c8ae83e65f6964596",
+        "size": 18004,
+        "version": "9"
+      },
+      "products": [
+        {
+          "id": "orig",
+          "version": "current"
+        }
+      ],
+      "snapshot": "tym"
+    },
+    {
+      "dataset_id": "cma_tym_analysis_cmadaas",
+      "mappings": {
+        "cmadaas": {
+          "api_version": "cedarkit.mappings/v1",
+          "backend": "cmadaas",
+          "id": "cedarkit.mappings.cmadaas",
+          "path": "resources/current-cmadaas-mappings.json",
+          "sha256": "98fb58eebb658edb22a2c9ba977007079d4a34381ef255a5afd92fac51584cfd",
+          "size": 1233211,
+          "version": "8"
+        }
+      },
+      "parameter_registry": {
+        "api_version": "cedarkit.parameters/v1",
+        "id": "cedarkit.parameters.cmadaas",
+        "path": "resources/current-cmadaas-parameters.json",
+        "sha256": "059083f3cd698eb71c17dbd877486758d75d2aa21b0bc6bac28fd0c2d757948e",
+        "size": 30274,
+        "version": "6"
+      },
+      "products": [
+        {
+          "id": "analysis",
+          "version": "service-20261105"
+        }
+      ],
+      "snapshot": "cmadaas"
+    },
+    {
+      "dataset_id": "cma_tym_forecast_cmadaas",
+      "mappings": {
+        "cmadaas": {
+          "api_version": "cedarkit.mappings/v1",
+          "backend": "cmadaas",
+          "id": "cedarkit.mappings.cmadaas",
+          "path": "resources/current-cmadaas-mappings.json",
+          "sha256": "98fb58eebb658edb22a2c9ba977007079d4a34381ef255a5afd92fac51584cfd",
+          "size": 1233211,
+          "version": "8"
+        }
+      },
+      "parameter_registry": {
+        "api_version": "cedarkit.parameters/v1",
+        "id": "cedarkit.parameters.cmadaas",
+        "path": "resources/current-cmadaas-parameters.json",
+        "sha256": "059083f3cd698eb71c17dbd877486758d75d2aa21b0bc6bac28fd0c2d757948e",
+        "size": 30274,
+        "version": "6"
+      },
+      "products": [
+        {
+          "id": "forecast",
+          "version": "service-20261105"
+        }
+      ],
+      "snapshot": "cmadaas"
+    }
+  ],
+  "files": [
+    {
+      "path": "browser/cmadaas/params.json",
+      "sha256": "390dc12acc1124c0b4d002f612947e900f2a437a70d6e00e2dca503c7fc885b6",
+      "size": 1492968
+    },
+    {
+      "path": "browser/geps/params.json",
+      "sha256": "24c8e70cf3b6d689ffb96349038f87b2c95999be55e5b96c4564299f2d48f1b5",
+      "size": 369614
+    },
+    {
+      "path": "browser/gfs/params.json",
+      "sha256": "3e5b7f454f864a542d9aabfc6e16858084adce470b62a0993b569f1ae5a77c0b",
+      "size": 308458
+    },
+    {
+      "path": "browser/meso1/params.json",
+      "sha256": "01687bf2b0830437f1dc414fbc4bc91ee34497ed3079546854c808a6f96bf9a8",
+      "size": 229371
+    },
+    {
+      "path": "browser/meso3/params.json",
+      "sha256": "78f572d182ba54009893004cd4dbc114decc8184c8942c23b3cd5e791b247659",
+      "size": 263400
+    },
+    {
+      "path": "browser/reps/params.json",
+      "sha256": "1dd5029e6e71fc29ca796e723113a5b0b365e88f7a12398eed5744cd38463c73",
+      "size": 284104
+    },
+    {
+      "path": "browser/tym/params.json",
+      "sha256": "e6717117714c0c0921e97e9d38904344121bac079fcfe8627e7cd7a49a2a12b7",
+      "size": 215099
+    },
+    {
+      "path": "catalog-v1.json",
+      "sha256": "1f2cc1a652b594db9f58fb5cc03c27a317bd3113dd82efed07ea8d43cce5a1ac",
+      "size": 1164084
+    },
+    {
+      "path": "legacy-links.json",
+      "sha256": "76c9ede2ab2d7a68ffa963699ad2542d7c5523a3b8f94b95c35dfeedff1f1e56",
+      "size": 133709
+    },
+    {
+      "path": "resources/current-cmadaas-mappings.json",
+      "sha256": "98fb58eebb658edb22a2c9ba977007079d4a34381ef255a5afd92fac51584cfd",
+      "size": 1233211
+    },
+    {
+      "path": "resources/current-cmadaas-parameters.json",
+      "sha256": "059083f3cd698eb71c17dbd877486758d75d2aa21b0bc6bac28fd0c2d757948e",
+      "size": 30274
+    },
+    {
+      "path": "resources/current-geps-mappings.json",
+      "sha256": "86f0c92308bfda9d589a7e377649728b8f764355b6e5f40ac5f0622bc7cb782e",
+      "size": 313110
+    },
+    {
+      "path": "resources/current-geps-parameters.json",
+      "sha256": "767dba673ebae8dc8b51bbd82e7ba5d2a68c40a31388293dc2c20cbebbcaffa4",
+      "size": 11685
+    },
+    {
+      "path": "resources/current-gfs-mappings.json",
+      "sha256": "734070cae6dcf55f9ad874ad4b22d6960c9056a92133e11bee8ed7b15b347bf8",
+      "size": 237798
+    },
+    {
+      "path": "resources/current-gfs-parameters.json",
+      "sha256": "a22af7aaacbbde834c007b2ab95343985c141bebd460734d5bcb02e8bd54b21d",
+      "size": 31187
+    },
+    {
+      "path": "resources/current-meso1-mappings.json",
+      "sha256": "d8a20aa20f477d4dae708a2669ca5b0809dff2d7d25002527d5c627e22ca37a6",
+      "size": 180652
+    },
+    {
+      "path": "resources/current-meso1-parameters.json",
+      "sha256": "c6538602512a63282023b8ca34ae72115f6348754899ee3fb59ba234325e70c2",
+      "size": 18881
+    },
+    {
+      "path": "resources/current-meso3-mappings.json",
+      "sha256": "2364850959fd862c31b8afe9491c8bd9aaf3c0993372aed893c0dc48685f7ac8",
+      "size": 206117
+    },
+    {
+      "path": "resources/current-meso3-parameters.json",
+      "sha256": "5ca2afcd4c45217707d8531cf9c240476038fa771219e5d177769b9fa56ab03f",
+      "size": 23251
+    },
+    {
+      "path": "resources/current-reps-mappings.json",
+      "sha256": "004d36b69a20a904b17247bbb63891f89e3ecdf051940a412832d018f2a68872",
+      "size": 240119
+    },
+    {
+      "path": "resources/current-reps-parameters.json",
+      "sha256": "5dc8cf8b751d1982a506cd5b115d69ab9aec9ed3d6d8d8a00f60a75c02f51859",
+      "size": 9202
+    },
+    {
+      "path": "resources/current-tym-mappings.json",
+      "sha256": "959ebac11abdb2a9ecd26b0bac1b026178bd6ffa1a7957b6fbfa70c57b73c627",
+      "size": 168811
+    },
+    {
+      "path": "resources/current-tym-parameters.json",
+      "sha256": "3360430a860fd89b0f10172ae8e6543566ce8025da6e3d3c8ae83e65f6964596",
+      "size": 18004
+    }
+  ],
+  "id": "cedarkit.browser.reviewed-current",
+  "schema_version": 1,
+  "scope": {
+    "complete_product_coverage": false,
+    "evidence_status": {
+      "availability": "not_guaranteed_for_all_cells",
+      "definitions": "reviewed_authoring",
+      "mappings": "reviewed_mapping_with_references"
+    },
+    "kind": "parameter_browser_snapshots",
+    "legacy_navigation": true,
+    "remaining_migration_obligations": [
+      {
+        "accepted": 529,
+        "evidence": [
+          "doc/2026-11-04-stage1.2-query-reki/task-01-coverage.md",
+          "stage1.2/task-07e6/coverage.json"
+        ],
+        "id": "service-history",
+        "note": "Historical service rows, not the number of mappings or expected-domain cells",
+        "remaining": 484,
+        "total": 1013
+      },
+      {
+        "id": "service-quality",
+        "note": "Independent quality cells, not additional historical rows",
+        "parts": {
+          "07E14": 2,
+          "07E17": 64,
+          "07E18": 419
+        },
+        "remaining": 485
+      },
+      {
+        "groups": {
+          "06J": 96,
+          "06K": 48
+        },
+        "id": "native-definition-gaps",
+        "note": "Original group obligations are not reduced by browser projection"
+      },
+      {
+        "id": "modelvar",
+        "note": "Explicit user deferral; not current browser support or an automatic reopen",
+        "status": "deferred",
+        "task": "N27"
+      },
+      {
+        "id": "legacy-authoring",
+        "note": "Archived 233 active parameters and 803 mappings are not automatically current support",
+        "status": "not_fully_reaudited"
+      }
+    ]
+  },
+  "snapshots": [
+    {
+      "dataset_ids": [
+        "cma_geps_control_cmadaas",
+        "cma_geps_perturbation_cmadaas",
+        "cma_gfs_gmf_analysis_cmadaas",
+        "cma_gfs_gmf_cmadaas",
+        "cma_meso_1km_analysis_cmadaas",
+        "cma_meso_1km_forecast_cmadaas",
+        "cma_meso_3km_analysis_cmadaas",
+        "cma_meso_3km_forecast_cmadaas",
+        "cma_reps_control_cmadaas",
+        "cma_reps_perturbation_cmadaas",
+        "cma_tym_analysis_cmadaas",
+        "cma_tym_forecast_cmadaas"
+      ],
+      "key": "cmadaas",
+      "mapping_resources": [
+        {
+          "api_version": "cedarkit.mappings/v1",
+          "backend": "cmadaas",
+          "id": "cedarkit.mappings.cmadaas",
+          "path": "resources/current-cmadaas-mappings.json",
+          "sha256": "98fb58eebb658edb22a2c9ba977007079d4a34381ef255a5afd92fac51584cfd",
+          "size": 1233211,
+          "version": "8"
+        }
+      ],
+      "parameter_resource": {
+        "api_version": "cedarkit.parameters/v1",
+        "id": "cedarkit.parameters.cmadaas",
+        "path": "resources/current-cmadaas-parameters.json",
+        "sha256": "059083f3cd698eb71c17dbd877486758d75d2aa21b0bc6bac28fd0c2d757948e",
+        "size": 30274,
+        "version": "6"
+      },
+      "path": "browser/cmadaas/params.json",
+      "schema_version": 4
+    },
+    {
+      "dataset_ids": [
+        "cma_geps"
+      ],
+      "key": "geps",
+      "mapping_resources": [
+        {
+          "api_version": "cedarkit.mappings/v1",
+          "backend": "grib2",
+          "id": "cedarkit.grib2.cma-geps.current",
+          "path": "resources/current-geps-mappings.json",
+          "sha256": "86f0c92308bfda9d589a7e377649728b8f764355b6e5f40ac5f0622bc7cb782e",
+          "size": 313110,
+          "version": "9"
+        }
+      ],
+      "parameter_resource": {
+        "api_version": "cedarkit.parameters/v1",
+        "id": "cedarkit.parameters.cma-geps.current",
+        "path": "resources/current-geps-parameters.json",
+        "sha256": "767dba673ebae8dc8b51bbd82e7ba5d2a68c40a31388293dc2c20cbebbcaffa4",
+        "size": 11685,
+        "version": "6"
+      },
+      "path": "browser/geps/params.json",
+      "schema_version": 4
+    },
+    {
+      "dataset_ids": [
+        "cma_gfs_gmf"
+      ],
+      "key": "gfs",
+      "mapping_resources": [
+        {
+          "api_version": "cedarkit.mappings/v1",
+          "backend": "grib2",
+          "id": "cedarkit.grib2.cma-gfs.current",
+          "path": "resources/current-gfs-mappings.json",
+          "sha256": "734070cae6dcf55f9ad874ad4b22d6960c9056a92133e11bee8ed7b15b347bf8",
+          "size": 237798,
+          "version": "20"
+        }
+      ],
+      "parameter_resource": {
+        "api_version": "cedarkit.parameters/v1",
+        "id": "cedarkit.parameters.cma-gfs.current",
+        "path": "resources/current-gfs-parameters.json",
+        "sha256": "a22af7aaacbbde834c007b2ab95343985c141bebd460734d5bcb02e8bd54b21d",
+        "size": 31187,
+        "version": "15"
+      },
+      "path": "browser/gfs/params.json",
+      "schema_version": 4
+    },
+    {
+      "dataset_ids": [
+        "cma_meso_1km"
+      ],
+      "key": "meso1",
+      "mapping_resources": [
+        {
+          "api_version": "cedarkit.mappings/v1",
+          "backend": "grib2",
+          "id": "cedarkit.grib2.cma-meso-1km.current",
+          "path": "resources/current-meso1-mappings.json",
+          "sha256": "d8a20aa20f477d4dae708a2669ca5b0809dff2d7d25002527d5c627e22ca37a6",
+          "size": 180652,
+          "version": "11"
+        }
+      ],
+      "parameter_resource": {
+        "api_version": "cedarkit.parameters/v1",
+        "id": "cedarkit.parameters.cma-meso-1km.current",
+        "path": "resources/current-meso1-parameters.json",
+        "sha256": "c6538602512a63282023b8ca34ae72115f6348754899ee3fb59ba234325e70c2",
+        "size": 18881,
+        "version": "8"
+      },
+      "path": "browser/meso1/params.json",
+      "schema_version": 4
+    },
+    {
+      "dataset_ids": [
+        "cma_meso_3km"
+      ],
+      "key": "meso3",
+      "mapping_resources": [
+        {
+          "api_version": "cedarkit.mappings/v1",
+          "backend": "grib2",
+          "id": "cedarkit.grib2.cma-meso-3km.current",
+          "path": "resources/current-meso3-mappings.json",
+          "sha256": "2364850959fd862c31b8afe9491c8bd9aaf3c0993372aed893c0dc48685f7ac8",
+          "size": 206117,
+          "version": "13"
+        }
+      ],
+      "parameter_resource": {
+        "api_version": "cedarkit.parameters/v1",
+        "id": "cedarkit.parameters.cma-meso-3km.current",
+        "path": "resources/current-meso3-parameters.json",
+        "sha256": "5ca2afcd4c45217707d8531cf9c240476038fa771219e5d177769b9fa56ab03f",
+        "size": 23251,
+        "version": "10"
+      },
+      "path": "browser/meso3/params.json",
+      "schema_version": 4
+    },
+    {
+      "dataset_ids": [
+        "cma_reps"
+      ],
+      "key": "reps",
+      "mapping_resources": [
+        {
+          "api_version": "cedarkit.mappings/v1",
+          "backend": "grib2",
+          "id": "cedarkit.grib2.cma-reps.current",
+          "path": "resources/current-reps-mappings.json",
+          "sha256": "004d36b69a20a904b17247bbb63891f89e3ecdf051940a412832d018f2a68872",
+          "size": 240119,
+          "version": "8"
+        }
+      ],
+      "parameter_resource": {
+        "api_version": "cedarkit.parameters/v1",
+        "id": "cedarkit.parameters.cma-reps.current",
+        "path": "resources/current-reps-parameters.json",
+        "sha256": "5dc8cf8b751d1982a506cd5b115d69ab9aec9ed3d6d8d8a00f60a75c02f51859",
+        "size": 9202,
+        "version": "5"
+      },
+      "path": "browser/reps/params.json",
+      "schema_version": 4
+    },
+    {
+      "dataset_ids": [
+        "cma_tym"
+      ],
+      "key": "tym",
+      "mapping_resources": [
+        {
+          "api_version": "cedarkit.mappings/v1",
+          "backend": "grib2",
+          "id": "cedarkit.grib2.cma-tym.current",
+          "path": "resources/current-tym-mappings.json",
+          "sha256": "959ebac11abdb2a9ecd26b0bac1b026178bd6ffa1a7957b6fbfa70c57b73c627",
+          "size": 168811,
+          "version": "12"
+        }
+      ],
+      "parameter_resource": {
+        "api_version": "cedarkit.parameters/v1",
+        "id": "cedarkit.parameters.cma-tym.current",
+        "path": "resources/current-tym-parameters.json",
+        "sha256": "3360430a860fd89b0f10172ae8e6543566ce8025da6e3d3c8ae83e65f6964596",
+        "size": 18004,
+        "version": "9"
+      },
+      "path": "browser/tym/params.json",
+      "schema_version": 4
+    }
+  ],
+  "sources": [
+    {
+      "path": "authoring/browser-current.json",
+      "sha256": "3143397eecf0802db66c93074eda65bdc6a026931c384bdcef1e0450553aca96",
+      "size": 6457
+    },
+    {
+      "path": "authoring/cemc-orig-batch1.json",
+      "sha256": "f4c574f2d86be024a2296872af75d971136c546c57541b831d044e6cb2f0d11c",
+      "size": 503448
+    },
+    {
+      "path": "authoring/cemc-orig-task06b.json",
+      "sha256": "49ef78833ca98628c88188634b2db40c73462ace4bdf53f16e9033f0f1464a3a",
+      "size": 814300
+    },
+    {
+      "path": "authoring/cemc-orig-task06c.json",
+      "sha256": "82cc4c27755afbd7044d360a0cd7eda01a0baafd948e49bcc069805228a1c3cd",
+      "size": 430370
+    },
+    {
+      "path": "authoring/cemc-orig-task06i.json",
+      "sha256": "8ab156a6e7cd2c11e72fb6cd50fbc3ee8b4d31edad9e640e34a93e9cd9ec651a",
+      "size": 5428
+    },
+    {
+      "path": "authoring/cmadaas-task07e6.json",
+      "sha256": "5a2a2d37ad02b727da6d55f642129c1cd634698048671d0186fe44318a753b27",
+      "size": 2448543
+    },
+    {
+      "path": "catalog-v1.json",
+      "sha256": "1f2cc1a652b594db9f58fb5cc03c27a317bd3113dd82efed07ea8d43cce5a1ac",
+      "size": 1164084
+    },
+    {
+      "path": "legacy/params-schema3.json",
+      "sha256": "aa576355db5b992d478287b4370f9e3b5e73217fa88f984dc0ff21f0be9f5a18",
+      "size": 77025
+    }
+  ],
+  "version": "1"
+}

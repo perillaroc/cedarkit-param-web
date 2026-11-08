@@ -30,3 +30,8 @@
   for = "/index.html"
   [headers.values]
     Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/reviewed/*"
+  [headers.values]
+    Cache-Control = "public, max-age=300, must-revalidate"

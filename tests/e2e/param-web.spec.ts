@@ -1,78 +1,175 @@
+import { mkdirSync } from 'node:fs'
+import { resolve } from 'node:path'
 import AxeBuilder from '@axe-core/playwright'
 import { expect, test } from '@playwright/test'
 
-test.describe('parameter discovery', () => {
-  test('searches a variant and opens its parameter by triplet', async ({ page }) => {
+const gfsT2m = '/#/parameters/cedarkit.parameters.cma-gfs.current/cedarkit.t2m'
+const cmadaasT2m = '/#/parameters/cedarkit.parameters.cmadaas/cedarkit.t2m'
+
+test.describe('schema 4 parameter discovery', () => {
+  test('loads seven contexts and searches stable IDs without merging definitions', async ({ page }) => {
+    const errors: string[] = []
+    page.on('pageerror', (error) => errors.push(error.message))
     await page.goto('/')
+    await expect(page.getByText('537 / 537 条资源内定义')).toBeVisible()
+    await expect(page.getByText(/schema v4 · 163 个稳定 ID · 537 条资源内定义 · 1295 条映射/)).toBeVisible()
+    await page.getByRole('textbox', { name: '搜索参数' }).fill('cedarkit.t2m')
+    await expect(page.getByText('7 / 537 条资源内定义')).toBeVisible()
+    await expect(page).toHaveURL(/q=cedarkit.t2m/)
+    await expect(page.locator('.desktop-table').getByRole('link', { name: 'cedarkit.t2m', exact: true })).toHaveCount(7)
+    expect(errors).toEqual([])
+  })
 
-    await expect(page.getByText('126 / 126 条')).toBeVisible()
+  test('filters the product scope and preserves URL state after visiting a detail', async ({ page }) => {
+    await page.goto('/#/?q=cedarkit.t2m&s=gfs&dataset=cma_gfs_gmf&backend=grib2')
+    await expect(page.getByText('1 / 537 条资源内定义')).toBeVisible()
+    await page.locator('.desktop-table').getByRole('link', { name: 'cedarkit.t2m', exact: true }).click()
+    await expect(page.getByRole('heading', { name: 'cedarkit.t2m', exact: true })).toBeVisible()
+    await expect(page.getByText('cma_gfs_gmf', { exact: false }).first()).toBeVisible()
+    await page.getByRole('link', { name: /返回要素总表/ }).click()
+    await expect(page.getByText('1 / 537 条资源内定义')).toBeVisible()
+    await expect(page).toHaveURL(/dataset=cma_gfs_gmf/)
+    await page.getByRole('button', { name: '清除筛选' }).click()
+    await expect(page.getByText('537 / 537 条资源内定义')).toBeVisible()
+  })
+
+  test('changes the resource and mapping filters through the controls', async ({ page }) => {
+    await page.goto('/')
+    await expect(page.getByRole('search')).toBeVisible()
+    await page.locator('.filter-select').nth(0).click()
+    await page.getByText('gfs', { exact: true }).click()
+    await expect(page.getByText('119 / 537 条资源内定义')).toBeVisible()
+    await page.locator('.filter-select').nth(3).click()
+    await page.getByText('无直接映射', { exact: true }).last().click()
+    await expect(page).toHaveURL(/m=without/)
+    await expect(page.locator('.desktop-table').getByRole('link', { name: 'cedarkit.albedo.any', exact: true })).toBeVisible()
+  })
+
+  test('shows scoped parents, local constraints, runtime pins, applicability and scientific evidence', async ({ page }) => {
+    await page.goto(gfsT2m)
+    await expect(page.getByRole('heading', { name: 'cedarkit.t2m', exact: true })).toBeVisible()
+    await expect(page.getByText('K（继承父定义）')).toBeVisible()
+    await expect(page.getByText(/a22af7aaacbbde834c007b2ab95343985c141bebd460734d5bcb02e8bd54b21d/)).toBeVisible()
+    await expect(page.getByText(/"level_type": "height_above_ground"/).first()).toBeVisible()
+    await expect(page.getByText(/reviewed_mapping_with_references/)).toBeVisible()
+    await expect(page.locator('.mapping-card')).not.toHaveCount(0)
+    await expect(page.locator('.evidence').first()).toBeVisible()
+    await page.getByRole('link', { name: 'cedarkit.t', exact: true }).click()
+    await expect(page.getByRole('heading', { name: /子定义／变体/ })).toBeVisible()
+    await expect(page).toHaveURL(/cedarkit.parameters.cma-gfs.current\/cedarkit.t$/)
+  })
+
+  test('keeps unmapped families visible without claiming direct mappings', async ({ page }) => {
+    await page.goto('/#/?s=gfs&m=without')
+    const link = page.locator('.desktop-table').getByRole('link', { name: 'cedarkit.albedo.any', exact: true })
+    await expect(link).toBeVisible()
+    await link.click()
+    await expect(page.getByText('无直接映射 · 家族或未直接映射定义')).toBeVisible()
+    await expect(page.getByText('本定义没有直接映射，请查看相关子定义')).toBeVisible()
+  })
+
+  test('uses a candidate page for old triplets and Enter navigation', async ({ page }) => {
+    await page.goto('/')
     const search = page.getByRole('textbox', { name: '搜索参数' })
-    await search.fill('t2m')
-    await expect(page.getByText('1 / 126 条')).toBeVisible()
-    await expect(page).toHaveURL(/q=t2m/)
-
+    await expect(search).toBeVisible()
     await search.fill('0.0.0')
     await search.press('Enter')
     await expect(page).toHaveURL(/#\/params\/0\/0\/0/)
-    await expect(page.getByRole('heading', { name: /t 0\.0\.0/ })).toBeVisible()
+    await expect(page.getByRole('heading', { name: '三元组 0.0.0 的参数候选' })).toBeVisible()
+    await expect(page.locator('.n-card').filter({ hasText: 'cedarkit.t2m' })).toHaveCount(1)
+    await page.locator('.n-card').filter({ hasText: 'cedarkit.t2m' }).getByRole('link', { name: /^gfs ·/ }).click()
+    await expect(page).toHaveURL(/parameters\/cedarkit.parameters.cma-gfs.current\/cedarkit.t2m/)
   })
 
-  test('filters by discipline and preserves state after visiting details', async ({ page }) => {
+  test('labels historical-only IDs and missing routes without treating them as retired', async ({ page }) => {
+    await page.goto('/#/params/0/0/4')
+    await expect(page.getByText('historical_only · 仅历史记录').first()).toBeVisible()
+    await expect(page.locator('.n-card').filter({ has: page.getByRole('heading', { name: 'cedarkit.mx2t', exact: true }) })).toContainText('这不表示已退役')
+    await expect(page.locator('.n-card').filter({ has: page.getByRole('heading', { name: 'cedarkit.mx2t', exact: true }) }).getByRole('link')).toHaveCount(0)
+    await page.goto('/#/params/999/999/999')
+    await expect(page.getByText('未找到该三元组的历史或当前候选')).toBeVisible()
+    await page.goto('/#/parameters/missing/cedarkit.t2m')
+    await expect(page.getByText('未找到该资源中的参数定义')).toBeVisible()
+  })
+
+  test('counts global obligations once for the entire group', async ({ page }) => {
     await page.goto('/')
-    await page.locator('.filter-select').first().click()
-    await page.getByText('2 — 陆面', { exact: true }).click()
-
-    await expect(page.getByText('3 / 126 条')).toBeVisible()
-    await expect(page).toHaveURL(/d=2/)
-    await page.getByRole('link', { name: '2.0.2', exact: true }).click()
-    await page.getByRole('link', { name: /返回要素总表/ }).click()
-
-    await expect(page.getByText('3 / 126 条')).toBeVisible()
-    await expect(page).toHaveURL(/d=2/)
+    await page.getByText('快照与全局待验范围', { exact: true }).click()
+    const ledger = page.getByRole('list', { name: '全局义务台账' })
+    await expect(ledger.getByRole('listitem')).toHaveCount(5)
+    await expect(ledger).toContainText('已验 529 / 1013；余 484')
+    await expect(ledger).toContainText('余 485')
+    await expect(ledger).toContainText('N27 deferred')
   })
 
-  test('shows effective inherited values on details', async ({ page }) => {
-    await page.goto('/#/params/0/0/0')
-
-    await expect(page.locator('tr').filter({ hasText: 'CMADaaS name' })).toContainText('TEM')
-    await expect(page.getByRole('heading', { name: /条件变体（7）/ })).toBeVisible()
-    await expect(page.getByRole('cell', { name: /K.*继承/ }).first()).toBeVisible()
-    await expect(page.getByText('“继承”表示该值来自条目级定义。')).toBeVisible()
-  })
-
-  test('uses cards on a narrow viewport', async ({ page }) => {
+  test('supports mobile cards, scoped detail and browser refresh', async ({ page }) => {
     await page.setViewportSize({ width: 390, height: 844 })
-    await page.goto('/#/?q=t2m')
-
+    await page.goto('/#/?q=cedarkit.t2m&s=gfs')
     await expect(page.locator('.mobile-list')).toBeVisible()
     await expect(page.locator('.desktop-table')).toBeHidden()
-    await expect(page.getByText('1 / 126 条')).toBeVisible()
-    await expect(page.locator('.mobile-list').getByText('t', { exact: true })).toBeVisible()
+    await page.locator('.mobile-list').getByRole('link').first().click()
+    await page.reload()
+    await expect(page.getByRole('heading', { name: 'cedarkit.t2m', exact: true })).toBeVisible()
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true)
   })
 
-  test('offers retry when registry loading fails', async ({ page }) => {
-    await page.route('**/params.json', (route) =>
-      route.fulfill({ status: 503, contentType: 'application/json', body: '{}' }),
-    )
+  test('retries a failed load and recovers using the same frozen group', async ({ page }) => {
+    let fail = true
+    await page.route('**/reviewed/manifest.json', (route) => fail
+      ? route.fulfill({ status: 503, body: '{}' }) : route.continue())
     await page.goto('/')
-
     await expect(page.getByText('数据加载失败')).toBeVisible()
     await expect(page.getByText(/HTTP 503/)).toBeVisible()
-    await expect(page.getByRole('button', { name: '重试' })).toBeVisible()
+    fail = false
+    await page.getByRole('button', { name: '重试' }).click()
+    await expect(page.getByText('537 / 537 条资源内定义')).toBeVisible()
+  })
+
+  test('rejects a modified manifest before exposing registry data', async ({ page }) => {
+    await page.route('**/reviewed/manifest.json', (route) => route.fulfill({ body: '{"schema_version":3}' }))
+    await page.goto('/')
+    await expect(page.getByText(/manifest SHA256 不符/)).toBeVisible()
+    await expect(page.getByRole('search')).toHaveCount(0)
+  })
+
+  test('rejects truncated members and does not render partial data', async ({ page }) => {
+    await page.route('**/reviewed/resources/current-gfs-parameters.json', (route) => route.fulfill({ body: '{}' }))
+    await page.goto('/')
+    await expect(page.getByText(/文件大小不符/)).toBeVisible()
+    await expect(page.getByRole('search')).toHaveCount(0)
+  })
+
+  test('captures accepted list, detail, legacy and mobile screens', async ({ page }, testInfo) => {
+    const dir = process.env.N03B_SCREENSHOT_DIR
+    if (dir) mkdirSync(dir, { recursive: true })
+    const screenshot = (name: string) => page.screenshot({ path: dir ? resolve(dir, name) : testInfo.outputPath(name), fullPage: true })
+    await page.goto('/#/?q=cedarkit.t2m')
+    await expect(page.getByText('7 / 537 条资源内定义')).toBeVisible()
+    await screenshot('list.png')
+    await page.goto(gfsT2m)
+    await expect(page.locator('.mapping-card').first()).toBeVisible()
+    await screenshot('detail-gfs-t2m.png')
+    await page.goto('/#/params/0/0/4')
+    await expect(page.getByText('historical_only · 仅历史记录').first()).toBeVisible()
+    await screenshot('legacy-historical.png')
+    await page.setViewportSize({ width: 390, height: 844 })
+    await page.goto('/#/?q=cedarkit.t2m&s=gfs')
+    await expect(page.locator('.mobile-list')).toBeVisible()
+    await screenshot('mobile.png')
   })
 })
 
 test.describe('accessibility', () => {
-  for (const route of ['/', '/#/params/0/0/0']) {
-    test(`${route} has no serious accessibility violations`, async ({ page }) => {
+  for (const [name, route] of [['list', '/'], ['native detail', gfsT2m], ['service detail', cmadaasT2m], ['legacy candidates', '/#/params/0/0/4'], ['mobile list', '/#/?q=cedarkit.t2m&s=gfs']]) {
+    test(`${name} has no serious accessibility violations`, async ({ page }) => {
+      if (name === 'mobile list') await page.setViewportSize({ width: 390, height: 844 })
       await page.goto(route)
-      await expect(page.getByText(/schema v[0-9]+/)).toBeVisible()
-
+      if (name === 'mobile list') await expect(page.locator('.mobile-list')).toBeVisible()
+      else if (name === 'list') await expect(page.getByRole('search')).toBeVisible()
+      else if (name === 'legacy candidates') await expect(page.getByText('historical_only · 仅历史记录').first()).toBeVisible()
+      else await expect(page.getByRole('heading', { name: 'cedarkit.t2m', exact: true })).toBeVisible()
       const results = await new AxeBuilder({ page }).analyze()
-      const blocking = results.violations.filter(({ impact }) =>
-        impact === 'serious' || impact === 'critical',
-      )
-      expect(blocking).toEqual([])
+      expect(results.violations.filter(({ impact }) => impact === 'serious' || impact === 'critical')).toEqual([])
     })
   }
 })

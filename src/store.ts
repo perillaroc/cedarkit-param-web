@@ -33,9 +33,7 @@ export function retryLoad(): void {
   void ensureLoaded(true)
 }
 
-/** 按三元组查找要素 */
-export function findEntry(d: number, c: number, n: number) {
-  return model.value?.entries.find(
-    (e) => e.discipline === d && e.category === c && e.number === n,
-  )
+/** Resolve both IDs inside the selected parameter resource. */
+export function findEntry(resource: string, parameter: string) {
+  return model.value?.entries.find((entry) => entry.resource.id === resource && entry.definition.parameter_id === parameter)
 }

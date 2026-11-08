@@ -12,10 +12,9 @@ onMounted(ensureLoaded)
     <n-layout style="min-height: 100vh">
       <n-layout-header bordered style="padding: 12px 24px">
         <div class="site-header">
-          <span class="site-title">CedarKit GRIB2 要素数据库</span>
+          <span class="site-title">CedarKit 参数浏览器</span>
           <n-text v-if="model" depth="3" class="site-meta">
-            schema v{{ model.meta.schema_version }} · {{ model.meta.stats?.entries ?? model.entries.length }} 条目 ·
-            {{ model.meta.stats?.variants ?? 0 }} 变体
+            schema v4 · {{ model.stableIds }} 个稳定 ID · {{ model.entries.length }} 条资源内定义 · {{ model.mappingCount }} 条映射
           </n-text>
         </div>
       </n-layout-header>
@@ -29,7 +28,28 @@ onMounted(ensureLoaded)
         <div v-else-if="loading || !model" class="loading-wrap">
           <n-spin size="large" />
         </div>
-        <n-message-provider v-else><router-view /></n-message-provider>
+        <template v-else>
+          <n-alert type="info" title="当前审核切片" class="scope-summary">
+            {{ model.manifest.snapshots.length }} 个资源上下文；保留各自定义和产品适用域。审核映射不保证所有时效、成员及质量单元可用。
+            <details class="scope-details">
+              <summary>快照与全局待验范围</summary>
+              <p>{{ model.manifest.id }} · v{{ model.manifest.version }} · 目录 v{{ model.manifest.catalog.version }}</p>
+              <p class="digest">manifest SHA256：{{ model.manifestSha256 }}</p>
+              <ul aria-label="全局义务台账">
+                <li v-for="item in model.manifest.scope.remaining_migration_obligations" :key="item.id">
+                  {{ item.id }}：
+                  <template v-if="item.total">已验 {{ item.accepted }} / {{ item.total }}；</template>
+                  <template v-if="item.remaining !== undefined">余 {{ item.remaining }}；</template>
+                  <template v-if="item.groups">{{ item.groups }}；</template>
+                  <template v-if="item.status">{{ item.task }} {{ item.status }}；</template>
+                  {{ item.note }}
+                </li>
+              </ul>
+              <p>台账在整个快照组内只计一次。</p>
+            </details>
+          </n-alert>
+          <n-message-provider><router-view /></n-message-provider>
+        </template>
       </n-layout-content>
     </n-layout>
   </n-config-provider>
@@ -42,6 +62,10 @@ body { margin: 0; }
 .site-title { font-size: 18px; font-weight: 600; }
 .site-meta { color: #62676d !important; font-size: 12px; white-space: nowrap; }
 .site-content { padding: 16px 24px 32px; max-width: 1200px; margin: 0 auto; }
+.scope-summary { margin-bottom: 20px; }
+.scope-details { margin-top: 8px; }
+.scope-details summary { cursor: pointer; }
+.digest { overflow-wrap: anywhere; font-family: monospace; font-size: 12px; }
 .loading-wrap { display: flex; justify-content: center; padding: 64px; }
 .error-content { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
 @media (max-width: 640px) {

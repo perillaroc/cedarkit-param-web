@@ -1,97 +1,79 @@
-/** params.json 数据契约与展示模型类型。
- *
- * 契约由 cedarkit-param-db 的 export-json 导出（meta.schema_version 协调两边升级），
- * Raw* 接口与契约字段一一对应；Entry/Variant 是 data.ts 装配后的展示模型。
- */
-
-// ---- 契约（params.json 原始结构）----
-
-export interface ParamKey {
-  discipline: number
-  category: number
-  number: number
-}
-
-export interface RawVariant {
+/** schema 4 keeps definitions and mappings inside their resource context. */
+export type Conditions = Record<string, unknown>
+export interface FilePin { path: string; size: number; sha256: string }
+export interface ResourcePin extends FilePin { api_version: string; id: string; version: string; backend?: string }
+export interface Parameter {
   parameter_id: string
   name: string
-  when: Record<string, number | string>
+  parent?: string
   aliases?: string[]
-  typeOfLevel?: string
-  level?: number
   unit?: string
   description?: string
   description_cn?: string
+  fixed_conditions?: Conditions
 }
-
-export interface RawEntry {
+export interface Mapping {
+  id: string
   parameter_id: string
-  key: ParamKey
-  name: string
-  aliases?: string[]
-  external_names?: Record<string, string>
-  wgrib2_name?: string
-  unit?: string
-  description?: string
-  description_cn?: string
-  typeOfLevel?: string
-  level?: number
-  remark?: string
-  updated_at?: string
-  variants?: RawVariant[]
+  backend: string
+  applies_to: Conditions
+  when?: Conditions
+  native: Conditions
+  evidence: string[]
 }
-
+export interface MappingResource {
+  api_version: string; id: string; version: string; backend: string
+  mappings: Mapping[]; tables?: unknown[]
+}
+export interface Obligation {
+  id: string; total?: number; accepted?: number; remaining?: number
+  groups?: Record<string, number>; parts?: Record<string, number>
+  status?: string; task?: string; note: string; evidence?: string[]
+}
+export interface Scope {
+  complete_product_coverage: boolean
+  evidence_status: { definitions: string; mappings: string; availability: string }
+  remaining_migration_obligations: Obligation[]
+}
+export interface SnapshotPin {
+  key: string; path: string; schema_version: number
+  parameter_resource: ResourcePin; mapping_resources: ResourcePin[]; dataset_ids: string[]
+}
+export interface DatasetBinding {
+  dataset_id: string; snapshot: string; parameter_registry: ResourcePin
+  mappings: Record<string, ResourcePin>; products: Array<{ id: string; version: string }>
+}
+export interface Manifest {
+  schema_version: number; id: string; version: string; scope: Scope
+  catalog: ResourcePin; files: FilePin[]; snapshots: SnapshotPin[]; dataset_bindings: DatasetBinding[]
+}
 export interface ParamDoc {
   meta: {
-    schema_version: number
-    generated_by?: string
-    stats?: { entries: number; variants: number; aliases: number }
+    schema_version: number; parameter_resource: Omit<ResourcePin, 'path' | 'size'>
+    scope: Scope & { dataset_ids: string[]; parameter_ids: string[]; requested_parameter_ids: string[]; mapping_resource_ids: string[] }
+    stats: { parameters: number; aliases: number; mappings: number }
   }
-  entries: RawEntry[]
+  parameters: Parameter[]; mapping_resources: MappingResource[]; retired_ids: string[]; notes: unknown[]
 }
-
-// ---- 展示模型 ----
-
-export interface Variant {
-  name: string
-  when: Record<string, number | string>
-  whenText: string
-  aliases: string[]
-  typeOfLevel?: string
-  level?: number
-  unit?: string
-  description?: string
-  descriptionCn?: string
+export interface LegacyCandidate {
+  parameter_id: string; historical_only: boolean
+  current_targets: Array<{ snapshot: string; parameter_resource_id: string; path: string }>
 }
-
+export interface LegacyIndex {
+  schema_version: number
+  scope: { current_support: boolean; purpose: string }
+  links: Array<{ triplet: string; candidates: LegacyCandidate[] }>
+}
+export interface ScopedMapping extends Mapping { resource: ResourcePin; tables: unknown[] }
 export interface Entry {
-  discipline: number
-  category: number
-  number: number
-  /** "d.c.n" 三元组，如 "0.0.0" */
-  triplet: string
-  disciplineLabel: string
-  name: string
-  aliases: string[]
-  cmadaasName?: string
-  wgrib2Name?: string
-  unit?: string
-  description?: string
-  descriptionCn?: string
-  typeOfLevel?: string
-  level?: number
-  remark?: string
-  updatedAt?: string
-  variants: Variant[]
-  /** 列表页过滤用的预拼接小写索引 */
-  searchText: string
+  key: string; snapshot: string; resource: ResourcePin; definition: Parameter
+  /** root first, including the local definition; no cross-resource inheritance */
+  lineage: Parameter[]
+  unit?: string; description?: string; descriptionCn?: string
+  aliases: string[]; fixedConditions: Conditions; mappings: ScopedMapping[]
+  triplets: string[]; datasets: string[]; searchText: string
 }
-
 export interface SiteModel {
-  entries: Entry[]
-  /** 数据中出现的 discipline 值与中文标签，按值排序 */
-  disciplines: Array<{ value: number; label: string }>
-  /** 数据中出现的 discipline/category 组合，按数值排序 */
-  categories: Array<{ discipline: number; value: number; label: string }>
-  meta: ParamDoc['meta']
+  manifest: Manifest; manifestSha256: string; entries: Entry[]; legacy: LegacyIndex
+  stableIds: number; mappingCount: number
 }

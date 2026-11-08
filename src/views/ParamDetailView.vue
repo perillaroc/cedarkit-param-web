@@ -1,176 +1,96 @@
 <script setup lang="ts">
-import { computed, h } from 'vue'
+import { computed } from 'vue'
 import { RouterLink, useRoute } from 'vue-router'
-import { NButton, NDescriptions, NDescriptionsItem, NDataTable, NEmpty, NH2, NH3, NSpace, NTag, NText, useMessage } from 'naive-ui'
-import type { DataTableColumns } from 'naive-ui'
-import { findEntry, model } from '../store'
+import { NAlert, NButton, NDescriptions, NDescriptionsItem, NEmpty, NH2, NH3, NSpace, NTag, useMessage } from 'naive-ui'
+import { findEntry } from '../store'
 import { detailRoute } from '../router'
-import type { Variant } from '../types'
-
-interface DisplayVariant extends Variant {
-  effectiveTypeOfLevel?: string
-  effectiveLevel?: number
-  effectiveUnit?: string
-  effectiveDescription?: string
-  inheritedTypeOfLevel: boolean
-  inheritedUnit: boolean
-  inheritedDescription: boolean
-}
-
+import { pretty } from '../data'
+import { model } from '../store'
 const route = useRoute()
 const message = useMessage()
-const listRoute = computed(() => ({ name: 'list', query: route.query }))
-const entry = computed(() =>
-  findEntry(Number(route.params.d), Number(route.params.c), Number(route.params.n)),
-)
-const entryIndex = computed(() =>
-  entry.value ? (model.value?.entries.indexOf(entry.value) ?? -1) : -1,
-)
-const previousEntry = computed(() =>
-  entryIndex.value > 0 ? model.value?.entries[entryIndex.value - 1] : undefined,
-)
-const nextEntry = computed(() => {
-  const index = entryIndex.value
-  return index >= 0 && index < (model.value?.entries.length ?? 0) - 1
-    ? model.value?.entries[index + 1]
-    : undefined
-})
-
-const displayVariants = computed<DisplayVariant[]>(() => {
-  if (!entry.value) return []
-  return entry.value.variants.map((variant) => ({
-    ...variant,
-    effectiveTypeOfLevel: variant.typeOfLevel ?? entry.value?.typeOfLevel,
-    effectiveLevel: variant.level ?? entry.value?.level,
-    effectiveUnit: variant.unit ?? entry.value?.unit,
-    effectiveDescription:
-      variant.descriptionCn ?? variant.description ?? entry.value?.descriptionCn ?? entry.value?.description,
-    inheritedTypeOfLevel: variant.typeOfLevel === undefined && entry.value?.typeOfLevel !== undefined,
-    inheritedUnit: variant.unit === undefined && entry.value?.unit !== undefined,
-    inheritedDescription:
-      variant.descriptionCn === undefined &&
-      variant.description === undefined &&
-      (entry.value?.descriptionCn !== undefined || entry.value?.description !== undefined),
-  }))
-})
-
-function valueWithInheritance(value: string | number | undefined, inherited: boolean) {
-  if (value === undefined) return ''
-  return inherited
-    ? h('span', [String(value), h(NTag, { size: 'tiny', bordered: false, style: 'margin-left: 6px' }, { default: () => '继承' })])
-    : String(value)
-}
-
-const variantColumns: DataTableColumns<DisplayVariant> = [
-  { title: '变体名', key: 'name', render: (v) => h(NText, { strong: true }, { default: () => v.name }) },
-  { title: 'when 条件', key: 'whenText', render: (v) => h('code', { class: 'when-code' }, v.whenText) },
-  {
-    title: 'typeOfLevel / level',
-    key: 'typeOfLevel',
-    render: (v) => {
-      const text = v.effectiveTypeOfLevel
-        ? `${v.effectiveTypeOfLevel}${v.effectiveLevel !== undefined ? ` / ${v.effectiveLevel}` : ''}`
-        : undefined
-      return valueWithInheritance(text, v.inheritedTypeOfLevel)
-    },
-  },
-  { title: '单位', key: 'unit', width: 110, render: (v) => valueWithInheritance(v.effectiveUnit, v.inheritedUnit) },
-  { title: '描述', key: 'description', render: (v) => valueWithInheritance(v.effectiveDescription, v.inheritedDescription) },
-  { title: '别名', key: 'aliases', render: (v) => v.aliases.join('、') },
-]
-
-async function copy(value: string, label: string) {
+async function copy(value: string) {
   try {
     await navigator.clipboard.writeText(value)
-    message.success(`已复制${label}`)
-  } catch {
-    message.error('复制失败，请手动选择文本')
-  }
+    message.success('已复制')
+  } catch { message.error('复制失败，请手动选择文本') }
 }
+const entry = computed(() => findEntry(String(route.params.resource), String(route.params.parameter)))
+const variants = computed(() => model.value?.entries.filter((e) =>
+  e.resource.id === entry.value?.resource.id && e.definition.parent === entry.value?.definition.parameter_id) ?? [])
+const alternatives = computed(() => model.value?.entries.filter((e) =>
+  e.definition.parameter_id === entry.value?.definition.parameter_id && e.resource.id !== entry.value?.resource.id) ?? [])
+const parentEntry = computed(() => entry.value?.definition.parent ? findEntry(entry.value.resource.id, entry.value.definition.parent) : undefined)
 </script>
 
 <template>
-  <n-empty v-if="!entry" description="未找到该要素" style="margin-top: 64px">
-    <template #extra>
-      <router-link :to="listRoute"><n-button>返回要素总表</n-button></router-link>
-    </template>
-  </n-empty>
-  <n-space v-else vertical size="large">
-    <div class="detail-nav">
-      <router-link :to="listRoute" class="plain-link">← 返回要素总表</router-link>
+  <n-space vertical size="large">
+    <router-link :to="{ name: 'list', query: route.query }">← 返回要素总表</router-link>
+    <n-empty v-if="!entry" description="未找到该资源中的参数定义" />
+    <template v-else>
+      <n-h2 class="detail-title">{{ entry.definition.parameter_id }}</n-h2>
       <n-space>
-        <router-link v-if="previousEntry" :to="detailRoute(previousEntry, route.query)">
-          <n-button size="small">← {{ previousEntry.triplet }}</n-button>
-        </router-link>
-        <router-link v-if="nextEntry" :to="detailRoute(nextEntry, route.query)">
-          <n-button size="small">{{ nextEntry.triplet }} →</n-button>
-        </router-link>
+        <n-tag type="info">{{ entry.snapshot }}</n-tag>
+        <n-button size="small" @click="copy(entry.definition.parameter_id)">复制稳定 ID</n-button>
+        <n-button size="small" @click="copy(entry.definition.name)">复制名称</n-button>
+        <n-tag>{{ entry.mappings.length ? `${entry.mappings.length} 条直接映射` : '无直接映射 · 家族或未直接映射定义' }}</n-tag>
       </n-space>
-    </div>
-
-    <n-h2 class="detail-title">
-      {{ entry.name }}
-      <n-text code class="triplet">{{ entry.triplet }}</n-text>
-      <n-tag type="info" size="small">{{ entry.disciplineLabel }}</n-tag>
-    </n-h2>
-
-    <n-descriptions bordered :column="1" label-placement="left" size="small">
-      <n-descriptions-item label="discipline / category / number">
-        {{ entry.discipline }} / {{ entry.category }} / {{ entry.number }}
-        <n-button class="copy-button" type="primary" secondary size="small" @click="copy(entry.triplet, '三元组')">复制</n-button>
-      </n-descriptions-item>
-      <n-descriptions-item label="name">
-        {{ entry.name }}
-        <n-button class="copy-button" type="primary" secondary size="small" @click="copy(entry.name, '名称')">复制</n-button>
-      </n-descriptions-item>
-      <n-descriptions-item v-if="entry.cmadaasName" label="CMADaaS name">
-        {{ entry.cmadaasName }}
-        <n-button class="copy-button" type="primary" secondary size="small" @click="copy(entry.cmadaasName!, ' CMADaaS 名称')">复制</n-button>
-      </n-descriptions-item>
-      <n-descriptions-item v-if="entry.wgrib2Name" label="wgrib2 name">
-        {{ entry.wgrib2Name }}
-        <n-button class="copy-button" type="primary" secondary size="small" @click="copy(entry.wgrib2Name!, ' wgrib2 名称')">复制</n-button>
-      </n-descriptions-item>
-      <n-descriptions-item v-if="entry.unit" label="单位">{{ entry.unit }}</n-descriptions-item>
-      <n-descriptions-item v-if="entry.typeOfLevel" label="typeOfLevel">{{ entry.typeOfLevel }}</n-descriptions-item>
-      <n-descriptions-item v-if="entry.level !== undefined" label="level">{{ entry.level }}</n-descriptions-item>
-      <n-descriptions-item v-if="entry.description" label="description">{{ entry.description }}</n-descriptions-item>
-      <n-descriptions-item v-if="entry.descriptionCn" label="中文描述">{{ entry.descriptionCn }}</n-descriptions-item>
-      <n-descriptions-item v-if="entry.aliases.length" label="别名">{{ entry.aliases.join('、') }}</n-descriptions-item>
-    </n-descriptions>
-
-    <template v-if="displayVariants.length">
-      <n-h3 class="section-title">条件变体（{{ displayVariants.length }}）</n-h3>
-      <n-data-table
-        :columns="variantColumns"
-        :data="displayVariants"
-        :row-key="(v: DisplayVariant) => v.name"
-        :scroll-x="1050"
-        size="small"
-      />
-      <n-text depth="3" class="hint">“继承”表示该值来自条目级定义。</n-text>
-    </template>
-
-    <template v-if="entry.remark || entry.updatedAt">
-      <n-h3 class="section-title">维护信息</n-h3>
       <n-descriptions bordered :column="1" label-placement="left" size="small">
-        <n-descriptions-item v-if="entry.remark" label="remark">{{ entry.remark }}</n-descriptions-item>
-        <n-descriptions-item v-if="entry.updatedAt" label="updated_at">{{ entry.updatedAt }}</n-descriptions-item>
+        <n-descriptions-item label="参数资源">{{ entry.resource.id }} · v{{ entry.resource.version }}</n-descriptions-item>
+        <n-descriptions-item label="资源 SHA256"><code>{{ entry.resource.sha256 }}</code></n-descriptions-item>
+        <n-descriptions-item label="名称">{{ entry.definition.name }}</n-descriptions-item>
+        <n-descriptions-item label="单位">{{ entry.unit ?? '未声明' }}<span v-if="!entry.definition.unit && entry.unit">（继承父定义）</span></n-descriptions-item>
+        <n-descriptions-item v-if="entry.descriptionCn || entry.description" label="描述">{{ entry.descriptionCn }} {{ entry.description }}</n-descriptions-item>
+        <n-descriptions-item label="别名">{{ entry.aliases.join('、') || '无' }}</n-descriptions-item>
+        <n-descriptions-item v-if="parentEntry" label="父定义">
+          <router-link :to="detailRoute(parentEntry, route.query)">{{ parentEntry.definition.parameter_id }}</router-link>
+        </n-descriptions-item>
+        <n-descriptions-item label="固定条件（含父约束）"><pre>{{ pretty(entry.fixedConditions) }}</pre></n-descriptions-item>
+        <n-descriptions-item label="当前 GRIB 三元组">{{ entry.triplets.join('、') || '无直接 GRIB 映射' }} <n-button v-if="entry.triplets.length" size="small" @click="copy(entry.triplets.join('、'))">复制三元组</n-button></n-descriptions-item>
       </n-descriptions>
+      <details v-if="alternatives.length">
+        <summary>同一稳定 ID 的其他资源定义（{{ alternatives.length }}）</summary>
+        <ul><li v-for="other in alternatives" :key="other.key">
+          <router-link :to="detailRoute(other, route.query)">{{ other.snapshot }} · {{ other.resource.id }}</router-link>
+        </li></ul>
+      </details>
+      <template v-if="variants.length">
+        <n-h3>子定义／变体（{{ variants.length }}）</n-h3>
+        <n-space><router-link v-for="child in variants" :key="child.key" :to="detailRoute(child, route.query)">{{ child.definition.parameter_id }}</router-link></n-space>
+      </template>
+      <details class="definition-records">
+        <summary>原始本地定义与父定义链</summary>
+        <pre>{{ pretty(entry.lineage) }}</pre>
+      </details>
+      <n-h3>产品／来源适用映射（{{ entry.mappings.length }}）</n-h3>
+      <n-alert type="info" title="审核证据与可用性">
+        定义为 reviewed_authoring，映射为 reviewed_mapping_with_references。实际可用性为 not_guaranteed_for_all_cells；
+        映射审核不保证每个时效、成员及质量单元均已通过。
+      </n-alert>
+      <n-empty v-if="!entry.mappings.length" description="本定义没有直接映射，请查看相关子定义" />
+      <article v-for="mapping in entry.mappings" :key="`${mapping.resource.id}/${mapping.id}`" class="mapping-card">
+        <h4>{{ mapping.id }}</h4>
+        <p>{{ mapping.backend }} · {{ mapping.resource.id }} · v{{ mapping.resource.version }}</p>
+        <n-descriptions bordered :column="1" label-placement="left" size="small">
+          <n-descriptions-item label="产品适用域"><pre>{{ pretty(mapping.applies_to) }}</pre></n-descriptions-item>
+          <n-descriptions-item label="映射条件"><pre>{{ pretty(mapping.when ?? {}) }}</pre></n-descriptions-item>
+        </n-descriptions>
+        <details><summary>原生选择与转换规则</summary><pre>{{ pretty(mapping.native) }}</pre></details>
+        <details v-if="mapping.tables.length"><summary>共享转换表（{{ mapping.tables.length }}）</summary><pre>{{ pretty(mapping.tables) }}</pre></details>
+        <details open><summary>审核证据（{{ mapping.evidence.length }}）</summary>
+          <ul class="evidence"><li v-for="reference in mapping.evidence" :key="reference"><code>{{ reference }}</code></li></ul>
+        </details>
+      </article>
     </template>
   </n-space>
 </template>
 
 <style scoped>
-.detail-nav { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
-.plain-link { text-decoration: none; }
-.detail-title, .section-title { margin-bottom: 0; }
-.triplet { font-size: 16px; }
-.copy-button { margin-left: 8px; font-weight: 500; }
-.hint { color: #62676d !important; font-size: 12px; }
-:deep(.when-code) { white-space: normal; overflow-wrap: anywhere; }
-@media (max-width: 640px) {
-  .detail-nav { align-items: flex-start; flex-direction: column; }
-  .detail-title { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
-}
+.detail-title { overflow-wrap: anywhere; margin: 0; }
+pre { margin: 4px 0; white-space: pre-wrap; overflow-wrap: anywhere; }
+code, p, a { overflow-wrap: anywhere; }
+.mapping-card { border: 1px solid #dedede; border-radius: 6px; padding: 16px; }
+h4 { margin: 0 0 8px; overflow-wrap: anywhere; }
+details { margin-top: 10px; }
+summary { cursor: pointer; color: #245c43; }
+.evidence { padding-left: 20px; font-size: 12px; }
 </style>

@@ -1,244 +1,93 @@
 <script setup lang="ts">
 import { computed, h, ref, watch } from 'vue'
 import { RouterLink, useRoute, useRouter } from 'vue-router'
-import { NButton, NCard, NDataTable, NEmpty, NInput, NPagination, NSelect, NSpace, NTag, NText, useMessage } from 'naive-ui'
+import { NButton, NCard, NDataTable, NEmpty, NInput, NPagination, NSelect, NSpace, NTag, NText } from 'naive-ui'
 import type { DataTableColumns } from 'naive-ui'
-import { model, findEntry } from '../store'
+import { model } from '../store'
 import { detailRoute } from '../router'
+import { filterEntries } from '../data'
 import type { Entry } from '../types'
-
-type VariantFilter = 'all' | 'with' | 'without'
 
 const route = useRoute()
 const router = useRouter()
-const message = useMessage()
-
-function queryValue(value: unknown): string {
-  return typeof value === 'string' ? value : ''
-}
-
-function integerValue(value: unknown): number | null {
-  const text = queryValue(value)
-  return /^\d+$/.test(text) ? Number(text) : null
-}
-
-const query = ref(queryValue(route.query.q))
-const discipline = ref<number | null>(integerValue(route.query.d))
-const categoryKey = ref<string | null>(queryValue(route.query.c) || null)
-const variantFilter = ref<VariantFilter>(
-  ['with', 'without'].includes(queryValue(route.query.v)) ? queryValue(route.query.v) as VariantFilter : 'all',
-)
-const page = ref(Math.max(1, integerValue(route.query.page) ?? 1))
-
-const disciplineOptions = computed(() =>
-  (model.value?.disciplines ?? []).map((d) => ({
-    label: `${d.value} — ${d.label}`,
-    value: d.value,
-  })),
-)
-
-const categoryOptions = computed(() =>
-  (model.value?.categories ?? [])
-    .filter((category) => discipline.value === null || category.discipline === discipline.value)
-    .map((category) => ({ label: category.label, value: `${category.discipline}.${category.value}` })),
-)
-
-const variantOptions = [
-  { label: '全部条目', value: 'all' },
-  { label: '有条件变体', value: 'with' },
-  { label: '无条件变体', value: 'without' },
-]
-
-const filtered = computed(() => {
-  const q = query.value.trim().toLowerCase()
-  return (model.value?.entries ?? []).filter((e) => {
-    const hasVariants = e.variants.length > 0
-    return (
-      (discipline.value === null || e.discipline === discipline.value) &&
-      (categoryKey.value === null || `${e.discipline}.${e.category}` === categoryKey.value) &&
-      (variantFilter.value === 'all' || (variantFilter.value === 'with' ? hasVariants : !hasVariants)) &&
-      (!q || e.searchText.includes(q))
-    )
-  })
-})
-
-const columns: DataTableColumns<Entry> = [
-  {
-    title: '编号',
-    key: 'triplet',
-    width: 100,
-    sorter: (a, b) =>
-      a.discipline - b.discipline || a.category - b.category || a.number - b.number,
-    render: (e) =>
-      h(
-        RouterLink,
-        { to: detailRoute(e, route.query), style: 'font-family: monospace' },
-        { default: () => e.triplet },
-      ),
-  },
-  {
-    title: 'name',
-    key: 'name',
-    sorter: (a, b) => a.name.localeCompare(b.name),
-    render: (e) => h(RouterLink, { to: detailRoute(e, route.query) }, { default: () => e.name }),
-  },
-  { title: 'CMADaaS', key: 'cmadaasName', width: 110, render: (e) => e.cmadaasName ?? '' },
-  { title: 'wgrib2', key: 'wgrib2Name', render: (e) => e.wgrib2Name ?? '' },
-  { title: '单位', key: 'unit', width: 80, render: (e) => e.unit ?? '' },
-  {
-    title: '描述',
-    key: 'description',
-    ellipsis: { tooltip: true },
-    render: (e) => e.descriptionCn ?? e.description ?? '',
-  },
-  {
-    title: '变体',
-    key: 'variants',
-    width: 80,
-    align: 'right',
-    sorter: (a, b) => a.variants.length - b.variants.length,
-    render: (e) =>
-      e.variants.length
-        ? h(NTag, { size: 'small', round: true }, { default: () => e.variants.length })
-        : '',
-  },
-]
-
-const pagination = computed(() => ({
-  page: page.value,
-  pageSize: 50,
-  onUpdatePage: (value: number) => { page.value = value },
+const text = (value: unknown) => typeof value === 'string' ? value : ''
+const query = ref(text(route.query.q))
+const snapshot = ref<string | null>(text(route.query.s) || null)
+const dataset = ref<string | null>(text(route.query.dataset) || null)
+const backend = ref<string | null>(text(route.query.backend) || null)
+const mapped = ref(['with', 'without'].includes(text(route.query.m)) ? text(route.query.m) : 'all')
+const page = ref(Math.max(1, Number.parseInt(text(route.query.page), 10) || 1))
+const snapshotOptions = computed(() => model.value?.manifest.snapshots.map((s) => ({ label: s.key, value: s.key })) ?? [])
+const datasetOptions = computed(() => model.value?.manifest.dataset_bindings
+  .filter((b) => !snapshot.value || b.snapshot === snapshot.value).map((b) => ({ label: b.dataset_id, value: b.dataset_id })) ?? [])
+const backendOptions = [{ label: 'GRIB2', value: 'grib2' }, { label: 'CMADaaS', value: 'cmadaas' }]
+const mappedOptions = [{ label: '全部定义', value: 'all' }, { label: '有直接映射', value: 'with' }, { label: '无直接映射', value: 'without' }]
+const filtered = computed(() => filterEntries(model.value?.entries ?? [], {
+  query: query.value, snapshot: snapshot.value, dataset: dataset.value, backend: backend.value, mapped: mapped.value,
 }))
-const mobileEntries = computed(() => filtered.value.slice((page.value - 1) * 50, page.value * 50))
-
-function rowProps(e: Entry) {
-  const open = () => router.push(detailRoute(e, route.query))
-  return {
-    style: 'cursor: pointer',
-    tabindex: 0,
-    onClick: (event: MouseEvent) => {
-      if (!(event.target as HTMLElement).closest('a, button')) void open()
-    },
-    onKeydown: (event: KeyboardEvent) => {
-      if (event.key === 'Enter' || event.key === ' ') {
-        event.preventDefault()
-        void open()
-      }
-    },
-  }
-}
-
+const visible = computed(() => filtered.value.slice((page.value - 1) * 50, page.value * 50))
+const columns: DataTableColumns<Entry> = [
+  { title: '稳定参数 ID', key: 'parameter', width: 265,
+    sorter: (a, b) => a.definition.parameter_id.localeCompare(b.definition.parameter_id),
+    render: (e) => h(RouterLink, { to: detailRoute(e, route.query) }, { default: () => e.definition.parameter_id }) },
+  { title: '资源上下文', key: 'snapshot', width: 110, render: (e) => `${e.snapshot} · v${e.resource.version}` },
+  { title: '名称', key: 'name', width: 110, render: (e) => e.definition.name },
+  { title: '单位', key: 'unit', width: 80, render: (e) => e.unit ?? '—' },
+  { title: '描述', key: 'description', render: (e) => e.descriptionCn ?? e.description ?? '—' },
+  { title: '直接映射', key: 'mappings', width: 100,
+    render: (e) => h(NTag, { size: 'small', type: e.mappings.length ? 'info' : 'default' },
+      { default: () => e.mappings.length ? String(e.mappings.length) : '无直接映射' }) },
+]
 function clearFilters() {
-  query.value = ''
-  discipline.value = null
-  categoryKey.value = null
-  variantFilter.value = 'all'
+  query.value = ''; snapshot.value = null; dataset.value = null; backend.value = null; mapped.value = 'all'
 }
-
-function tryQuickOpen() {
-  const match = query.value.trim().match(/^(\d+)[./,\s]+(\d+)[./,\s]+(\d+)$/)
-  if (!match) return
-  const entry = findEntry(Number(match[1]), Number(match[2]), Number(match[3]))
-  if (entry) void router.push(detailRoute(entry, route.query))
-  else message.warning(`未找到参数 ${match[1]}.${match[2]}.${match[3]}`)
+function quickOpen() {
+  const triplet = query.value.trim().match(/^(\d+)[./,\s]+(\d+)[./,\s]+(\d+)$/)
+  if (triplet) void router.push({ name: 'legacy', params: { d: triplet[1], c: triplet[2], n: triplet[3] }, query: route.query })
 }
-
-watch(discipline, (value) => {
-  if (value !== null && categoryKey.value && !categoryKey.value.startsWith(`${value}.`)) {
-    categoryKey.value = null
-  }
+watch(snapshot, () => {
+  if (dataset.value && !datasetOptions.value.some((option) => option.value === dataset.value)) dataset.value = null
 })
-
-watch([query, discipline, categoryKey, variantFilter], () => { page.value = 1 })
-
-watch(
-  [query, discipline, categoryKey, variantFilter, page],
-  () => {
-    const next = {
-      ...(query.value.trim() ? { q: query.value.trim() } : {}),
-      ...(discipline.value === null ? {} : { d: String(discipline.value) }),
-      ...(categoryKey.value === null ? {} : { c: categoryKey.value }),
-      ...(variantFilter.value === 'all' ? {} : { v: variantFilter.value }),
-      ...(page.value === 1 ? {} : { page: String(page.value) }),
-    }
-    void router.replace({ query: next })
-  },
-)
+watch([query, snapshot, dataset, backend, mapped], () => { page.value = 1 })
+watch(() => filtered.value.length, (length) => { page.value = Math.min(page.value, Math.max(1, Math.ceil(length / 50))) })
+watch([query, snapshot, dataset, backend, mapped, page], () => {
+  void router.replace({ query: {
+    ...(query.value.trim() ? { q: query.value.trim() } : {}), ...(snapshot.value ? { s: snapshot.value } : {}),
+    ...(dataset.value ? { dataset: dataset.value } : {}), ...(backend.value ? { backend: backend.value } : {}),
+    ...(mapped.value !== 'all' ? { m: mapped.value } : {}), ...(page.value > 1 ? { page: String(page.value) } : {}),
+  } })
+})
 </script>
 
 <template>
   <n-space vertical size="medium">
     <div class="filters" role="search" aria-label="参数筛选">
-      <n-input
-        v-model:value="query"
-        type="text"
-        placeholder="搜索名称、描述、单位、层次或输入 0.0.0…"
-        :input-props="{ 'aria-label': '搜索参数' }"
-        clearable
-        autofocus
-        class="search-input"
-        @keyup.enter="tryQuickOpen"
-      />
-      <n-select
-        v-model:value="discipline"
-        :options="disciplineOptions"
-        placeholder="全部 Discipline"
-        :input-props="{ 'aria-label': '按 Discipline 筛选' }"
-        clearable
-        class="filter-select"
-      />
-      <n-select
-        v-model:value="categoryKey"
-        :options="categoryOptions"
-        placeholder="全部 Category"
-        :input-props="{ 'aria-label': '按 Category 筛选' }"
-        clearable
-        class="filter-select"
-      />
-      <n-select
-        v-model:value="variantFilter"
-        :options="variantOptions"
-        :input-props="{ 'aria-label': '按条件变体筛选' }"
-        class="filter-select"
-      />
+      <n-input v-model:value="query" placeholder="搜索稳定 ID、别名、描述、产品或三元组…"
+        :input-props="{ 'aria-label': '搜索参数' }" clearable class="search-input" @keyup.enter="quickOpen" />
+      <n-select v-model:value="snapshot" :options="snapshotOptions" placeholder="全部资源上下文" clearable
+        :input-props="{ 'aria-label': '资源上下文' }" class="filter-select" />
+      <n-select v-model:value="dataset" :options="datasetOptions" placeholder="全部产品数据集" clearable
+        :input-props="{ 'aria-label': '产品数据集' }" class="filter-select" />
+      <n-select v-model:value="backend" :options="backendOptions" placeholder="全部来源" clearable
+        :input-props="{ 'aria-label': '来源' }" class="filter-select" />
+      <n-select v-model:value="mapped" :options="mappedOptions" :input-props="{ 'aria-label': '直接映射状态' }" class="filter-select" />
     </div>
-
     <div class="result-summary">
-      <n-text depth="3" class="result-count">{{ filtered.length }} / {{ model?.entries.length ?? 0 }} 条</n-text>
-      <n-button v-if="query || discipline !== null || categoryKey || variantFilter !== 'all'" text type="primary" @click="clearFilters">
-        清除筛选
-      </n-button>
+      <n-text class="result-count">{{ filtered.length }} / {{ model?.entries.length ?? 0 }} 条资源内定义</n-text>
+      <n-button size="small" @click="clearFilters">清除筛选</n-button>
     </div>
-
-    <n-empty v-if="!filtered.length" description="没有符合条件的参数">
-      <template #extra><n-button @click="clearFilters">清除筛选</n-button></template>
-    </n-empty>
-
-    <n-data-table
-      v-else
-      class="desktop-table"
-      :columns="columns"
-      :data="filtered"
-      :row-key="(e: Entry) => e.triplet"
-      :row-props="rowProps"
-      :pagination="pagination"
-      :scroll-x="900"
-      size="small"
-    />
-
+    <n-empty v-if="!filtered.length" description="未找到匹配的参数定义" />
+    <n-data-table v-else class="desktop-table" :columns="columns" :data="filtered" :row-key="(e: Entry) => e.key"
+      :pagination="{ page, pageSize: 50, onUpdatePage: (value: number) => page = value }" :scroll-x="1050" size="small" />
     <div v-if="filtered.length" class="mobile-list">
-      <router-link v-for="entry in mobileEntries" :key="entry.triplet" :to="detailRoute(entry, route.query)" class="card-link">
+      <router-link v-for="entry in visible" :key="entry.key" :to="detailRoute(entry, route.query)" class="card-link">
         <n-card size="small">
-          <template #header>
-            <span>{{ entry.name }}</span>
-            <n-text code>{{ entry.triplet }}</n-text>
-          </template>
-          <p class="card-description">{{ entry.descriptionCn ?? entry.description ?? '暂无描述' }}</p>
+          <h3 class="card-title">{{ entry.definition.parameter_id }}</h3>
+          <p>{{ entry.descriptionCn ?? entry.description ?? entry.definition.name }}</p>
           <n-space size="small">
-            <n-tag v-if="entry.cmadaasName" size="small" type="success">CMADaaS: {{ entry.cmadaasName }}</n-tag>
-            <n-tag v-if="entry.wgrib2Name" size="small">{{ entry.wgrib2Name }}</n-tag>
+            <n-tag size="small">{{ entry.snapshot }} · v{{ entry.resource.version }}</n-tag>
             <n-tag v-if="entry.unit" size="small">{{ entry.unit }}</n-tag>
-            <n-tag v-if="entry.variants.length" size="small" type="info">{{ entry.variants.length }} 个变体</n-tag>
+            <n-tag size="small">{{ entry.mappings.length }} 条直接映射</n-tag>
           </n-space>
         </n-card>
       </router-link>
@@ -248,23 +97,18 @@ watch(
 </template>
 
 <style scoped>
-.filters { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
-.search-input { width: min(100%, 380px); }
-.filter-select { width: 180px; }
-.result-summary { display: flex; align-items: center; justify-content: space-between; }
-.result-count { color: #62676d !important; }
+.filters { display: flex; flex-wrap: wrap; gap: 10px; }
+.search-input { width: 100%; }
+.filter-select { flex: 1; min-width: 180px; }
+.result-summary { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.result-count { color: #50565c; }
 .mobile-list { display: none; }
-.card-link { color: inherit; text-decoration: none; }
-.card-description { margin: 0 0 10px; color: var(--n-text-color-3); }
+.card-title { margin: 0 0 12px; font-size: 17px; }
+.card-link { color: inherit; text-decoration: none; overflow-wrap: anywhere; }
 @media (max-width: 700px) {
-  .filters { display: grid; grid-template-columns: 1fr 1fr; }
-  .search-input { width: 100%; grid-column: 1 / -1; }
-  .filter-select { width: 100%; }
+  .filters { display: grid; grid-template-columns: 1fr; }
+  .filter-select { min-width: 0; width: 100%; }
   .desktop-table { display: none; }
   .mobile-list { display: grid; gap: 10px; }
-}
-@media (max-width: 420px) {
-  .filters { grid-template-columns: 1fr; }
-  .search-input { grid-column: auto; }
 }
 </style>
