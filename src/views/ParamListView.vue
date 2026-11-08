@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, h, ref, watch } from 'vue'
+import { computed, h, nextTick, ref, watch } from 'vue'
 import { RouterLink, useRoute, useRouter } from 'vue-router'
 import { NButton, NCard, NDataTable, NEmpty, NInput, NPagination, NSelect, NSpace, NTag, NText } from 'naive-ui'
 import type { DataTableColumns } from 'naive-ui'
@@ -17,6 +17,21 @@ const dataset = ref<string | null>(text(route.query.dataset) || null)
 const backend = ref<string | null>(text(route.query.backend) || null)
 const mapped = ref(['with', 'without'].includes(text(route.query.m)) ? text(route.query.m) : 'all')
 const page = ref(Math.max(1, Number.parseInt(text(route.query.page), 10) || 1))
+let applyingRoute = false
+watch(() => route.query, (values) => {
+  const nextQuery = text(values.q)
+  const nextSnapshot = text(values.s) || null
+  const nextDataset = text(values.dataset) || null
+  const nextBackend = text(values.backend) || null
+  const nextMapped = ['with', 'without'].includes(text(values.m)) ? text(values.m) : 'all'
+  const nextPage = Math.max(1, Number.parseInt(text(values.page), 10) || 1)
+  if (query.value.trim() === nextQuery && snapshot.value === nextSnapshot && dataset.value === nextDataset
+    && backend.value === nextBackend && mapped.value === nextMapped && page.value === nextPage) return
+  applyingRoute = true
+  query.value = nextQuery; snapshot.value = nextSnapshot; dataset.value = nextDataset
+  backend.value = nextBackend; mapped.value = nextMapped; page.value = nextPage
+  void nextTick(() => { applyingRoute = false })
+})
 const snapshotOptions = computed(() => model.value?.manifest.snapshots.map((s) => ({ label: s.key, value: s.key })) ?? [])
 const datasetOptions = computed(() => model.value?.manifest.dataset_bindings
   .filter((b) => !snapshot.value || b.snapshot === snapshot.value).map((b) => ({ label: b.dataset_id, value: b.dataset_id })) ?? [])
@@ -46,11 +61,13 @@ function quickOpen() {
   if (triplet) void router.push({ name: 'legacy', params: { d: triplet[1], c: triplet[2], n: triplet[3] }, query: route.query })
 }
 watch(snapshot, () => {
+  if (applyingRoute) return
   if (dataset.value && !datasetOptions.value.some((option) => option.value === dataset.value)) dataset.value = null
 })
-watch([query, snapshot, dataset, backend, mapped], () => { page.value = 1 })
+watch([query, snapshot, dataset, backend, mapped], () => { if (!applyingRoute) page.value = 1 })
 watch(() => filtered.value.length, (length) => { page.value = Math.min(page.value, Math.max(1, Math.ceil(length / 50))) })
 watch([query, snapshot, dataset, backend, mapped, page], () => {
+  if (applyingRoute) return
   void router.replace({ query: {
     ...(query.value.trim() ? { q: query.value.trim() } : {}), ...(snapshot.value ? { s: snapshot.value } : {}),
     ...(dataset.value ? { dataset: dataset.value } : {}), ...(backend.value ? { backend: backend.value } : {}),

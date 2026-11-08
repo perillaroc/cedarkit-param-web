@@ -702,6 +702,11 @@
               "snapshot": "gfs"
             },
             {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-1km.current",
+              "path": "browser/meso1/params.json",
+              "snapshot": "meso1"
+            },
+            {
               "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
               "path": "browser/meso3/params.json",
               "snapshot": "meso3"
@@ -731,6 +736,11 @@
               "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
               "path": "browser/gfs/params.json",
               "snapshot": "gfs"
+            },
+            {
+              "parameter_resource_id": "cedarkit.parameters.cma-meso-1km.current",
+              "path": "browser/meso1/params.json",
+              "snapshot": "meso1"
             },
             {
               "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",

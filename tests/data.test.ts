@@ -40,13 +40,28 @@ afterEach(() => vi.unstubAllGlobals())
 
 describe('accepted schema 4 group', () => {
   it('keeps all seven resource contexts, exact runtime pins and bounded global obligations', () => {
-    expect(model.entries).toHaveLength(537)
+    expect(model.entries).toHaveLength(539)
     expect(model.stableIds).toBe(163)
-    expect(model.mappingCount).toBe(1295)
+    expect(model.mappingCount).toBe(1297)
     expect(model.manifest.dataset_bindings).toHaveLength(18)
-    expect(new Set(model.entries.map((e) => e.key)).size).toBe(537)
+    expect(new Set(model.entries.map((e) => e.key)).size).toBe(539)
     expect(model.manifest.scope.remaining_migration_obligations.find((o) => o.id === 'service-history')?.remaining).toBe(484)
     expect(model.manifest.scope.remaining_migration_obligations.find((o) => o.id === 'service-quality')?.remaining).toBe(485)
+  })
+  it('preserves the reviewed MESO-1KM PWAT scope, units, evidence and legacy targets', () => {
+    const pwat = get('meso1', 'cedarkit.pwat')
+    expect(pwat.unit).toBe('kg/m2')
+    expect(pwat.lineage.map((p) => p.parameter_id)).toEqual(['cedarkit.pwat.any', 'cedarkit.pwat'])
+    expect(pwat.fixedConditions).toEqual({ level_type: 'entire_atmosphere' })
+    expect(pwat.mappings.map((m) => m.id).sort()).toEqual(['pwat.instantaneous.forecast', 'pwat.instantaneous.initial'])
+    expect(pwat.mappings.every((m) => m.applies_to.dataset === 'cma_meso_1km' && m.applies_to.time === '2026-11-02T12:00:00Z')).toBe(true)
+    expect(pwat.mappings.some((m) => m.evidence.some((e) => e.includes('task-n04a')))).toBe(true)
+    const mappingResource = model.manifest.snapshots.find((s) => s.key === 'meso1')!
+    expect(mappingResource.parameter_resource.version).toBe('9')
+    expect(mappingResource.mapping_resources[0].version).toBe('12')
+    const legacy = legacyCandidates(model, '0.1.3').find((c) => c.parameter_id === 'cedarkit.pwat')!
+    expect(legacy.current_targets.some((t) => t.snapshot === 'meso1')).toBe(true)
+    expect(model.manifest.scope.remaining_migration_obligations.find((o) => o.id === 'native-definition-gaps')?.groups).toEqual({ '06J': 95, '06K': 48 })
   })
   it('inherits only within one resource while retaining original local definitions and parent constraints', () => {
     const t2m = get('gfs', 'cedarkit.t2m')
@@ -132,7 +147,7 @@ describe('byte-verified group loading', () => {
   it('loads the exact frozen manifest and every member from the manifest directory', async () => {
     const mock = mockFetch()
     const loaded = await loadModel('/reviewed/manifest.json')
-    expect(loaded.entries).toHaveLength(537)
+    expect(loaded.entries).toHaveLength(539)
     expect(loaded.manifestSha256).toBe(accepted.sha256)
     expect(mock).toHaveBeenCalledTimes(24)
     expect(mock).toHaveBeenCalledWith('/reviewed/resources/current-gfs-parameters.json')
@@ -144,7 +159,7 @@ describe('byte-verified group loading', () => {
   })
   it('rejects incompatible manifest format and group version', async () => {
     await expect(changedManifest((m) => m.schema_version = 2)).rejects.toThrow(/schema_version/)
-    await expect(changedManifest((m) => m.version = '2')).rejects.toThrow(/内容版本/)
+    await expect(changedManifest((m) => m.version = '999')).rejects.toThrow(/内容版本/)
   })
   it('rejects path traversal and duplicate group members', async () => {
     await expect(changedManifest((m) => m.files[0].path = '../params.json')).rejects.toThrow(/组内路径/)

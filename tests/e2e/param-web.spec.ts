@@ -11,10 +11,10 @@ test.describe('schema 4 parameter discovery', () => {
     const errors: string[] = []
     page.on('pageerror', (error) => errors.push(error.message))
     await page.goto('/')
-    await expect(page.getByText('537 / 537 条资源内定义')).toBeVisible()
-    await expect(page.getByText(/schema v4 · 163 个稳定 ID · 537 条资源内定义 · 1295 条映射/)).toBeVisible()
+    await expect(page.getByText('539 / 539 条资源内定义')).toBeVisible()
+    await expect(page.getByText(/schema v4 · 163 个稳定 ID · 539 条资源内定义 · 1297 条映射/)).toBeVisible()
     await page.getByRole('textbox', { name: '搜索参数' }).fill('cedarkit.t2m')
-    await expect(page.getByText('7 / 537 条资源内定义')).toBeVisible()
+    await expect(page.getByText('7 / 539 条资源内定义')).toBeVisible()
     await expect(page).toHaveURL(/q=cedarkit.t2m/)
     await expect(page.locator('.desktop-table').getByRole('link', { name: 'cedarkit.t2m', exact: true })).toHaveCount(7)
     expect(errors).toEqual([])
@@ -22,15 +22,15 @@ test.describe('schema 4 parameter discovery', () => {
 
   test('filters the product scope and preserves URL state after visiting a detail', async ({ page }) => {
     await page.goto('/#/?q=cedarkit.t2m&s=gfs&dataset=cma_gfs_gmf&backend=grib2')
-    await expect(page.getByText('1 / 537 条资源内定义')).toBeVisible()
+    await expect(page.getByText('1 / 539 条资源内定义')).toBeVisible()
     await page.locator('.desktop-table').getByRole('link', { name: 'cedarkit.t2m', exact: true }).click()
     await expect(page.getByRole('heading', { name: 'cedarkit.t2m', exact: true })).toBeVisible()
     await expect(page.getByText('cma_gfs_gmf', { exact: false }).first()).toBeVisible()
     await page.getByRole('link', { name: /返回要素总表/ }).click()
-    await expect(page.getByText('1 / 537 条资源内定义')).toBeVisible()
+    await expect(page.getByText('1 / 539 条资源内定义')).toBeVisible()
     await expect(page).toHaveURL(/dataset=cma_gfs_gmf/)
     await page.getByRole('button', { name: '清除筛选' }).click()
-    await expect(page.getByText('537 / 537 条资源内定义')).toBeVisible()
+    await expect(page.getByText('539 / 539 条资源内定义')).toBeVisible()
   })
 
   test('changes the resource and mapping filters through the controls', async ({ page }) => {
@@ -38,7 +38,7 @@ test.describe('schema 4 parameter discovery', () => {
     await expect(page.getByRole('search')).toBeVisible()
     await page.locator('.filter-select').nth(0).click()
     await page.getByText('gfs', { exact: true }).click()
-    await expect(page.getByText('119 / 537 条资源内定义')).toBeVisible()
+    await expect(page.getByText('119 / 539 条资源内定义')).toBeVisible()
     await page.locator('.filter-select').nth(3).click()
     await page.getByText('无直接映射', { exact: true }).last().click()
     await expect(page).toHaveURL(/m=without/)
@@ -59,6 +59,30 @@ test.describe('schema 4 parameter discovery', () => {
     await expect(page).toHaveURL(/cedarkit.parameters.cma-gfs.current\/cedarkit.t$/)
   })
 
+  test('discovers MESO-1KM PWAT with exact reviewed scope and its old triplet link', async ({ page }) => {
+    await page.goto('/#/?q=cedarkit.pwat&s=meso1')
+    await expect(page.getByText('2 / 539 条资源内定义')).toBeVisible()
+    await page.locator('.desktop-table').getByRole('link', { name: 'cedarkit.pwat', exact: true }).click()
+    await expect(page.getByRole('heading', { name: 'cedarkit.pwat', exact: true })).toBeVisible()
+    await expect(page.getByText('kg/m2（继承父定义）')).toBeVisible()
+    await expect(page.getByText(/"level_type": "entire_atmosphere"/).first()).toBeVisible()
+    await expect(page.locator('.mapping-card')).toHaveCount(2)
+    await expect(page.locator('.mapping-card').filter({ hasText: 'pwat.instantaneous.initial' })).toContainText('PT0H')
+    await expect(page.locator('.mapping-card').filter({ hasText: 'pwat.instantaneous.forecast' })).toContainText('PT48H')
+    await expect(page.locator('.mapping-card').first()).toContainText('2026-11-02T12:00:00Z')
+    await expect(page.locator('.evidence').filter({ hasText: 'task-n04a' }).first()).toBeVisible()
+    const dir = process.env.N03B_SCREENSHOT_DIR
+    if (dir) {
+      mkdirSync(dir, { recursive: true })
+      await page.screenshot({ path: resolve(dir, 'detail-meso1-pwat.png'), fullPage: true })
+    }
+    await page.goto('/#/params/0/1/3')
+    const candidate = page.locator('.n-card').filter({ has: page.getByRole('heading', { name: 'cedarkit.pwat', exact: true }) })
+    await candidate.getByRole('link', { name: /^meso1 ·/ }).click()
+    await expect(page).toHaveURL(/parameters\/cedarkit.parameters.cma-meso-1km.current\/cedarkit.pwat$/)
+    await expect(page.getByRole('heading', { name: 'cedarkit.pwat', exact: true })).toBeVisible()
+  })
+
   test('keeps unmapped families visible without claiming direct mappings', async ({ page }) => {
     await page.goto('/#/?s=gfs&m=without')
     const link = page.locator('.desktop-table').getByRole('link', { name: 'cedarkit.albedo.any', exact: true })
@@ -66,6 +90,26 @@ test.describe('schema 4 parameter discovery', () => {
     await link.click()
     await expect(page.getByText('无直接映射 · 家族或未直接映射定义')).toBeVisible()
     await expect(page.getByText('本定义没有直接映射，请查看相关子定义')).toBeVisible()
+  })
+
+  test('synchronizes same-page URL filters and pagination through browser history', async ({ page }) => {
+    await page.goto('/')
+    await expect(page.getByText('539 / 539 条资源内定义')).toBeVisible()
+    await page.evaluate(() => { window.location.hash = '/?q=cedarkit.pwat&s=meso1' })
+    await expect(page.getByText('2 / 539 条资源内定义')).toBeVisible()
+    await expect(page.getByRole('textbox', { name: '搜索参数' })).toHaveValue('cedarkit.pwat')
+    await page.evaluate(() => { window.location.hash = '/?s=gfs&page=2' })
+    await expect(page.getByText('119 / 539 条资源内定义')).toBeVisible()
+    await expect(page.locator('.desktop-table .n-pagination-item--active')).toHaveText('2')
+    await page.goBack()
+    await expect(page.getByText('2 / 539 条资源内定义')).toBeVisible()
+    await page.goForward()
+    await expect(page.getByText('119 / 539 条资源内定义')).toBeVisible()
+    await expect(page.locator('.desktop-table .n-pagination-item--active')).toHaveText('2')
+    const search = page.getByRole('textbox', { name: '搜索参数' })
+    await search.fill('temperature ')
+    await expect(page).toHaveURL(/q=temperature/)
+    await expect(search).toHaveValue('temperature ')
   })
 
   test('uses a candidate page for old triplets and Enter navigation', async ({ page }) => {
@@ -99,6 +143,8 @@ test.describe('schema 4 parameter discovery', () => {
     await expect(ledger.getByRole('listitem')).toHaveCount(5)
     await expect(ledger).toContainText('已验 529 / 1013；余 484')
     await expect(ledger).toContainText('余 485')
+    await expect(ledger).toContainText('"06J": 95')
+    await expect(ledger).toContainText('"06K": 48')
     await expect(ledger).toContainText('N27 deferred')
   })
 
@@ -122,7 +168,7 @@ test.describe('schema 4 parameter discovery', () => {
     await expect(page.getByText(/HTTP 503/)).toBeVisible()
     fail = false
     await page.getByRole('button', { name: '重试' }).click()
-    await expect(page.getByText('537 / 537 条资源内定义')).toBeVisible()
+    await expect(page.getByText('539 / 539 条资源内定义')).toBeVisible()
   })
 
   test('rejects a modified manifest before exposing registry data', async ({ page }) => {
@@ -144,7 +190,7 @@ test.describe('schema 4 parameter discovery', () => {
     if (dir) mkdirSync(dir, { recursive: true })
     const screenshot = (name: string) => page.screenshot({ path: dir ? resolve(dir, name) : testInfo.outputPath(name), fullPage: true })
     await page.goto('/#/?q=cedarkit.t2m')
-    await expect(page.getByText('7 / 537 条资源内定义')).toBeVisible()
+    await expect(page.getByText('7 / 539 条资源内定义')).toBeVisible()
     await screenshot('list.png')
     await page.goto(gfsT2m)
     await expect(page.locator('.mapping-card').first()).toBeVisible()
