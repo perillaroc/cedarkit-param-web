@@ -40,12 +40,12 @@ afterEach(() => vi.unstubAllGlobals())
 
 describe('accepted schema 4 group', () => {
   it('keeps all seven resource contexts, exact runtime pins and bounded global obligations', () => {
-    expect(model.entries).toHaveLength(539)
+    expect(model.entries).toHaveLength(540)
     expect(model.stableIds).toBe(163)
-    expect(model.mappingCount).toBe(1297)
+    expect(model.mappingCount).toBe(1299)
     expect(model.manifest.dataset_bindings).toHaveLength(18)
-    expect(new Set(model.entries.map((e) => e.key)).size).toBe(539)
-    expect(model.manifest.scope.remaining_migration_obligations.find((o) => o.id === 'service-history')?.remaining).toBe(484)
+    expect(new Set(model.entries.map((e) => e.key)).size).toBe(540)
+    expect(model.manifest.scope.remaining_migration_obligations.find((o) => o.id === 'service-history')?.remaining).toBe(482)
     expect(model.manifest.scope.remaining_migration_obligations.find((o) => o.id === 'service-quality')?.remaining).toBe(485)
   })
   it('preserves the reviewed MESO-1KM PWAT scope, units, evidence and legacy targets', () => {
@@ -62,6 +62,19 @@ describe('accepted schema 4 group', () => {
     const legacy = legacyCandidates(model, '0.1.3').find((c) => c.parameter_id === 'cedarkit.pwat')!
     expect(legacy.current_targets.some((t) => t.snapshot === 'meso1')).toBe(true)
     expect(model.manifest.scope.remaining_migration_obligations.find((o) => o.id === 'native-definition-gaps')?.groups).toEqual({ '06J': 95, '06K': 48 })
+  })
+  it('preserves the bounded GFS service NLHF energy definition and its independent resource scope', () => {
+    const service = get('cmadaas', 'cedarkit.slhf')
+    const native = get('gfs', 'cedarkit.slhf')
+    expect(service.key).not.toBe(native.key)
+    expect(service.unit).toBe('J/m2')
+    expect(service.fixedConditions).toEqual({ level_type: 'surface', statistics: { operation: 'accumulation', over: 'time', period: { kind: 'since_initialization' } } })
+    expect(service.mappings.map((m) => m.id).sort()).toEqual(['S-gfs-ana.slhf.energy.since-initialization', 'S-gfs-fcst.slhf.energy.since-initialization'])
+    expect(service.mappings.every((m) => m.when?.time === '2026-11-02T12:00:00Z')).toBe(true)
+    expect(service.mappings.find((m) => m.applies_to.product === 'analysis')?.when?.step).toEqual(['PT0H'])
+    expect(service.mappings.find((m) => m.applies_to.product === 'forecast')?.when?.step).toEqual(['PT3H', 'PT6H', 'PT48H'])
+    expect(service.mappings.every((m) => m.evidence.some((e) => e.includes('task-n06-01/results/scientific.json')))).toBe(true)
+    expect(legacyCandidates(model, '0.0.10').find((c) => c.parameter_id === 'cedarkit.slhf')?.current_targets.some((t) => t.snapshot === 'cmadaas')).toBe(true)
   })
   it('inherits only within one resource while retaining original local definitions and parent constraints', () => {
     const t2m = get('gfs', 'cedarkit.t2m')
@@ -147,7 +160,7 @@ describe('byte-verified group loading', () => {
   it('loads the exact frozen manifest and every member from the manifest directory', async () => {
     const mock = mockFetch()
     const loaded = await loadModel('/reviewed/manifest.json')
-    expect(loaded.entries).toHaveLength(539)
+    expect(loaded.entries).toHaveLength(540)
     expect(loaded.manifestSha256).toBe(accepted.sha256)
     expect(mock).toHaveBeenCalledTimes(24)
     expect(mock).toHaveBeenCalledWith('/reviewed/resources/current-gfs-parameters.json')

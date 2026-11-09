@@ -7380,6 +7380,58 @@
           },
           "backend": "cmadaas",
           "evidence": [
+            "I01/coverage-draft.json#S-gfs-ana-row-102",
+            "stage1.2/task-06i",
+            "stage1.2/task-n06-01/originals/manifest.json",
+            "stage1.2/task-n06-01/results/scientific.json"
+          ],
+          "id": "S-gfs-ana.slhf.energy.since-initialization",
+          "native": {
+            "match": {
+              "fcstEle": "NLHF",
+              "maxLat": 41,
+              "maxLon": 117,
+              "minLat": 39,
+              "minLon": 115
+            },
+            "translate": {
+              "statistics": {
+                "rule": "cmadaas.statistics_fields"
+              },
+              "time": {
+                "rule": "cmadaas.time_fields"
+              },
+              "unit": {
+                "config": {
+                  "source_unit": "J/m2"
+                },
+                "rule": "common.value_unit"
+              },
+              "vertical": {
+                "config": {
+                  "table": "cmadaas.levels"
+                },
+                "rule": "cmadaas.vertical_table"
+              }
+            }
+          },
+          "parameter_id": "cedarkit.slhf",
+          "when": {
+            "level_type": "surface",
+            "step": [
+              "PT0H"
+            ],
+            "time": "2026-11-02T12:00:00Z"
+          }
+        },
+        {
+          "applies_to": {
+            "dataset": "cma_gfs_gmf_analysis_cmadaas",
+            "product": "analysis",
+            "product_version": "service-20261105"
+          },
+          "backend": "cmadaas",
+          "evidence": [
             "I01/coverage-draft.json#S-gfs-ana-row-5",
             "stage1.2/task-07b/accepted-samples;live-response-and-original-GRIB-comparison"
           ],
@@ -15708,6 +15760,60 @@
             "level_type": "surface",
             "step": "PT24H",
             "time": "2026-08-30T00:00:00Z"
+          }
+        },
+        {
+          "applies_to": {
+            "dataset": "cma_gfs_gmf_cmadaas",
+            "product": "forecast",
+            "product_version": "service-20261105"
+          },
+          "backend": "cmadaas",
+          "evidence": [
+            "I01/coverage-draft.json#S-gfs-fcst-row-98",
+            "stage1.2/task-06i",
+            "stage1.2/task-n06-01/originals/manifest.json",
+            "stage1.2/task-n06-01/results/scientific.json"
+          ],
+          "id": "S-gfs-fcst.slhf.energy.since-initialization",
+          "native": {
+            "match": {
+              "fcstEle": "NLHF",
+              "maxLat": 41,
+              "maxLon": 117,
+              "minLat": 39,
+              "minLon": 115
+            },
+            "translate": {
+              "statistics": {
+                "rule": "cmadaas.statistics_fields"
+              },
+              "time": {
+                "rule": "cmadaas.time_fields"
+              },
+              "unit": {
+                "config": {
+                  "source_unit": "J/m2"
+                },
+                "rule": "common.value_unit"
+              },
+              "vertical": {
+                "config": {
+                  "table": "cmadaas.levels"
+                },
+                "rule": "cmadaas.vertical_table"
+              }
+            }
+          },
+          "parameter_id": "cedarkit.slhf",
+          "when": {
+            "level_type": "surface",
+            "step": [
+              "PT3H",
+              "PT6H",
+              "PT48H"
+            ],
+            "time": "2026-11-02T12:00:00Z"
           }
         },
         {
@@ -55458,7 +55564,7 @@
           ]
         }
       ],
-      "version": "8"
+      "version": "9"
     }
   ],
   "meta": {
@@ -55466,8 +55572,8 @@
     "parameter_resource": {
       "api_version": "cedarkit.parameters/v1",
       "id": "cedarkit.parameters.cmadaas",
-      "sha256": "059083f3cd698eb71c17dbd877486758d75d2aa21b0bc6bac28fd0c2d757948e",
-      "version": "6"
+      "sha256": "5c8ee3b97ab91b16636d8be67e81f33788b0ffc638f693c10c6bd4c3ca81271b",
+      "version": "7"
     },
     "schema_version": 4,
     "scope": {
@@ -55573,6 +55679,7 @@
         "cedarkit.sf.since-initialization",
         "cedarkit.si",
         "cedarkit.si.any",
+        "cedarkit.slhf",
         "cedarkit.sweatidx",
         "cedarkit.sweatidx.any",
         "cedarkit.t",
@@ -55602,14 +55709,15 @@
       ],
       "remaining_migration_obligations": [
         {
-          "accepted": 529,
+          "accepted": 531,
           "evidence": [
             "doc/2026-11-04-stage1.2-query-reki/task-01-coverage.md",
-            "stage1.2/task-07e6/coverage.json"
+            "stage1.2/task-07e6/coverage.json",
+            "stage1.2/task-n06-01/coverage.json"
           ],
           "id": "service-history",
           "note": "Historical service rows, not the number of mappings or expected-domain cells",
-          "remaining": 484,
+          "remaining": 482,
           "total": 1013
         },
         {
@@ -55700,6 +55808,7 @@
         "cedarkit.sf.6h",
         "cedarkit.sf.since-initialization",
         "cedarkit.si",
+        "cedarkit.slhf",
         "cedarkit.sweatidx",
         "cedarkit.t",
         "cedarkit.t2m",
@@ -55724,8 +55833,8 @@
     },
     "stats": {
       "aliases": 18,
-      "mappings": 528,
-      "parameters": 101
+      "mappings": 530,
+      "parameters": 102
     }
   },
   "notes": [],
@@ -56689,6 +56798,23 @@
       "name": "si",
       "parameter_id": "cedarkit.si.any",
       "unit": "K"
+    },
+    {
+      "description": "Surface latent heat accumulated since initialization",
+      "description_cn": "地表潜热从起报累计",
+      "fixed_conditions": {
+        "level_type": "surface",
+        "statistics": {
+          "operation": "accumulation",
+          "over": "time",
+          "period": {
+            "kind": "since_initialization"
+          }
+        }
+      },
+      "name": "slhf",
+      "parameter_id": "cedarkit.slhf",
+      "unit": "J/m2"
     },
     {
       "aliases": [

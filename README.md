@@ -23,16 +23,16 @@ npm run test:e2e
 
 ## 冻结的 schema 4 快照
 
-当前消费 `public/reviewed/manifest.json`，组为 `cedarkit.browser.reviewed-current` v2。
-manifest 格式为 1，七份浏览器文档格式为 4，目录内容为 v41；这些版本分别管理。
+当前消费 `public/reviewed/manifest.json`，组为 `cedarkit.browser.reviewed-current` v3。
+manifest 格式为 1，七份浏览器文档格式为 4，目录内容为 v42；这些版本分别管理。
 精确 manifest SHA256 固定在 `src/bundle-pin.json`。
 
-输入来自 `cedarkit-param-db` 的审核文本作者导出。N04B-01 冻结的 revision 2 导出组由以下命令
+输入来自 `cedarkit-param-db` 的审核文本作者导出。N06-01 冻结的 revision 3 导出组由以下命令
 原字节安装到一个新目录，没有手工修改生成 JSON：
 
 ```sh
 node tools/browser-bundle.mjs \
-  ../../doc/2026-11-04-stage1.2-query-reki/evidence/task-n04b-01/browser-candidate-a
+  ../../doc/2026-11-04-stage1.2-query-reki/evidence/task-n06-01/browser-candidate
 ```
 
 安装目录必须不存在；同一 revision 不覆盖。已有安装可用以下命令复核：
@@ -54,7 +54,7 @@ npm run verify:bundle
 
 ## 浏览和导航
 
-- 列表保留 539 条资源内定义，涉及 163 个稳定 ID、1297 条映射。相同稳定 ID 在不同
+- 列表保留 540 条资源内定义，涉及 163 个稳定 ID、1299 条映射。相同稳定 ID 在不同
   资源中的定义分别显示，避免覆盖差异；119 个稳定 ID 有直接映射。
 - 搜索稳定 ID、名称／别名、中英文描述、单位、父定义、科学条件、适用产品、
   原生字段、证据引用和 GRIB 三元组。可按资源、dataset、backend 和直接映射状态筛选。
@@ -105,3 +105,10 @@ N10G 已验该历史 schema 3 组合。N10I-01 的直接回退目标为上述 re
 ## 协议
 
 Apache License 2.0，见 [LICENSE](LICENSE)。
+
+
+## GFS NLHF revision 3 与组合恢复
+
+N06-01 作者组新增天擎 `cedarkit.slhf` 定义及两个 GFS 产品映射，规范单位为 `J/m2`、地表、从起报累计。已审核范围仅为 2026-11-02 12 UTC、分析 0h／预报 3、6、48h、39–41N／115–117E。服务原头 `W.m-2` 的解释依据保留在同产品原始 GRIB／实际响应对照中，数值不除时长或改符号，其他周期／时效不自动成为已验范围。catalog42、天擎参数7／映射9的作用域保持独立，旧三元组 `0.0.10` 仍通过候选页选择资源。
+
+全局历史行 1013 中已验531、余482，本批浏览器验收不重复扣减其中两行；N06余114、质量485、本地95／集合48组及N27暂缓保留。N10I-02 的精确七包、NuWe service extra、browser3／运行资源联合验收及恢复记录见 `doc/2026-11-04-stage1.2-query-reki/evidence/task-n10i-02/README.md`。直接旧组为原N10H七包＋同service extra＋browser2／catalog41；恢复须同时选择旧代码pin、完整快照及运行包和资源。原N10I-01六包／browser2联合证据及更早历史恢复目标继续保留，不能只换manifest或单个JSON。

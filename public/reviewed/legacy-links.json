@@ -362,6 +362,11 @@
         {
           "current_targets": [
             {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            },
+            {
               "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
               "path": "browser/gfs/params.json",
               "snapshot": "gfs"
