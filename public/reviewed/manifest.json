@@ -5,9 +5,9 @@
     "id": "reki.cemc-catalog",
     "owner": "reki",
     "path": "catalog-v1.json",
-    "sha256": "128395bec252def82221ca34bc52fac600097542a85908a8014cb98dcaf5bc11",
-    "size": 1165978,
-    "version": "42"
+    "sha256": "5e306304e26ca58d190d37877fe4a545b5bb91f5279b0f9e95f72b2630e08b6d",
+    "size": 1169158,
+    "version": "43"
   },
   "dataset_bindings": [
     {
@@ -47,18 +47,18 @@
           "backend": "cmadaas",
           "id": "cedarkit.mappings.cmadaas",
           "path": "resources/current-cmadaas-mappings.json",
-          "sha256": "87aa357c3496933d9d7e72c0da16d8ae2e7af8a4a0352c37df72fe48e7a84eb1",
-          "size": 1235934,
-          "version": "9"
+          "sha256": "40a903198c0e01fc2b1b3df89a25000457b7856e7c709a9861661e0ebd41a758",
+          "size": 1241962,
+          "version": "10"
         }
       },
       "parameter_registry": {
         "api_version": "cedarkit.parameters/v1",
         "id": "cedarkit.parameters.cmadaas",
         "path": "resources/current-cmadaas-parameters.json",
-        "sha256": "5c8ee3b97ab91b16636d8be67e81f33788b0ffc638f693c10c6bd4c3ca81271b",
-        "size": 30747,
-        "version": "7"
+        "sha256": "8e4f49624ac9822ca328264cca9e23a9f3cd4ab5c4dba482d95492a4d04b4a14",
+        "size": 31731,
+        "version": "8"
       },
       "products": [
         {
@@ -76,18 +76,18 @@
           "backend": "cmadaas",
           "id": "cedarkit.mappings.cmadaas",
           "path": "resources/current-cmadaas-mappings.json",
-          "sha256": "87aa357c3496933d9d7e72c0da16d8ae2e7af8a4a0352c37df72fe48e7a84eb1",
-          "size": 1235934,
-          "version": "9"
+          "sha256": "40a903198c0e01fc2b1b3df89a25000457b7856e7c709a9861661e0ebd41a758",
+          "size": 1241962,
+          "version": "10"
         }
       },
       "parameter_registry": {
         "api_version": "cedarkit.parameters/v1",
         "id": "cedarkit.parameters.cmadaas",
         "path": "resources/current-cmadaas-parameters.json",
-        "sha256": "5c8ee3b97ab91b16636d8be67e81f33788b0ffc638f693c10c6bd4c3ca81271b",
-        "size": 30747,
-        "version": "7"
+        "sha256": "8e4f49624ac9822ca328264cca9e23a9f3cd4ab5c4dba482d95492a4d04b4a14",
+        "size": 31731,
+        "version": "8"
       },
       "products": [
         {
@@ -134,18 +134,18 @@
           "backend": "cmadaas",
           "id": "cedarkit.mappings.cmadaas",
           "path": "resources/current-cmadaas-mappings.json",
-          "sha256": "87aa357c3496933d9d7e72c0da16d8ae2e7af8a4a0352c37df72fe48e7a84eb1",
-          "size": 1235934,
-          "version": "9"
+          "sha256": "40a903198c0e01fc2b1b3df89a25000457b7856e7c709a9861661e0ebd41a758",
+          "size": 1241962,
+          "version": "10"
         }
       },
       "parameter_registry": {
         "api_version": "cedarkit.parameters/v1",
         "id": "cedarkit.parameters.cmadaas",
         "path": "resources/current-cmadaas-parameters.json",
-        "sha256": "5c8ee3b97ab91b16636d8be67e81f33788b0ffc638f693c10c6bd4c3ca81271b",
-        "size": 30747,
-        "version": "7"
+        "sha256": "8e4f49624ac9822ca328264cca9e23a9f3cd4ab5c4dba482d95492a4d04b4a14",
+        "size": 31731,
+        "version": "8"
       },
       "products": [
         {
@@ -163,18 +163,18 @@
           "backend": "cmadaas",
           "id": "cedarkit.mappings.cmadaas",
           "path": "resources/current-cmadaas-mappings.json",
-          "sha256": "87aa357c3496933d9d7e72c0da16d8ae2e7af8a4a0352c37df72fe48e7a84eb1",
-          "size": 1235934,
-          "version": "9"
+          "sha256": "40a903198c0e01fc2b1b3df89a25000457b7856e7c709a9861661e0ebd41a758",
+          "size": 1241962,
+          "version": "10"
         }
       },
       "parameter_registry": {
         "api_version": "cedarkit.parameters/v1",
         "id": "cedarkit.parameters.cmadaas",
         "path": "resources/current-cmadaas-parameters.json",
-        "sha256": "5c8ee3b97ab91b16636d8be67e81f33788b0ffc638f693c10c6bd4c3ca81271b",
-        "size": 30747,
-        "version": "7"
+        "sha256": "8e4f49624ac9822ca328264cca9e23a9f3cd4ab5c4dba482d95492a4d04b4a14",
+        "size": 31731,
+        "version": "8"
       },
       "products": [
         {
@@ -221,18 +221,18 @@
           "backend": "cmadaas",
           "id": "cedarkit.mappings.cmadaas",
           "path": "resources/current-cmadaas-mappings.json",
-          "sha256": "87aa357c3496933d9d7e72c0da16d8ae2e7af8a4a0352c37df72fe48e7a84eb1",
-          "size": 1235934,
-          "version": "9"
+          "sha256": "40a903198c0e01fc2b1b3df89a25000457b7856e7c709a9861661e0ebd41a758",
+          "size": 1241962,
+          "version": "10"
         }
       },
       "parameter_registry": {
         "api_version": "cedarkit.parameters/v1",
         "id": "cedarkit.parameters.cmadaas",
         "path": "resources/current-cmadaas-parameters.json",
-        "sha256": "5c8ee3b97ab91b16636d8be67e81f33788b0ffc638f693c10c6bd4c3ca81271b",
-        "size": 30747,
-        "version": "7"
+        "sha256": "8e4f49624ac9822ca328264cca9e23a9f3cd4ab5c4dba482d95492a4d04b4a14",
+        "size": 31731,
+        "version": "8"
       },
       "products": [
         {
@@ -250,18 +250,18 @@
           "backend": "cmadaas",
           "id": "cedarkit.mappings.cmadaas",
           "path": "resources/current-cmadaas-mappings.json",
-          "sha256": "87aa357c3496933d9d7e72c0da16d8ae2e7af8a4a0352c37df72fe48e7a84eb1",
-          "size": 1235934,
-          "version": "9"
+          "sha256": "40a903198c0e01fc2b1b3df89a25000457b7856e7c709a9861661e0ebd41a758",
+          "size": 1241962,
+          "version": "10"
         }
       },
       "parameter_registry": {
         "api_version": "cedarkit.parameters/v1",
         "id": "cedarkit.parameters.cmadaas",
         "path": "resources/current-cmadaas-parameters.json",
-        "sha256": "5c8ee3b97ab91b16636d8be67e81f33788b0ffc638f693c10c6bd4c3ca81271b",
-        "size": 30747,
-        "version": "7"
+        "sha256": "8e4f49624ac9822ca328264cca9e23a9f3cd4ab5c4dba482d95492a4d04b4a14",
+        "size": 31731,
+        "version": "8"
       },
       "products": [
         {
@@ -308,18 +308,18 @@
           "backend": "cmadaas",
           "id": "cedarkit.mappings.cmadaas",
           "path": "resources/current-cmadaas-mappings.json",
-          "sha256": "87aa357c3496933d9d7e72c0da16d8ae2e7af8a4a0352c37df72fe48e7a84eb1",
-          "size": 1235934,
-          "version": "9"
+          "sha256": "40a903198c0e01fc2b1b3df89a25000457b7856e7c709a9861661e0ebd41a758",
+          "size": 1241962,
+          "version": "10"
         }
       },
       "parameter_registry": {
         "api_version": "cedarkit.parameters/v1",
         "id": "cedarkit.parameters.cmadaas",
         "path": "resources/current-cmadaas-parameters.json",
-        "sha256": "5c8ee3b97ab91b16636d8be67e81f33788b0ffc638f693c10c6bd4c3ca81271b",
-        "size": 30747,
-        "version": "7"
+        "sha256": "8e4f49624ac9822ca328264cca9e23a9f3cd4ab5c4dba482d95492a4d04b4a14",
+        "size": 31731,
+        "version": "8"
       },
       "products": [
         {
@@ -337,18 +337,18 @@
           "backend": "cmadaas",
           "id": "cedarkit.mappings.cmadaas",
           "path": "resources/current-cmadaas-mappings.json",
-          "sha256": "87aa357c3496933d9d7e72c0da16d8ae2e7af8a4a0352c37df72fe48e7a84eb1",
-          "size": 1235934,
-          "version": "9"
+          "sha256": "40a903198c0e01fc2b1b3df89a25000457b7856e7c709a9861661e0ebd41a758",
+          "size": 1241962,
+          "version": "10"
         }
       },
       "parameter_registry": {
         "api_version": "cedarkit.parameters/v1",
         "id": "cedarkit.parameters.cmadaas",
         "path": "resources/current-cmadaas-parameters.json",
-        "sha256": "5c8ee3b97ab91b16636d8be67e81f33788b0ffc638f693c10c6bd4c3ca81271b",
-        "size": 30747,
-        "version": "7"
+        "sha256": "8e4f49624ac9822ca328264cca9e23a9f3cd4ab5c4dba482d95492a4d04b4a14",
+        "size": 31731,
+        "version": "8"
       },
       "products": [
         {
@@ -395,18 +395,18 @@
           "backend": "cmadaas",
           "id": "cedarkit.mappings.cmadaas",
           "path": "resources/current-cmadaas-mappings.json",
-          "sha256": "87aa357c3496933d9d7e72c0da16d8ae2e7af8a4a0352c37df72fe48e7a84eb1",
-          "size": 1235934,
-          "version": "9"
+          "sha256": "40a903198c0e01fc2b1b3df89a25000457b7856e7c709a9861661e0ebd41a758",
+          "size": 1241962,
+          "version": "10"
         }
       },
       "parameter_registry": {
         "api_version": "cedarkit.parameters/v1",
         "id": "cedarkit.parameters.cmadaas",
         "path": "resources/current-cmadaas-parameters.json",
-        "sha256": "5c8ee3b97ab91b16636d8be67e81f33788b0ffc638f693c10c6bd4c3ca81271b",
-        "size": 30747,
-        "version": "7"
+        "sha256": "8e4f49624ac9822ca328264cca9e23a9f3cd4ab5c4dba482d95492a4d04b4a14",
+        "size": 31731,
+        "version": "8"
       },
       "products": [
         {
@@ -424,18 +424,18 @@
           "backend": "cmadaas",
           "id": "cedarkit.mappings.cmadaas",
           "path": "resources/current-cmadaas-mappings.json",
-          "sha256": "87aa357c3496933d9d7e72c0da16d8ae2e7af8a4a0352c37df72fe48e7a84eb1",
-          "size": 1235934,
-          "version": "9"
+          "sha256": "40a903198c0e01fc2b1b3df89a25000457b7856e7c709a9861661e0ebd41a758",
+          "size": 1241962,
+          "version": "10"
         }
       },
       "parameter_registry": {
         "api_version": "cedarkit.parameters/v1",
         "id": "cedarkit.parameters.cmadaas",
         "path": "resources/current-cmadaas-parameters.json",
-        "sha256": "5c8ee3b97ab91b16636d8be67e81f33788b0ffc638f693c10c6bd4c3ca81271b",
-        "size": 30747,
-        "version": "7"
+        "sha256": "8e4f49624ac9822ca328264cca9e23a9f3cd4ab5c4dba482d95492a4d04b4a14",
+        "size": 31731,
+        "version": "8"
       },
       "products": [
         {
@@ -482,18 +482,18 @@
           "backend": "cmadaas",
           "id": "cedarkit.mappings.cmadaas",
           "path": "resources/current-cmadaas-mappings.json",
-          "sha256": "87aa357c3496933d9d7e72c0da16d8ae2e7af8a4a0352c37df72fe48e7a84eb1",
-          "size": 1235934,
-          "version": "9"
+          "sha256": "40a903198c0e01fc2b1b3df89a25000457b7856e7c709a9861661e0ebd41a758",
+          "size": 1241962,
+          "version": "10"
         }
       },
       "parameter_registry": {
         "api_version": "cedarkit.parameters/v1",
         "id": "cedarkit.parameters.cmadaas",
         "path": "resources/current-cmadaas-parameters.json",
-        "sha256": "5c8ee3b97ab91b16636d8be67e81f33788b0ffc638f693c10c6bd4c3ca81271b",
-        "size": 30747,
-        "version": "7"
+        "sha256": "8e4f49624ac9822ca328264cca9e23a9f3cd4ab5c4dba482d95492a4d04b4a14",
+        "size": 31731,
+        "version": "8"
       },
       "products": [
         {
@@ -511,18 +511,18 @@
           "backend": "cmadaas",
           "id": "cedarkit.mappings.cmadaas",
           "path": "resources/current-cmadaas-mappings.json",
-          "sha256": "87aa357c3496933d9d7e72c0da16d8ae2e7af8a4a0352c37df72fe48e7a84eb1",
-          "size": 1235934,
-          "version": "9"
+          "sha256": "40a903198c0e01fc2b1b3df89a25000457b7856e7c709a9861661e0ebd41a758",
+          "size": 1241962,
+          "version": "10"
         }
       },
       "parameter_registry": {
         "api_version": "cedarkit.parameters/v1",
         "id": "cedarkit.parameters.cmadaas",
         "path": "resources/current-cmadaas-parameters.json",
-        "sha256": "5c8ee3b97ab91b16636d8be67e81f33788b0ffc638f693c10c6bd4c3ca81271b",
-        "size": 30747,
-        "version": "7"
+        "sha256": "8e4f49624ac9822ca328264cca9e23a9f3cd4ab5c4dba482d95492a4d04b4a14",
+        "size": 31731,
+        "version": "8"
       },
       "products": [
         {
@@ -536,58 +536,58 @@
   "files": [
     {
       "path": "browser/cmadaas/params.json",
-      "sha256": "3ade83a176325112e9c104aecad64997040f8c5e23b502fc895205cb6c848eb3",
-      "size": 1496688
+      "sha256": "178e1827030cebfb3565422fcc6e66dde2b792e109ae1cbbf31c4daf7d4096fa",
+      "size": 1504738
     },
     {
       "path": "browser/geps/params.json",
-      "sha256": "163a4a8051681a5d0d32a4104ef0b9c2e4874ce772013edb1656b3e5d219c512",
-      "size": 369664
+      "sha256": "48b1025e95de10daaa18e410df887df01996473916e13958f3044256aed4bb22",
+      "size": 369714
     },
     {
       "path": "browser/gfs/params.json",
-      "sha256": "9785b91a035d5dd70deaedd681b99c316986795107dcaff4504a6a480ab31f10",
-      "size": 308508
+      "sha256": "35e96b85ac74f2f0fe446d75e950f05067c763ad6eef765c34868d5fea6b567e",
+      "size": 308558
     },
     {
       "path": "browser/meso1/params.json",
-      "sha256": "95941a19e819582fe1b8061c448537e481c33ea526dbf96c4c9dfa7cce10c2a1",
-      "size": 234300
+      "sha256": "dd6117571ea4fdeb2c4fe23d77b6cd204241808de4fcf88336c96ae99e9ca8f2",
+      "size": 234350
     },
     {
       "path": "browser/meso3/params.json",
-      "sha256": "e8898d386442559ad821f85ef2d828356dd675543497ff3087a37413d54427af",
-      "size": 263450
+      "sha256": "377c0879b88cc851687831331be0823226822f725782fa0d67d3f39885a84b47",
+      "size": 263500
     },
     {
       "path": "browser/reps/params.json",
-      "sha256": "f7a48c3d8b1f03d7ae456584a2456ef616a11c4ca86c5ccdf67040bacc7bb4c3",
-      "size": 284154
+      "sha256": "991488ad67f905936cfab5f8855689358c880928b311146c132347e22a51fa55",
+      "size": 284204
     },
     {
       "path": "browser/tym/params.json",
-      "sha256": "bd93c32e86984fa1f98a6815598a84cbc167f11d3dc9c5168054976a172c87c9",
-      "size": 215149
+      "sha256": "abd12ec7b7704d1b453caca66571387a82c81b57f41fa2d825a3473165b958c6",
+      "size": 215199
     },
     {
       "path": "catalog-v1.json",
-      "sha256": "128395bec252def82221ca34bc52fac600097542a85908a8014cb98dcaf5bc11",
-      "size": 1165978
+      "sha256": "5e306304e26ca58d190d37877fe4a545b5bb91f5279b0f9e95f72b2630e08b6d",
+      "size": 1169158
     },
     {
       "path": "legacy-links.json",
-      "sha256": "a47ce4205b99536b15a9a9958e4eced78021d4a15663796d30ce1dad549e2a71",
-      "size": 134291
+      "sha256": "2d86decc39ed912ab099fb3a9a6659c5796e38ede6f29b0bb042c9e0a8aead2b",
+      "size": 134667
     },
     {
       "path": "resources/current-cmadaas-mappings.json",
-      "sha256": "87aa357c3496933d9d7e72c0da16d8ae2e7af8a4a0352c37df72fe48e7a84eb1",
-      "size": 1235934
+      "sha256": "40a903198c0e01fc2b1b3df89a25000457b7856e7c709a9861661e0ebd41a758",
+      "size": 1241962
     },
     {
       "path": "resources/current-cmadaas-parameters.json",
-      "sha256": "5c8ee3b97ab91b16636d8be67e81f33788b0ffc638f693c10c6bd4c3ca81271b",
-      "size": 30747
+      "sha256": "8e4f49624ac9822ca328264cca9e23a9f3cd4ab5c4dba482d95492a4d04b4a14",
+      "size": 31731
     },
     {
       "path": "resources/current-geps-mappings.json",
@@ -663,15 +663,16 @@
     "legacy_navigation": true,
     "remaining_migration_obligations": [
       {
-        "accepted": 531,
+        "accepted": 535,
         "evidence": [
           "doc/2026-11-04-stage1.2-query-reki/task-01-coverage.md",
           "stage1.2/task-07e6/coverage.json",
-          "stage1.2/task-n06-01/coverage.json"
+          "stage1.2/task-n06-01/coverage.json",
+          "stage1.2/task-n06-02/coverage.json"
         ],
         "id": "service-history",
         "note": "Historical service rows, not the number of mappings or expected-domain cells",
-        "remaining": 482,
+        "remaining": 478,
         "total": 1013
       },
       {
@@ -728,18 +729,18 @@
           "backend": "cmadaas",
           "id": "cedarkit.mappings.cmadaas",
           "path": "resources/current-cmadaas-mappings.json",
-          "sha256": "87aa357c3496933d9d7e72c0da16d8ae2e7af8a4a0352c37df72fe48e7a84eb1",
-          "size": 1235934,
-          "version": "9"
+          "sha256": "40a903198c0e01fc2b1b3df89a25000457b7856e7c709a9861661e0ebd41a758",
+          "size": 1241962,
+          "version": "10"
         }
       ],
       "parameter_resource": {
         "api_version": "cedarkit.parameters/v1",
         "id": "cedarkit.parameters.cmadaas",
         "path": "resources/current-cmadaas-parameters.json",
-        "sha256": "5c8ee3b97ab91b16636d8be67e81f33788b0ffc638f693c10c6bd4c3ca81271b",
-        "size": 30747,
-        "version": "7"
+        "sha256": "8e4f49624ac9822ca328264cca9e23a9f3cd4ab5c4dba482d95492a4d04b4a14",
+        "size": 31731,
+        "version": "8"
       },
       "path": "browser/cmadaas/params.json",
       "schema_version": 4
@@ -910,8 +911,8 @@
   "sources": [
     {
       "path": "authoring/browser-current.json",
-      "sha256": "9890d7bc83097fec5b2c004147fcf86b108df97af72354eb09bcb6adf585c15e",
-      "size": 6543
+      "sha256": "7110854903de1ba5dca6070bc5769dc7999f93ffe27ab1a708303f6ca1ed4aeb",
+      "size": 6590
     },
     {
       "path": "authoring/cemc-orig-batch1.json",
@@ -939,14 +940,14 @@
       "size": 5428
     },
     {
-      "path": "authoring/cmadaas-task-n06-01.json",
-      "sha256": "ebd1dc4c876b4f0d2dd9aa7b49d6c9cb46d9a8f5f415c685357bb80d82fdd8ad",
-      "size": 2453624
+      "path": "authoring/cmadaas-task-n06-02.json",
+      "sha256": "3d9da21a6b3d6e7818beebdb31e2dd5fb4189dbfe997e3a45511402b52ec2911",
+      "size": 2464598
     },
     {
       "path": "catalog-v1.json",
-      "sha256": "128395bec252def82221ca34bc52fac600097542a85908a8014cb98dcaf5bc11",
-      "size": 1165978
+      "sha256": "5e306304e26ca58d190d37877fe4a545b5bb91f5279b0f9e95f72b2630e08b6d",
+      "size": 1169158
     },
     {
       "path": "legacy/params-schema3.json",
@@ -954,5 +955,5 @@
       "size": 77025
     }
   ],
-  "version": "3"
+  "version": "4"
 }
