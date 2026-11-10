@@ -4141,6 +4141,91 @@
           },
           "backend": "cmadaas",
           "evidence": [
+            "I01/coverage-draft.json#S-gfs-ana-row-103",
+            "stage1.2/task-06b-priority-carriers/producer-evidence.md",
+            "stage1.2/task-t02/originals/manifest.json",
+            "stage1.2/task-t02/results/moisture-review.json#S-gfs-ana-row-103"
+          ],
+          "id": "S-gfs-ana-row-103.qflx.instantaneous",
+          "native": {
+            "match": {
+              "fcstEle": "MOFU",
+              "maxLat": 41,
+              "maxLon": 117,
+              "minLat": 39,
+              "minLon": 115
+            },
+            "translate": {
+              "statistics": {
+                "rule": "cmadaas.statistics_fields"
+              },
+              "time": {
+                "rule": "cmadaas.time_fields"
+              },
+              "unit": {
+                "config": {
+                  "source_unit": "g/(cm.hPa.s)"
+                },
+                "rule": "common.value_unit"
+              },
+              "vertical": {
+                "config": {
+                  "table": "cmadaas.levels"
+                },
+                "rule": "cmadaas.vertical_table"
+              }
+            }
+          },
+          "parameter_id": "cedarkit.qflx",
+          "when": {
+            "level": [
+              10,
+              20,
+              30,
+              50,
+              70,
+              100,
+              125,
+              150,
+              175,
+              200,
+              225,
+              250,
+              275,
+              300,
+              350,
+              400,
+              450,
+              500,
+              550,
+              600,
+              650,
+              700,
+              750,
+              800,
+              850,
+              900,
+              925,
+              950,
+              975,
+              1000
+            ],
+            "level_type": "pressure",
+            "level_unit": "hPa",
+            "step": [
+              "PT0H"
+            ],
+            "time": "2026-11-02T12:00:00Z"
+          }
+        },
+        {
+          "applies_to": {
+            "dataset": "cma_gfs_gmf_analysis_cmadaas",
+            "product": "analysis",
+            "product_version": "service-20261105"
+          },
+          "backend": "cmadaas",
+          "evidence": [
             "I01/coverage-draft.json#S-gfs-ana-row-109",
             "stage1.2/task-07c/accepted-samples/responses.jsonl#S-gfs-ana-row-109",
             "stage1.2/task-07c/originals.jsonl#S-gfs-ana-row-109"
@@ -14362,6 +14447,92 @@
               "PT234H",
               "PT240H"
             ]
+          }
+        },
+        {
+          "applies_to": {
+            "dataset": "cma_gfs_gmf_cmadaas",
+            "product": "forecast",
+            "product_version": "service-20261105"
+          },
+          "backend": "cmadaas",
+          "evidence": [
+            "I01/coverage-draft.json#S-gfs-fcst-row-74",
+            "stage1.2/task-06b-priority-carriers/producer-evidence.md",
+            "stage1.2/task-t02/originals/manifest.json",
+            "stage1.2/task-t02/results/moisture-review.json#S-gfs-fcst-row-74"
+          ],
+          "id": "S-gfs-fcst-row-74.qflx.instantaneous",
+          "native": {
+            "match": {
+              "fcstEle": "MOFU",
+              "maxLat": 41,
+              "maxLon": 117,
+              "minLat": 39,
+              "minLon": 115
+            },
+            "translate": {
+              "statistics": {
+                "rule": "cmadaas.statistics_fields"
+              },
+              "time": {
+                "rule": "cmadaas.time_fields"
+              },
+              "unit": {
+                "config": {
+                  "source_unit": "g/(cm.hPa.s)"
+                },
+                "rule": "common.value_unit"
+              },
+              "vertical": {
+                "config": {
+                  "table": "cmadaas.levels"
+                },
+                "rule": "cmadaas.vertical_table"
+              }
+            }
+          },
+          "parameter_id": "cedarkit.qflx",
+          "when": {
+            "level": [
+              10,
+              20,
+              30,
+              50,
+              70,
+              100,
+              125,
+              150,
+              175,
+              200,
+              225,
+              250,
+              275,
+              300,
+              350,
+              400,
+              450,
+              500,
+              550,
+              600,
+              650,
+              700,
+              750,
+              800,
+              850,
+              900,
+              925,
+              950,
+              975,
+              1000
+            ],
+            "level_type": "pressure",
+            "level_unit": "hPa",
+            "step": [
+              "PT6H",
+              "PT48H"
+            ],
+            "time": "2026-11-02T12:00:00Z"
           }
         },
         {
@@ -25664,6 +25835,58 @@
           },
           "backend": "cmadaas",
           "evidence": [
+            "I01/coverage-draft.json#S-meso3-ana-row-42",
+            "stage1.2/task-t02/inputs/ref/models/meso_3km/varname.dat#qfx",
+            "stage1.2/task-t02/originals/manifest.json",
+            "stage1.2/task-t02/results/moisture-review.json#S-meso3-ana-row-42"
+          ],
+          "id": "S-meso3-ana-row-42.qfxsfc.instantaneous",
+          "native": {
+            "match": {
+              "fcstEle": "SMOFU",
+              "maxLat": 41,
+              "maxLon": 117,
+              "minLat": 39,
+              "minLon": 115
+            },
+            "translate": {
+              "statistics": {
+                "rule": "cmadaas.statistics_fields"
+              },
+              "time": {
+                "rule": "cmadaas.time_fields"
+              },
+              "unit": {
+                "config": {
+                  "source_unit": "kg/(m2.s)"
+                },
+                "rule": "common.value_unit"
+              },
+              "vertical": {
+                "config": {
+                  "table": "cmadaas.levels"
+                },
+                "rule": "cmadaas.vertical_table"
+              }
+            }
+          },
+          "parameter_id": "cedarkit.qfxsfc",
+          "when": {
+            "level_type": "surface",
+            "step": [
+              "PT0H"
+            ],
+            "time": "2026-11-02T12:00:00Z"
+          }
+        },
+        {
+          "applies_to": {
+            "dataset": "cma_meso_3km_analysis_cmadaas",
+            "product": "analysis",
+            "product_version": "service-20261105"
+          },
+          "backend": "cmadaas",
+          "evidence": [
             "I01/coverage-draft.json#S-meso3-ana-row-47",
             "stage1.2/task-07e3/accepted-samples/cases.json#S-meso3-ana-row-47",
             "stage1.2/task-07e3/originals.jsonl#S-meso3-ana-row-47"
@@ -25997,6 +26220,80 @@
             "step": [
               "PT0H"
             ]
+          }
+        },
+        {
+          "applies_to": {
+            "dataset": "cma_meso_3km_analysis_cmadaas",
+            "product": "analysis",
+            "product_version": "service-20261105"
+          },
+          "backend": "cmadaas",
+          "evidence": [
+            "I01/coverage-draft.json#S-meso3-ana-row-64",
+            "stage1.2/task-06b-priority-carriers/producer-evidence.md",
+            "stage1.2/task-t02/originals/manifest.json",
+            "stage1.2/task-t02/results/moisture-review.json#S-meso3-ana-row-64"
+          ],
+          "id": "S-meso3-ana-row-64.qflx.instantaneous",
+          "native": {
+            "match": {
+              "fcstEle": "MOFU",
+              "maxLat": 41,
+              "maxLon": 117,
+              "minLat": 39,
+              "minLon": 115
+            },
+            "translate": {
+              "statistics": {
+                "rule": "cmadaas.statistics_fields"
+              },
+              "time": {
+                "rule": "cmadaas.time_fields"
+              },
+              "unit": {
+                "config": {
+                  "source_unit": "g/(cm.hPa.s)"
+                },
+                "rule": "common.value_unit"
+              },
+              "vertical": {
+                "config": {
+                  "table": "cmadaas.levels"
+                },
+                "rule": "cmadaas.vertical_table"
+              }
+            }
+          },
+          "parameter_id": "cedarkit.qflx",
+          "when": {
+            "level": [
+              100,
+              200,
+              300,
+              350,
+              400,
+              450,
+              500,
+              550,
+              600,
+              650,
+              700,
+              750,
+              800,
+              850,
+              900,
+              925,
+              950,
+              975,
+              1000
+            ],
+            "level_type": "pressure",
+            "level_unit": "hPa",
+            "step": [
+              "PT0H"
+            ],
+            "time": "2026-11-02T12:00:00Z"
           }
         },
         {
@@ -27686,6 +27983,59 @@
               "PT35H",
               "PT36H"
             ]
+          }
+        },
+        {
+          "applies_to": {
+            "dataset": "cma_meso_3km_forecast_cmadaas",
+            "product": "forecast",
+            "product_version": "service-20261105"
+          },
+          "backend": "cmadaas",
+          "evidence": [
+            "I01/coverage-draft.json#S-meso3-fcst-row-102",
+            "stage1.2/task-t02/inputs/ref/models/meso_3km/varname.dat#qfx",
+            "stage1.2/task-t02/originals/manifest.json",
+            "stage1.2/task-t02/results/moisture-review.json#S-meso3-fcst-row-102"
+          ],
+          "id": "S-meso3-fcst-row-102.qfxsfc.instantaneous",
+          "native": {
+            "match": {
+              "fcstEle": "SMOFU",
+              "maxLat": 41,
+              "maxLon": 117,
+              "minLat": 39,
+              "minLon": 115
+            },
+            "translate": {
+              "statistics": {
+                "rule": "cmadaas.statistics_fields"
+              },
+              "time": {
+                "rule": "cmadaas.time_fields"
+              },
+              "unit": {
+                "config": {
+                  "source_unit": "kg/(m2.s)"
+                },
+                "rule": "common.value_unit"
+              },
+              "vertical": {
+                "config": {
+                  "table": "cmadaas.levels"
+                },
+                "rule": "cmadaas.vertical_table"
+              }
+            }
+          },
+          "parameter_id": "cedarkit.qfxsfc",
+          "when": {
+            "level_type": "surface",
+            "step": [
+              "PT6H",
+              "PT48H"
+            ],
+            "time": "2026-11-02T12:00:00Z"
           }
         },
         {
@@ -31662,6 +32012,81 @@
               "PT35H",
               "PT36H"
             ]
+          }
+        },
+        {
+          "applies_to": {
+            "dataset": "cma_meso_3km_forecast_cmadaas",
+            "product": "forecast",
+            "product_version": "service-20261105"
+          },
+          "backend": "cmadaas",
+          "evidence": [
+            "I01/coverage-draft.json#S-meso3-fcst-row-74",
+            "stage1.2/task-06b-priority-carriers/producer-evidence.md",
+            "stage1.2/task-t02/originals/manifest.json",
+            "stage1.2/task-t02/results/moisture-review.json#S-meso3-fcst-row-74"
+          ],
+          "id": "S-meso3-fcst-row-74.qflx.instantaneous",
+          "native": {
+            "match": {
+              "fcstEle": "MOFU",
+              "maxLat": 41,
+              "maxLon": 117,
+              "minLat": 39,
+              "minLon": 115
+            },
+            "translate": {
+              "statistics": {
+                "rule": "cmadaas.statistics_fields"
+              },
+              "time": {
+                "rule": "cmadaas.time_fields"
+              },
+              "unit": {
+                "config": {
+                  "source_unit": "g/(cm.hPa.s)"
+                },
+                "rule": "common.value_unit"
+              },
+              "vertical": {
+                "config": {
+                  "table": "cmadaas.levels"
+                },
+                "rule": "cmadaas.vertical_table"
+              }
+            }
+          },
+          "parameter_id": "cedarkit.qflx",
+          "when": {
+            "level": [
+              100,
+              200,
+              300,
+              350,
+              400,
+              450,
+              500,
+              550,
+              600,
+              650,
+              700,
+              750,
+              800,
+              850,
+              900,
+              925,
+              950,
+              975,
+              1000
+            ],
+            "level_type": "pressure",
+            "level_unit": "hPa",
+            "step": [
+              "PT6H",
+              "PT48H"
+            ],
+            "time": "2026-11-02T12:00:00Z"
           }
         },
         {
@@ -44813,6 +45238,58 @@
           },
           "backend": "cmadaas",
           "evidence": [
+            "I01/coverage-draft.json#S-tym-ana-row-58",
+            "stage1.2/task-t02/inputs/ref/models/tym/varname.dat#qfx",
+            "stage1.2/task-t02/originals/manifest.json",
+            "stage1.2/task-t02/results/moisture-review.json#S-tym-ana-row-58"
+          ],
+          "id": "S-tym-ana-row-58.qfxsfc.instantaneous",
+          "native": {
+            "match": {
+              "fcstEle": "SMOFU",
+              "maxLat": 41,
+              "maxLon": 117,
+              "minLat": 39,
+              "minLon": 115
+            },
+            "translate": {
+              "statistics": {
+                "rule": "cmadaas.statistics_fields"
+              },
+              "time": {
+                "rule": "cmadaas.time_fields"
+              },
+              "unit": {
+                "config": {
+                  "source_unit": "kg/(m2.s)"
+                },
+                "rule": "common.value_unit"
+              },
+              "vertical": {
+                "config": {
+                  "table": "cmadaas.levels"
+                },
+                "rule": "cmadaas.vertical_table"
+              }
+            }
+          },
+          "parameter_id": "cedarkit.qfxsfc",
+          "when": {
+            "level_type": "surface",
+            "step": [
+              "PT0H"
+            ],
+            "time": "2026-11-02T12:00:00Z"
+          }
+        },
+        {
+          "applies_to": {
+            "dataset": "cma_tym_analysis_cmadaas",
+            "product": "analysis",
+            "product_version": "service-20261105"
+          },
+          "backend": "cmadaas",
+          "evidence": [
             "I01/coverage-draft.json#S-tym-ana-row-6",
             "stage1.2/task-07c/accepted-samples/responses.jsonl#S-tym-ana-row-6",
             "stage1.2/task-07c/originals.jsonl#S-tym-ana-row-6"
@@ -45119,6 +45596,68 @@
             "step": [
               "PT0H"
             ]
+          }
+        },
+        {
+          "applies_to": {
+            "dataset": "cma_tym_analysis_cmadaas",
+            "product": "analysis",
+            "product_version": "service-20261105"
+          },
+          "backend": "cmadaas",
+          "evidence": [
+            "I01/coverage-draft.json#S-tym-ana-row-65",
+            "stage1.2/task-06b-priority-carriers/producer-evidence.md",
+            "stage1.2/task-t02/originals/manifest.json",
+            "stage1.2/task-t02/results/moisture-review.json#S-tym-ana-row-65"
+          ],
+          "id": "S-tym-ana-row-65.qflx.instantaneous",
+          "native": {
+            "match": {
+              "fcstEle": "MOFU",
+              "maxLat": 41,
+              "maxLon": 117,
+              "minLat": 39,
+              "minLon": 115
+            },
+            "translate": {
+              "statistics": {
+                "rule": "cmadaas.statistics_fields"
+              },
+              "time": {
+                "rule": "cmadaas.time_fields"
+              },
+              "unit": {
+                "config": {
+                  "source_unit": "g/(cm.hPa.s)"
+                },
+                "rule": "common.value_unit"
+              },
+              "vertical": {
+                "config": {
+                  "table": "cmadaas.levels"
+                },
+                "rule": "cmadaas.vertical_table"
+              }
+            }
+          },
+          "parameter_id": "cedarkit.qflx",
+          "when": {
+            "level": [
+              100,
+              200,
+              500,
+              700,
+              850,
+              925,
+              1000
+            ],
+            "level_type": "pressure",
+            "level_unit": "hPa",
+            "step": [
+              "PT0H"
+            ],
+            "time": "2026-11-02T12:00:00Z"
           }
         },
         {
@@ -49906,6 +50445,69 @@
               "PT119H",
               "PT120H"
             ]
+          }
+        },
+        {
+          "applies_to": {
+            "dataset": "cma_tym_forecast_cmadaas",
+            "product": "forecast",
+            "product_version": "service-20261105"
+          },
+          "backend": "cmadaas",
+          "evidence": [
+            "I01/coverage-draft.json#S-tym-fcst-row-58",
+            "stage1.2/task-06b-priority-carriers/producer-evidence.md",
+            "stage1.2/task-t02/originals/manifest.json",
+            "stage1.2/task-t02/results/moisture-review.json#S-tym-fcst-row-58"
+          ],
+          "id": "S-tym-fcst-row-58.qflx.instantaneous",
+          "native": {
+            "match": {
+              "fcstEle": "MOFU",
+              "maxLat": 41,
+              "maxLon": 117,
+              "minLat": 39,
+              "minLon": 115
+            },
+            "translate": {
+              "statistics": {
+                "rule": "cmadaas.statistics_fields"
+              },
+              "time": {
+                "rule": "cmadaas.time_fields"
+              },
+              "unit": {
+                "config": {
+                  "source_unit": "g/(cm.hPa.s)"
+                },
+                "rule": "common.value_unit"
+              },
+              "vertical": {
+                "config": {
+                  "table": "cmadaas.levels"
+                },
+                "rule": "cmadaas.vertical_table"
+              }
+            }
+          },
+          "parameter_id": "cedarkit.qflx",
+          "when": {
+            "level": [
+              100,
+              200,
+              500,
+              700,
+              850,
+              925,
+              1000
+            ],
+            "level_type": "pressure",
+            "level_unit": "hPa",
+            "step": [
+              "PT6H",
+              "PT48H"
+            ],
+            "time": "2026-11-02T12:00:00Z"
           }
         },
         {
@@ -54859,6 +55461,59 @@
           },
           "backend": "cmadaas",
           "evidence": [
+            "I01/coverage-draft.json#S-tym-fcst-row-91",
+            "stage1.2/task-t02/inputs/ref/models/tym/varname.dat#qfx",
+            "stage1.2/task-t02/originals/manifest.json",
+            "stage1.2/task-t02/results/moisture-review.json#S-tym-fcst-row-91"
+          ],
+          "id": "S-tym-fcst-row-91.qfxsfc.instantaneous",
+          "native": {
+            "match": {
+              "fcstEle": "SMOFU",
+              "maxLat": 41,
+              "maxLon": 117,
+              "minLat": 39,
+              "minLon": 115
+            },
+            "translate": {
+              "statistics": {
+                "rule": "cmadaas.statistics_fields"
+              },
+              "time": {
+                "rule": "cmadaas.time_fields"
+              },
+              "unit": {
+                "config": {
+                  "source_unit": "kg/(m2.s)"
+                },
+                "rule": "common.value_unit"
+              },
+              "vertical": {
+                "config": {
+                  "table": "cmadaas.levels"
+                },
+                "rule": "cmadaas.vertical_table"
+              }
+            }
+          },
+          "parameter_id": "cedarkit.qfxsfc",
+          "when": {
+            "level_type": "surface",
+            "step": [
+              "PT6H",
+              "PT48H"
+            ],
+            "time": "2026-11-02T12:00:00Z"
+          }
+        },
+        {
+          "applies_to": {
+            "dataset": "cma_tym_forecast_cmadaas",
+            "product": "forecast",
+            "product_version": "service-20261105"
+          },
+          "backend": "cmadaas",
+          "evidence": [
             "I01/coverage-draft.json#S-tym-fcst-row-92",
             "stage1.2/task-07c/accepted-samples/responses.jsonl#S-tym-fcst-row-92",
             "stage1.2/task-07c/originals.jsonl#S-tym-fcst-row-92"
@@ -56423,7 +57078,7 @@
           ]
         }
       ],
-      "version": "13"
+      "version": "14"
     }
   ],
   "meta": {
@@ -56431,8 +57086,8 @@
     "parameter_resource": {
       "api_version": "cedarkit.parameters/v1",
       "id": "cedarkit.parameters.cmadaas",
-      "sha256": "4ce99774e09fddf41372c57ee0273746fabd79c6d43f67e7f5a8a9608c0883e2",
-      "version": "11"
+      "sha256": "270258b3fa619dc5b1d3a76c076cc3ac9c78653cb4bac45ddc5091304b495794",
+      "version": "12"
     },
     "schema_version": 4,
     "scope": {
@@ -56502,6 +57157,9 @@
         "cedarkit.pwat.any",
         "cedarkit.q",
         "cedarkit.qc",
+        "cedarkit.qflx",
+        "cedarkit.qfxsfc",
+        "cedarkit.qfxsfc.any",
         "cedarkit.qi",
         "cedarkit.qr",
         "cedarkit.qs",
@@ -56579,7 +57237,7 @@
       ],
       "remaining_migration_obligations": [
         {
-          "accepted": 547,
+          "accepted": 557,
           "evidence": [
             "doc/2026-11-04-stage1.2-query-reki/task-01-coverage.md",
             "stage1.2/task-07e6/coverage.json",
@@ -56587,11 +57245,12 @@
             "stage1.2/task-n06-02/coverage.json",
             "stage1.2/task-n06-03/coverage.json",
             "stage1.2/task-n06-04/coverage.json",
-            "stage1.2/task-n06-05/coverage.json"
+            "stage1.2/task-n06-05/coverage.json",
+            "stage1.2/task-t02/coverage.json"
           ],
           "id": "service-history",
           "note": "Historical service rows, not the number of mappings or expected-domain cells",
-          "remaining": 466,
+          "remaining": 456,
           "total": 1013
         },
         {
@@ -56652,6 +57311,8 @@
         "cedarkit.pwat",
         "cedarkit.q",
         "cedarkit.qc",
+        "cedarkit.qflx",
+        "cedarkit.qfxsfc",
         "cedarkit.qi",
         "cedarkit.qr",
         "cedarkit.qs",
@@ -56714,9 +57375,9 @@
       "runtime_mappings": true
     },
     "stats": {
-      "aliases": 19,
-      "mappings": 546,
-      "parameters": 113
+      "aliases": 20,
+      "mappings": 556,
+      "parameters": 116
     }
   },
   "notes": [],
@@ -57185,6 +57846,31 @@
       "name": "qc",
       "parameter_id": "cedarkit.qc",
       "unit": "kg/kg"
+    },
+    {
+      "description": "Moisture flux",
+      "description_cn": "水汽通量",
+      "name": "qflx",
+      "parameter_id": "cedarkit.qflx",
+      "unit": "g/(cm.hPa.s)"
+    },
+    {
+      "aliases": [
+        "qfx"
+      ],
+      "fixed_conditions": {
+        "level_type": "surface"
+      },
+      "name": "qfxsfc",
+      "parameter_id": "cedarkit.qfxsfc",
+      "parent": "cedarkit.qfxsfc.any"
+    },
+    {
+      "description": "Surface moisture flux",
+      "description_cn": "地表水汽通量",
+      "name": "qfxsfc",
+      "parameter_id": "cedarkit.qfxsfc.any",
+      "unit": "kg/(m2.s)"
     },
     {
       "description": "Ice mixing ratio",

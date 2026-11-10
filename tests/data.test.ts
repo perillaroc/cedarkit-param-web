@@ -40,13 +40,32 @@ afterEach(() => vi.unstubAllGlobals())
 
 describe('accepted schema 4 group', () => {
   it('keeps all seven resource contexts, exact runtime pins and bounded global obligations', () => {
-    expect(model.entries).toHaveLength(551)
+    expect(model.entries).toHaveLength(554)
     expect(model.stableIds).toBe(169)
-    expect(model.mappingCount).toBe(1315)
+    expect(model.mappingCount).toBe(1325)
     expect(model.manifest.dataset_bindings).toHaveLength(18)
-    expect(new Set(model.entries.map((e) => e.key)).size).toBe(551)
-    expect(model.manifest.scope.remaining_migration_obligations.find((o) => o.id === 'service-history')?.remaining).toBe(466)
+    expect(new Set(model.entries.map((e) => e.key)).size).toBe(554)
+    expect(model.manifest.scope.remaining_migration_obligations.find((o) => o.id === 'service-history')?.remaining).toBe(456)
     expect(model.manifest.scope.remaining_migration_obligations.find((o) => o.id === 'service-quality')?.remaining).toBe(485)
+  })
+  it('keeps independently reviewed moisture units and finite service scopes separate from native contexts', () => {
+    const flux = get('cmadaas', 'cedarkit.qflx')
+    const surface = get('cmadaas', 'cedarkit.qfxsfc')
+    expect(flux.unit).toBe('g/(cm.hPa.s)')
+    expect(flux.mappings).toHaveLength(6)
+    expect(new Set(flux.mappings.map((m) => m.applies_to.dataset)).size).toBe(6)
+    expect(flux.mappings.every((m) => m.when?.level_type === 'pressure' && m.when?.time === '2026-11-02T12:00:00Z')).toBe(true)
+    expect(surface.unit).toBe('kg/(m2.s)')
+    expect(surface.fixedConditions).toEqual({ level_type: 'surface' })
+    expect(surface.mappings).toHaveLength(4)
+    expect(surface.mappings.every((m) => m.when?.level_type === 'surface')).toBe(true)
+    for (const entry of [flux, surface]) {
+      expect(entry.fixedConditions).not.toHaveProperty('statistics')
+      expect(entry.mappings.every((m) => m.evidence.some((e) => e.includes('task-t02/results/moisture-review.json')))).toBe(true)
+      expect(entry.mappings.every((m) => JSON.stringify(m.when?.step) === JSON.stringify(m.applies_to.product === 'analysis' ? ['PT0H'] : ['PT6H', 'PT48H']))).toBe(true)
+    }
+    expect(flux.key).not.toBe(get('gfs', 'cedarkit.qflx').key)
+    expect(get('cmadaas', 'cedarkit.qfxsfc.any').mappings).toHaveLength(0)
   })
   it('preserves the reviewed MESO-1KM PWAT scope, units, evidence and legacy targets', () => {
     const pwat = get('meso1', 'cedarkit.pwat')
@@ -271,7 +290,7 @@ describe('byte-verified group loading', () => {
   it('loads the exact frozen manifest and every member from the manifest directory', async () => {
     const mock = mockFetch()
     const loaded = await loadModel('/reviewed/manifest.json')
-    expect(loaded.entries).toHaveLength(551)
+    expect(loaded.entries).toHaveLength(554)
     expect(loaded.manifestSha256).toBe(accepted.sha256)
     expect(mock).toHaveBeenCalledTimes(24)
     expect(mock).toHaveBeenCalledWith('/reviewed/resources/current-gfs-parameters.json')

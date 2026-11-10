@@ -23,16 +23,16 @@ npm run test:e2e
 
 ## 冻结的 schema 4 快照
 
-当前消费 `public/reviewed/manifest.json`，组为 `cedarkit.browser.reviewed-current` v7。
-manifest 格式为 1，七份浏览器文档格式为 4，目录内容为 v46；这些版本分别管理。
+当前消费 `public/reviewed/manifest.json`，组为 `cedarkit.browser.reviewed-current` v8。
+manifest 格式为 1，七份浏览器文档格式为 4，目录内容为 v47；这些版本分别管理。
 精确 manifest SHA256 固定在 `src/bundle-pin.json`。
 
-输入来自 `cedarkit-param-db` 的审核文本作者导出。N06-05 冻结的 revision 7 导出组由以下命令
+输入来自 `cedarkit-param-db` 的审核文本作者导出。T02 冻结的 revision 8 导出组由以下命令
 原字节安装到一个新目录，没有手工修改生成 JSON：
 
 ```sh
 node tools/browser-bundle.mjs \
-  ../../doc/2026-11-04-stage1.2-query-reki/evidence/task-n06-05/browser-candidate
+  ../../doc/2026-11-04-stage1.2-query-reki/evidence/task-t02/browser-candidate
 ```
 
 安装目录必须不存在；同一 revision 不覆盖。已有安装可用以下命令复核：
@@ -54,7 +54,7 @@ npm run verify:bundle
 
 ## 浏览和导航
 
-- 列表保留 551 条资源内定义，涉及 169 个稳定 ID、1315 条映射。相同稳定 ID 在不同
+- 列表保留 554 条资源内定义，涉及 169 个稳定 ID、1325 条映射。相同稳定 ID 在不同
   资源中的定义分别显示，避免覆盖差异；127 个稳定 ID 有直接映射。
 - 搜索稳定 ID、名称／别名、中英文描述、单位、父定义、科学条件、适用产品、
   原生字段、证据引用和 GRIB 三元组。可按资源、dataset、backend 和直接映射状态筛选。
@@ -140,8 +140,14 @@ N10I-05精确七包＋同NuWe extra／browser6的完整组合、混配边界及�
 
 ## ULRF revision 7 与独立长波证据
 
-当前N06-05作者组为browser revision7／catalog46／天擎参数11／映射13，包含551资源内定义、169稳定ID及1315作用域映射。GFS服务`cedarkit.gulw`地表1/0与`cedarkit.tulw`大气顶8/0继承家族`cedarkit.gulw.any`的J/m2，固定从起报累计；父家族无直接映射，大气顶为类别而非数值高度。旧三元组0.5.4导航到独立审核的服务定义，历史w/m2和gslu别名不导入当前语义；原生GFS119定义未因此增补。
+N06-05当时作者组为browser revision7／catalog46／天擎参数11／映射13，包含551资源内定义、169稳定ID及1315作用域映射。GFS服务`cedarkit.gulw`地表1/0与`cedarkit.tulw`大气顶8/0继承家族`cedarkit.gulw.any`的J/m2，固定从起报累计；父家族无直接映射，大气顶为类别而非数值高度。旧三元组0.5.4导航到独立审核的服务定义，历史w/m2和gslu别名不导入当前语义；原生GFS119定义未因此增补。
 
 ULRF详情说明仅限本服务三定义。生产case212的ws/m2、原始0/5/4累计载体及实际响应支持有限范围时间积分能量解释；原生地表W m**-2／大气顶unknown、服务W.m-2与历史w/m2的冲突声明保持。服务大气顶行中文名也写“地面”，按英文属性、ULRF_8、生产分支与原生8/0独立审核层域。冻结2026-11-02 12 UTC、39–41N／115–117E，分析0h为零，六个3/6/48h预报场全为负值；保留原值原符号，不翻转、裁剪、除时长、拟合或推断positive-up、一般单调性与物理成因。原USRF／NWFS／NSRF／NLHF说明与范围保持，四MXT/MNT仍未验。
 
 N10I-06精确七包＋同NuWe extra／browser7完整组合、页面、混配与完整旧新恢复证据见`doc/2026-11-04-stage1.2-query-reki/evidence/task-n10i-06/README.md`。直接旧组为已联合验收的N10I-05完整七包＋extra／browser6／catalog45；恢复时同时选匹配代码、pin、快照、包及资源。历史547已验／466剩余、N06余98、质量485、本地95、集合48组96报文和N27暂缓保持，本批不重复扣四条ULRF。
+
+## T02 moisture revision 8
+
+当前审核组为 browser8／catalog47／CMADaaS参数12／映射14。新增服务 `cedarkit.qflx` 六条映射和 `cedarkit.qfxsfc` 四条映射，分别保留 `g/(cm.hPa.s)` 与 `kg/(m2.s)`，均为瞬时量。QFLX采用各产品独立Q／U／V原场复算证据；空响应单位来自明确审核映射，原数值不乘metadata SCALE_DIVISOR、不套用旧十倍尺度，也不换成潜热或累计能量。
+
+范围仅为2026-11-02 12UTC、39–41N／115–117E，分析0h／预报6与48h；QFLX限各产品审核等压面，地表通量只含MESO‑3KM／TYM。本地与服务定义上下文保持独立，父家族无直接映射。共554作用域定义／169稳定ID／1325映射，历史服务557行已验、456行未验；质量485及本地组义务不变。[科学核查](../../doc/2026-11-04-stage1.2-query-reki/evidence/task-t02/README.md)
