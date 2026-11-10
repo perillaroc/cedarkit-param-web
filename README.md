@@ -23,16 +23,16 @@ npm run test:e2e
 
 ## 冻结的 schema 4 快照
 
-当前消费 `public/reviewed/manifest.json`，组为 `cedarkit.browser.reviewed-current` v5。
-manifest 格式为 1，七份浏览器文档格式为 4，目录内容为 v44；这些版本分别管理。
+当前消费 `public/reviewed/manifest.json`，组为 `cedarkit.browser.reviewed-current` v6。
+manifest 格式为 1，七份浏览器文档格式为 4，目录内容为 v45；这些版本分别管理。
 精确 manifest SHA256 固定在 `src/bundle-pin.json`。
 
-输入来自 `cedarkit-param-db` 的审核文本作者导出。N06-03 冻结的 revision 5 导出组由以下命令
+输入来自 `cedarkit-param-db` 的审核文本作者导出。N06-04 冻结的 revision 6 导出组由以下命令
 原字节安装到一个新目录，没有手工修改生成 JSON：
 
 ```sh
 node tools/browser-bundle.mjs \
-  ../../doc/2026-11-04-stage1.2-query-reki/evidence/task-n06-03/browser-candidate
+  ../../doc/2026-11-04-stage1.2-query-reki/evidence/task-n06-04/browser-candidate
 ```
 
 安装目录必须不存在；同一 revision 不覆盖。已有安装可用以下命令复核：
@@ -129,3 +129,11 @@ N06-03作者组为browser revision5／catalog44／天擎参数9／映射11，包
 审核范围固定2026-11-02 12 UTC、39–41N／115–117E、分析0h及预报3、6、48h。独立producer／原始GRIB／实际响应证据支持晴空净短波积分能量；原头W.m-2及919个原TOA +6→48h负增量保留，不除时长、改符号、裁剪或承诺单调性。NSRF／NLHF保持各自解释和有限适用域，MXT/MNT仍缺实际统计窗口依据，没有新增相应服务映射。
 
 N10I-04的精确七包＋同NuWe extra、browser5／catalog44完整组合、混配边界和恢复证据位于`doc/2026-11-04-stage1.2-query-reki/evidence/task-n10i-04/README.md`。直接旧组为N10I-03已联合验收的完整七包＋同extra／browser4／catalog43，恢复须同时选择匹配代码pin、完整页面快照及运行包和资源。当前历史539已验／474剩余、N06余106、质量485、本地95／集合48组96报文及N27暂缓保持；本次配套组合不重复扣减四条NWFS。
+
+## USRF revision 6 与原符号说明
+
+当前N06-04作者组为browser revision6／catalog45／天擎参数10／映射12，包含548资源内定义、166稳定ID和1311作用域映射。GFS服务`cedarkit.gusw`地表1/0与`cedarkit.tusw`大气顶8/0继承家族`cedarkit.gusw.any`的J/m2，固定从起报累计；父家族无直接映射，顶边界为类别，无数值高度。旧三元组0.4.8通过候选页导航至本批服务定义，原历史单位和GSWU别名保持历史材料，不导入当前语义或原生GFS支持。
+
+USRF详情的单位与符号说明限定于本服务资源三定义：原生地表解码头为`W m**-2`、顶为`unknown`，服务为`W.m-2`，历史为`w/m2`；本批按生产GUSW／TUSW、case211及原始GRIB／实际响应证据解释为带原符号的时间积分能量J/m2。所有原正负值保留，不翻转、裁剪或除时长，也不赋予positive-up、单调性或物理成因。范围只包括2026-11-02 12 UTC、39–41N／115–117E、分析0h及预报3／6／48h；原NLHF／NSRF／NWFS仍各自保留已验范围，MXT/MNT仍缺统计窗口依据。
+
+N10I-05精确七包＋同NuWe extra／browser6的完整组合、混配边界及旧新恢复证据位于`doc/2026-11-04-stage1.2-query-reki/evidence/task-n10i-05/README.md`。直接旧组为已联合验收的N10I-04完整七包＋同extra／代码pin5／browser5／catalog44；恢复时同时选择匹配代码、快照、包和运行资源。当前历史543已验／470剩余、N06余102、质量485、本地95、集合48组96报文和N27暂缓保持，本批不重复扣四条USRF。

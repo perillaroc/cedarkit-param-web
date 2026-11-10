@@ -47,6 +47,11 @@ const parentEntry = computed(() => entry.value?.definition.parent ? findEntry(en
         <n-descriptions-item label="固定条件（含父约束）"><pre>{{ pretty(entry.fixedConditions) }}</pre></n-descriptions-item>
         <n-descriptions-item label="当前 GRIB 三元组">{{ entry.triplets.join('、') || '无直接 GRIB 映射' }} <n-button v-if="entry.triplets.length" size="small" @click="copy(entry.triplets.join('、'))">复制三元组</n-button></n-descriptions-item>
       </n-descriptions>
+      <n-alert v-if="entry.resource.id === 'cedarkit.parameters.cmadaas' && ['cedarkit.gusw.any', 'cedarkit.gusw', 'cedarkit.tusw'].includes(entry.definition.parameter_id)" class="usrf-semantics" type="info" title="USRF 单位与符号">
+        <p>本批 GFS USRF 具名结果使用 J/m2，表示保留原符号的时间积分能量。</p>
+        <p>原生地表解码头为 <code>W m**-2</code>，大气顶为 <code>unknown</code>；服务原头为 <code>W.m-2</code>，历史记录为 <code>w/m2</code>。当前单位依据生产声明、原始 GRIB 和实际响应审核，原声明保留供追溯。</p>
+        <p>保留全部原正负值，不翻转符号、不裁剪、不除时长；本批未确立 positive-up 或单调性。请在对应产品映射中查看有限适用范围与审核证据。</p>
+      </n-alert>
       <details v-if="alternatives.length">
         <summary>同一稳定 ID 的其他资源定义（{{ alternatives.length }}）</summary>
         <ul><li v-for="other in alternatives" :key="other.key">
