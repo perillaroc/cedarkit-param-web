@@ -23,16 +23,16 @@ npm run test:e2e
 
 ## 冻结的 schema 4 快照
 
-当前消费 `public/reviewed/manifest.json`，组为 `cedarkit.browser.reviewed-current` v4。
-manifest 格式为 1，七份浏览器文档格式为 4，目录内容为 v43；这些版本分别管理。
+当前消费 `public/reviewed/manifest.json`，组为 `cedarkit.browser.reviewed-current` v5。
+manifest 格式为 1，七份浏览器文档格式为 4，目录内容为 v44；这些版本分别管理。
 精确 manifest SHA256 固定在 `src/bundle-pin.json`。
 
-输入来自 `cedarkit-param-db` 的审核文本作者导出。N06-02 冻结的 revision 4 导出组由以下命令
+输入来自 `cedarkit-param-db` 的审核文本作者导出。N06-03 冻结的 revision 5 导出组由以下命令
 原字节安装到一个新目录，没有手工修改生成 JSON：
 
 ```sh
 node tools/browser-bundle.mjs \
-  ../../doc/2026-11-04-stage1.2-query-reki/evidence/task-n06-02/browser-candidate
+  ../../doc/2026-11-04-stage1.2-query-reki/evidence/task-n06-03/browser-candidate
 ```
 
 安装目录必须不存在；同一 revision 不覆盖。已有安装可用以下命令复核：
@@ -121,3 +121,11 @@ N06-01 作者组新增天擎 `cedarkit.slhf` 定义及两个 GFS 产品映射，
 GSW和TSW沿用同一历史三元组0.4.9，经候选页选择资源和边界；GSW父定义的单位／累计统计在TSW详情继承，映射适用域分别显示surface和atmosphere_top。原NLHF与PWAT仍保留独立审核范围。MXT/MNT的统计窗口仍缺证，当前服务资源未增加对应具名映射，不把历史候选当成现有服务支持。
 
 N10I-03完整七包＋同NuWe extra、当前browser4及旧N10I-02完整七包／browser3的联合验收、混配边界和恢复记录位于`doc/2026-11-04-stage1.2-query-reki/evidence/task-n10i-03/README.md`。恢复须同时选择对应代码pin、完整快照、运行包和资源；更早历史组仍按各自封存证据保留。当前历史行535已验／478剩余，N06余110，质量485、本地95／集合48组及N27暂缓不变；本次组合不再次扣减四条NSRF。
+
+## NWFS revision 5 与完整组合恢复
+
+N06-03作者组为browser revision5／catalog44／天擎参数9／映射11，包含545资源内定义、163稳定ID和1307作用域映射。新增GFS服务`cedarkit.gswc`地表1/0及`cedarkit.tswc`大气顶8/0；两者是同一晴空净短波家族`cedarkit.gswc.any`的子定义，继承J/m2，并固定从起报累计。父家族没有直接映射，可经父定义切换地表与顶边界；顶为类别，不添加数值高度。历史三元组0.4.11经候选页选择资源及定义，原NSRF三元组0.4.9及NLHF0.0.10仍各自保留。
+
+审核范围固定2026-11-02 12 UTC、39–41N／115–117E、分析0h及预报3、6、48h。独立producer／原始GRIB／实际响应证据支持晴空净短波积分能量；原头W.m-2及919个原TOA +6→48h负增量保留，不除时长、改符号、裁剪或承诺单调性。NSRF／NLHF保持各自解释和有限适用域，MXT/MNT仍缺实际统计窗口依据，没有新增相应服务映射。
+
+N10I-04的精确七包＋同NuWe extra、browser5／catalog44完整组合、混配边界和恢复证据位于`doc/2026-11-04-stage1.2-query-reki/evidence/task-n10i-04/README.md`。直接旧组为N10I-03已联合验收的完整七包＋同extra／browser4／catalog43，恢复须同时选择匹配代码pin、完整页面快照及运行包和资源。当前历史539已验／474剩余、N06余106、质量485、本地95／集合48组96报文及N27暂缓保持；本次配套组合不重复扣减四条NWFS。

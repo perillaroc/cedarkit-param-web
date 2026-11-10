@@ -7432,6 +7432,58 @@
           },
           "backend": "cmadaas",
           "evidence": [
+            "I01/coverage-draft.json#S-gfs-ana-row-104",
+            "stage1.2/task-n06-03/inputs/ref/package/grib_util_v12.6/include/paraNum.h#case109",
+            "stage1.2/task-n06-03/originals/manifest.json",
+            "stage1.2/task-n06-03/results/scientific-source.json"
+          ],
+          "id": "S-gfs-ana.gswc.energy.since-initialization",
+          "native": {
+            "match": {
+              "fcstEle": "NWFS",
+              "maxLat": 41,
+              "maxLon": 117,
+              "minLat": 39,
+              "minLon": 115
+            },
+            "translate": {
+              "statistics": {
+                "rule": "cmadaas.statistics_fields"
+              },
+              "time": {
+                "rule": "cmadaas.time_fields"
+              },
+              "unit": {
+                "config": {
+                  "source_unit": "J/m2"
+                },
+                "rule": "common.value_unit"
+              },
+              "vertical": {
+                "config": {
+                  "table": "cmadaas.levels"
+                },
+                "rule": "cmadaas.vertical_table"
+              }
+            }
+          },
+          "parameter_id": "cedarkit.gswc",
+          "when": {
+            "level_type": "surface",
+            "step": [
+              "PT0H"
+            ],
+            "time": "2026-11-02T12:00:00Z"
+          }
+        },
+        {
+          "applies_to": {
+            "dataset": "cma_gfs_gmf_analysis_cmadaas",
+            "product": "analysis",
+            "product_version": "service-20261105"
+          },
+          "backend": "cmadaas",
+          "evidence": [
             "I01/coverage-draft.json#S-gfs-ana-row-102",
             "stage1.2/task-06i",
             "stage1.2/task-n06-01/originals/manifest.json",
@@ -7571,6 +7623,58 @@
             }
           },
           "parameter_id": "cedarkit.tsw",
+          "when": {
+            "level_type": "atmosphere_top",
+            "step": [
+              "PT0H"
+            ],
+            "time": "2026-11-02T12:00:00Z"
+          }
+        },
+        {
+          "applies_to": {
+            "dataset": "cma_gfs_gmf_analysis_cmadaas",
+            "product": "analysis",
+            "product_version": "service-20261105"
+          },
+          "backend": "cmadaas",
+          "evidence": [
+            "I01/coverage-draft.json#S-gfs-ana-row-105",
+            "stage1.2/task-n06-03/inputs/ref/package/grib_util_v12.6/include/paraNum.h#case109",
+            "stage1.2/task-n06-03/originals/manifest.json",
+            "stage1.2/task-n06-03/results/scientific-source.json"
+          ],
+          "id": "S-gfs-ana.tswc.energy.since-initialization",
+          "native": {
+            "match": {
+              "fcstEle": "NWFS",
+              "maxLat": 41,
+              "maxLon": 117,
+              "minLat": 39,
+              "minLon": 115
+            },
+            "translate": {
+              "statistics": {
+                "rule": "cmadaas.statistics_fields"
+              },
+              "time": {
+                "rule": "cmadaas.time_fields"
+              },
+              "unit": {
+                "config": {
+                  "source_unit": "J/m2"
+                },
+                "rule": "common.value_unit"
+              },
+              "vertical": {
+                "config": {
+                  "table": "cmadaas.levels"
+                },
+                "rule": "cmadaas.vertical_table"
+              }
+            }
+          },
+          "parameter_id": "cedarkit.tswc",
           "when": {
             "level_type": "atmosphere_top",
             "step": [
@@ -15928,6 +16032,60 @@
           },
           "backend": "cmadaas",
           "evidence": [
+            "I01/coverage-draft.json#S-gfs-fcst-row-116",
+            "stage1.2/task-n06-03/inputs/ref/package/grib_util_v12.6/include/paraNum.h#case109",
+            "stage1.2/task-n06-03/originals/manifest.json",
+            "stage1.2/task-n06-03/results/scientific-source.json"
+          ],
+          "id": "S-gfs-fcst.gswc.energy.since-initialization",
+          "native": {
+            "match": {
+              "fcstEle": "NWFS",
+              "maxLat": 41,
+              "maxLon": 117,
+              "minLat": 39,
+              "minLon": 115
+            },
+            "translate": {
+              "statistics": {
+                "rule": "cmadaas.statistics_fields"
+              },
+              "time": {
+                "rule": "cmadaas.time_fields"
+              },
+              "unit": {
+                "config": {
+                  "source_unit": "J/m2"
+                },
+                "rule": "common.value_unit"
+              },
+              "vertical": {
+                "config": {
+                  "table": "cmadaas.levels"
+                },
+                "rule": "cmadaas.vertical_table"
+              }
+            }
+          },
+          "parameter_id": "cedarkit.gswc",
+          "when": {
+            "level_type": "surface",
+            "step": [
+              "PT3H",
+              "PT6H",
+              "PT48H"
+            ],
+            "time": "2026-11-02T12:00:00Z"
+          }
+        },
+        {
+          "applies_to": {
+            "dataset": "cma_gfs_gmf_cmadaas",
+            "product": "forecast",
+            "product_version": "service-20261105"
+          },
+          "backend": "cmadaas",
+          "evidence": [
             "I01/coverage-draft.json#S-gfs-fcst-row-98",
             "stage1.2/task-06i",
             "stage1.2/task-n06-01/originals/manifest.json",
@@ -16128,6 +16286,60 @@
             }
           },
           "parameter_id": "cedarkit.tsw",
+          "when": {
+            "level_type": "atmosphere_top",
+            "step": [
+              "PT3H",
+              "PT6H",
+              "PT48H"
+            ],
+            "time": "2026-11-02T12:00:00Z"
+          }
+        },
+        {
+          "applies_to": {
+            "dataset": "cma_gfs_gmf_cmadaas",
+            "product": "forecast",
+            "product_version": "service-20261105"
+          },
+          "backend": "cmadaas",
+          "evidence": [
+            "I01/coverage-draft.json#S-gfs-fcst-row-115",
+            "stage1.2/task-n06-03/inputs/ref/package/grib_util_v12.6/include/paraNum.h#case109",
+            "stage1.2/task-n06-03/originals/manifest.json",
+            "stage1.2/task-n06-03/results/scientific-source.json"
+          ],
+          "id": "S-gfs-fcst.tswc.energy.since-initialization",
+          "native": {
+            "match": {
+              "fcstEle": "NWFS",
+              "maxLat": 41,
+              "maxLon": 117,
+              "minLat": 39,
+              "minLon": 115
+            },
+            "translate": {
+              "statistics": {
+                "rule": "cmadaas.statistics_fields"
+              },
+              "time": {
+                "rule": "cmadaas.time_fields"
+              },
+              "unit": {
+                "config": {
+                  "source_unit": "J/m2"
+                },
+                "rule": "common.value_unit"
+              },
+              "vertical": {
+                "config": {
+                  "table": "cmadaas.levels"
+                },
+                "rule": "cmadaas.vertical_table"
+              }
+            }
+          },
+          "parameter_id": "cedarkit.tswc",
           "when": {
             "level_type": "atmosphere_top",
             "step": [
@@ -55787,7 +55999,7 @@
           ]
         }
       ],
-      "version": "10"
+      "version": "11"
     }
   ],
   "meta": {
@@ -55795,8 +56007,8 @@
     "parameter_resource": {
       "api_version": "cedarkit.parameters/v1",
       "id": "cedarkit.parameters.cmadaas",
-      "sha256": "8e4f49624ac9822ca328264cca9e23a9f3cd4ab5c4dba482d95492a4d04b4a14",
-      "version": "8"
+      "sha256": "77dc6bcc332fa7fb73105743787d9ae2c5dfc792a4b285c0a27b3190c9710473",
+      "version": "9"
     },
     "schema_version": 4,
     "scope": {
@@ -55840,6 +56052,8 @@
         "cedarkit.div",
         "cedarkit.graupel",
         "cedarkit.gsw",
+        "cedarkit.gswc",
+        "cedarkit.gswc.any",
         "cedarkit.h",
         "cedarkit.h.any",
         "cedarkit.hcc",
@@ -55917,6 +56131,7 @@
         "cedarkit.tiw",
         "cedarkit.tiw.any",
         "cedarkit.tsw",
+        "cedarkit.tswc",
         "cedarkit.ttd",
         "cedarkit.tvw",
         "cedarkit.tvw.any",
@@ -55934,16 +56149,17 @@
       ],
       "remaining_migration_obligations": [
         {
-          "accepted": 535,
+          "accepted": 539,
           "evidence": [
             "doc/2026-11-04-stage1.2-query-reki/task-01-coverage.md",
             "stage1.2/task-07e6/coverage.json",
             "stage1.2/task-n06-01/coverage.json",
-            "stage1.2/task-n06-02/coverage.json"
+            "stage1.2/task-n06-02/coverage.json",
+            "stage1.2/task-n06-03/coverage.json"
           ],
           "id": "service-history",
           "note": "Historical service rows, not the number of mappings or expected-domain cells",
-          "remaining": 478,
+          "remaining": 474,
           "total": 1013
         },
         {
@@ -55987,6 +56203,7 @@
         "cedarkit.div",
         "cedarkit.graupel",
         "cedarkit.gsw",
+        "cedarkit.gswc",
         "cedarkit.h",
         "cedarkit.h.any",
         "cedarkit.hcc",
@@ -56046,6 +56263,7 @@
         "cedarkit.theta-se",
         "cedarkit.tiw",
         "cedarkit.tsw",
+        "cedarkit.tswc",
         "cedarkit.ttd",
         "cedarkit.tvw",
         "cedarkit.u",
@@ -56061,8 +56279,8 @@
     },
     "stats": {
       "aliases": 19,
-      "mappings": 534,
-      "parameters": 104
+      "mappings": 538,
+      "parameters": 107
     }
   },
   "notes": [],
@@ -56229,6 +56447,28 @@
       },
       "name": "gsw",
       "parameter_id": "cedarkit.gsw",
+      "unit": "J/m2"
+    },
+    {
+      "fixed_conditions": {
+        "level_type": "surface",
+        "statistics": {
+          "operation": "accumulation",
+          "over": "time",
+          "period": {
+            "kind": "since_initialization"
+          }
+        }
+      },
+      "name": "gswc",
+      "parameter_id": "cedarkit.gswc",
+      "parent": "cedarkit.gswc.any"
+    },
+    {
+      "description": "Time-integrated net short-wave radiation, clear sky",
+      "description_cn": "晴空净短波辐射时间积分量",
+      "name": "gswc",
+      "parameter_id": "cedarkit.gswc.any",
       "unit": "J/m2"
     },
     {
@@ -57227,6 +57467,23 @@
       "name": "tsw",
       "parameter_id": "cedarkit.tsw",
       "parent": "cedarkit.gsw"
+    },
+    {
+      "description": "Time-integrated net short-wave radiation at the top of atmosphere, clear sky",
+      "description_cn": "大气顶晴空净短波辐射时间积分量",
+      "fixed_conditions": {
+        "level_type": "atmosphere_top",
+        "statistics": {
+          "operation": "accumulation",
+          "over": "time",
+          "period": {
+            "kind": "since_initialization"
+          }
+        }
+      },
+      "name": "tswc",
+      "parameter_id": "cedarkit.tswc",
+      "parent": "cedarkit.gswc.any"
     },
     {
       "description": "Dew point depression",

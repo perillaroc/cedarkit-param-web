@@ -40,12 +40,12 @@ afterEach(() => vi.unstubAllGlobals())
 
 describe('accepted schema 4 group', () => {
   it('keeps all seven resource contexts, exact runtime pins and bounded global obligations', () => {
-    expect(model.entries).toHaveLength(542)
+    expect(model.entries).toHaveLength(545)
     expect(model.stableIds).toBe(163)
-    expect(model.mappingCount).toBe(1303)
+    expect(model.mappingCount).toBe(1307)
     expect(model.manifest.dataset_bindings).toHaveLength(18)
-    expect(new Set(model.entries.map((e) => e.key)).size).toBe(542)
-    expect(model.manifest.scope.remaining_migration_obligations.find((o) => o.id === 'service-history')?.remaining).toBe(478)
+    expect(new Set(model.entries.map((e) => e.key)).size).toBe(545)
+    expect(model.manifest.scope.remaining_migration_obligations.find((o) => o.id === 'service-history')?.remaining).toBe(474)
     expect(model.manifest.scope.remaining_migration_obligations.find((o) => o.id === 'service-quality')?.remaining).toBe(485)
   })
   it('preserves the reviewed MESO-1KM PWAT scope, units, evidence and legacy targets', () => {
@@ -96,6 +96,29 @@ describe('accepted schema 4 group', () => {
     }
     expect(model.entries.filter((e) => e.snapshot === 'cmadaas' && ['cedarkit.mx2t', 'cedarkit.mn2t'].includes(e.definition.parameter_id))).toHaveLength(0)
   })
+  it('retains the independent NWFS clear-sky hierarchy, energy clock and finite surface/top service mappings', () => {
+    const family = get('cmadaas', 'cedarkit.gswc.any')
+    const surface = get('cmadaas', 'cedarkit.gswc')
+    const top = get('cmadaas', 'cedarkit.tswc')
+    expect(family.unit).toBe('J/m2')
+    expect(family.definition.description).toContain('clear sky')
+    expect(family.mappings).toHaveLength(0)
+    for (const [entry, boundary] of [[surface, 'surface'], [top, 'atmosphere_top']] as const) {
+      expect(entry.lineage.map((p) => p.parameter_id)).toEqual(['cedarkit.gswc.any', entry.definition.parameter_id])
+      expect(entry.definition.unit).toBeUndefined()
+      expect(entry.unit).toBe('J/m2')
+      expect(entry.fixedConditions).toEqual({ level_type: boundary, statistics: { operation: 'accumulation', over: 'time', period: { kind: 'since_initialization' } } })
+      expect(entry.fixedConditions).not.toHaveProperty('level')
+      expect(entry.mappings).toHaveLength(2)
+      expect(entry.mappings.every((m) => m.when?.level_type === boundary && m.when?.time === '2026-11-02T12:00:00Z')).toBe(true)
+      for (const mapping of entry.mappings) expect(mapping.native).toMatchObject({ match: { fcstEle: 'NWFS' } })
+      expect(entry.mappings.find((m) => m.applies_to.product === 'analysis')?.when?.step).toEqual(['PT0H'])
+      expect(entry.mappings.find((m) => m.applies_to.product === 'forecast')?.when?.step).toEqual(['PT3H', 'PT6H', 'PT48H'])
+      expect(entry.mappings.every((m) => m.evidence.some((e) => e.includes('task-n06-03/results/scientific-source.json')))).toBe(true)
+      expect(legacyCandidates(model, '0.4.11').find((c) => c.parameter_id === entry.definition.parameter_id)?.current_targets.some((t) => t.snapshot === 'cmadaas')).toBe(true)
+    }
+    expect(get('gfs', 'cedarkit.gswc').fixedConditions).toEqual({ level_type: 'surface' })
+  })
   it('inherits only within one resource while retaining original local definitions and parent constraints', () => {
     const t2m = get('gfs', 'cedarkit.t2m')
     expect(t2m.unit).toBe('K')
@@ -113,7 +136,7 @@ describe('accepted schema 4 group', () => {
   })
   it('keeps family definitions without claiming direct execution', () => {
     const direct = new Set(model.entries.filter((e) => e.mappings.length).map((e) => e.definition.parameter_id))
-    expect(direct.size).toBe(121)
+    expect(direct.size).toBe(123)
     expect(model.entries.some((e) => e.mappings.length === 0)).toBe(true)
     expect(filterEntries(model.entries, { ...filters, mapped: 'without' }).every((e) => !e.mappings.length)).toBe(true)
   })
@@ -180,7 +203,7 @@ describe('byte-verified group loading', () => {
   it('loads the exact frozen manifest and every member from the manifest directory', async () => {
     const mock = mockFetch()
     const loaded = await loadModel('/reviewed/manifest.json')
-    expect(loaded.entries).toHaveLength(542)
+    expect(loaded.entries).toHaveLength(545)
     expect(loaded.manifestSha256).toBe(accepted.sha256)
     expect(mock).toHaveBeenCalledTimes(24)
     expect(mock).toHaveBeenCalledWith('/reviewed/resources/current-gfs-parameters.json')
