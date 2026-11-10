@@ -3103,18 +3103,36 @@
     {
       "candidates": [
         {
-          "current_targets": [],
-          "historical_only": true,
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            }
+          ],
+          "historical_only": false,
           "parameter_id": "cedarkit.gulw"
         },
         {
-          "current_targets": [],
-          "historical_only": true,
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            }
+          ],
+          "historical_only": false,
           "parameter_id": "cedarkit.gulw.any"
         },
         {
-          "current_targets": [],
-          "historical_only": true,
+          "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            }
+          ],
+          "historical_only": false,
           "parameter_id": "cedarkit.tulw"
         }
       ],

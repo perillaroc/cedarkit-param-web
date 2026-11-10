@@ -52,6 +52,12 @@ const parentEntry = computed(() => entry.value?.definition.parent ? findEntry(en
         <p>原生地表解码头为 <code>W m**-2</code>，大气顶为 <code>unknown</code>；服务原头为 <code>W.m-2</code>，历史记录为 <code>w/m2</code>。当前单位依据生产声明、原始 GRIB 和实际响应审核，原声明保留供追溯。</p>
         <p>保留全部原正负值，不翻转符号、不裁剪、不除时长；本批未确立 positive-up 或单调性。请在对应产品映射中查看有限适用范围与审核证据。</p>
       </n-alert>
+      <n-alert v-if="entry.resource.id === 'cedarkit.parameters.cmadaas' && ['cedarkit.gulw.any', 'cedarkit.gulw', 'cedarkit.tulw'].includes(entry.definition.parameter_id)" class="ulrf-semantics" type="info" title="ULRF 单位、符号与层域">
+        <p>本批 GFS ULRF 具名结果使用 J/m2，表示保留原符号的时间积分能量。分析场为零，六个预报场全为负值。</p>
+        <p>原生地表解码头为 <code>W m**-2</code>，大气顶为 <code>unknown</code>；服务原头为 <code>W.m-2</code>，历史记录为 <code>w/m2</code>。当前单位依据本批生产声明、原始 GRIB 和实际响应独立审核，原声明保留供追溯。</p>
+        <p>服务中文名在大气顶行也写成“地面”；审核按英文属性、ULRF_8、生产分支和原生 8/0 确认大气顶，不把它归到地表。历史 gslu 别名仅供档案导航。</p>
+        <p>保留全部原值，不翻转符号、不裁剪、不除时长；本批未确立 positive-up、一般单调性或物理成因。请在对应产品映射中查看有限适用范围与审核证据。</p>
+      </n-alert>
       <details v-if="alternatives.length">
         <summary>同一稳定 ID 的其他资源定义（{{ alternatives.length }}）</summary>
         <ul><li v-for="other in alternatives" :key="other.key">

@@ -10152,18 +10152,19 @@
       ],
       "remaining_migration_obligations": [
         {
-          "accepted": 543,
+          "accepted": 547,
           "evidence": [
             "doc/2026-11-04-stage1.2-query-reki/task-01-coverage.md",
             "stage1.2/task-07e6/coverage.json",
             "stage1.2/task-n06-01/coverage.json",
             "stage1.2/task-n06-02/coverage.json",
             "stage1.2/task-n06-03/coverage.json",
-            "stage1.2/task-n06-04/coverage.json"
+            "stage1.2/task-n06-04/coverage.json",
+            "stage1.2/task-n06-05/coverage.json"
           ],
           "id": "service-history",
           "note": "Historical service rows, not the number of mappings or expected-domain cells",
-          "remaining": 470,
+          "remaining": 466,
           "total": 1013
         },
         {
