@@ -40,12 +40,12 @@ afterEach(() => vi.unstubAllGlobals())
 
 describe('accepted schema 4 group', () => {
   it('keeps all seven resource contexts, exact runtime pins and bounded global obligations', () => {
-    expect(model.entries).toHaveLength(560)
+    expect(model.entries).toHaveLength(570)
     expect(model.stableIds).toBe(171)
-    expect(model.mappingCount).toBe(1345)
+    expect(model.mappingCount).toBe(1377)
     expect(model.manifest.dataset_bindings).toHaveLength(18)
-    expect(new Set(model.entries.map((e) => e.key)).size).toBe(560)
-    expect(model.manifest.scope.remaining_migration_obligations.find((o) => o.id === 'service-history')?.remaining).toBe(450)
+    expect(new Set(model.entries.map((e) => e.key)).size).toBe(570)
+    expect(model.manifest.scope.remaining_migration_obligations.find((o) => o.id === 'service-history')?.remaining).toBe(415)
     expect(model.manifest.scope.remaining_migration_obligations.find((o) => o.id === 'service-quality')?.remaining).toBe(485)
   })
   it('keeps independently reviewed moisture units and finite service scopes separate from native contexts', () => {
@@ -78,6 +78,19 @@ describe('accepted schema 4 group', () => {
     expect(get('cmadaas', 'cedarkit.st-0-10').mappings).toHaveLength(6)
     expect(model.manifest.scope.remaining_migration_obligations.find((o) => o.id === 'soil-temperature-availability')?.remaining).toBe(4)
     expect(get('cmadaas', 'cedarkit.st-0-10').key).not.toBe(get('gfs', 'cedarkit.st-0-10').key)
+  })
+  it('shows storm-relative helicity as a bounded layer without publishing the unresolved shear', () => {
+    const helicity = get('cmadaas', 'cedarkit.srh-0-1000')
+    expect(helicity.unit).toBe('J/kg')
+    expect(helicity.fixedConditions.layer).toEqual({
+      bottom: { type: 'height_above_ground', value: 0, unit: 'm' },
+      top: { type: 'height_above_ground', value: 1000, unit: 'm' },
+    })
+    expect(helicity.mappings).toHaveLength(4)
+    expect(helicity.mappings.every((mapping) => mapping.when?.layer && !('level' in mapping.when))).toBe(true)
+    expect(helicity.mappings.some((mapping) => mapping.id === 'S-meso1-ana-row-43.diagnostic')).toBe(true)
+    expect(model.entries.some((entry) => entry.snapshot === 'cmadaas' && entry.definition.parameter_id === 'cedarkit.shr-0-1000')).toBe(false)
+    expect(model.manifest.scope.remaining_migration_obligations.find((o) => o.id === 'diagnostic-supplementary-grid-observations')?.remaining).toBe(2)
   })
   it('preserves the reviewed MESO-1KM PWAT scope, units, evidence and legacy targets', () => {
     const pwat = get('meso1', 'cedarkit.pwat')
@@ -302,7 +315,7 @@ describe('byte-verified group loading', () => {
   it('loads the exact frozen manifest and every member from the manifest directory', async () => {
     const mock = mockFetch()
     const loaded = await loadModel('/reviewed/manifest.json')
-    expect(loaded.entries).toHaveLength(560)
+    expect(loaded.entries).toHaveLength(570)
     expect(loaded.manifestSha256).toBe(accepted.sha256)
     expect(mock).toHaveBeenCalledTimes(24)
     expect(mock).toHaveBeenCalledWith('/reviewed/resources/current-gfs-parameters.json')

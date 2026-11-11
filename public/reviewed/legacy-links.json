@@ -2870,6 +2870,11 @@
         {
           "current_targets": [
             {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            },
+            {
               "parameter_resource_id": "cedarkit.parameters.cma-meso-1km.current",
               "path": "browser/meso1/params.json",
               "snapshot": "meso1"
@@ -2885,6 +2890,11 @@
         },
         {
           "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            },
             {
               "parameter_resource_id": "cedarkit.parameters.cma-meso-1km.current",
               "path": "browser/meso1/params.json",
@@ -3448,6 +3458,11 @@
         {
           "current_targets": [
             {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            },
+            {
               "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
               "path": "browser/gfs/params.json",
               "snapshot": "gfs"
@@ -3597,6 +3612,11 @@
         {
           "current_targets": [
             {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            },
+            {
               "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
               "path": "browser/meso3/params.json",
               "snapshot": "meso3"
@@ -3607,6 +3627,11 @@
         },
         {
           "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            },
             {
               "parameter_resource_id": "cedarkit.parameters.cma-meso-3km.current",
               "path": "browser/meso3/params.json",
@@ -3845,6 +3870,11 @@
         {
           "current_targets": [
             {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            },
+            {
               "parameter_resource_id": "cedarkit.parameters.cma-meso-1km.current",
               "path": "browser/meso1/params.json",
               "snapshot": "meso1"
@@ -3860,6 +3890,11 @@
         },
         {
           "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            },
             {
               "parameter_resource_id": "cedarkit.parameters.cma-meso-1km.current",
               "path": "browser/meso1/params.json",
@@ -4085,6 +4120,11 @@
       "candidates": [
         {
           "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            },
             {
               "parameter_resource_id": "cedarkit.parameters.cma-meso-1km.current",
               "path": "browser/meso1/params.json",
@@ -4354,6 +4394,11 @@
         {
           "current_targets": [
             {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            },
+            {
               "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
               "path": "browser/gfs/params.json",
               "snapshot": "gfs"
@@ -4369,6 +4414,11 @@
         },
         {
           "current_targets": [
+            {
+              "parameter_resource_id": "cedarkit.parameters.cmadaas",
+              "path": "browser/cmadaas/params.json",
+              "snapshot": "cmadaas"
+            },
             {
               "parameter_resource_id": "cedarkit.parameters.cma-gfs.current",
               "path": "browser/gfs/params.json",
