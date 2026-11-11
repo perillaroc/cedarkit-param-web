@@ -23,16 +23,16 @@ npm run test:e2e
 
 ## 冻结的 schema 4 快照
 
-当前消费 `public/reviewed/manifest.json`，组为 `cedarkit.browser.reviewed-current` v8。
-manifest 格式为 1，七份浏览器文档格式为 4，目录内容为 v47；这些版本分别管理。
+当前消费 `public/reviewed/manifest.json`，组为 `cedarkit.browser.reviewed-current` v9。
+manifest 格式为 1，七份浏览器文档格式为 4，目录内容为 v48；这些版本分别管理。
 精确 manifest SHA256 固定在 `src/bundle-pin.json`。
 
-输入来自 `cedarkit-param-db` 的审核文本作者导出。T02 冻结的 revision 8 导出组由以下命令
+输入来自 `cedarkit-param-db` 的审核文本作者导出。T03 冻结的 revision 9 导出组由以下命令
 原字节安装到一个新目录，没有手工修改生成 JSON：
 
 ```sh
 node tools/browser-bundle.mjs \
-  ../../doc/2026-11-04-stage1.2-query-reki/evidence/task-t02/browser-candidate
+  ../../doc/2026-11-04-stage1.2-query-reki/evidence/task-t03/browser-candidate
 ```
 
 安装目录必须不存在；同一 revision 不覆盖。已有安装可用以下命令复核：
@@ -54,8 +54,8 @@ npm run verify:bundle
 
 ## 浏览和导航
 
-- 列表保留 554 条资源内定义，涉及 169 个稳定 ID、1325 条映射。相同稳定 ID 在不同
-  资源中的定义分别显示，避免覆盖差异；127 个稳定 ID 有直接映射。
+- 列表保留 560 条资源内定义，涉及 171 个稳定 ID、1345 条映射。相同稳定 ID 在不同
+  资源中的定义分别显示，避免覆盖差异；129 个稳定 ID 有直接映射。
 - 搜索稳定 ID、名称／别名、中英文描述、单位、父定义、科学条件、适用产品、
   原生字段、证据引用和 GRIB 三元组。可按资源、dataset、backend 和直接映射状态筛选。
 - 筛选和分页保存在 URL；桌面显示表格，移动端显示卡片。
@@ -148,6 +148,12 @@ N10I-06精确七包＋同NuWe extra／browser7完整组合、页面、混配与�
 
 ## T02 moisture revision 8
 
-当前审核组为 browser8／catalog47／CMADaaS参数12／映射14。新增服务 `cedarkit.qflx` 六条映射和 `cedarkit.qfxsfc` 四条映射，分别保留 `g/(cm.hPa.s)` 与 `kg/(m2.s)`，均为瞬时量。QFLX采用各产品独立Q／U／V原场复算证据；空响应单位来自明确审核映射，原数值不乘metadata SCALE_DIVISOR、不套用旧十倍尺度，也不换成潜热或累计能量。
+T02审核组为 browser8／catalog47／CMADaaS参数12／映射14。新增服务 `cedarkit.qflx` 六条映射和 `cedarkit.qfxsfc` 四条映射，分别保留 `g/(cm.hPa.s)` 与 `kg/(m2.s)`，均为瞬时量。QFLX采用各产品独立Q／U／V原场复算证据；空响应单位来自明确审核映射，原数值不乘metadata SCALE_DIVISOR、不套用旧十倍尺度，也不换成潜热或累计能量。
 
 范围仅为2026-11-02 12UTC、39–41N／115–117E，分析0h／预报6与48h；QFLX限各产品审核等压面，地表通量只含MESO‑3KM／TYM。本地与服务定义上下文保持独立，父家族无直接映射。共554作用域定义／169稳定ID／1325映射，历史服务557行已验、456行未验；质量485及本地组义务不变。[科学核查](../../doc/2026-11-04-stage1.2-query-reki/evidence/task-t02/README.md)
+
+## T03 soil temperature revision 9
+
+当前组为browser9／catalog48／CMADaaS参数13／映射15，包含560作用域定义、171稳定ID及1345映射。服务新增六个固定土温层定义、20条映射和六张产品专属联合层表；规范查询使用上下边界，不把中点数值冒作单层深度。GFS四层0–10／10–40／40–100／100–200cm，MESO‑3KM与TYM仅交付已核0–10／10–30／60–100cm，单位K。
+
+范围限2026-11-02 12UTC、39–41N／115–117E、分析0h／预报6h；六条土温历史行按该明确范围结算，四个30–60cm层45服务拒绝另记可用性义务。原GFS分析TEM0与TYM预报TEM0／10／30／60错误层标保留并明确记录更正依据；实际映射中点各有本产品原报文和成功响应。六条非1KM土壤湿度仍有kg/kg与m3/m3冲突，四条1KM土壤行缺自身原场／成功服务，均不具名交付。历史563已验／450未验，原485质量单元、T02两个控制观察及T03四个土温质量单元分别计数。[核查与组合验收](../../doc/2026-11-04-stage1.2-query-reki/evidence/task-t03/README.md)

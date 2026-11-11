@@ -40,12 +40,12 @@ afterEach(() => vi.unstubAllGlobals())
 
 describe('accepted schema 4 group', () => {
   it('keeps all seven resource contexts, exact runtime pins and bounded global obligations', () => {
-    expect(model.entries).toHaveLength(554)
-    expect(model.stableIds).toBe(169)
-    expect(model.mappingCount).toBe(1325)
+    expect(model.entries).toHaveLength(560)
+    expect(model.stableIds).toBe(171)
+    expect(model.mappingCount).toBe(1345)
     expect(model.manifest.dataset_bindings).toHaveLength(18)
-    expect(new Set(model.entries.map((e) => e.key)).size).toBe(554)
-    expect(model.manifest.scope.remaining_migration_obligations.find((o) => o.id === 'service-history')?.remaining).toBe(456)
+    expect(new Set(model.entries.map((e) => e.key)).size).toBe(560)
+    expect(model.manifest.scope.remaining_migration_obligations.find((o) => o.id === 'service-history')?.remaining).toBe(450)
     expect(model.manifest.scope.remaining_migration_obligations.find((o) => o.id === 'service-quality')?.remaining).toBe(485)
   })
   it('keeps independently reviewed moisture units and finite service scopes separate from native contexts', () => {
@@ -66,6 +66,18 @@ describe('accepted schema 4 group', () => {
     }
     expect(flux.key).not.toBe(get('gfs', 'cedarkit.qflx').key)
     expect(get('cmadaas', 'cedarkit.qfxsfc.any').mappings).toHaveLength(0)
+  })
+  it('keeps reviewed soil layers distinct from point depths and retains unavailable cells', () => {
+    const soil = get('cmadaas', 'cedarkit.st-60-100')
+    expect(soil.unit).toBe('K')
+    expect(soil.fixedConditions.layer).toEqual({ top: { type: 'depth_below_land', value: 0.6, unit: 'm' }, bottom: { type: 'depth_below_land', value: 1, unit: 'm' } })
+    expect(soil.fixedConditions.statistics).toEqual({ operation: 'instantaneous', over: 'time' })
+    expect(soil.mappings).toHaveLength(4)
+    expect(soil.mappings.every((m) => m.when?.layer && !('level' in m.when))).toBe(true)
+    expect(soil.mappings.every((m) => m.evidence.some((e) => e.includes('task-t03/accepted-cases.json')))).toBe(true)
+    expect(get('cmadaas', 'cedarkit.st-0-10').mappings).toHaveLength(6)
+    expect(model.manifest.scope.remaining_migration_obligations.find((o) => o.id === 'soil-temperature-availability')?.remaining).toBe(4)
+    expect(get('cmadaas', 'cedarkit.st-0-10').key).not.toBe(get('gfs', 'cedarkit.st-0-10').key)
   })
   it('preserves the reviewed MESO-1KM PWAT scope, units, evidence and legacy targets', () => {
     const pwat = get('meso1', 'cedarkit.pwat')
@@ -223,7 +235,7 @@ describe('accepted schema 4 group', () => {
   })
   it('keeps family definitions without claiming direct execution', () => {
     const direct = new Set(model.entries.filter((e) => e.mappings.length).map((e) => e.definition.parameter_id))
-    expect(direct.size).toBe(127)
+    expect(direct.size).toBe(129)
     expect(model.entries.some((e) => e.mappings.length === 0)).toBe(true)
     expect(filterEntries(model.entries, { ...filters, mapped: 'without' }).every((e) => !e.mappings.length)).toBe(true)
   })
@@ -290,7 +302,7 @@ describe('byte-verified group loading', () => {
   it('loads the exact frozen manifest and every member from the manifest directory', async () => {
     const mock = mockFetch()
     const loaded = await loadModel('/reviewed/manifest.json')
-    expect(loaded.entries).toHaveLength(554)
+    expect(loaded.entries).toHaveLength(560)
     expect(loaded.manifestSha256).toBe(accepted.sha256)
     expect(mock).toHaveBeenCalledTimes(24)
     expect(mock).toHaveBeenCalledWith('/reviewed/resources/current-gfs-parameters.json')
