@@ -23,16 +23,14 @@ npm run test:e2e
 
 ## 冻结的 schema 4 快照
 
-当前消费 `public/reviewed/manifest.json`，组为 `cedarkit.browser.reviewed-current` v9。
-manifest 格式为 1，七份浏览器文档格式为 4，目录内容为 v48；这些版本分别管理。
+当前消费 `public/reviewed/manifest.json`，组为 `cedarkit.browser.reviewed-current` revision 12。
+manifest 格式为 1，七份浏览器文档格式为 4，目录内容为 v52。
 精确 manifest SHA256 固定在 `src/bundle-pin.json`。
 
-输入来自 `cedarkit-param-db` 的审核文本作者导出。T03 冻结的 revision 9 导出组由以下命令
-原字节安装到一个新目录，没有手工修改生成 JSON：
+输入来自 `cedarkit-param-db` 的审核文本作者导出。使用以下命令原字节安装已验导出组。
 
 ```sh
-node tools/browser-bundle.mjs \
-  ../../doc/2026-11-04-stage1.2-query-reki/evidence/task-t03/browser-candidate
+node tools/browser-bundle.mjs /tmp/reviewed-browser-schema4
 ```
 
 安装目录必须不存在；同一 revision 不覆盖。已有安装可用以下命令复核：
@@ -54,17 +52,20 @@ npm run verify:bundle
 
 ## 浏览和导航
 
-- 列表保留 560 条资源内定义，涉及 171 个稳定 ID、1345 条映射。相同稳定 ID 在不同
-  资源中的定义分别显示，避免覆盖差异；129 个稳定 ID 有直接映射。
+- 列表包含 702 条资源内定义、215 个稳定 ID 和 2581 条映射。相同稳定 ID 在不同
+  资源中的定义分别显示。有 158 个稳定 ID 有直接映射。
 - 搜索稳定 ID、名称／别名、中英文描述、单位、父定义、科学条件、适用产品、
   原生字段、证据引用和 GRIB 三元组。可按资源、dataset、backend 和直接映射状态筛选。
 - 筛选和分页保存在 URL；桌面显示表格，移动端显示卡片。
 - 详情按“参数资源 ID＋稳定参数 ID”定位；单位／描述只从同一资源内的父定义继承，
   展示原本地定义、完整父链、固定条件、子定义、每条映射的产品域、条件、原生转换、
   共享表及证据引用。映射身份也包含映射资源 ID。
+- ORIG 列表标出原值和混合分支。详情列明定义单位及各映射的读取输出。保留解码原值的
+  分支省略标准单位，仍可在读取结果中追溯原生单位标签。名称和别名取自本地定义。
 - 有定义且无直接映射时明确显示状态，不因此宣称可以执行。
 - `/#/params/:d/:c/:n` 旧链接及搜索框三元组回车进入候选页，保留多个稳定身份及资源入口。
-  85 个仅历史身份使用 `historical_only`，表示未纳入当前审核切片，不自动视为退役或当前支持。
+  41 个仅历史身份使用 `historical_only`，表示未纳入当前审核切片。旧链接 `0.0.4`
+  已能到达 GFS `cedarkit.mx2t`（规范名 `tmax2m`）。
 - 页面显示 reviewed_authoring／reviewed_mapping_with_references，并说明未保证所有
   时效／成员／质量单元可用。全局待验义务从 manifest 展示一次，不按七份快照相加。
 - 加载失败时显示原因并提供重试，拒绝部分数据展示。
@@ -79,6 +80,9 @@ npm run verify:bundle
 
 采用 hash 路由和相对资源路径，支持静态根目录和子目录托管。Netlify 设置在
 `netlify.toml`，构建命令为 `npm ci && npm run build`，发布目录为 `dist/`。
+
+本批回退使用 T05 的 web 提交 `bd658fbc`、browser revision 10 和 catalog v49 七包组合。
+本地子路径的混配拒绝、完整回退与恢复记录见 [1.5-03 验收](../../doc/2026-11-14-stage1.5-query-reki/evidence/1.5-03/README.md)。
 
 ## MESO-1KM PWAT 与本次组合
 

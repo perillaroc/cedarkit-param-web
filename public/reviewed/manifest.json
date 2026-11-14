@@ -5,9 +5,9 @@
     "id": "reki.cemc-catalog",
     "owner": "reki",
     "path": "catalog-v1.json",
-    "sha256": "c856ee3dfd9080f2e3763529360a4d6c13ad82ae7dace876b32e64c5e6237040",
-    "size": 1234425,
-    "version": "49"
+    "sha256": "ce0eccb58bce73659426818a850266c1c76934314b31602a8d31f52b8f554a65",
+    "size": 1184452,
+    "version": "52"
   },
   "dataset_bindings": [
     {
@@ -18,18 +18,18 @@
           "backend": "grib2",
           "id": "cedarkit.grib2.cma-geps.current",
           "path": "resources/current-geps-mappings.json",
-          "sha256": "86f0c92308bfda9d589a7e377649728b8f764355b6e5f40ac5f0622bc7cb782e",
-          "size": 313110,
-          "version": "9"
+          "sha256": "a8f914ec5e96563edbd7b959d800c890a16d9f3da3b8311e363bd31be220ce91",
+          "size": 606266,
+          "version": "11"
         }
       },
       "parameter_registry": {
         "api_version": "cedarkit.parameters/v1",
         "id": "cedarkit.parameters.cma-geps.current",
         "path": "resources/current-geps-parameters.json",
-        "sha256": "767dba673ebae8dc8b51bbd82e7ba5d2a68c40a31388293dc2c20cbebbcaffa4",
-        "size": 11685,
-        "version": "6"
+        "sha256": "9cdc808a264ccf1e2b3d13f476a8c587f3281fabcce350eeeb94df26792363a7",
+        "size": 12779,
+        "version": "8"
       },
       "products": [
         {
@@ -105,18 +105,18 @@
           "backend": "grib2",
           "id": "cedarkit.grib2.cma-gfs.current",
           "path": "resources/current-gfs-mappings.json",
-          "sha256": "734070cae6dcf55f9ad874ad4b22d6960c9056a92133e11bee8ed7b15b347bf8",
-          "size": 237798,
-          "version": "20"
+          "sha256": "5d304ed4f13e09bbad9ed5a4e35c9e9b375455c1f734c986669791165af07295",
+          "size": 572152,
+          "version": "23"
         }
       },
       "parameter_registry": {
         "api_version": "cedarkit.parameters/v1",
         "id": "cedarkit.parameters.cma-gfs.current",
         "path": "resources/current-gfs-parameters.json",
-        "sha256": "a22af7aaacbbde834c007b2ab95343985c141bebd460734d5bcb02e8bd54b21d",
-        "size": 31187,
-        "version": "15"
+        "sha256": "beffabd1b83213b16a6493a7c9c15d4e3388f0af1b2ab92486e219b369a958e6",
+        "size": 43317,
+        "version": "18"
       },
       "products": [
         {
@@ -192,18 +192,18 @@
           "backend": "grib2",
           "id": "cedarkit.grib2.cma-meso-1km.current",
           "path": "resources/current-meso1-mappings.json",
-          "sha256": "cadabd50cb74c3fe91457609a4974ff9f9f72cca582d0741fd2d01b4b027ad62",
-          "size": 184574,
-          "version": "12"
+          "sha256": "b21c8a34a200180e452b552c084210862023a4c3301b6e9cc91afbcb84a7e817",
+          "size": 423696,
+          "version": "13"
         }
       },
       "parameter_registry": {
         "api_version": "cedarkit.parameters/v1",
         "id": "cedarkit.parameters.cma-meso-1km.current",
         "path": "resources/current-meso1-parameters.json",
-        "sha256": "0ac40324a25bbb37cee54a3ebda2dc0f6378a78a7eeb5693506385d446ed7c24",
-        "size": 19259,
-        "version": "9"
+        "sha256": "ab89bef0ac691daefaf9d710bc5d1f5dce8f6d8e709a43c4144aaeac95078593",
+        "size": 25643,
+        "version": "11"
       },
       "products": [
         {
@@ -279,18 +279,18 @@
           "backend": "grib2",
           "id": "cedarkit.grib2.cma-meso-3km.current",
           "path": "resources/current-meso3-mappings.json",
-          "sha256": "2364850959fd862c31b8afe9491c8bd9aaf3c0993372aed893c0dc48685f7ac8",
-          "size": 206117,
-          "version": "13"
+          "sha256": "3b79b09b97f70d26cb4f0ef07f2f6b9f324d57f9f128182f15b18a00ac02824d",
+          "size": 496499,
+          "version": "14"
         }
       },
       "parameter_registry": {
         "api_version": "cedarkit.parameters/v1",
         "id": "cedarkit.parameters.cma-meso-3km.current",
         "path": "resources/current-meso3-parameters.json",
-        "sha256": "5ca2afcd4c45217707d8531cf9c240476038fa771219e5d177769b9fa56ab03f",
-        "size": 23251,
-        "version": "10"
+        "sha256": "ec04076c061c0142e5c8abb18d7dc0e4a314ce6b8329bb60df88fbdce8731483",
+        "size": 31958,
+        "version": "12"
       },
       "products": [
         {
@@ -366,18 +366,18 @@
           "backend": "grib2",
           "id": "cedarkit.grib2.cma-reps.current",
           "path": "resources/current-reps-mappings.json",
-          "sha256": "004d36b69a20a904b17247bbb63891f89e3ecdf051940a412832d018f2a68872",
-          "size": 240119,
-          "version": "8"
+          "sha256": "9c1048105a87f0f343b95fe5f135318abe01072c4dafc2c71f4022a2c8a8bf22",
+          "size": 502783,
+          "version": "11"
         }
       },
       "parameter_registry": {
         "api_version": "cedarkit.parameters/v1",
         "id": "cedarkit.parameters.cma-reps.current",
         "path": "resources/current-reps-parameters.json",
-        "sha256": "5dc8cf8b751d1982a506cd5b115d69ab9aec9ed3d6d8d8a00f60a75c02f51859",
-        "size": 9202,
-        "version": "5"
+        "sha256": "2a3effbbb6da9bba6541d5ff4a8c14e31feb64fc102da22a02b2c1c1c604e8e2",
+        "size": 11075,
+        "version": "8"
       },
       "products": [
         {
@@ -453,18 +453,18 @@
           "backend": "grib2",
           "id": "cedarkit.grib2.cma-tym.current",
           "path": "resources/current-tym-mappings.json",
-          "sha256": "959ebac11abdb2a9ecd26b0bac1b026178bd6ffa1a7957b6fbfa70c57b73c627",
-          "size": 168811,
-          "version": "12"
+          "sha256": "fbe9c2b97ee59fc0b8fb46c89d6ff040f2e8262a755bdfbd590eb3c98d32fc10",
+          "size": 339943,
+          "version": "13"
         }
       },
       "parameter_registry": {
         "api_version": "cedarkit.parameters/v1",
         "id": "cedarkit.parameters.cma-tym.current",
         "path": "resources/current-tym-parameters.json",
-        "sha256": "3360430a860fd89b0f10172ae8e6543566ce8025da6e3d3c8ae83e65f6964596",
-        "size": 18004,
-        "version": "9"
+        "sha256": "f898ae1b8066e1c7aaea8cd5164da97eee776426ea962bed5051afd0cf9ab2fd",
+        "size": 22188,
+        "version": "11"
       },
       "products": [
         {
@@ -541,43 +541,43 @@
     },
     {
       "path": "browser/geps/params.json",
-      "sha256": "12bd7ace58a7ab5333ce7272d00392384917b66f954186b4f1bc0d3aebb7b57e",
-      "size": 370739
+      "sha256": "213d95d104fd517b0653fd428d0b315a22f3ef0926a07b375ddbf2a5cc72cdce",
+      "size": 706411
     },
     {
       "path": "browser/gfs/params.json",
-      "sha256": "c18ece7ca93db0c97e7ac5637e83e0750e900804066ce3ef884c2a16a8ad1b96",
-      "size": 309583
+      "sha256": "f2d6e8e2bc3f288c58e3938ef76b09968548a05d5a5202855ea4777c9d27b019",
+      "size": 705000
     },
     {
       "path": "browser/meso1/params.json",
-      "sha256": "55e7c528c31ea2a90fd90c4024a426e8451d5828738990d0c3cd186dc6b65ed0",
-      "size": 235375
+      "sha256": "22a4ee30afb7ff3493ac59fbc21aa66daadd4c4350286b646989ddfaa157ee62",
+      "size": 515714
     },
     {
       "path": "browser/meso3/params.json",
-      "sha256": "2d518c881834fd72ce24ec5498b9af1d46e80709faf1d7adf6cb169cec26c880",
-      "size": 264525
+      "sha256": "cddf41f47c16f95012dd1eb1d6b8d6e07968fb3bfbb99c10893c36648b8e4cf3",
+      "size": 606095
     },
     {
       "path": "browser/reps/params.json",
-      "sha256": "ad6002eb89236d6261f5f73746c51d00286e21f06d0d328e0704d227855eb0cf",
-      "size": 285229
+      "sha256": "9251e869508d0ec512aeb335a363bb638245eb4e924e65813a946fdb22f037d6",
+      "size": 586873
     },
     {
       "path": "browser/tym/params.json",
-      "sha256": "4dac29e462d43a3370c4641f30c2900f71596a604d6559086db862df856ef7a7",
-      "size": 216224
+      "sha256": "bbd8170a75772195ce996e1ca0dd333fd85d9961cd3ca8b5840d189d55535093",
+      "size": 416522
     },
     {
       "path": "catalog-v1.json",
-      "sha256": "c856ee3dfd9080f2e3763529360a4d6c13ad82ae7dace876b32e64c5e6237040",
-      "size": 1234425
+      "sha256": "ce0eccb58bce73659426818a850266c1c76934314b31602a8d31f52b8f554a65",
+      "size": 1184452
     },
     {
       "path": "legacy-links.json",
-      "sha256": "f3db9ea2e168c517de764cf4b043ff641e59780370f7ca5ceb90551487b902fa",
-      "size": 139621
+      "sha256": "6b2565b15809493bb9d65fe2c0eafa76fa2bf0f60d11e856b86d026ab5447fcc",
+      "size": 165482
     },
     {
       "path": "resources/current-cmadaas-mappings.json",
@@ -591,63 +591,63 @@
     },
     {
       "path": "resources/current-geps-mappings.json",
-      "sha256": "86f0c92308bfda9d589a7e377649728b8f764355b6e5f40ac5f0622bc7cb782e",
-      "size": 313110
+      "sha256": "a8f914ec5e96563edbd7b959d800c890a16d9f3da3b8311e363bd31be220ce91",
+      "size": 606266
     },
     {
       "path": "resources/current-geps-parameters.json",
-      "sha256": "767dba673ebae8dc8b51bbd82e7ba5d2a68c40a31388293dc2c20cbebbcaffa4",
-      "size": 11685
+      "sha256": "9cdc808a264ccf1e2b3d13f476a8c587f3281fabcce350eeeb94df26792363a7",
+      "size": 12779
     },
     {
       "path": "resources/current-gfs-mappings.json",
-      "sha256": "734070cae6dcf55f9ad874ad4b22d6960c9056a92133e11bee8ed7b15b347bf8",
-      "size": 237798
+      "sha256": "5d304ed4f13e09bbad9ed5a4e35c9e9b375455c1f734c986669791165af07295",
+      "size": 572152
     },
     {
       "path": "resources/current-gfs-parameters.json",
-      "sha256": "a22af7aaacbbde834c007b2ab95343985c141bebd460734d5bcb02e8bd54b21d",
-      "size": 31187
+      "sha256": "beffabd1b83213b16a6493a7c9c15d4e3388f0af1b2ab92486e219b369a958e6",
+      "size": 43317
     },
     {
       "path": "resources/current-meso1-mappings.json",
-      "sha256": "cadabd50cb74c3fe91457609a4974ff9f9f72cca582d0741fd2d01b4b027ad62",
-      "size": 184574
+      "sha256": "b21c8a34a200180e452b552c084210862023a4c3301b6e9cc91afbcb84a7e817",
+      "size": 423696
     },
     {
       "path": "resources/current-meso1-parameters.json",
-      "sha256": "0ac40324a25bbb37cee54a3ebda2dc0f6378a78a7eeb5693506385d446ed7c24",
-      "size": 19259
+      "sha256": "ab89bef0ac691daefaf9d710bc5d1f5dce8f6d8e709a43c4144aaeac95078593",
+      "size": 25643
     },
     {
       "path": "resources/current-meso3-mappings.json",
-      "sha256": "2364850959fd862c31b8afe9491c8bd9aaf3c0993372aed893c0dc48685f7ac8",
-      "size": 206117
+      "sha256": "3b79b09b97f70d26cb4f0ef07f2f6b9f324d57f9f128182f15b18a00ac02824d",
+      "size": 496499
     },
     {
       "path": "resources/current-meso3-parameters.json",
-      "sha256": "5ca2afcd4c45217707d8531cf9c240476038fa771219e5d177769b9fa56ab03f",
-      "size": 23251
+      "sha256": "ec04076c061c0142e5c8abb18d7dc0e4a314ce6b8329bb60df88fbdce8731483",
+      "size": 31958
     },
     {
       "path": "resources/current-reps-mappings.json",
-      "sha256": "004d36b69a20a904b17247bbb63891f89e3ecdf051940a412832d018f2a68872",
-      "size": 240119
+      "sha256": "9c1048105a87f0f343b95fe5f135318abe01072c4dafc2c71f4022a2c8a8bf22",
+      "size": 502783
     },
     {
       "path": "resources/current-reps-parameters.json",
-      "sha256": "5dc8cf8b751d1982a506cd5b115d69ab9aec9ed3d6d8d8a00f60a75c02f51859",
-      "size": 9202
+      "sha256": "2a3effbbb6da9bba6541d5ff4a8c14e31feb64fc102da22a02b2c1c1c604e8e2",
+      "size": 11075
     },
     {
       "path": "resources/current-tym-mappings.json",
-      "sha256": "959ebac11abdb2a9ecd26b0bac1b026178bd6ffa1a7957b6fbfa70c57b73c627",
-      "size": 168811
+      "sha256": "fbe9c2b97ee59fc0b8fb46c89d6ff040f2e8262a755bdfbd590eb3c98d32fc10",
+      "size": 339943
     },
     {
       "path": "resources/current-tym-parameters.json",
-      "sha256": "3360430a860fd89b0f10172ae8e6543566ce8025da6e3d3c8ae83e65f6964596",
-      "size": 18004
+      "sha256": "f898ae1b8066e1c7aaea8cd5164da97eee776426ea962bed5051afd0cf9ab2fd",
+      "size": 22188
     }
   ],
   "id": "cedarkit.browser.reviewed-current",
@@ -778,18 +778,18 @@
           "backend": "grib2",
           "id": "cedarkit.grib2.cma-geps.current",
           "path": "resources/current-geps-mappings.json",
-          "sha256": "86f0c92308bfda9d589a7e377649728b8f764355b6e5f40ac5f0622bc7cb782e",
-          "size": 313110,
-          "version": "9"
+          "sha256": "a8f914ec5e96563edbd7b959d800c890a16d9f3da3b8311e363bd31be220ce91",
+          "size": 606266,
+          "version": "11"
         }
       ],
       "parameter_resource": {
         "api_version": "cedarkit.parameters/v1",
         "id": "cedarkit.parameters.cma-geps.current",
         "path": "resources/current-geps-parameters.json",
-        "sha256": "767dba673ebae8dc8b51bbd82e7ba5d2a68c40a31388293dc2c20cbebbcaffa4",
-        "size": 11685,
-        "version": "6"
+        "sha256": "9cdc808a264ccf1e2b3d13f476a8c587f3281fabcce350eeeb94df26792363a7",
+        "size": 12779,
+        "version": "8"
       },
       "path": "browser/geps/params.json",
       "schema_version": 4
@@ -805,18 +805,18 @@
           "backend": "grib2",
           "id": "cedarkit.grib2.cma-gfs.current",
           "path": "resources/current-gfs-mappings.json",
-          "sha256": "734070cae6dcf55f9ad874ad4b22d6960c9056a92133e11bee8ed7b15b347bf8",
-          "size": 237798,
-          "version": "20"
+          "sha256": "5d304ed4f13e09bbad9ed5a4e35c9e9b375455c1f734c986669791165af07295",
+          "size": 572152,
+          "version": "23"
         }
       ],
       "parameter_resource": {
         "api_version": "cedarkit.parameters/v1",
         "id": "cedarkit.parameters.cma-gfs.current",
         "path": "resources/current-gfs-parameters.json",
-        "sha256": "a22af7aaacbbde834c007b2ab95343985c141bebd460734d5bcb02e8bd54b21d",
-        "size": 31187,
-        "version": "15"
+        "sha256": "beffabd1b83213b16a6493a7c9c15d4e3388f0af1b2ab92486e219b369a958e6",
+        "size": 43317,
+        "version": "18"
       },
       "path": "browser/gfs/params.json",
       "schema_version": 4
@@ -832,18 +832,18 @@
           "backend": "grib2",
           "id": "cedarkit.grib2.cma-meso-1km.current",
           "path": "resources/current-meso1-mappings.json",
-          "sha256": "cadabd50cb74c3fe91457609a4974ff9f9f72cca582d0741fd2d01b4b027ad62",
-          "size": 184574,
-          "version": "12"
+          "sha256": "b21c8a34a200180e452b552c084210862023a4c3301b6e9cc91afbcb84a7e817",
+          "size": 423696,
+          "version": "13"
         }
       ],
       "parameter_resource": {
         "api_version": "cedarkit.parameters/v1",
         "id": "cedarkit.parameters.cma-meso-1km.current",
         "path": "resources/current-meso1-parameters.json",
-        "sha256": "0ac40324a25bbb37cee54a3ebda2dc0f6378a78a7eeb5693506385d446ed7c24",
-        "size": 19259,
-        "version": "9"
+        "sha256": "ab89bef0ac691daefaf9d710bc5d1f5dce8f6d8e709a43c4144aaeac95078593",
+        "size": 25643,
+        "version": "11"
       },
       "path": "browser/meso1/params.json",
       "schema_version": 4
@@ -859,18 +859,18 @@
           "backend": "grib2",
           "id": "cedarkit.grib2.cma-meso-3km.current",
           "path": "resources/current-meso3-mappings.json",
-          "sha256": "2364850959fd862c31b8afe9491c8bd9aaf3c0993372aed893c0dc48685f7ac8",
-          "size": 206117,
-          "version": "13"
+          "sha256": "3b79b09b97f70d26cb4f0ef07f2f6b9f324d57f9f128182f15b18a00ac02824d",
+          "size": 496499,
+          "version": "14"
         }
       ],
       "parameter_resource": {
         "api_version": "cedarkit.parameters/v1",
         "id": "cedarkit.parameters.cma-meso-3km.current",
         "path": "resources/current-meso3-parameters.json",
-        "sha256": "5ca2afcd4c45217707d8531cf9c240476038fa771219e5d177769b9fa56ab03f",
-        "size": 23251,
-        "version": "10"
+        "sha256": "ec04076c061c0142e5c8abb18d7dc0e4a314ce6b8329bb60df88fbdce8731483",
+        "size": 31958,
+        "version": "12"
       },
       "path": "browser/meso3/params.json",
       "schema_version": 4
@@ -886,18 +886,18 @@
           "backend": "grib2",
           "id": "cedarkit.grib2.cma-reps.current",
           "path": "resources/current-reps-mappings.json",
-          "sha256": "004d36b69a20a904b17247bbb63891f89e3ecdf051940a412832d018f2a68872",
-          "size": 240119,
-          "version": "8"
+          "sha256": "9c1048105a87f0f343b95fe5f135318abe01072c4dafc2c71f4022a2c8a8bf22",
+          "size": 502783,
+          "version": "11"
         }
       ],
       "parameter_resource": {
         "api_version": "cedarkit.parameters/v1",
         "id": "cedarkit.parameters.cma-reps.current",
         "path": "resources/current-reps-parameters.json",
-        "sha256": "5dc8cf8b751d1982a506cd5b115d69ab9aec9ed3d6d8d8a00f60a75c02f51859",
-        "size": 9202,
-        "version": "5"
+        "sha256": "2a3effbbb6da9bba6541d5ff4a8c14e31feb64fc102da22a02b2c1c1c604e8e2",
+        "size": 11075,
+        "version": "8"
       },
       "path": "browser/reps/params.json",
       "schema_version": 4
@@ -913,18 +913,18 @@
           "backend": "grib2",
           "id": "cedarkit.grib2.cma-tym.current",
           "path": "resources/current-tym-mappings.json",
-          "sha256": "959ebac11abdb2a9ecd26b0bac1b026178bd6ffa1a7957b6fbfa70c57b73c627",
-          "size": 168811,
-          "version": "12"
+          "sha256": "fbe9c2b97ee59fc0b8fb46c89d6ff040f2e8262a755bdfbd590eb3c98d32fc10",
+          "size": 339943,
+          "version": "13"
         }
       ],
       "parameter_resource": {
         "api_version": "cedarkit.parameters/v1",
         "id": "cedarkit.parameters.cma-tym.current",
         "path": "resources/current-tym-parameters.json",
-        "sha256": "3360430a860fd89b0f10172ae8e6543566ce8025da6e3d3c8ae83e65f6964596",
-        "size": 18004,
-        "version": "9"
+        "sha256": "f898ae1b8066e1c7aaea8cd5164da97eee776426ea962bed5051afd0cf9ab2fd",
+        "size": 22188,
+        "version": "11"
       },
       "path": "browser/tym/params.json",
       "schema_version": 4
@@ -933,8 +933,8 @@
   "sources": [
     {
       "path": "authoring/browser-current.json",
-      "sha256": "ba08203805a92e521a6ebc68afda3f08aaeed5b47b0ac3c7f19a413d56e6c703",
-      "size": 7526
+      "sha256": "aae8f0f67c40b312812e6be0b7f9126791577e51825d3f54ca6697fa9fa97fb0",
+      "size": 7712
     },
     {
       "path": "authoring/cemc-orig-batch1.json",
@@ -942,9 +942,34 @@
       "size": 503448
     },
     {
+      "path": "authoring/cemc-orig-name-review.json",
+      "sha256": "e5f7a0969472a177b1bc08fa46b22b3db7ed7f716c01af414126ec71b4ce286a",
+      "size": 20673
+    },
+    {
+      "path": "authoring/cemc-orig-stage1.4-bindings.json",
+      "sha256": "2eff617db5884c50b3ea5f3d36ff28aae9ef9577169f187af693971cd20403a1",
+      "size": 1955600
+    },
+    {
       "path": "authoring/cemc-orig-task-n04b-01.json",
       "sha256": "91e8dd16f2ea4e2ad88dd30b9b7a1ee4fecddd658e6ce524091bfeb808ad6555",
       "size": 5493
+    },
+    {
+      "path": "authoring/cemc-orig-task-orig07.json",
+      "sha256": "3257ed1ee1f49ad695ae573dd9443c3df19bf8a47fd59e92dac2a52e53a31798",
+      "size": 24996
+    },
+    {
+      "path": "authoring/cemc-orig-task-orig08.json",
+      "sha256": "04fd4ced9ad13b76413ec539f343b05d45faa71ad120c2daf4d0611617732c24",
+      "size": 35475
+    },
+    {
+      "path": "authoring/cemc-orig-task-orig09.json",
+      "sha256": "eea1d488790994b77700b14b75ca7cf9ddc528b93434107e604f5642bb15fabb",
+      "size": 5220
     },
     {
       "path": "authoring/cemc-orig-task06b.json",
@@ -968,8 +993,8 @@
     },
     {
       "path": "catalog-v1.json",
-      "sha256": "c856ee3dfd9080f2e3763529360a4d6c13ad82ae7dace876b32e64c5e6237040",
-      "size": 1234425
+      "sha256": "ce0eccb58bce73659426818a850266c1c76934314b31602a8d31f52b8f554a65",
+      "size": 1184452
     },
     {
       "path": "legacy/params-schema3.json",
@@ -977,5 +1002,5 @@
       "size": 77025
     }
   ],
-  "version": "10"
+  "version": "12"
 }

@@ -4,7 +4,7 @@ import { RouterLink, useRoute } from 'vue-router'
 import { NAlert, NButton, NDescriptions, NDescriptionsItem, NEmpty, NH2, NH3, NSpace, NTag, useMessage } from 'naive-ui'
 import { findEntry } from '../store'
 import { detailRoute } from '../router'
-import { pretty } from '../data'
+import { isOrigMapping, isOriginalValueMapping, pretty } from '../data'
 import { model } from '../store'
 const route = useRoute()
 const message = useMessage()
@@ -20,6 +20,7 @@ const variants = computed(() => model.value?.entries.filter((e) =>
 const alternatives = computed(() => model.value?.entries.filter((e) =>
   e.definition.parameter_id === entry.value?.definition.parameter_id && e.resource.id !== entry.value?.resource.id) ?? [])
 const parentEntry = computed(() => entry.value?.definition.parent ? findEntry(entry.value.resource.id, entry.value.definition.parent) : undefined)
+const originalCount = computed(() => entry.value?.mappings.filter(isOriginalValueMapping).length ?? 0)
 </script>
 
 <template>
@@ -34,11 +35,15 @@ const parentEntry = computed(() => entry.value?.definition.parent ? findEntry(en
         <n-button size="small" @click="copy(entry.definition.name)">复制名称</n-button>
         <n-tag>{{ entry.mappings.length ? `${entry.mappings.length} 条直接映射` : '无直接映射 · 家族或未直接映射定义' }}</n-tag>
       </n-space>
+      <n-alert v-if="originalCount" type="info" title="ORIG 原值分支">
+        {{ originalCount }} 条映射保留解码值及原生单位标签，xarray 省略标准单位。
+        <span v-if="originalCount < entry.mappings.length">同一报文同时命中其他含单位规则的分支时，读取优先应用已审单位规则。</span>
+      </n-alert>
       <n-descriptions bordered :column="1" label-placement="left" size="small">
         <n-descriptions-item label="参数资源">{{ entry.resource.id }} · v{{ entry.resource.version }}</n-descriptions-item>
         <n-descriptions-item label="资源 SHA256"><code>{{ entry.resource.sha256 }}</code></n-descriptions-item>
         <n-descriptions-item label="名称">{{ entry.definition.name }}</n-descriptions-item>
-        <n-descriptions-item label="单位">{{ entry.unit ?? '未声明' }}<span v-if="!entry.definition.unit && entry.unit">（继承父定义）</span></n-descriptions-item>
+        <n-descriptions-item label="定义单位">{{ entry.unit === '-' && originalCount ? '待证' : (entry.unit ?? '未声明') }}<span v-if="!entry.definition.unit && entry.unit">（继承父定义）</span></n-descriptions-item>
         <n-descriptions-item v-if="entry.descriptionCn || entry.description" label="描述">{{ entry.descriptionCn }} {{ entry.description }}</n-descriptions-item>
         <n-descriptions-item label="别名">{{ entry.aliases.join('、') || '无' }}</n-descriptions-item>
         <n-descriptions-item v-if="parentEntry" label="父定义">
@@ -82,6 +87,12 @@ const parentEntry = computed(() => entry.value?.definition.parent ? findEntry(en
         <h4>{{ mapping.id }}</h4>
         <p>{{ mapping.backend }} · {{ mapping.resource.id }} · v{{ mapping.resource.version }}</p>
         <n-descriptions bordered :column="1" label-placement="left" size="small">
+          <n-descriptions-item v-if="isOrigMapping(mapping)" label="读取输出">
+            {{ isOriginalValueMapping(mapping) ? '原值 · 单位待证' : `标准单位 ${entry.unit}` }}
+          </n-descriptions-item>
+          <n-descriptions-item v-if="isOriginalValueMapping(mapping) && !mapping.native.translate?.vertical" label="固定面">
+            保留原生固定面编码，物理层次待证
+          </n-descriptions-item>
           <n-descriptions-item label="产品适用域"><pre>{{ pretty(mapping.applies_to) }}</pre></n-descriptions-item>
           <n-descriptions-item label="映射条件"><pre>{{ pretty(mapping.when ?? {}) }}</pre></n-descriptions-item>
         </n-descriptions>

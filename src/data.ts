@@ -1,9 +1,24 @@
 import acceptedGroup from './bundle-pin.json'
-import type { Entry, FilePin, LegacyIndex, Manifest, MappingResource, Parameter, ParamDoc, ResourcePin, SiteModel } from './types'
+import type { Entry, FilePin, LegacyIndex, Manifest, Mapping, MappingResource, Parameter, ParamDoc, ResourcePin, SiteModel } from './types'
 
 export const SUPPORTED_SCHEMA_VERSION = 4
 export const scopedKey = (resource: string, parameter: string) => `${resource}/${parameter}`
 export const pretty = (value: unknown) => JSON.stringify(value, null, 2)
+
+export function isOrigMapping(mapping: Mapping): boolean {
+  return mapping.backend === 'grib2' && mapping.applies_to.product === 'orig' &&
+    mapping.applies_to.product_version === 'current'
+}
+
+export function isOriginalValueMapping(mapping: Mapping): boolean {
+  return isOrigMapping(mapping) && mapping.native.translate?.unit === undefined
+}
+
+export function unitSummary(entry: Entry): string | undefined {
+  const originalCount = entry.mappings.filter(isOriginalValueMapping).length
+  if (originalCount === 0) return entry.unit
+  return originalCount === entry.mappings.length ? '原值 · 单位待证' : '按映射分支'
+}
 
 function check(condition: unknown, message: string): asserts condition {
   if (!condition) throw new Error(message)
@@ -139,7 +154,8 @@ export function buildModel(manifest: Manifest, files: Map<string, unknown>, mani
       }
       const effective = Object.assign({}, ...lineage) as Parameter
       const fixedConditions = Object.assign({}, ...lineage.map((p) => p.fixed_conditions ?? {}))
-      const aliases = [...new Set(lineage.flatMap((p) => p.aliases ?? []))]
+      const aliases = parameter.aliases ?? []
+      const ancestorText = lineage.slice(0, -1).map(({ aliases: _aliases, ...parent }) => JSON.stringify(parent))
       const mappings = allMappings.filter((m) => m.parameter_id === parameter.parameter_id)
       const triplets = [...new Set(mappings.flatMap((m) => {
         const match = m.native.match as Record<string, unknown> | undefined
@@ -151,7 +167,7 @@ export function buildModel(manifest: Manifest, files: Map<string, unknown>, mani
         resource: snapshot.parameter_resource, definition: parameter, lineage,
         unit: effective.unit, description: effective.description, descriptionCn: effective.description_cn,
         aliases, fixedConditions, mappings, triplets, datasets,
-        searchText: [snapshot.key, snapshot.parameter_resource.id, ...lineage.map((p) => JSON.stringify(p)),
+        searchText: [snapshot.key, snapshot.parameter_resource.id, ...ancestorText, JSON.stringify(parameter),
           JSON.stringify(mappings), ...triplets].join(' ').toLowerCase() })
     }
   }

@@ -5,7 +5,7 @@ import { NButton, NCard, NDataTable, NEmpty, NInput, NPagination, NSelect, NSpac
 import type { DataTableColumns } from 'naive-ui'
 import { model } from '../store'
 import { detailRoute } from '../router'
-import { filterEntries } from '../data'
+import { filterEntries, unitSummary } from '../data'
 import type { Entry } from '../types'
 
 const route = useRoute()
@@ -47,7 +47,7 @@ const columns: DataTableColumns<Entry> = [
     render: (e) => h(RouterLink, { to: detailRoute(e, route.query) }, { default: () => e.definition.parameter_id }) },
   { title: '资源上下文', key: 'snapshot', width: 110, render: (e) => `${e.snapshot} · v${e.resource.version}` },
   { title: '名称', key: 'name', width: 110, render: (e) => e.definition.name },
-  { title: '单位', key: 'unit', width: 80, render: (e) => e.unit ?? '—' },
+  { title: '单位', key: 'unit', width: 126, render: (e) => unitSummary(e) ?? '—' },
   { title: '描述', key: 'description', render: (e) => e.descriptionCn ?? e.description ?? '—' },
   { title: '直接映射', key: 'mappings', width: 100,
     render: (e) => h(NTag, { size: 'small', type: e.mappings.length ? 'info' : 'default' },
@@ -103,7 +103,7 @@ watch([query, snapshot, dataset, backend, mapped, page], () => {
           <p>{{ entry.descriptionCn ?? entry.description ?? entry.definition.name }}</p>
           <n-space size="small">
             <n-tag size="small">{{ entry.snapshot }} · v{{ entry.resource.version }}</n-tag>
-            <n-tag v-if="entry.unit" size="small">{{ entry.unit }}</n-tag>
+            <n-tag v-if="unitSummary(entry)" size="small">{{ unitSummary(entry) }}</n-tag>
             <n-tag size="small">{{ entry.mappings.length }} 条直接映射</n-tag>
           </n-space>
         </n-card>

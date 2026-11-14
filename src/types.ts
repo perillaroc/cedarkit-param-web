@@ -18,7 +18,7 @@ export interface Mapping {
   backend: string
   applies_to: Conditions
   when?: Conditions
-  native: Conditions
+  native: Conditions & { translate?: Conditions }
   evidence: string[]
 }
 export interface MappingResource {

@@ -2,7 +2,7 @@ import { readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { createHash } from 'node:crypto'
 import { afterEach, describe, expect, it, vi } from 'vitest'
-import { buildModel, filterEntries, legacyCandidates, loadModel } from '../src/data'
+import { buildModel, filterEntries, isOriginalValueMapping, legacyCandidates, loadModel, unitSummary } from '../src/data'
 import accepted from '../src/bundle-pin.json'
 import type { Manifest, ParamDoc } from '../src/types'
 
@@ -40,11 +40,11 @@ afterEach(() => vi.unstubAllGlobals())
 
 describe('accepted schema 4 group', () => {
   it('keeps all seven resource contexts, exact runtime pins and bounded global obligations', () => {
-    expect(model.entries).toHaveLength(570)
-    expect(model.stableIds).toBe(171)
-    expect(model.mappingCount).toBe(1377)
+    expect(model.entries).toHaveLength(702)
+    expect(model.stableIds).toBe(215)
+    expect(model.mappingCount).toBe(2581)
     expect(model.manifest.dataset_bindings).toHaveLength(18)
-    expect(new Set(model.entries.map((e) => e.key)).size).toBe(570)
+    expect(new Set(model.entries.map((e) => e.key)).size).toBe(702)
     expect(model.manifest.scope.remaining_migration_obligations.find((o) => o.id === 'service-history')?.remaining).toBe(415)
     expect(model.manifest.scope.remaining_migration_obligations.find((o) => o.id === 'service-quality')?.remaining).toBe(485)
   })
@@ -97,12 +97,15 @@ describe('accepted schema 4 group', () => {
     expect(pwat.unit).toBe('kg/m2')
     expect(pwat.lineage.map((p) => p.parameter_id)).toEqual(['cedarkit.pwat.any', 'cedarkit.pwat'])
     expect(pwat.fixedConditions).toEqual({ level_type: 'entire_atmosphere' })
-    expect(pwat.mappings.map((m) => m.id).sort()).toEqual(['pwat.instantaneous.forecast', 'pwat.instantaneous.initial'])
-    expect(pwat.mappings.every((m) => m.applies_to.dataset === 'cma_meso_1km' && m.applies_to.time === '2026-11-02T12:00:00Z')).toBe(true)
-    expect(pwat.mappings.some((m) => m.evidence.some((e) => e.includes('task-n04a')))).toBe(true)
+    expect(pwat.mappings).toHaveLength(4)
+    expect(pwat.mappings.every((m) => m.applies_to.dataset === 'cma_meso_1km')).toBe(true)
+    const translated = pwat.mappings.filter((m) => !isOriginalValueMapping(m))
+    expect(translated.map((m) => m.id).sort()).toEqual(['pwat.instantaneous.forecast', 'pwat.instantaneous.initial'])
+    expect(translated.every((m) => m.applies_to.time === '2026-11-02T12:00:00Z')).toBe(true)
+    expect(translated.some((m) => m.evidence.some((e) => e.includes('task-n04a')))).toBe(true)
     const mappingResource = model.manifest.snapshots.find((s) => s.key === 'meso1')!
-    expect(mappingResource.parameter_resource.version).toBe('9')
-    expect(mappingResource.mapping_resources[0].version).toBe('12')
+    expect(mappingResource.parameter_resource.version).toBe('11')
+    expect(mappingResource.mapping_resources[0].version).toBe('13')
     const legacy = legacyCandidates(model, '0.1.3').find((c) => c.parameter_id === 'cedarkit.pwat')!
     expect(legacy.current_targets.some((t) => t.snapshot === 'meso1')).toBe(true)
     expect(model.manifest.scope.remaining_migration_obligations.find((o) => o.id === 'native-definition-gaps')?.groups).toEqual({ '06J': 95, '06K': 48 })
@@ -190,12 +193,13 @@ describe('accepted schema 4 group', () => {
     expect(candidates.map((c) => c.parameter_id).sort()).toEqual(['cedarkit.gusw', 'cedarkit.gusw.any', 'cedarkit.tusw'])
     for (const candidate of candidates) {
       expect(candidate.historical_only).toBe(false)
-      expect(candidate.current_targets.map((t) => t.snapshot)).toEqual(['cmadaas'])
+      expect(candidate.current_targets.map((t) => t.snapshot)).toEqual(['cmadaas', 'gfs'])
       const entry = get('cmadaas', candidate.parameter_id)
       expect(entry.unit).toBe('J/m2')
       expect(entry.aliases).not.toContain('gswu')
     }
-    expect(model.entries.some((e) => e.snapshot === 'gfs' && candidates.some((c) => c.parameter_id === e.definition.parameter_id))).toBe(false)
+    expect(unitSummary(get('gfs', 'cedarkit.gusw'))).toBe('按映射分支')
+    expect(unitSummary(get('cmadaas', 'cedarkit.gusw'))).toBe('J/m2')
   })
   it('keeps signed ULRF energy, inherited units and independent finite boundary mappings', () => {
     const family = get('cmadaas', 'cedarkit.gulw.any')
@@ -224,12 +228,13 @@ describe('accepted schema 4 group', () => {
     expect(candidates.map((c) => c.parameter_id).sort()).toEqual(['cedarkit.gulw', 'cedarkit.gulw.any', 'cedarkit.tulw'])
     for (const candidate of candidates) {
       expect(candidate.historical_only).toBe(false)
-      expect(candidate.current_targets.map((t) => t.snapshot)).toEqual(['cmadaas'])
+      expect(candidate.current_targets.map((t) => t.snapshot)).toEqual(['cmadaas', 'gfs'])
       const entry = get('cmadaas', candidate.parameter_id)
       expect(entry.unit).toBe('J/m2')
       expect(entry.aliases).not.toContain('gslu')
     }
-    expect(model.entries.some((e) => e.snapshot === 'gfs' && candidates.some((c) => c.parameter_id === e.definition.parameter_id))).toBe(false)
+    expect(unitSummary(get('gfs', 'cedarkit.gulw'))).toBe('按映射分支')
+    expect(unitSummary(get('cmadaas', 'cedarkit.gulw'))).toBe('J/m2')
   })
   it('inherits only within one resource while retaining original local definitions and parent constraints', () => {
     const t2m = get('gfs', 'cedarkit.t2m')
@@ -248,7 +253,7 @@ describe('accepted schema 4 group', () => {
   })
   it('keeps family definitions without claiming direct execution', () => {
     const direct = new Set(model.entries.filter((e) => e.mappings.length).map((e) => e.definition.parameter_id))
-    expect(direct.size).toBe(129)
+    expect(direct.size).toBe(158)
     expect(model.entries.some((e) => e.mappings.length === 0)).toBe(true)
     expect(filterEntries(model.entries, { ...filters, mapped: 'without' }).every((e) => !e.mappings.length)).toBe(true)
   })
@@ -264,17 +269,51 @@ describe('accepted schema 4 group', () => {
     expect(result.length).toBeGreaterThan(0)
     expect(result.every((e) => e.snapshot === 'gfs')).toBe(true)
     expect(filterEntries(model.entries, { ...filters, dataset: 'cma_gfs_gmf', backend: 'cmadaas' })).toEqual([])
-    expect(filterEntries(model.entries, { ...filters, snapshot: 'gfs' })).toHaveLength(119)
+    expect(filterEntries(model.entries, { ...filters, snapshot: 'gfs' })).toHaveLength(163)
+  })
+  it('keeps reviewed names and aliases with the definitions that declare them', () => {
+    expect(get('gfs', 'cedarkit.glw').aliases).toEqual([])
+    expect(get('meso1', 'cedarkit.glw').aliases).toEqual(['str'])
+    expect(get('geps', 'cedarkit.sf').aliases).toEqual(['asnow', 'snow'])
+    expect(get('reps', 'cedarkit.sf').aliases).toEqual([])
+    const parent = get('gfs', 'cedarkit.shr')
+    const child = get('gfs', 'cedarkit.shr-0-1000')
+    expect(parent.aliases).toEqual(['vwsh'])
+    expect(child.aliases).toEqual([])
+    expect(filterEntries([parent, child], { ...filters, query: 'vwsh' })).toEqual([parent])
+  })
+  it('distinguishes ORIG original values, fixed-face encoding and reviewed units', () => {
+    const rawMappings = model.entries.flatMap((entry) => entry.mappings.filter(isOriginalValueMapping))
+    expect(rawMappings).toHaveLength(1171)
+    expect(rawMappings.filter((m) => !m.native.translate?.vertical).map((m) => m.parameter_id).sort()).toEqual([
+      'cedarkit.ripbl', 'cedarkit.ripbl', 'cedarkit.uhmax', 'cedarkit.uhmax',
+    ])
+    for (const [snapshot, id, count] of [['gfs', 'cedarkit.glw', 2], ['reps', 'cedarkit.sf', 6]] as const) {
+      const entry = get(snapshot, id)
+      expect(entry.mappings).toHaveLength(count)
+      expect(entry.mappings.every(isOriginalValueMapping)).toBe(true)
+      expect(unitSummary(entry)).toBe('原值 · 单位待证')
+    }
+    const geps = get('geps', 'cedarkit.sf')
+    expect(geps.mappings).toHaveLength(12)
+    expect(geps.mappings.filter(isOriginalValueMapping)).toHaveLength(6)
+    expect(unitSummary(geps)).toBe('按映射分支')
   })
   it('keeps ambiguous historical identities and historical_only without retiring them', () => {
     const candidates = legacyCandidates(model, '0.0.0')
     expect(candidates.length).toBeGreaterThan(1)
     expect(candidates.find((c) => c.parameter_id === 'cedarkit.t2m')?.current_targets).toHaveLength(7)
-    const old = legacyCandidates(model, '0.0.4').find((c) => c.parameter_id === 'cedarkit.mx2t')!
+    const extrema = legacyCandidates(model, '0.0.4').find((c) => c.parameter_id === 'cedarkit.mx2t')!
+    expect(extrema.historical_only).toBe(false)
+    expect(extrema.current_targets.map((t) => t.snapshot)).toContain('gfs')
+    expect(extrema.current_targets.map((t) => t.snapshot)).not.toContain('cmadaas')
+    expect(get('gfs', 'cedarkit.mx2t').definition.name).toBe('tmax2m')
+    expect(get('gfs', 'cedarkit.mx2t').aliases).toEqual(['mx2t'])
+    const old = legacyCandidates(model, '0.0.17').find((c) => c.parameter_id === 'cedarkit.skint')!
     expect(old.historical_only).toBe(true)
     expect(old.current_targets).toEqual([])
     const historical = new Set(model.legacy.links.flatMap((l) => l.candidates.filter((c) => c.historical_only).map((c) => c.parameter_id)))
-    expect(historical.size).toBe(85)
+    expect(historical.size).toBe(41)
     expect(legacyCandidates(model, '999.999.999')).toEqual([])
   })
 })
@@ -306,7 +345,7 @@ describe('semantic acceptance', () => {
   })
   it('rejects legacy links that claim a historical identity is current', () => {
     const copy = structuredClone(files)
-    copy.get('legacy-links.json').links.find((l: { triplet: string }) => l.triplet === '0.0.4').candidates[0].historical_only = false
+    copy.get('legacy-links.json').links.find((l: { triplet: string }) => l.triplet === '0.0.17').candidates[0].historical_only = false
     expect(() => buildModel(manifest, copy, accepted.sha256)).toThrow(/historical_only/)
   })
 })
@@ -315,7 +354,7 @@ describe('byte-verified group loading', () => {
   it('loads the exact frozen manifest and every member from the manifest directory', async () => {
     const mock = mockFetch()
     const loaded = await loadModel('/reviewed/manifest.json')
-    expect(loaded.entries).toHaveLength(570)
+    expect(loaded.entries).toHaveLength(702)
     expect(loaded.manifestSha256).toBe(accepted.sha256)
     expect(mock).toHaveBeenCalledTimes(24)
     expect(mock).toHaveBeenCalledWith('/reviewed/resources/current-gfs-parameters.json')
