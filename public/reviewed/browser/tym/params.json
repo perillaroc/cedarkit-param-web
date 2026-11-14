@@ -11230,6 +11230,138 @@
           "applies_to": {
             "dataset": "cma_tym",
             "product": "orig",
+            "product_version": "current",
+            "time": "2026-11-02T12:00:00Z"
+          },
+          "backend": "grib2",
+          "evidence": [
+            "doc/2026-11-14-stage1.5-query-reki/evidence/1.5-04D/supplement/historical-status.tsv#tym:13",
+            "doc/2026-11-14-stage1.5-query-reki/evidence/1.5-04D/supplement/production-review.md#tym",
+            "stage1.4/1.4-05/carrier-index.tsv#tym-021"
+          ],
+          "id": "uhmax.hourly.forecast.2026110212",
+          "native": {
+            "match": {
+              "centre": 38,
+              "discipline": 0,
+              "edition": 2,
+              "forecastTime": 0,
+              "generatingProcessIdentifier": 15,
+              "indicatorOfUnitForTimeRange": 1,
+              "indicatorOfUnitOfTimeRange": 1,
+              "lengthOfTimeRange": [
+                6,
+                48
+              ],
+              "localTablesVersion": 0,
+              "numberOfTimeRange": 1,
+              "parameterCategory": 7,
+              "parameterNumber": 15,
+              "productDefinitionTemplateNumber": 8,
+              "productionStatusOfProcessedData": 0,
+              "scaleFactorOfFirstFixedSurface": 0,
+              "scaleFactorOfSecondFixedSurface": 0,
+              "scaledValueOfFirstFixedSurface": 34464,
+              "scaledValueOfSecondFixedSurface": 1,
+              "significanceOfReferenceTime": 1,
+              "subCentre": 0,
+              "tablesVersion": 4,
+              "typeOfFirstFixedSurface": 103,
+              "typeOfGeneratingProcess": 2,
+              "typeOfProcessedData": 1,
+              "typeOfSecondFixedSurface": 103,
+              "typeOfStatisticalProcessing": 2,
+              "typeOfTimeIncrement": 2
+            },
+            "translate": {
+              "time": {
+                "rule": "grib.time"
+              },
+              "unit": {
+                "config": {
+                  "source_unit": "m2/s2"
+                },
+                "rule": "common.value_unit"
+              }
+            }
+          },
+          "parameter_id": "cedarkit.uhmax",
+          "when": {
+            "step": [
+              "PT6H",
+              "PT48H"
+            ]
+          }
+        },
+        {
+          "applies_to": {
+            "dataset": "cma_tym",
+            "product": "orig",
+            "product_version": "current",
+            "time": "2026-11-02T12:00:00Z"
+          },
+          "backend": "grib2",
+          "evidence": [
+            "doc/2026-11-14-stage1.5-query-reki/evidence/1.5-04D/supplement/historical-status.tsv#tym:13",
+            "doc/2026-11-14-stage1.5-query-reki/evidence/1.5-04D/supplement/production-review.md#tym",
+            "stage1.4/1.4-05/carrier-index.tsv#tym-021"
+          ],
+          "id": "uhmax.hourly.initial.2026110212",
+          "native": {
+            "match": {
+              "centre": 38,
+              "discipline": 0,
+              "edition": 2,
+              "forecastTime": 0,
+              "generatingProcessIdentifier": 15,
+              "indicatorOfUnitForTimeRange": 1,
+              "indicatorOfUnitOfTimeRange": 1,
+              "lengthOfTimeRange": [
+                0
+              ],
+              "localTablesVersion": 0,
+              "numberOfTimeRange": 1,
+              "parameterCategory": 7,
+              "parameterNumber": 15,
+              "productDefinitionTemplateNumber": 8,
+              "productionStatusOfProcessedData": 0,
+              "scaleFactorOfFirstFixedSurface": 0,
+              "scaleFactorOfSecondFixedSurface": 0,
+              "scaledValueOfFirstFixedSurface": 34464,
+              "scaledValueOfSecondFixedSurface": 1,
+              "significanceOfReferenceTime": 0,
+              "subCentre": 0,
+              "tablesVersion": 4,
+              "typeOfFirstFixedSurface": 103,
+              "typeOfGeneratingProcess": 0,
+              "typeOfProcessedData": 0,
+              "typeOfSecondFixedSurface": 103,
+              "typeOfStatisticalProcessing": 2,
+              "typeOfTimeIncrement": 2
+            },
+            "translate": {
+              "time": {
+                "rule": "grib.time"
+              },
+              "unit": {
+                "config": {
+                  "source_unit": "m2/s2"
+                },
+                "rule": "common.value_unit"
+              }
+            }
+          },
+          "parameter_id": "cedarkit.uhmax",
+          "when": {
+            "step": [
+              "PT0H"
+            ]
+          }
+        },
+        {
+          "applies_to": {
+            "dataset": "cma_tym",
+            "product": "orig",
             "product_version": "current"
           },
           "backend": "grib2",
@@ -11972,7 +12104,7 @@
         }
       ],
       "tables": [],
-      "version": "15"
+      "version": "16"
     }
   ],
   "meta": {
@@ -11980,8 +12112,8 @@
     "parameter_resource": {
       "api_version": "cedarkit.parameters/v1",
       "id": "cedarkit.parameters.cma-tym.current",
-      "sha256": "59fcaf38aa4c45737309fb7974b06783182b1102531fd5a42d958dd36dc869cd",
-      "version": "12"
+      "sha256": "a8a34eea80413891a8571dbe1ad8b44f46213ecf9c2740f26b101dca3b5f59a8",
+      "version": "13"
     },
     "schema_version": 4,
     "scope": {
@@ -12120,14 +12252,14 @@
         },
         {
           "evidence": [
-            "doc/2026-11-14-stage1.5-query-reki/evidence/1.5-04C/supplement/historical-ledger.tsv"
+            "doc/2026-11-14-stage1.5-query-reki/evidence/1.5-04D/supplement/historical-ledger.tsv"
           ],
           "groups": {
             "06J": 95,
             "06K": 48
           },
           "id": "native-definition-gaps",
-          "note": "Historical denominators. Verified: 35 groups. Partially verified: 1 group. Open: 107 groups. Reviewed scopes are limited to their recorded conditions."
+          "note": "Historical denominators. Verified: 39 groups. Partially verified: 1 group. Open: 103 groups. Reviewed scopes are limited to their recorded conditions."
         },
         {
           "id": "modelvar",
@@ -12227,7 +12359,7 @@
     },
     "stats": {
       "aliases": 20,
-      "mappings": 241,
+      "mappings": 243,
       "parameters": 86
     }
   },
@@ -12993,6 +13125,8 @@
       "parent": "cedarkit.u"
     },
     {
+      "description": "Updraft helicity maximum. For the reviewed ORIG cycle of 2026-11-02 12 UTC, the 6 and 48 h values accumulate over the preceding output hour. The 0 h field is initialized to zero. Integration uses the 2000–5000 m terrain-following reference coordinate. The GRIB fixed surfaces and statistical interval preserve the producer's encoded selectors.",
+      "description_cn": "上升气流螺旋度最大值。2026-11-02 12 UTC 起报的 ORIG +6／+48h 在各自输出前一小时内取最大值，0h 为初始化零场。积分使用 2000–5000 m 地形跟随参考坐标。GRIB 固定面与统计窗保留生产端编码。",
       "fixed_conditions": {
         "statistics": {
           "operation": "maximum",

@@ -674,6 +674,126 @@
           "applies_to": {
             "dataset": "cma_meso_1km",
             "product": "orig",
+            "product_version": "current",
+            "time": "2026-11-02T12:00:00Z"
+          },
+          "backend": "grib2",
+          "evidence": [
+            "doc/2026-11-14-stage1.5-query-reki/evidence/1.5-04D/supplement/historical-status.tsv#meso1:23",
+            "doc/2026-11-14-stage1.5-query-reki/evidence/1.5-04D/supplement/meso1-diagnostics.json",
+            "stage1.4/1.4-05/carrier-index.tsv#meso1-028"
+          ],
+          "id": "dbzmaxh.height.forecast.2026110212",
+          "native": {
+            "match": {
+              "centre": 38,
+              "discipline": 0,
+              "edition": 2,
+              "forecastTime": [
+                360,
+                2880
+              ],
+              "generatingProcessIdentifier": 15,
+              "indicatorOfUnitOfTimeRange": 0,
+              "localTablesVersion": 1,
+              "parameterCategory": 16,
+              "parameterNumber": 226,
+              "productDefinitionTemplateNumber": 0,
+              "productionStatusOfProcessedData": 0,
+              "significanceOfReferenceTime": 1,
+              "subCentre": 0,
+              "tablesVersion": 4,
+              "typeOfFirstFixedSurface": 1,
+              "typeOfGeneratingProcess": 2,
+              "typeOfProcessedData": 1,
+              "typeOfSecondFixedSurface": 255
+            },
+            "translate": {
+              "time": {
+                "rule": "grib.time"
+              },
+              "unit": {
+                "config": {
+                  "source_unit": "m"
+                },
+                "rule": "common.value_unit"
+              },
+              "vertical": {
+                "rule": "grib.fixed_surfaces"
+              }
+            }
+          },
+          "parameter_id": "cedarkit.dbzmaxh",
+          "when": {
+            "step": [
+              "PT6H",
+              "PT48H"
+            ]
+          }
+        },
+        {
+          "applies_to": {
+            "dataset": "cma_meso_1km",
+            "product": "orig",
+            "product_version": "current",
+            "time": "2026-11-02T12:00:00Z"
+          },
+          "backend": "grib2",
+          "evidence": [
+            "doc/2026-11-14-stage1.5-query-reki/evidence/1.5-04D/supplement/historical-status.tsv#meso1:23",
+            "doc/2026-11-14-stage1.5-query-reki/evidence/1.5-04D/supplement/meso1-diagnostics.json",
+            "stage1.4/1.4-05/carrier-index.tsv#meso1-028"
+          ],
+          "id": "dbzmaxh.height.initial.2026110212",
+          "native": {
+            "match": {
+              "centre": 38,
+              "discipline": 0,
+              "edition": 2,
+              "forecastTime": [
+                0
+              ],
+              "generatingProcessIdentifier": 15,
+              "indicatorOfUnitOfTimeRange": 0,
+              "localTablesVersion": 1,
+              "parameterCategory": 16,
+              "parameterNumber": 226,
+              "productDefinitionTemplateNumber": 0,
+              "productionStatusOfProcessedData": 0,
+              "significanceOfReferenceTime": 0,
+              "subCentre": 0,
+              "tablesVersion": 4,
+              "typeOfFirstFixedSurface": 1,
+              "typeOfGeneratingProcess": 0,
+              "typeOfProcessedData": 0,
+              "typeOfSecondFixedSurface": 255
+            },
+            "translate": {
+              "time": {
+                "rule": "grib.time"
+              },
+              "unit": {
+                "config": {
+                  "source_unit": "m"
+                },
+                "rule": "common.value_unit"
+              },
+              "vertical": {
+                "rule": "grib.fixed_surfaces"
+              }
+            }
+          },
+          "parameter_id": "cedarkit.dbzmaxh",
+          "when": {
+            "step": [
+              "PT0H"
+            ]
+          }
+        },
+        {
+          "applies_to": {
+            "dataset": "cma_meso_1km",
+            "product": "orig",
             "product_version": "current"
           },
           "backend": "grib2",
@@ -14813,7 +14933,7 @@
         }
       ],
       "tables": [],
-      "version": "15"
+      "version": "16"
     }
   ],
   "meta": {
@@ -14821,8 +14941,8 @@
     "parameter_resource": {
       "api_version": "cedarkit.parameters/v1",
       "id": "cedarkit.parameters.cma-meso-1km.current",
-      "sha256": "7d2f2c19894260f2f88eda43bb561ce769310cdcbea19cc74b645643a0dd8ac4",
-      "version": "12"
+      "sha256": "c95792d95aa3f7b86de2ed144fadfb38106128dc3b1e5c1165edadd74ec6954e",
+      "version": "13"
     },
     "schema_version": 4,
     "scope": {
@@ -14975,14 +15095,14 @@
         },
         {
           "evidence": [
-            "doc/2026-11-14-stage1.5-query-reki/evidence/1.5-04C/supplement/historical-ledger.tsv"
+            "doc/2026-11-14-stage1.5-query-reki/evidence/1.5-04D/supplement/historical-ledger.tsv"
           ],
           "groups": {
             "06J": 95,
             "06K": 48
           },
           "id": "native-definition-gaps",
-          "note": "Historical denominators. Verified: 35 groups. Partially verified: 1 group. Open: 107 groups. Reviewed scopes are limited to their recorded conditions."
+          "note": "Historical denominators. Verified: 39 groups. Partially verified: 1 group. Open: 103 groups. Reviewed scopes are limited to their recorded conditions."
         },
         {
           "id": "modelvar",
@@ -15092,7 +15212,7 @@
     },
     "stats": {
       "aliases": 15,
-      "mappings": 306,
+      "mappings": 308,
       "parameters": 100
     }
   },
@@ -15187,8 +15307,8 @@
       "unit": "J/kg"
     },
     {
-      "description": "cloud base",
-      "description_cn": "云底高度",
+      "description": "Cloud base height above model terrain for the reviewed ORIG cycle of 2026-11-02 12 UTC at 0, 6 and 48 h. The lowest qualifying model level sets the base. Columns without a qualifying level are missing. A single qualifying level gives the same base and top before packing.",
+      "description_cn": "2026-11-02 12 UTC 起报的 ORIG 0／6／48h，云底取最低合格模式层距模式地面的高度。无合格层时缺测。仅一层合格时，打包前云底与云顶相同。",
       "fixed_conditions": {
         "level_type": "surface"
       },
@@ -15197,8 +15317,8 @@
       "unit": "m"
     },
     {
-      "description": "cloud top",
-      "description_cn": "云顶高度",
+      "description": "Cloud top height above model terrain for the reviewed ORIG cycle of 2026-11-02 12 UTC at 0, 6 and 48 h. The highest qualifying model level sets the top. Columns without a qualifying level are missing. A single qualifying level gives the same base and top before packing.",
+      "description_cn": "2026-11-02 12 UTC 起报的 ORIG 0／6／48h，云顶取最高合格模式层距模式地面的高度。无合格层时缺测。仅一层合格时，打包前云底与云顶相同。",
       "fixed_conditions": {
         "level_type": "surface"
       },
@@ -15214,8 +15334,8 @@
       "unit": "dbz"
     },
     {
-      "description": "height of maximum of radar reflectivity",
-      "description_cn": "最大雷达回波的高度",
+      "description": "Height of maximum radar reflectivity. In the reviewed ORIG cycle of 2026-11-02 12 UTC, forecast fields at 6 and 48 h give the absolute model geopotential height of the strongest echo over the preceding hour. Echoes can reach the 30,000 m model top. The 0 h field is initialized to zero.",
+      "description_cn": "最大雷达回波高度。2026-11-02 12 UTC 起报的 ORIG +6／+48h 给出前一小时最强回波所在模式层的绝对位势高度，回波可达 30,000 m 模式顶。0h 为初始化零场。",
       "fixed_conditions": {},
       "name": "dbzmaxh",
       "parameter_id": "cedarkit.dbzmaxh",
