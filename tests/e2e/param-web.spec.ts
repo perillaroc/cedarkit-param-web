@@ -12,7 +12,7 @@ test.describe('schema 4 parameter discovery', () => {
     page.on('pageerror', (error) => errors.push(error.message))
     await page.goto('/')
     await expect(page.getByText('702 / 702 条资源内定义')).toBeVisible()
-    await expect(page.getByText(/schema v4 · 215 个稳定 ID · 702 条资源内定义 · 2581 条映射/)).toBeVisible()
+    await expect(page.getByText(/schema v4 · 215 个稳定 ID · 702 条资源内定义 · 2589 条映射/)).toBeVisible()
     await page.getByRole('textbox', { name: '搜索参数' }).fill('cedarkit.t2m')
     await expect(page.getByText('7 / 702 条资源内定义')).toBeVisible()
     await expect(page).toHaveURL(/q=cedarkit.t2m/)
@@ -421,6 +421,20 @@ test.describe('schema 4 parameter discovery', () => {
     await expect(page.getByText('ORIG 原值分支')).toBeVisible()
     await expect(page.locator('.mapping-card').filter({ hasText: '原值 · 单位待证' })).toHaveCount(6)
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true)
+  })
+
+  test('shows the finite K-index unit branches alongside the original-value branches', async ({ page }, testInfo) => {
+    await page.goto('/#/parameters/cedarkit.parameters.cma-gfs.current/cedarkit.kidx')
+    const mappings = page.locator('.mapping-card')
+    await expect(mappings.filter({ hasText: '原值 · 单位待证' })).toHaveCount(2)
+    await expect(mappings.filter({ hasText: '标准单位 K' })).toHaveCount(2)
+    const forecast = mappings.filter({ hasText: 'kidx.instantaneous.forecast.2026110212' })
+    await expect(forecast).toContainText('2026-11-02T12:00:00Z')
+    await expect(forecast).toContainText('PT6H')
+    await expect(forecast).toContainText('PT48H')
+    const dir = process.env.N03B_SCREENSHOT_DIR
+    if (dir) mkdirSync(dir, { recursive: true })
+    await forecast.screenshot({ path: dir ? resolve(dir, 'orig-gfs-kidx-forecast.png') : testInfo.outputPath('orig-gfs-kidx-forecast.png') })
   })
 
   test('counts global obligations once for the entire group', async ({ page }) => {

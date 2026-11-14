@@ -42,7 +42,7 @@ describe('accepted schema 4 group', () => {
   it('keeps all seven resource contexts, exact runtime pins and bounded global obligations', () => {
     expect(model.entries).toHaveLength(702)
     expect(model.stableIds).toBe(215)
-    expect(model.mappingCount).toBe(2581)
+    expect(model.mappingCount).toBe(2589)
     expect(model.manifest.dataset_bindings).toHaveLength(18)
     expect(new Set(model.entries.map((e) => e.key)).size).toBe(702)
     expect(model.manifest.scope.remaining_migration_obligations.find((o) => o.id === 'service-history')?.remaining).toBe(415)
@@ -105,7 +105,7 @@ describe('accepted schema 4 group', () => {
     expect(translated.some((m) => m.evidence.some((e) => e.includes('task-n04a')))).toBe(true)
     const mappingResource = model.manifest.snapshots.find((s) => s.key === 'meso1')!
     expect(mappingResource.parameter_resource.version).toBe('11')
-    expect(mappingResource.mapping_resources[0].version).toBe('13')
+    expect(mappingResource.mapping_resources[0].version).toBe('14')
     const legacy = legacyCandidates(model, '0.1.3').find((c) => c.parameter_id === 'cedarkit.pwat')!
     expect(legacy.current_targets.some((t) => t.snapshot === 'meso1')).toBe(true)
     expect(model.manifest.scope.remaining_migration_obligations.find((o) => o.id === 'native-definition-gaps')?.groups).toEqual({ '06J': 95, '06K': 48 })
@@ -298,6 +298,17 @@ describe('accepted schema 4 group', () => {
     expect(geps.mappings).toHaveLength(12)
     expect(geps.mappings.filter(isOriginalValueMapping)).toHaveLength(6)
     expect(unitSummary(geps)).toBe('按映射分支')
+  })
+  it('keeps each deterministic K-index unit rule within its reviewed ORIG cycle and leads', () => {
+    for (const snapshot of ['gfs', 'meso1', 'meso3', 'tym']) {
+      const entry = get(snapshot, 'cedarkit.kidx')
+      expect(entry.unit).toBe('K')
+      expect(entry.mappings).toHaveLength(4)
+      expect(unitSummary(entry)).toBe('按映射分支')
+      const reviewed = entry.mappings.filter((mapping) => !isOriginalValueMapping(mapping))
+      expect(reviewed.map((mapping) => mapping.applies_to.time)).toEqual(['2026-11-02T12:00:00Z', '2026-11-02T12:00:00Z'])
+      expect(reviewed.flatMap((mapping) => mapping.when?.step).sort()).toEqual(['PT0H', 'PT48H', 'PT6H'])
+    }
   })
   it('keeps ambiguous historical identities and historical_only without retiring them', () => {
     const candidates = legacyCandidates(model, '0.0.0')

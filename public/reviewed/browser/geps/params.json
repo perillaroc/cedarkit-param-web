@@ -20491,12 +20491,15 @@
           "remaining": 485
         },
         {
+          "evidence": [
+            "doc/2026-11-14-stage1.5-query-reki/evidence/1.5-04/historical-status.tsv"
+          ],
           "groups": {
             "06J": 95,
             "06K": 48
           },
           "id": "native-definition-gaps",
-          "note": "Original group obligations are not reduced by browser projection"
+          "note": "Historical denominators. Verified: 20 groups. Partially verified: 1 group. Open: 122 groups. Reviewed scopes are limited to their recorded conditions."
         },
         {
           "id": "modelvar",

@@ -1508,6 +1508,127 @@
           "applies_to": {
             "dataset": "cma_meso_1km",
             "product": "orig",
+            "product_version": "current",
+            "time": "2026-11-02T12:00:00Z"
+          },
+          "backend": "grib2",
+          "evidence": [
+            "doc/2026-11-14-stage1.5-query-reki/evidence/1.5-04/decisions.json#meso1:20",
+            "doc/2026-11-14-stage1.5-query-reki/evidence/1.5-04/physical-review.json#file-88",
+            "doc/2026-11-14-stage1.5-query-reki/evidence/1.5-04/physical-review.json#file-91",
+            "stage1.4/1.4-05/carrier-index.tsv#meso1-069"
+          ],
+          "id": "kidx.instantaneous.forecast.2026110212",
+          "native": {
+            "match": {
+              "centre": 38,
+              "discipline": 0,
+              "edition": 2,
+              "forecastTime": [
+                360,
+                2880
+              ],
+              "generatingProcessIdentifier": 15,
+              "indicatorOfUnitOfTimeRange": 0,
+              "localTablesVersion": 0,
+              "parameterCategory": 7,
+              "parameterNumber": 2,
+              "productDefinitionTemplateNumber": 0,
+              "productionStatusOfProcessedData": 0,
+              "significanceOfReferenceTime": 1,
+              "subCentre": 0,
+              "tablesVersion": 4,
+              "typeOfFirstFixedSurface": 101,
+              "typeOfGeneratingProcess": 2,
+              "typeOfProcessedData": 1,
+              "typeOfSecondFixedSurface": 255
+            },
+            "translate": {
+              "time": {
+                "rule": "grib.time"
+              },
+              "unit": {
+                "config": {
+                  "source_unit": "K"
+                },
+                "rule": "common.value_unit"
+              },
+              "vertical": {
+                "rule": "grib.fixed_surfaces"
+              }
+            }
+          },
+          "parameter_id": "cedarkit.kidx",
+          "when": {
+            "step": [
+              "PT6H",
+              "PT48H"
+            ]
+          }
+        },
+        {
+          "applies_to": {
+            "dataset": "cma_meso_1km",
+            "product": "orig",
+            "product_version": "current",
+            "time": "2026-11-02T12:00:00Z"
+          },
+          "backend": "grib2",
+          "evidence": [
+            "doc/2026-11-14-stage1.5-query-reki/evidence/1.5-04/decisions.json#meso1:20",
+            "doc/2026-11-14-stage1.5-query-reki/evidence/1.5-04/physical-review.json#file-87",
+            "stage1.4/1.4-05/carrier-index.tsv#meso1-069"
+          ],
+          "id": "kidx.instantaneous.initial.2026110212",
+          "native": {
+            "match": {
+              "centre": 38,
+              "discipline": 0,
+              "edition": 2,
+              "forecastTime": [
+                0
+              ],
+              "generatingProcessIdentifier": 15,
+              "indicatorOfUnitOfTimeRange": 0,
+              "localTablesVersion": 0,
+              "parameterCategory": 7,
+              "parameterNumber": 2,
+              "productDefinitionTemplateNumber": 0,
+              "productionStatusOfProcessedData": 0,
+              "significanceOfReferenceTime": 0,
+              "subCentre": 0,
+              "tablesVersion": 4,
+              "typeOfFirstFixedSurface": 101,
+              "typeOfGeneratingProcess": 0,
+              "typeOfProcessedData": 0,
+              "typeOfSecondFixedSurface": 255
+            },
+            "translate": {
+              "time": {
+                "rule": "grib.time"
+              },
+              "unit": {
+                "config": {
+                  "source_unit": "K"
+                },
+                "rule": "common.value_unit"
+              },
+              "vertical": {
+                "rule": "grib.fixed_surfaces"
+              }
+            }
+          },
+          "parameter_id": "cedarkit.kidx",
+          "when": {
+            "step": [
+              "PT0H"
+            ]
+          }
+        },
+        {
+          "applies_to": {
+            "dataset": "cma_meso_1km",
+            "product": "orig",
             "product_version": "current"
           },
           "backend": "grib2",
@@ -14564,7 +14685,7 @@
         }
       ],
       "tables": [],
-      "version": "13"
+      "version": "14"
     }
   ],
   "meta": {
@@ -14725,12 +14846,15 @@
           "remaining": 485
         },
         {
+          "evidence": [
+            "doc/2026-11-14-stage1.5-query-reki/evidence/1.5-04/historical-status.tsv"
+          ],
           "groups": {
             "06J": 95,
             "06K": 48
           },
           "id": "native-definition-gaps",
-          "note": "Original group obligations are not reduced by browser projection"
+          "note": "Historical denominators. Verified: 20 groups. Partially verified: 1 group. Open: 122 groups. Reviewed scopes are limited to their recorded conditions."
         },
         {
           "id": "modelvar",
@@ -14840,7 +14964,7 @@
     },
     "stats": {
       "aliases": 15,
-      "mappings": 302,
+      "mappings": 304,
       "parameters": 100
     }
   },
