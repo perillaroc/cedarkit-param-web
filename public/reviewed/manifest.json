@@ -5,9 +5,9 @@
     "id": "reki.cemc-catalog",
     "owner": "reki",
     "path": "catalog-v1.json",
-    "sha256": "647af53fec454f4c93bc7eadeb41f1db00aa07e863130d635b9bdf4dc5d9aafe",
+    "sha256": "7adb6f3dd8ab0f5b71569e0bc7e81ab212a479f9ab5a4d26e1d9dc90e6f144ac",
     "size": 1184452,
-    "version": "54"
+    "version": "55"
   },
   "dataset_bindings": [
     {
@@ -114,9 +114,9 @@
         "api_version": "cedarkit.parameters/v1",
         "id": "cedarkit.parameters.cma-gfs.current",
         "path": "resources/current-gfs-parameters.json",
-        "sha256": "ad8d474f1fd551d0f12f04f6a81da77bd21f67c91157f932246207e4ef7bd33b",
-        "size": 43762,
-        "version": "19"
+        "sha256": "2667203c29889f16a9d50081ad2d0c1bc975f79f4f77579f8a0cea49f4e0fca9",
+        "size": 44106,
+        "version": "20"
       },
       "products": [
         {
@@ -279,18 +279,18 @@
           "backend": "grib2",
           "id": "cedarkit.grib2.cma-meso-3km.current",
           "path": "resources/current-meso3-mappings.json",
-          "sha256": "5218f996edf523641250ff5ccd21d83db10004d027853a7ef8693c4476e8332b",
-          "size": 503745,
-          "version": "16"
+          "sha256": "a6d6d7772de134b7dd7b594a644a8b319887b5bd902dc9c3796d00896fe434e0",
+          "size": 507165,
+          "version": "17"
         }
       },
       "parameter_registry": {
         "api_version": "cedarkit.parameters/v1",
         "id": "cedarkit.parameters.cma-meso-3km.current",
         "path": "resources/current-meso3-parameters.json",
-        "sha256": "175af39c78094967ade1b5f9ec041c66c83f4939309512c75045498a801b49bd",
-        "size": 32403,
-        "version": "13"
+        "sha256": "37d7a1e96d6a5412021c4ef9354ab2f934088385e9392bd08841291353d1286f",
+        "size": 33080,
+        "version": "14"
       },
       "products": [
         {
@@ -536,42 +536,42 @@
   "files": [
     {
       "path": "browser/cmadaas/params.json",
-      "sha256": "b992e5c098b101559649db79bf0e5bfa94a71409598727f12bd15d696208d280",
+      "sha256": "4f5c4729633beda7b1358c5dfb9d4b5cc6f827fd7b527352be4734ed360320a7",
       "size": 1669059
     },
     {
       "path": "browser/geps/params.json",
-      "sha256": "25a97bc51430c5d82084d73763d249398be80d87852bc557351eb59de4f36d3d",
+      "sha256": "36c7aa31be25d542ce32f918cbfad8bb26d17a2a13aae45fd6258d17e6b831e0",
       "size": 706622
     },
     {
       "path": "browser/gfs/params.json",
-      "sha256": "54c6bdce0df2fcec0ee522aeb7f7b6466e1beecbb39286588f70c8448afc1dbe",
-      "size": 713871
+      "sha256": "fd38c57f4811a16bcb762b4890d3e9c6eb431dd1a8115baf15ed2f0708f2c740",
+      "size": 714215
     },
     {
       "path": "browser/meso1/params.json",
-      "sha256": "3cb7391d7be27f19b4b01d7bb7ec3f0ed03e3a9ef31d90784390152c360d2ecf",
+      "sha256": "67729779c32f10bd332d2b09430e1b185f6547b0b2ac66ba6b9f7da401827367",
       "size": 519906
     },
     {
       "path": "browser/meso3/params.json",
-      "sha256": "ec738f0c786a46ecd4d5dc5b802d655b15734d51d7848959f2f8297c38c34e80",
-      "size": 614993
+      "sha256": "221e22506d35940102e3850092db29a57e6da4a35cf5ea564aee51870b989589",
+      "size": 619570
     },
     {
       "path": "browser/reps/params.json",
-      "sha256": "273f7d11e6bf842db1159f0ca059e32e687e69ab5a6445e5d1be948e8a03a83e",
+      "sha256": "19f4e0598064a77e75ec5bf5ab62499199ca06bfec7a6576960f45212b517af7",
       "size": 587084
     },
     {
       "path": "browser/tym/params.json",
-      "sha256": "7f9bc8cf5bee3ac364d8364f87fd0b90afdf6183f9aeb0e24af5f7a14fa51dfe",
+      "sha256": "f42f491accebe87594986da265e3c5204616e6c4f567658da5639b9a949037cc",
       "size": 425380
     },
     {
       "path": "catalog-v1.json",
-      "sha256": "647af53fec454f4c93bc7eadeb41f1db00aa07e863130d635b9bdf4dc5d9aafe",
+      "sha256": "7adb6f3dd8ab0f5b71569e0bc7e81ab212a479f9ab5a4d26e1d9dc90e6f144ac",
       "size": 1184452
     },
     {
@@ -606,8 +606,8 @@
     },
     {
       "path": "resources/current-gfs-parameters.json",
-      "sha256": "ad8d474f1fd551d0f12f04f6a81da77bd21f67c91157f932246207e4ef7bd33b",
-      "size": 43762
+      "sha256": "2667203c29889f16a9d50081ad2d0c1bc975f79f4f77579f8a0cea49f4e0fca9",
+      "size": 44106
     },
     {
       "path": "resources/current-meso1-mappings.json",
@@ -621,13 +621,13 @@
     },
     {
       "path": "resources/current-meso3-mappings.json",
-      "sha256": "5218f996edf523641250ff5ccd21d83db10004d027853a7ef8693c4476e8332b",
-      "size": 503745
+      "sha256": "a6d6d7772de134b7dd7b594a644a8b319887b5bd902dc9c3796d00896fe434e0",
+      "size": 507165
     },
     {
       "path": "resources/current-meso3-parameters.json",
-      "sha256": "175af39c78094967ade1b5f9ec041c66c83f4939309512c75045498a801b49bd",
-      "size": 32403
+      "sha256": "37d7a1e96d6a5412021c4ef9354ab2f934088385e9392bd08841291353d1286f",
+      "size": 33080
     },
     {
       "path": "resources/current-reps-mappings.json",
@@ -693,14 +693,14 @@
       },
       {
         "evidence": [
-          "doc/2026-11-14-stage1.5-query-reki/evidence/1.5-04C/historical-ledger.tsv"
+          "doc/2026-11-14-stage1.5-query-reki/evidence/1.5-04D/historical-ledger.tsv"
         ],
         "groups": {
           "06J": 95,
           "06K": 48
         },
         "id": "native-definition-gaps",
-        "note": "Historical denominators. Verified: 23 groups. Partially verified: 1 group. Open: 119 groups. Reviewed scopes are limited to their recorded conditions."
+        "note": "Historical denominators. Verified: 28 groups. Partially verified: 1 group. Open: 114 groups. Reviewed scopes are limited to their recorded conditions."
       },
       {
         "id": "modelvar",
@@ -817,9 +817,9 @@
         "api_version": "cedarkit.parameters/v1",
         "id": "cedarkit.parameters.cma-gfs.current",
         "path": "resources/current-gfs-parameters.json",
-        "sha256": "ad8d474f1fd551d0f12f04f6a81da77bd21f67c91157f932246207e4ef7bd33b",
-        "size": 43762,
-        "version": "19"
+        "sha256": "2667203c29889f16a9d50081ad2d0c1bc975f79f4f77579f8a0cea49f4e0fca9",
+        "size": 44106,
+        "version": "20"
       },
       "path": "browser/gfs/params.json",
       "schema_version": 4
@@ -862,18 +862,18 @@
           "backend": "grib2",
           "id": "cedarkit.grib2.cma-meso-3km.current",
           "path": "resources/current-meso3-mappings.json",
-          "sha256": "5218f996edf523641250ff5ccd21d83db10004d027853a7ef8693c4476e8332b",
-          "size": 503745,
-          "version": "16"
+          "sha256": "a6d6d7772de134b7dd7b594a644a8b319887b5bd902dc9c3796d00896fe434e0",
+          "size": 507165,
+          "version": "17"
         }
       ],
       "parameter_resource": {
         "api_version": "cedarkit.parameters/v1",
         "id": "cedarkit.parameters.cma-meso-3km.current",
         "path": "resources/current-meso3-parameters.json",
-        "sha256": "175af39c78094967ade1b5f9ec041c66c83f4939309512c75045498a801b49bd",
-        "size": 32403,
-        "version": "13"
+        "sha256": "37d7a1e96d6a5412021c4ef9354ab2f934088385e9392bd08841291353d1286f",
+        "size": 33080,
+        "version": "14"
       },
       "path": "browser/meso3/params.json",
       "schema_version": 4
@@ -936,8 +936,8 @@
   "sources": [
     {
       "path": "authoring/browser-current.json",
-      "sha256": "ebca0bf9652c7a1b6967bc057b797c1ae075ef619102dfba27e4a8df1d2f9aae",
-      "size": 8040
+      "sha256": "0578ad6a5e302b8954cf2c4f410dd85e6c8359c8bb7feaf5e43d11e4328088fa",
+      "size": 8094
     },
     {
       "path": "authoring/cemc-orig-batch1.json",
@@ -963,6 +963,11 @@
       "path": "authoring/cemc-orig-stage1.5-snowfall.json",
       "sha256": "a05500d2c80d88bc66a1a288f8e940ea72a1bba14f4cfe492e66515f9c10d304",
       "size": 6485
+    },
+    {
+      "path": "authoring/cemc-orig-stage1.5-vertical-diagnostics.json",
+      "sha256": "7b130b0c64768a7a1c883e2e6ba3347537f255fa1aa55feb86c334314e9a6e27",
+      "size": 3321
     },
     {
       "path": "authoring/cemc-orig-task-n04b-01.json",
@@ -1006,7 +1011,7 @@
     },
     {
       "path": "catalog-v1.json",
-      "sha256": "647af53fec454f4c93bc7eadeb41f1db00aa07e863130d635b9bdf4dc5d9aafe",
+      "sha256": "7adb6f3dd8ab0f5b71569e0bc7e81ab212a479f9ab5a4d26e1d9dc90e6f144ac",
       "size": 1184452
     },
     {
@@ -1015,5 +1020,5 @@
       "size": 77025
     }
   ],
-  "version": "14"
+  "version": "15"
 }

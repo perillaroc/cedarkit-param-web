@@ -22,13 +22,26 @@ test('shows the water-equivalent snowfall branches and their reviewed range', as
   await page.screenshot({ path: testInfo.outputPath('orig-gfs-sf.png'), fullPage: true })
 })
 
+test('shows absolute radar height with its reviewed scope and raw fallback', async ({ page }, testInfo) => {
+  await page.goto('/#/parameters/cedarkit.parameters.cma-meso-3km.current/cedarkit.dbzmaxh')
+  await expect(page.getByRole('cell', { name: /绝对位势高度/ })).toBeVisible()
+  const cards = page.locator('.mapping-card')
+  await expect(cards.filter({ hasText: '标准单位 m' })).toHaveCount(2)
+  await expect(cards.filter({ hasText: '原值 · 单位待证' })).toHaveCount(2)
+  const forecast = cards.filter({ hasText: 'dbzmaxh.height.forecast.2026110212' })
+  await expect(forecast).toContainText('2026-11-02T12:00:00Z')
+  await expect(forecast).toContainText('PT6H')
+  await expect(forecast).toContainText('PT48H')
+  await page.screenshot({ path: testInfo.outputPath('orig-meso3-dbzmaxh.png'), fullPage: true })
+})
+
 test.describe('schema 4 parameter discovery', () => {
   test('loads seven contexts and searches stable IDs without merging definitions', async ({ page }) => {
     const errors: string[] = []
     page.on('pageerror', (error) => errors.push(error.message))
     await page.goto('/')
     await expect(page.getByText('702 / 702 条资源内定义')).toBeVisible()
-    await expect(page.getByText(/schema v4 · 215 个稳定 ID · 702 条资源内定义 · 2595 条映射/)).toBeVisible()
+    await expect(page.getByText(/schema v4 · 215 个稳定 ID · 702 条资源内定义 · 2597 条映射/)).toBeVisible()
     await page.getByRole('textbox', { name: '搜索参数' }).fill('cedarkit.t2m')
     await expect(page.getByText('7 / 702 条资源内定义')).toBeVisible()
     await expect(page).toHaveURL(/q=cedarkit.t2m/)

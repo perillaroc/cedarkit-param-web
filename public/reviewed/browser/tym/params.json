@@ -12120,14 +12120,14 @@
         },
         {
           "evidence": [
-            "doc/2026-11-14-stage1.5-query-reki/evidence/1.5-04C/historical-ledger.tsv"
+            "doc/2026-11-14-stage1.5-query-reki/evidence/1.5-04D/historical-ledger.tsv"
           ],
           "groups": {
             "06J": 95,
             "06K": 48
           },
           "id": "native-definition-gaps",
-          "note": "Historical denominators. Verified: 23 groups. Partially verified: 1 group. Open: 119 groups. Reviewed scopes are limited to their recorded conditions."
+          "note": "Historical denominators. Verified: 28 groups. Partially verified: 1 group. Open: 114 groups. Reviewed scopes are limited to their recorded conditions."
         },
         {
           "id": "modelvar",

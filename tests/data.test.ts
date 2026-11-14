@@ -42,7 +42,7 @@ describe('accepted schema 4 group', () => {
   it('keeps all seven resource contexts, exact runtime pins and bounded global obligations', () => {
     expect(model.entries).toHaveLength(702)
     expect(model.stableIds).toBe(215)
-    expect(model.mappingCount).toBe(2595)
+    expect(model.mappingCount).toBe(2597)
     expect(model.manifest.dataset_bindings).toHaveLength(18)
     expect(new Set(model.entries.map((e) => e.key)).size).toBe(702)
     expect(model.manifest.scope.remaining_migration_obligations.find((o) => o.id === 'service-history')?.remaining).toBe(415)
@@ -321,6 +321,23 @@ describe('accepted schema 4 group', () => {
       expect(reviewed.flatMap((mapping) => mapping.when?.step).sort()).toEqual(['PT0H', 'PT48H', 'PT6H'])
     }
     expect(unitSummary(get('meso1', 'cedarkit.sf'))).toBe('原值 · 单位待证')
+  })
+  it('shows the scoped terrain references and MESO-3KM radar height unit', () => {
+    for (const product of ['gfs', 'meso3']) {
+      for (const name of ['cldb', 'cldt']) {
+        const cloud = get(product, 'cedarkit.' + name)
+        expect(cloud.descriptionCn).toContain('距模式地面')
+        expect(cloud.fixedConditions).toEqual({ level_type: 'surface' })
+        expect(cloud.unit).toBe('m')
+      }
+    }
+    const radar = get('meso3', 'cedarkit.dbzmaxh')
+    expect(radar.descriptionCn).toContain('绝对位势高度')
+    expect(radar.mappings.filter(isOriginalValueMapping)).toHaveLength(2)
+    const reviewed = radar.mappings.filter((mapping) => !isOriginalValueMapping(mapping))
+    expect(reviewed.map((mapping) => mapping.applies_to.time)).toEqual(['2026-11-02T12:00:00Z', '2026-11-02T12:00:00Z'])
+    expect(reviewed.flatMap((mapping) => mapping.when?.step).sort()).toEqual(['PT0H', 'PT48H', 'PT6H'])
+    expect(unitSummary(get('meso1', 'cedarkit.dbzmaxh'))).toBe('原值 · 单位待证')
   })
   it('keeps ambiguous historical identities and historical_only without retiring them', () => {
     const candidates = legacyCandidates(model, '0.0.0')
