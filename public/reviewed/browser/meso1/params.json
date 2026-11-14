@@ -3335,6 +3335,134 @@
           "applies_to": {
             "dataset": "cma_meso_1km",
             "product": "orig",
+            "product_version": "current",
+            "time": "2026-11-02T12:00:00Z"
+          },
+          "backend": "grib2",
+          "evidence": [
+            "doc/2026-11-14-stage1.5-query-reki/evidence/1.5-04C/supplement/historical-status.tsv#meso1:04",
+            "doc/2026-11-14-stage1.5-query-reki/evidence/1.5-04C/supplement/production-sources.json#meso1",
+            "stage1.4/1.4-05/carrier-index.tsv#meso1-002"
+          ],
+          "id": "sf.since-initialization.forecast.2026110212",
+          "native": {
+            "match": {
+              "centre": 38,
+              "discipline": 0,
+              "edition": 2,
+              "generatingProcessIdentifier": 15,
+              "indicatorOfUnitForTimeRange": 0,
+              "indicatorOfUnitOfTimeRange": 0,
+              "lengthOfTimeRange": [
+                360,
+                2880
+              ],
+              "localTablesVersion": 0,
+              "numberOfTimeRange": 1,
+              "parameterCategory": 1,
+              "parameterNumber": 29,
+              "productDefinitionTemplateNumber": 8,
+              "productionStatusOfProcessedData": 0,
+              "significanceOfReferenceTime": 1,
+              "subCentre": 0,
+              "tablesVersion": 4,
+              "typeOfFirstFixedSurface": 1,
+              "typeOfGeneratingProcess": 2,
+              "typeOfProcessedData": 1,
+              "typeOfSecondFixedSurface": 255,
+              "typeOfStatisticalProcessing": 1,
+              "typeOfTimeIncrement": 2
+            },
+            "translate": {
+              "time": {
+                "rule": "grib.time"
+              },
+              "unit": {
+                "config": {
+                  "source_unit": "m"
+                },
+                "rule": "common.value_unit"
+              },
+              "vertical": {
+                "rule": "grib.fixed_surfaces"
+              }
+            }
+          },
+          "parameter_id": "cedarkit.sf",
+          "when": {
+            "step": [
+              "PT6H",
+              "PT48H"
+            ]
+          }
+        },
+        {
+          "applies_to": {
+            "dataset": "cma_meso_1km",
+            "product": "orig",
+            "product_version": "current",
+            "time": "2026-11-02T12:00:00Z"
+          },
+          "backend": "grib2",
+          "evidence": [
+            "doc/2026-11-14-stage1.5-query-reki/evidence/1.5-04C/supplement/historical-status.tsv#meso1:04",
+            "doc/2026-11-14-stage1.5-query-reki/evidence/1.5-04C/supplement/production-sources.json#meso1",
+            "stage1.4/1.4-05/carrier-index.tsv#meso1-002"
+          ],
+          "id": "sf.since-initialization.initial.2026110212",
+          "native": {
+            "match": {
+              "centre": 38,
+              "discipline": 0,
+              "edition": 2,
+              "generatingProcessIdentifier": 15,
+              "indicatorOfUnitForTimeRange": 0,
+              "indicatorOfUnitOfTimeRange": 0,
+              "lengthOfTimeRange": [
+                0
+              ],
+              "localTablesVersion": 0,
+              "numberOfTimeRange": 1,
+              "parameterCategory": 1,
+              "parameterNumber": 29,
+              "productDefinitionTemplateNumber": 8,
+              "productionStatusOfProcessedData": 0,
+              "significanceOfReferenceTime": 0,
+              "subCentre": 0,
+              "tablesVersion": 4,
+              "typeOfFirstFixedSurface": 1,
+              "typeOfGeneratingProcess": 0,
+              "typeOfProcessedData": 0,
+              "typeOfSecondFixedSurface": 255,
+              "typeOfStatisticalProcessing": 1,
+              "typeOfTimeIncrement": 2
+            },
+            "translate": {
+              "time": {
+                "rule": "grib.time"
+              },
+              "unit": {
+                "config": {
+                  "source_unit": "m"
+                },
+                "rule": "common.value_unit"
+              },
+              "vertical": {
+                "rule": "grib.fixed_surfaces"
+              }
+            }
+          },
+          "parameter_id": "cedarkit.sf",
+          "when": {
+            "step": [
+              "PT0H"
+            ]
+          }
+        },
+        {
+          "applies_to": {
+            "dataset": "cma_meso_1km",
+            "product": "orig",
             "product_version": "current"
           },
           "backend": "grib2",
@@ -14685,7 +14813,7 @@
         }
       ],
       "tables": [],
-      "version": "14"
+      "version": "15"
     }
   ],
   "meta": {
@@ -14693,8 +14821,8 @@
     "parameter_resource": {
       "api_version": "cedarkit.parameters/v1",
       "id": "cedarkit.parameters.cma-meso-1km.current",
-      "sha256": "ab89bef0ac691daefaf9d710bc5d1f5dce8f6d8e709a43c4144aaeac95078593",
-      "version": "11"
+      "sha256": "7d2f2c19894260f2f88eda43bb561ce769310cdcbea19cc74b645643a0dd8ac4",
+      "version": "12"
     },
     "schema_version": 4,
     "scope": {
@@ -14847,14 +14975,14 @@
         },
         {
           "evidence": [
-            "doc/2026-11-14-stage1.5-query-reki/evidence/1.5-04D/historical-ledger.tsv"
+            "doc/2026-11-14-stage1.5-query-reki/evidence/1.5-04C/supplement/historical-ledger.tsv"
           ],
           "groups": {
             "06J": 95,
             "06K": 48
           },
           "id": "native-definition-gaps",
-          "note": "Historical denominators. Verified: 28 groups. Partially verified: 1 group. Open: 114 groups. Reviewed scopes are limited to their recorded conditions."
+          "note": "Historical denominators. Verified: 35 groups. Partially verified: 1 group. Open: 107 groups. Reviewed scopes are limited to their recorded conditions."
         },
         {
           "id": "modelvar",
@@ -14964,7 +15092,7 @@
     },
     "stats": {
       "aliases": 15,
-      "mappings": 304,
+      "mappings": 306,
       "parameters": 100
     }
   },
@@ -15486,11 +15614,16 @@
       "parent": "cedarkit.rh"
     },
     {
+      "description": "ORIG snowfall (SF). The reviewed 0, 6 and 48 h fields from 2026-11-02 12 UTC represent accumulated large-scale solid precipitation as liquid-water-equivalent depth.",
+      "description_cn": "ORIG 降雪（SF）。2026-11-02 12 UTC 起报的 0／6／48h 已确认为累计大尺度固态降水的液态水当量深度。",
       "fixed_conditions": {
         "level_type": "surface",
         "statistics": {
           "operation": "accumulation",
-          "over": "time"
+          "over": "time",
+          "period": {
+            "kind": "since_initialization"
+          }
         }
       },
       "name": "sf",
@@ -15498,8 +15631,8 @@
       "parent": "cedarkit.sf.any"
     },
     {
-      "description": "Snow melt",
-      "description_cn": "降雪",
+      "description": "ORIG snowfall (SF)",
+      "description_cn": "ORIG 降雪（SF）",
       "fixed_conditions": {},
       "name": "cedarkit.sf.any",
       "parameter_id": "cedarkit.sf.any",

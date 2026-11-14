@@ -5,9 +5,9 @@
     "id": "reki.cemc-catalog",
     "owner": "reki",
     "path": "catalog-v1.json",
-    "sha256": "7adb6f3dd8ab0f5b71569e0bc7e81ab212a479f9ab5a4d26e1d9dc90e6f144ac",
+    "sha256": "c8e17609271d3a1dc64297cf3015d144cc65265ec5fb65db890b8ff0935450ba",
     "size": 1184452,
-    "version": "55"
+    "version": "56"
   },
   "dataset_bindings": [
     {
@@ -192,18 +192,18 @@
           "backend": "grib2",
           "id": "cedarkit.grib2.cma-meso-1km.current",
           "path": "resources/current-meso1-mappings.json",
-          "sha256": "6244f75b90bdef5e10dba05f6014833d1e0acd6a3147b056807b2122f8d761e7",
-          "size": 427193,
-          "version": "14"
+          "sha256": "a5933d2045b50aebecb2909937adfe8a98f3bed8b49861c165d0f5927594b3ac",
+          "size": 430993,
+          "version": "15"
         }
       },
       "parameter_registry": {
         "api_version": "cedarkit.parameters/v1",
         "id": "cedarkit.parameters.cma-meso-1km.current",
         "path": "resources/current-meso1-parameters.json",
-        "sha256": "ab89bef0ac691daefaf9d710bc5d1f5dce8f6d8e709a43c4144aaeac95078593",
-        "size": 25643,
-        "version": "11"
+        "sha256": "7d2f2c19894260f2f88eda43bb561ce769310cdcbea19cc74b645643a0dd8ac4",
+        "size": 26088,
+        "version": "12"
       },
       "products": [
         {
@@ -366,18 +366,18 @@
           "backend": "grib2",
           "id": "cedarkit.grib2.cma-reps.current",
           "path": "resources/current-reps-mappings.json",
-          "sha256": "9c1048105a87f0f343b95fe5f135318abe01072c4dafc2c71f4022a2c8a8bf22",
-          "size": 502783,
-          "version": "11"
+          "sha256": "cbd992171df91d77d106ebbbaaa50689d7e12c11f2f547c0d96a5827cb061fee",
+          "size": 516978,
+          "version": "12"
         }
       },
       "parameter_registry": {
         "api_version": "cedarkit.parameters/v1",
         "id": "cedarkit.parameters.cma-reps.current",
         "path": "resources/current-reps-parameters.json",
-        "sha256": "2a3effbbb6da9bba6541d5ff4a8c14e31feb64fc102da22a02b2c1c1c604e8e2",
-        "size": 11075,
-        "version": "8"
+        "sha256": "46e0f126333ee55f27230af98ad5f1d9e43c2d797961b2634900edf4ed0f83b4",
+        "size": 11515,
+        "version": "9"
       },
       "products": [
         {
@@ -536,42 +536,42 @@
   "files": [
     {
       "path": "browser/cmadaas/params.json",
-      "sha256": "4f5c4729633beda7b1358c5dfb9d4b5cc6f827fd7b527352be4734ed360320a7",
-      "size": 1669059
+      "sha256": "4a08922d2046eab4f416e70375da4f8262924facbb6a09c1a1c29006cf808530",
+      "size": 1669070
     },
     {
       "path": "browser/geps/params.json",
-      "sha256": "36c7aa31be25d542ce32f918cbfad8bb26d17a2a13aae45fd6258d17e6b831e0",
-      "size": 706622
+      "sha256": "49948f1b7e1c6241f575e0c390e5a1aa47227ffc1e8fc8f37fdd50fc6a35c619",
+      "size": 706633
     },
     {
       "path": "browser/gfs/params.json",
-      "sha256": "fd38c57f4811a16bcb762b4890d3e9c6eb431dd1a8115baf15ed2f0708f2c740",
-      "size": 714215
+      "sha256": "56ec22da2b430d8e4e2aa1645bcd585ce981003e3d0aeb2033b7974cb131d07a",
+      "size": 714226
     },
     {
       "path": "browser/meso1/params.json",
-      "sha256": "67729779c32f10bd332d2b09430e1b185f6547b0b2ac66ba6b9f7da401827367",
-      "size": 519906
+      "sha256": "796f3054d7c4c70e023d70bfa946c269fe4ab7318e211a44819bf7fa881d3f07",
+      "size": 524674
     },
     {
       "path": "browser/meso3/params.json",
-      "sha256": "221e22506d35940102e3850092db29a57e6da4a35cf5ea564aee51870b989589",
-      "size": 619570
+      "sha256": "00d09d1b75cf6255f8a58f327a960ec68eae45e5265276310f0cf660e483316c",
+      "size": 619581
     },
     {
       "path": "browser/reps/params.json",
-      "sha256": "19f4e0598064a77e75ec5bf5ab62499199ca06bfec7a6576960f45212b517af7",
-      "size": 587084
+      "sha256": "99df7ad566439f028830a50b65499fa86f24d493425382a8ed522d2e5cdb1ff4",
+      "size": 603618
     },
     {
       "path": "browser/tym/params.json",
-      "sha256": "f42f491accebe87594986da265e3c5204616e6c4f567658da5639b9a949037cc",
-      "size": 425380
+      "sha256": "46d210a02559485ad00a2f8f33a0f7f764ebe6ec9eb643ef8958c89fae16c067",
+      "size": 425391
     },
     {
       "path": "catalog-v1.json",
-      "sha256": "7adb6f3dd8ab0f5b71569e0bc7e81ab212a479f9ab5a4d26e1d9dc90e6f144ac",
+      "sha256": "c8e17609271d3a1dc64297cf3015d144cc65265ec5fb65db890b8ff0935450ba",
       "size": 1184452
     },
     {
@@ -611,13 +611,13 @@
     },
     {
       "path": "resources/current-meso1-mappings.json",
-      "sha256": "6244f75b90bdef5e10dba05f6014833d1e0acd6a3147b056807b2122f8d761e7",
-      "size": 427193
+      "sha256": "a5933d2045b50aebecb2909937adfe8a98f3bed8b49861c165d0f5927594b3ac",
+      "size": 430993
     },
     {
       "path": "resources/current-meso1-parameters.json",
-      "sha256": "ab89bef0ac691daefaf9d710bc5d1f5dce8f6d8e709a43c4144aaeac95078593",
-      "size": 25643
+      "sha256": "7d2f2c19894260f2f88eda43bb561ce769310cdcbea19cc74b645643a0dd8ac4",
+      "size": 26088
     },
     {
       "path": "resources/current-meso3-mappings.json",
@@ -631,13 +631,13 @@
     },
     {
       "path": "resources/current-reps-mappings.json",
-      "sha256": "9c1048105a87f0f343b95fe5f135318abe01072c4dafc2c71f4022a2c8a8bf22",
-      "size": 502783
+      "sha256": "cbd992171df91d77d106ebbbaaa50689d7e12c11f2f547c0d96a5827cb061fee",
+      "size": 516978
     },
     {
       "path": "resources/current-reps-parameters.json",
-      "sha256": "2a3effbbb6da9bba6541d5ff4a8c14e31feb64fc102da22a02b2c1c1c604e8e2",
-      "size": 11075
+      "sha256": "46e0f126333ee55f27230af98ad5f1d9e43c2d797961b2634900edf4ed0f83b4",
+      "size": 11515
     },
     {
       "path": "resources/current-tym-mappings.json",
@@ -693,14 +693,14 @@
       },
       {
         "evidence": [
-          "doc/2026-11-14-stage1.5-query-reki/evidence/1.5-04D/historical-ledger.tsv"
+          "doc/2026-11-14-stage1.5-query-reki/evidence/1.5-04C/supplement/historical-ledger.tsv"
         ],
         "groups": {
           "06J": 95,
           "06K": 48
         },
         "id": "native-definition-gaps",
-        "note": "Historical denominators. Verified: 28 groups. Partially verified: 1 group. Open: 114 groups. Reviewed scopes are limited to their recorded conditions."
+        "note": "Historical denominators. Verified: 35 groups. Partially verified: 1 group. Open: 107 groups. Reviewed scopes are limited to their recorded conditions."
       },
       {
         "id": "modelvar",
@@ -835,18 +835,18 @@
           "backend": "grib2",
           "id": "cedarkit.grib2.cma-meso-1km.current",
           "path": "resources/current-meso1-mappings.json",
-          "sha256": "6244f75b90bdef5e10dba05f6014833d1e0acd6a3147b056807b2122f8d761e7",
-          "size": 427193,
-          "version": "14"
+          "sha256": "a5933d2045b50aebecb2909937adfe8a98f3bed8b49861c165d0f5927594b3ac",
+          "size": 430993,
+          "version": "15"
         }
       ],
       "parameter_resource": {
         "api_version": "cedarkit.parameters/v1",
         "id": "cedarkit.parameters.cma-meso-1km.current",
         "path": "resources/current-meso1-parameters.json",
-        "sha256": "ab89bef0ac691daefaf9d710bc5d1f5dce8f6d8e709a43c4144aaeac95078593",
-        "size": 25643,
-        "version": "11"
+        "sha256": "7d2f2c19894260f2f88eda43bb561ce769310cdcbea19cc74b645643a0dd8ac4",
+        "size": 26088,
+        "version": "12"
       },
       "path": "browser/meso1/params.json",
       "schema_version": 4
@@ -889,18 +889,18 @@
           "backend": "grib2",
           "id": "cedarkit.grib2.cma-reps.current",
           "path": "resources/current-reps-mappings.json",
-          "sha256": "9c1048105a87f0f343b95fe5f135318abe01072c4dafc2c71f4022a2c8a8bf22",
-          "size": 502783,
-          "version": "11"
+          "sha256": "cbd992171df91d77d106ebbbaaa50689d7e12c11f2f547c0d96a5827cb061fee",
+          "size": 516978,
+          "version": "12"
         }
       ],
       "parameter_resource": {
         "api_version": "cedarkit.parameters/v1",
         "id": "cedarkit.parameters.cma-reps.current",
         "path": "resources/current-reps-parameters.json",
-        "sha256": "2a3effbbb6da9bba6541d5ff4a8c14e31feb64fc102da22a02b2c1c1c604e8e2",
-        "size": 11075,
-        "version": "8"
+        "sha256": "46e0f126333ee55f27230af98ad5f1d9e43c2d797961b2634900edf4ed0f83b4",
+        "size": 11515,
+        "version": "9"
       },
       "path": "browser/reps/params.json",
       "schema_version": 4
@@ -936,8 +936,8 @@
   "sources": [
     {
       "path": "authoring/browser-current.json",
-      "sha256": "0578ad6a5e302b8954cf2c4f410dd85e6c8359c8bb7feaf5e43d11e4328088fa",
-      "size": 8094
+      "sha256": "cacdd6555a0f8d5b706c07446171219db3fa70d4d4da35185c5ffcc607e208c2",
+      "size": 8158
     },
     {
       "path": "authoring/cemc-orig-batch1.json",
@@ -958,6 +958,11 @@
       "path": "authoring/cemc-orig-stage1.5-kindex-units.json",
       "sha256": "fcab3fff6813b5229a033c7f925235866d9d71982e6ee1235fa8e5c3847c75be",
       "size": 5206
+    },
+    {
+      "path": "authoring/cemc-orig-stage1.5-snowfall-supplement.json",
+      "sha256": "5c9972edf865e42606284bc9c6d17c0d160e6a8ad352c6f6b4e22c75bd2f91bc",
+      "size": 8046
     },
     {
       "path": "authoring/cemc-orig-stage1.5-snowfall.json",
@@ -1011,7 +1016,7 @@
     },
     {
       "path": "catalog-v1.json",
-      "sha256": "7adb6f3dd8ab0f5b71569e0bc7e81ab212a479f9ab5a4d26e1d9dc90e6f144ac",
+      "sha256": "c8e17609271d3a1dc64297cf3015d144cc65265ec5fb65db890b8ff0935450ba",
       "size": 1184452
     },
     {
@@ -1020,5 +1025,5 @@
       "size": 77025
     }
   ],
-  "version": "15"
+  "version": "16"
 }

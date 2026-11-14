@@ -42,7 +42,7 @@ describe('accepted schema 4 group', () => {
   it('keeps all seven resource contexts, exact runtime pins and bounded global obligations', () => {
     expect(model.entries).toHaveLength(702)
     expect(model.stableIds).toBe(215)
-    expect(model.mappingCount).toBe(2597)
+    expect(model.mappingCount).toBe(2605)
     expect(model.manifest.dataset_bindings).toHaveLength(18)
     expect(new Set(model.entries.map((e) => e.key)).size).toBe(702)
     expect(model.manifest.scope.remaining_migration_obligations.find((o) => o.id === 'service-history')?.remaining).toBe(415)
@@ -104,8 +104,8 @@ describe('accepted schema 4 group', () => {
     expect(translated.every((m) => m.applies_to.time === '2026-11-02T12:00:00Z')).toBe(true)
     expect(translated.some((m) => m.evidence.some((e) => e.includes('task-n04a')))).toBe(true)
     const mappingResource = model.manifest.snapshots.find((s) => s.key === 'meso1')!
-    expect(mappingResource.parameter_resource.version).toBe('11')
-    expect(mappingResource.mapping_resources[0].version).toBe('14')
+    expect(mappingResource.parameter_resource.version).toBe('12')
+    expect(mappingResource.mapping_resources[0].version).toBe('15')
     const legacy = legacyCandidates(model, '0.1.3').find((c) => c.parameter_id === 'cedarkit.pwat')!
     expect(legacy.current_targets.some((t) => t.snapshot === 'meso1')).toBe(true)
     expect(model.manifest.scope.remaining_migration_obligations.find((o) => o.id === 'native-definition-gaps')?.groups).toEqual({ '06J': 95, '06K': 48 })
@@ -288,12 +288,10 @@ describe('accepted schema 4 group', () => {
     expect(rawMappings.filter((m) => !m.native.translate?.vertical).map((m) => m.parameter_id).sort()).toEqual([
       'cedarkit.ripbl', 'cedarkit.ripbl', 'cedarkit.uhmax', 'cedarkit.uhmax',
     ])
-    for (const [snapshot, id, count] of [['gfs', 'cedarkit.glw', 2], ['reps', 'cedarkit.sf', 6]] as const) {
-      const entry = get(snapshot, id)
-      expect(entry.mappings).toHaveLength(count)
-      expect(entry.mappings.every(isOriginalValueMapping)).toBe(true)
-      expect(unitSummary(entry)).toBe('原值 · 单位待证')
-    }
+    const glw = get('gfs', 'cedarkit.glw')
+    expect(glw.mappings).toHaveLength(2)
+    expect(glw.mappings.every(isOriginalValueMapping)).toBe(true)
+    expect(unitSummary(glw)).toBe('原值 · 单位待证')
     const geps = get('geps', 'cedarkit.sf')
     expect(geps.mappings).toHaveLength(12)
     expect(geps.mappings.filter(isOriginalValueMapping)).toHaveLength(6)
@@ -310,8 +308,8 @@ describe('accepted schema 4 group', () => {
       expect(reviewed.flatMap((mapping) => mapping.when?.step).sort()).toEqual(['PT0H', 'PT48H', 'PT6H'])
     }
   })
-  it('shows reviewed snowfall units for the three verified ORIG products', () => {
-    for (const snapshot of ['gfs', 'meso3', 'tym']) {
+  it('shows reviewed deterministic snowfall units at the original cycle and leads', () => {
+    for (const snapshot of ['gfs', 'meso1', 'meso3', 'tym']) {
       const entry = get(snapshot, 'cedarkit.sf')
       expect(entry.descriptionCn).toContain('液态水当量')
       expect(unitSummary(entry)).toBe('按映射分支')
@@ -320,7 +318,24 @@ describe('accepted schema 4 group', () => {
       expect(reviewed.map((mapping) => mapping.applies_to.time)).toEqual(['2026-11-02T12:00:00Z', '2026-11-02T12:00:00Z'])
       expect(reviewed.flatMap((mapping) => mapping.when?.step).sort()).toEqual(['PT0H', 'PT48H', 'PT6H'])
     }
-    expect(unitSummary(get('meso1', 'cedarkit.sf'))).toBe('原值 · 单位待证')
+  })
+  it('shows the REPS diagnostic units for the reviewed members and encoded intervals', () => {
+    const entry = get('reps', 'cedarkit.sf')
+    expect(entry.descriptionCn).toContain('各输出时刻重算')
+    expect(entry.unit).toBe('m')
+    expect(entry.fixedConditions).toEqual({ level_type: 'surface', statistics: { operation: 'accumulation', over: 'time' } })
+    expect(unitSummary(entry)).toBe('按映射分支')
+    expect(entry.mappings.filter(isOriginalValueMapping)).toHaveLength(6)
+    const reviewed = entry.mappings.filter((mapping) => !isOriginalValueMapping(mapping))
+    expect(reviewed).toHaveLength(6)
+    for (const rule of reviewed) {
+      expect(rule.applies_to.time).toBe('2026-11-02T06:00:00Z')
+      expect(rule.native.match).toMatchObject({ forecastTime: 0, perturbationNumber: rule.when?.member })
+    }
+    expect(reviewed.map((rule) => [rule.when?.step, rule.when?.member])).toEqual([
+      [['PT6H', 'PT48H'], [0]], [['PT6H', 'PT48H'], [2, 14]], [['PT6H', 'PT48H'], [1]],
+      [['PT0H'], [0]], [['PT0H'], [2, 14]], [['PT0H'], [1]],
+    ])
   })
   it('shows the scoped terrain references and MESO-3KM radar height unit', () => {
     for (const product of ['gfs', 'meso3']) {

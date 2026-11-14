@@ -23,8 +23,8 @@ npm run test:e2e
 
 ## 冻结的 schema 4 快照
 
-当前消费 `public/reviewed/manifest.json`，组为 `cedarkit.browser.reviewed-current` revision 15。
-manifest 格式为 1，七份浏览器文档格式为 4，目录内容为 v55。
+当前消费 `public/reviewed/manifest.json`，组为 `cedarkit.browser.reviewed-current` revision 16。
+manifest 格式为 1，七份浏览器文档格式为 4，目录内容为 v56。
 精确 manifest SHA256 固定在 `src/bundle-pin.json`。
 
 输入来自 `cedarkit-param-db` 的审核文本作者导出。使用以下命令原字节安装已验导出组。
@@ -52,7 +52,7 @@ npm run verify:bundle
 
 ## 浏览和导航
 
-- 列表包含 702 条资源内定义、215 个稳定 ID 和 2597 条映射。相同稳定 ID 在不同
+- 列表包含 702 条资源内定义、215 个稳定 ID 和 2605 条映射。相同稳定 ID 在不同
   资源中的定义分别显示。有 158 个稳定 ID 有直接映射。
 - 搜索稳定 ID、名称／别名、中英文描述、单位、父定义、科学条件、适用产品、
   原生字段、证据引用和 GRIB 三元组。可按资源、dataset、backend 和直接映射状态筛选。
@@ -81,11 +81,11 @@ npm run verify:bundle
 采用 hash 路由和相对资源路径，支持静态根目录和子目录托管。Netlify 设置在
 `netlify.toml`，构建命令为 `npm ci && npm run build`，发布目录为 `dist/`。
 
-revision 15 补充 GFS、MESO-3KM 的云高基准，新增 MESO-3KM 最大回波高度的米制分支。
-适用 2026-11-02 12 UTC 起报的 0／6／48h。直接回退使用 web 提交 `d3d78bc`、browser revision 14 和 catalog v54。
+revision 16 补齐 MESO-1KM 和 REPS 的 ORIG 降雪审核。两套产品均审核 0／6／48h，MESO-1KM 对应 2026-11-02 12 UTC，REPS 对应同日 06 UTC 的成员 0、1、2、14。
+直接回退使用 web 提交 `21224d8`、browser revision 15 和 catalog v55。revision 15 补充 GFS、MESO-3KM 的云高基准及 MESO-3KM 最大回波高度的米制分支。
 revision 14 是 GFS、MESO-3KM、TYM 的 ORIG 降雪审核组。
 更早的 T05 完整回退组合为 web 提交 `bd658fbc`、browser revision 10 和 catalog v49。
-[1.5-04D 验收](../../doc/2026-11-14-stage1.5-query-reki/evidence/1.5-04D/README.md) · [1.5-04C 验收](../../doc/2026-11-14-stage1.5-query-reki/evidence/1.5-04C/README.md) · [1.5-04A 验收](../../doc/2026-11-14-stage1.5-query-reki/evidence/1.5-04/README.md)
+[1.5-04C 续验](../../doc/2026-11-14-stage1.5-query-reki/evidence/1.5-04C/supplement/README.md) · [1.5-04D 验收](../../doc/2026-11-14-stage1.5-query-reki/evidence/1.5-04D/README.md) · [1.5-04A 验收](../../doc/2026-11-14-stage1.5-query-reki/evidence/1.5-04/README.md)
 
 ## MESO-1KM PWAT 与本次组合
 
