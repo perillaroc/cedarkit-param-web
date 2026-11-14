@@ -42,7 +42,7 @@ describe('accepted schema 4 group', () => {
   it('keeps all seven resource contexts, exact runtime pins and bounded global obligations', () => {
     expect(model.entries).toHaveLength(702)
     expect(model.stableIds).toBe(215)
-    expect(model.mappingCount).toBe(2589)
+    expect(model.mappingCount).toBe(2595)
     expect(model.manifest.dataset_bindings).toHaveLength(18)
     expect(new Set(model.entries.map((e) => e.key)).size).toBe(702)
     expect(model.manifest.scope.remaining_migration_obligations.find((o) => o.id === 'service-history')?.remaining).toBe(415)
@@ -309,6 +309,18 @@ describe('accepted schema 4 group', () => {
       expect(reviewed.map((mapping) => mapping.applies_to.time)).toEqual(['2026-11-02T12:00:00Z', '2026-11-02T12:00:00Z'])
       expect(reviewed.flatMap((mapping) => mapping.when?.step).sort()).toEqual(['PT0H', 'PT48H', 'PT6H'])
     }
+  })
+  it('shows reviewed snowfall units for the three verified ORIG products', () => {
+    for (const snapshot of ['gfs', 'meso3', 'tym']) {
+      const entry = get(snapshot, 'cedarkit.sf')
+      expect(entry.descriptionCn).toContain('液态水当量')
+      expect(unitSummary(entry)).toBe('按映射分支')
+      expect(entry.mappings.filter(isOriginalValueMapping)).toHaveLength(2)
+      const reviewed = entry.mappings.filter((mapping) => !isOriginalValueMapping(mapping))
+      expect(reviewed.map((mapping) => mapping.applies_to.time)).toEqual(['2026-11-02T12:00:00Z', '2026-11-02T12:00:00Z'])
+      expect(reviewed.flatMap((mapping) => mapping.when?.step).sort()).toEqual(['PT0H', 'PT48H', 'PT6H'])
+    }
+    expect(unitSummary(get('meso1', 'cedarkit.sf'))).toBe('原值 · 单位待证')
   })
   it('keeps ambiguous historical identities and historical_only without retiring them', () => {
     const candidates = legacyCandidates(model, '0.0.0')
